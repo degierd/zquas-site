@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology — ZQUAS</title>
+    <meta name="description" content="Technical overview of the ZQUAS engine architecture: GPU adjudication, policy compiler, identity graph, cryptographic attestation, and privacy-preserving MPC.">
+    <meta property="og:title" content="Technology — ZQUAS">
+    <meta property="og:description" content="Technical overview of the ZQUAS engine architecture for CTOs, technical evaluators, and due diligence teams.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zquas.ai/technology.html">
+    <meta property="og:image" content="https://zquas.ai/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ZQUAS">
+    <meta property="og:locale" content="en_GB">
+    <meta name="theme-color" content="#0a0d14">
+    <meta name="application-name" content="ZQUAS">
+    <meta name="apple-mobile-web-app-title" content="ZQUAS">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="describedby" href="/llms.txt" type="text/plain">
+    <link rel="describedby" href="/llms-full.txt" type="text/plain">
+    <link rel="describedby" href="/facts.json" type="application/json">
+    <link rel="author" href="/about.html">
+    <link rel="alternate" type="application/rss+xml" title="ZQUAS Articles" href="/feed.xml">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://zquas.ai/og-image.png">
+    <meta name="author" content="Danny de Gier">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zquas.ai/technology.html">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=4">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zquas.ai/"},
+            {"@type": "ListItem", "position": 2, "name": "Technology", "item": "https://zquas.ai/technology.html"}
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">ZQUAS<span>.</span></a>
+        <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <div class="nav-dropdown">
+                <a href="technology.html" class="nav-dropdown-toggle active">Technology <span class="nav-arrow">&#x25BE;</span></a>
+                <div class="nav-dropdown-menu">
+                    <a href="technology.html" class="active">Overview</a>
+                    <a href="architecture.html">Architecture</a>
+                    <a href="compare.html">Compare</a>
+                    <a href="why-different.html">Why Different</a>
+                    <a href="benchmark.html">Benchmark</a>
+                    <a href="engineering.html">Engineering</a>
+                </div>
+            </div>
+            <a href="regulators.html">Regulators</a>
+            <a href="use-case.html">Use Case</a>
+            <a href="about.html">About</a>
+            <a href="articles.html">Articles</a>
+            <a href="founding-partner.html">Partner</a>
+            <a href="contact.html" class="nav-contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+
+<div class="tech-header">
+    <div class="section-label">Technology</div>
+    <h1>How ZQUAS works</h1>
+    <p class="section-desc">
+        A technical overview of the engine architecture for CTOs, technical evaluators, and due diligence teams. No source code, no internal codenames. Enough depth to understand what's real and what's different.
+    </p>
+</div>
+
+<!-- Screenshots section — hidden until assets ready
+<section>
+    <div class="container">
+        <div class="section-label">Live Engine</div>
+        <h2 class="section-title">Real software. Real GPU. Real output.</h2>
+        <div class="screenshot-grid">
+            <div class="screenshot-placeholder">
+                <img src="screenshots/overview.png" alt="ZQUAS engine city overview showing 1M+ accounts">
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+<section class="problem-section">
+    <div class="container">
+        <div class="section-label">Architecture</div>
+        <h2 class="section-title">Five layers, one engine</h2>
+        <p class="section-desc">
+            ZQUAS is a vertically integrated compliance engine. Each layer is purpose-built, not assembled from third-party components. The engine runs on a single GPU installation per institution.
+        </p>
+    </div>
+    <div class="layer-stack">
+        <div class="layer-card">
+            <div class="layer-card-inner">
+                <div class="arch-tag">LAYER 1</div>
+                <h3>Policy Language &amp; Compiler</h3>
+                <p>Compliance policies are written in a domain-specific language designed for regulatory rules. The language has its own lexer, parser, semantic analyser, and compiler. Policies compile to bytecode that can be evaluated on GPU. The bytecode is immutable once deployed. A new policy version produces a new compilation with a different cryptographic hash. This means the exact policy set in effect at any moment is unambiguously identifiable.</p>
+            </div>
+        </div>
+        <div class="layer-card">
+            <div class="layer-card-inner">
+                <div class="arch-tag">LAYER 2</div>
+                <h3>GPU Adjudication Engine</h3>
+                <p>The compiled policy bytecode executes on GPU. Each entity is evaluated against the full policy set in parallel. The engine processes 500,000 entities across 100 AML policies in under 2 seconds, sustaining 190 million compliance policy evaluations per second at batch 4,096. Alert lifecycle under 10ms. Results are deterministic: same policy version, same input data, same verdict.</p>
+            </div>
+        </div>
+        <div class="layer-card">
+            <div class="layer-card-inner">
+                <div class="arch-tag">LAYER 3</div>
+                <h3>Identity Resolution &amp; Graph Intelligence</h3>
+                <p>A GPU-resident entity graph maintains relationships between accounts, individuals, businesses, devices, and counterparties. The graph uses a high-throughput GPU-resident hash table for real-time updates without read contention. Graph neural network inference propagates risk scores across entity relationships, providing full network context for every compliance decision. Entity resolution runs at GPU speed, not in overnight batch.</p>
+            </div>
+        </div>
+        <div class="layer-card">
+            <div class="layer-card-inner">
+                <div class="arch-tag">LAYER 4</div>
+                <h3>Cryptographic Attestation</h3>
+                <p>Every batch of compliance decisions produces a sealed proof bundle. The bundle includes: a BLAKE3 hash of the policy set, a hash of the input data, individual verdict hashes, a Merkle root binding all verdicts together, and an Ed25519 signature over the complete bundle. A separate SHA-256 witness hash is produced for regulatory interfaces. Proof bundles can optionally include GPU-accelerated zero-knowledge governance proofs.</p>
+            </div>
+        </div>
+        <div class="layer-card">
+            <div class="layer-card-inner">
+                <div class="arch-tag">LAYER 5</div>
+                <h3>Privacy-Preserving Cross-Institutional Layer</h3>
+                <p>When multiple institutions run ZQUAS, cross-bank detection activates via privacy-preserving federation. The protocol combines ECDH-PSI (X25519) for entity matching, Yao's Garbled Circuits (Free-XOR) for risk comparison, and IKNP OT Extension (Chou-Orlandi base OT on P-256) for oblivious transfer. Security model: semi-honest. Transport: AES-256-GCM with X25519 key exchange. Each institution retains full data sovereignty. No raw entity data crosses institutional boundaries. At 100,000 entities, a bilateral round completes in approximately 3.1 seconds. Both parties sign the result with Ed25519. A regulator verifies the attestation with a public key alone. 361 tests, zero critical findings.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-label">Data Flow</div>
+        <h2 class="section-title">From transaction to verified verdict</h2>
+        <p class="section-desc">
+            The engine uses a triple-stream GPU pipeline for compliance adjudication.
+        </p>
+    </div>
+    <div class="container">
+        <div class="pipeline-flow">
+            <div class="pipeline-stream">
+                <div class="arch-tag">STREAM A</div>
+                <h4>Load</h4>
+                <p>Transaction data serialised to GPU-native evaluation contexts. Asynchronous host-to-device copy via zero-copy memory transfers.</p>
+            </div>
+            <div class="pipeline-stream">
+                <div class="arch-tag">STREAM B</div>
+                <h4>Adjudicate</h4>
+                <p>GPU kernel evaluates N transactions against M policies in parallel. One block per transaction, one thread per policy. Verdict per transaction.</p>
+            </div>
+            <div class="pipeline-stream">
+                <div class="arch-tag">STREAM C</div>
+                <h4>Commit</h4>
+                <p>Results copied device-to-host. Epoch commitment computed. Merkle root constructed. Ed25519 signature applied. Proof bundle sealed.</p>
+            </div>
+        </div>
+        <p class="pipeline-note">Inter-stream synchronisation uses CUDA events. Streams execute concurrently. Load, adjudicate, and commit operate on different batches simultaneously, maximising throughput.</p>
+    </div>
+</section>
+
+<section class="problem-section">
+    <div class="container">
+        <div class="section-label">Regulator Verification</div>
+        <h2 class="section-title">Independent verification without vendor software</h2>
+        <p class="section-desc">
+            The engine ships with a standalone verification CLI. The tool is independent of the ZQUAS engine. It takes a proof bundle, a registered policy set, and evaluation contexts as input. It replays the evaluation deterministically and confirms that the proof is valid. The tool outputs VALID (exit code 0), INVALID (exit code 1), or ERROR (exit code 2). No GPU required for verification. No vendor infrastructure needed.
+        </p>
+        <div class="terminal-block">
+<pre><span class="terminal-prompt">$</span> themis-verify --epoch epoch_2026-03-08.bundle --policies /registered/v4.2/ --contexts eval_contexts.bin
+
+Replaying epoch 2026-03-08_14:32:00Z...
+Policies:       29 loaded (hash: a3f7c2...)
+Contexts:       1,247 evaluated
+Verdicts:       1,247 matched
+Merkle root:    <span class="terminal-ok">OK</span>
+Ed25519 sig:    <span class="terminal-ok">OK</span>
+
+Result: <span class="terminal-ok">VALID</span> (deterministic replay confirmed)</pre>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-label">Engineering</div>
+        <h2 class="section-title">How it's built</h2>
+        <p class="section-desc">Standards and toolchain.</p>
+        <div class="eng-grid">
+            <div class="eng-card">
+                <h4>Language</h4>
+                <p>C++23 with CUDA. Self-contained CUDA compilation per kernel. No separable compilation dependencies.</p>
+            </div>
+            <div class="eng-card">
+                <h4>GPU Targets</h4>
+                <p>NVIDIA architectures: sm_86 (Ampere), sm_89 (Ada Lovelace), sm_100 (Blackwell), sm_120 (next-gen). Tested on RTX 5090.</p>
+            </div>
+            <div class="eng-card">
+                <h4>Build Hardening</h4>
+                <p>MSVC /sdl, /guard:cf, /GS, /Qspectre, /fp:strict. Linker: /CETCOMPAT, /DYNAMICBASE, /NXCOMPAT, /HIGHENTROPYVA.</p>
+            </div>
+            <div class="eng-card">
+                <h4>Testing</h4>
+                <p>13,336 automated tests across the codebase, verified 12 June 2026: 11,734 GTest, 980 Playwright browser tests, 622 pytest. Roughly 7 percent are full-scale composition and locked-number proofs, the remainder unit and boundary tests. CPL engine: 288 tests. Federation: 361 tests. Crypto KAT tests: Ed25519 (RFC 8032), SHA-256 (FIPS 180-4), Blake3 (official vectors).</p>
+            </div>
+            <div class="eng-card">
+                <h4>Cryptography</h4>
+                <p>BLAKE3 (internal), SHA-256 (regulatory), Ed25519 (signatures), ZK-optimised hash functions (ZK circuits). DualHash at domain boundaries.</p>
+            </div>
+            <div class="eng-card">
+                <h4>Binary Attestation</h4>
+                <p>Reproducible builds with embedded BLAKE3 + SHA-256 hashes, compiler version, git commit, and Ed25519 signature for runtime self-verification.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="problem-section">
+    <div class="container">
+        <div class="section-label">Governance Architecture</div>
+        <h2 class="section-title">Nothing executes without constitutional authorization</h2>
+        <p class="section-desc">
+            The engine enforces a zero-bypass governance model. Every computational action requires explicit authorization, every authorization is metered, and every action is cryptographically provable. This is not a logging layer added on top. It's the execution model itself.
+        </p>
+        <div class="arch-grid">
+            <div class="arch-card">
+                <div class="arch-tag">ENFORCEMENT</div>
+                <h3>policy execution gateway</h3>
+                <p>The single enforcement point through which every governed action must pass. There is no code path that bypasses the gate. If an action lacks a valid warrant, it does not execute. This is enforced architecturally, not by convention.</p>
+            </div>
+            <div class="arch-card">
+                <div class="arch-tag">AUTHORIZATION</div>
+                <h3>authorisation framework</h3>
+                <p>Ephemeral Ed25519 keypairs mint cryptographic warrants for authorized actions. Each warrant is scoped to a specific action, agent, and time window. Warrants cannot be reused, extended, or forged. The authority rotates keys to prevent accumulation of stale credentials.</p>
+            </div>
+            <div class="arch-card">
+                <div class="arch-tag">METERING</div>
+                <h3>resource governor</h3>
+                <p>Every agent has a monotonic gas ledger. Each action consumes gas. When gas is depleted, the agent cannot act until replenished by an authorized governance decision. This prevents runaway processes, resource exhaustion, and any single agent consuming unbounded compute. Sharded concurrency ensures metering does not become a bottleneck.</p>
+            </div>
+            <div class="arch-card">
+                <div class="arch-tag">INCLUSION PROOF</div>
+                <h3>policy hierarchy</h3>
+                <p>A GPU-resident Sparse Merkle Tree maintains policy inclusion proofs. Any party can verify that a specific policy was part of the active policy set at a specific time without accessing the full policy database. This enables selective disclosure during regulatory review.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-label">Predictive Layer</div>
+        <h2 class="section-title">Detect problems before they happen</h2>
+        <p class="section-desc">
+            The predictive compliance engine simulates governance state forward in time without executing policies. It predicts gas depletion, resource violations, cascade failures, and warrant expiry over N future frames. Compliance issues are flagged before they materialise, not after.
+        </p>
+        <div class="arch-card" style="max-width: 800px;">
+            <div class="arch-tag">PROJECTION</div>
+            <h3>Pre-Cognition Engine</h3>
+            <p>The predictive compliance engine uses a discrete-time state machine with fixed-point arithmetic for deterministic projection. It operates on copy-on-write shadow states, meaning projections don't interfere with live governance. The projection scheduler integrates with the decision kernel, feeding predictions directly into policy evaluation. The practical result: the system warns that an agent will exhaust its gas budget in 12 evaluation cycles, or that a warrant will expire before a pending operation completes, or that a policy change will create a coverage gap in a specific compliance domain. Preemptive compliance, not reactive detection.</p>
+        </div>
+    </div>
+</section>
+
+<section class="problem-section">
+    <div class="container">
+        <div class="section-label">Continuous Verification</div>
+        <h2 class="section-title">The engine attacks itself</h2>
+        <p class="section-desc">
+            The adversarial testing framework has 13+ subsystems. It continuously generates adversarial inputs, fuzzes policy evaluation boundaries, and maps decision surface coverage. This runs on GPU alongside production workloads.
+        </p>
+        <div class="arch-grid">
+            <div class="arch-card">
+                <div class="arch-tag">FUZZING</div>
+                <h3>GPU-Accelerated Fuzzing</h3>
+                <p>Adversarial input generation running on dedicated CUDA streams. The fuzzer targets policy evaluation edge cases, threshold boundaries, and entity resolution logic. It finds the inputs that break your rules before criminals do.</p>
+            </div>
+            <div class="arch-card">
+                <div class="arch-tag">CARTOGRAPHY</div>
+                <h3>Decision Surface Mapping</h3>
+                <p>GPU-accelerated cartography subsystem maps the complete decision surface of the policy set. It identifies regions of the input space where small changes in transaction parameters flip verdicts. These boundary regions are where evasion attempts concentrate.</p>
+            </div>
+            <div class="arch-card">
+                <div class="arch-tag">VERIFICATION</div>
+                <h3>Two-Gate Pipeline</h3>
+                <p>A 6-step pre-commit gate runs before any policy change is deployed. A parallel CI/CD gate runs comprehensive adversarial testing. Resource arbitration manages GPU streams, Z3 solver instances, and VRAM budgets across all subsystems. No policy change reaches production without surviving adversarial scrutiny.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-label">Semantic Layer</div>
+        <h2 class="section-title">Reasoning beyond patterns</h2>
+        <div class="arch-grid">
+            <div class="arch-card">
+                <div class="arch-tag">KNOWLEDGE GRAPH</div>
+                <h3>AI-native semantic runtime</h3>
+                <p>A structured ontology across entity existence, relationships, behaviour, epistemic state, and temporal projections provides structured contextual reasoning for agent decision-making. The graph represents not just what entities exist and how they connect, but how they behave over time, what is known about them with what confidence, and what actions they afford. This context feeds into compliance evaluation, giving the engine understanding beyond raw transaction patterns.</p>
+            </div>
+            <div class="arch-card">
+                <div class="arch-tag">TEMPORAL ANALYSIS</div>
+                <h3>Multi-Timeline Virtualization</h3>
+                <p>The engine can evaluate the same entity under different temporal contexts simultaneously. Compare this month's transaction pattern against last month's baseline, project forward under different scenarios, or replay historical periods with current policies. Temporal virtualization runs on GPU with per-context isolation. The practical use: scenario analysis at compliance speed, not in overnight batch reports.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="problem-section">
+    <div class="container">
+        <div class="section-label">Integration</div>
+        <h2 class="section-title">Plugs into what you already run</h2>
+        <div class="arch-grid">
+            <div class="arch-card">
+                <div class="arch-tag">SIEM / GRC</div>
+                <h3>Zero-Copy Export</h3>
+                <p>Verdict export in RAW and CEF formats for direct ingestion by SIEM platforms (Splunk, QRadar, Sentinel) and GRC systems. Messages use zero-copy flat encoding with domain-tagged BLAKE3 integrity hashes. Epoch-level export batches align with the cryptographic attestation cycle, so every exported verdict is traceable to its proof bundle.</p>
+            </div>
+            <div class="arch-card">
+                <div class="arch-tag">DATA INGESTION</div>
+                <h3>High-Throughput Ingest</h3>
+                <p>256MB shared memory ring buffer with cache-line separated atomic indices for lock-free ingestion. Supports standard JSON payloads via the native language bridge and raw binary payloads via GPU-Direct bypass for high-frequency environments. Backpressure policies (drop newest, drop oldest, block) are configurable per deployment. The engine ingests at the speed your payment infrastructure produces, not the other way around.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-label">Binary Integrity</div>
+        <h2 class="section-title">The engine verifies itself</h2>
+        <div class="arch-card" style="max-width: 800px;">
+            <div class="arch-tag">SUPPLY CHAIN</div>
+            <h3>Build Attestation</h3>
+            <p>Every compiled binary embeds deterministic hashes (BLAKE3 and SHA-256) of its own content, the compiler version and flags used to build it, the git commit hash, and an Ed25519 signature over all of the above. At runtime, the engine can verify its own binary integrity. If the binary has been modified, patched, or tampered with, verification fails and the engine refuses to start. This is supply chain security at the binary level, relevant for DORA digital operational resilience requirements and for any institution concerned about software integrity in their compliance infrastructure.</p>
+        </div>
+    </div>
+</section>
+
+<section class="problem-section">
+    <div class="container">
+        <div class="section-label">Scope</div>
+        <p class="scope-text">
+            This page describes the architecture at a level appropriate for technical evaluation. Implementation details including the policy language syntax, GPU kernel design, MPC protocol specifics, and internal subsystem architecture are available under NDA for qualified evaluation partners. Contact <a href="mailto:danny@zquas.ai">danny@zquas.ai</a>.
+        </p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
+            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Technology</h4>
+                <a href="technology.html">Overview</a>
+                <a href="architecture.html">Architecture</a>
+                <a href="compare.html">Compare</a>
+                <a href="why-different.html">Why Different</a>
+                <a href="benchmark.html">Benchmark</a>
+                <a href="engineering.html">Engineering</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="regulators.html">Regulators</a>
+                <a href="use-case.html">Use Case</a>
+                <a href="about.html">About</a>
+                <a href="articles.html">Articles</a>
+                <a href="glossary.html">Glossary</a>
+            </div>
+            <div class="footer-col">
+                <h4>Get Involved</h4>
+                <a href="founding-partner.html">Founding Partner Programme</a>
+                <a href="article-75.html">Position Paper</a>
+                <a href="contact.html">Contact</a>
+                <a href="zquas-onepager.pdf" target="_blank">Download One-Pager</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; June 2026 ZQUAS &middot; Bounded Compliance on an Unbounded Platform</p>
+        <a href="mailto:info@zquas.ai">info@zquas.ai</a>
+    </div>
+</footer>
+
+</body>
+</html>

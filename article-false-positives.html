@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 95% Problem — ZQUAS</title>
+    <meta name="description" content="Most AML alerts are false positives. Modern systems already use customer context, baselines and machine learning, yet stay bounded by network visibility that ends at the bank's own perimeter.">
+    <meta property="og:title" content="The 95% Problem — ZQUAS">
+    <meta property="og:description" content="Most AML alerts are false positives. Modern systems already use customer context, baselines and machine learning, yet stay bounded by network visibility that ends at the bank's own perimeter.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://zquas.ai/article-false-positives.html">
+    <meta property="og:image" content="https://zquas.ai/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ZQUAS">
+    <meta property="og:locale" content="en_GB">
+    <meta name="theme-color" content="#0a0d14">
+    <meta name="application-name" content="ZQUAS">
+    <meta name="apple-mobile-web-app-title" content="ZQUAS">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="describedby" href="/llms.txt" type="text/plain">
+    <link rel="describedby" href="/llms-full.txt" type="text/plain">
+    <link rel="describedby" href="/facts.json" type="application/json">
+    <link rel="author" href="/about.html">
+    <link rel="alternate" type="application/rss+xml" title="ZQUAS Articles" href="/feed.xml">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://zquas.ai/og-image.png">
+    <meta name="author" content="Danny de Gier">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zquas.ai/article-false-positives.html">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=4">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The 95% Problem",
+        "description": "Most AML alerts are false positives. Modern systems already use customer context, baselines and machine learning, yet stay bounded by network visibility that ends at the bank's own perimeter.",
+        "datePublished": "2026-06-10",
+        "author": {
+            "@type": "Person",
+            "name": "Danny de Gier"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ZQUAS",
+            "url": "https://zquas.ai"
+        },
+        "image": "https://zquas.ai/og-image.png",
+        "inLanguage": "en-GB",
+        "isAccessibleForFree": true,
+        "mainEntityOfPage": "https://zquas.ai/article-false-positives.html"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zquas.ai/"},
+            {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://zquas.ai/articles.html"},
+            {"@type": "ListItem", "position": 3, "name": "The 95% Problem", "item": "https://zquas.ai/article-false-positives.html"}
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">ZQUAS<span>.</span></a>
+        <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <div class="nav-dropdown">
+                <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
+                <div class="nav-dropdown-menu">
+                    <a href="technology.html">Overview</a>
+                    <a href="architecture.html">Architecture</a>
+                    <a href="compare.html">Compare</a>
+                    <a href="why-different.html">Why Different</a>
+                    <a href="benchmark.html">Benchmark</a>
+                    <a href="engineering.html">Engineering</a>
+                </div>
+            </div>
+            <a href="regulators.html">Regulators</a>
+            <a href="use-case.html">Use Case</a>
+            <a href="about.html">About</a>
+            <a href="articles.html" class="active">Articles</a>
+            <a href="founding-partner.html">Partner</a>
+            <a href="contact.html" class="nav-contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+
+<article>
+    <div class="article-header">
+        <a href="articles.html" class="article-back">&larr; Articles</a>
+        <div class="article-meta">June 2026 &middot; Analysis &middot; 6 min read</div>
+        <h1>The 95% Problem</h1>
+        <p class="lead">Anti-money laundering systems flag enormous volumes of legitimate activity as suspicious. The cost is not only the wasted review. It is the genuine criminal activity hiding inside the noise, and the fact that the context needed to tell the two apart increasingly lies beyond any single institution's reach.</p>
+    </div>
+
+    <div class="article-body">
+        <p>
+            Every compliance team knows the number, even if nobody says it out loud. In transaction monitoring, the large majority of alerts are false. Figures above ninety percent are reported routinely in regulatory speeches, supervisory reviews, and industry studies, and the real rate varies widely by bank, jurisdiction, and scenario. But the direction is not in dispute.
+        </p>
+        <p>
+            An analyst working through a hundred alerts in a day may find that the overwhelming majority describe nothing more than a customer behaving normally. That is usually discussed as an efficiency problem. The more consequential problem sits underneath it.
+        </p>
+
+        <h2>Context Is the Constraint, and It Stops at the Perimeter</h2>
+        <p>
+            It would be convenient to blame this on primitive technology, and inconvenient for that story that it is largely untrue. Modern monitoring is not a wall of fixed thresholds. Good systems already reason with customer risk scores, behavioural baselines, peer groups, and expected activity. They already draw on KYC data, occupation, geography, adverse media, and watchlists.
+        </p>
+        <p>
+            Rules and models can and do reference customer context. The picture of the customer they work from is far richer than a single transaction. The limit is not that these systems are blind. It is that the context each one holds is bounded, and it is bounded most sharply at the edge of the institution.
+        </p>
+        <p>
+            A bank can build a detailed picture of how a customer behaves at that bank. It cannot see how the same customer behaves everywhere else, because that activity sits in other institutions and never reaches it. The context runs out exactly where the customer's activity crosses to another bank. That is precisely where a great deal of laundering is designed to live.
+        </p>
+
+        <h2>The Cost Is Not the Review. It Is the Miss.</h2>
+        <p>
+            The direct cost is visible on any compliance budget. Institutions spend heavily on alert review, much of it consumed by cases that were never going to be anything. But the expensive failure is the one that does not appear on a budget line. When most alerts are noise, the ones that matter are buried inside it.
+        </p>
+        <p>
+            An analyst working through a long queue of mostly-nothing is not in a strong position to recognise the single case that is actually a laundering network.
+        </p>
+
+        <div class="callout">
+            <p>Alert fatigue is not a morale issue. It is a detection failure. The false positives are not just wasting time. They are camouflage for the true positives.</p>
+        </div>
+
+        <p>
+            This part is well supported. Work from the FATF, the Wolfsberg Group, and academic studies points the same way: high alert volumes reduce investigation quality, analyst attention, and time per case. A system that floods its analysts with noise is not only inefficient. It is worse at catching criminals, because it has made the real signals harder to see.
+        </p>
+
+        <h2>Better Rules and Models Hit the Same Ceiling</h2>
+        <p>
+            The instinctive response to a missed case is to add a rule, and over years the rule set grows into the hundreds. Mature programmes work hard against the resulting volume. They tune thresholds, add suppression logic, segment customers, and retire rules that have stopped earning their place. Increasingly they layer machine learning on top to suppress false positives and rank what remains.
+        </p>
+        <p>
+            That genuinely helps. Models do real work in modern AML, and they often reduce false positives substantially. Dismissing any of it would be wrong. But all of it meets the same ceiling.
+        </p>
+        <p>
+            Tuning reshuffles how the system reasons about the information it already has. A model reasons only about the data it was given. Neither adds the information that is missing. A capable model trained on one bank's view is still confined to one bank's view.
+        </p>
+        <p>
+            If the underlying data never contained what was needed to separate a criminal from a customer, better technique redistributes the error rather than removing it. Better modelling raises the ceiling the data allows. It does not lift the data's own limit.
+        </p>
+
+        <h2>The Rise of Network Context</h2>
+        <p>
+            One of the most significant recent advances in AML is not a sharper threshold or a bigger model. It is looking at relationships rather than at transactions in isolation. Graph and network analysis have moved to the centre of the field precisely because so much of what matters is relational: mule rings, layering chains, shell structures, hidden beneficial ownership, and coordinated activity that no single transaction reveals. Seen as a network, a set of individually unremarkable accounts can resolve into an obvious pattern.
+        </p>
+
+        <h2>Context Has a Ceiling Too, and Only the Network Breaks It</h2>
+        <p>
+            Context is not a silver bullet, and it is worth saying so plainly. A determined criminal manipulates it. They age mule accounts, build a plausible transaction history, and mimic a legitimate business until the activity looks entirely normal. Richer context alone does not defeat a patient adversary.
+        </p>
+        <p>
+            But notice what defeats single-bank context in every one of those cases. The manufactured normality is constructed at one institution, for the eyes of one institution. A criminal can build a clean history at your bank. Building a clean position across the entire network, at every institution they touch at once, is far harder.
+        </p>
+        <p>
+            The coordination that makes the scheme work is exactly what becomes visible when the view spans institutions. Synthetic normality is a single-bank illusion. It is the strongest argument for context that does not stop at the perimeter, not against it.
+        </p>
+
+        <h2>Investigate Risk, Not Noise</h2>
+        <p>
+            So the goal is not the impossible one of a system that emits only genuine alerts. Precision and recall trade against each other, and any honest detection system lives with that trade. The goal is to move it: to raise fewer alerts on noise and more on what actually matters, by giving the system the context that decides the difference.
+        </p>
+        <p>
+            Better context does not abolish false positives. It reduces how often the system mistakes an ordinary customer for a suspicious one, and how often it misses a suspicious one hiding as ordinary.
+        </p>
+
+        <h2>Where the Missing Context Comes From</h2>
+        <p>
+            The context that breaks the single-bank ceiling has to come from other institutions. That is where earlier attempts came undone. The obvious way to share it is to pool everyone's data in one place, and privacy law has made that road increasingly hard to sustain. GDPR Article 5(1)(c) sets data minimisation against bulk pooling, and AMLR Article 75 opens only a narrow gateway, restricted to customers a bank has already assessed as higher-risk.
+        </p>
+        <p>
+            <a href="tmnl.html">Transaction Monitoring Netherlands</a> was the most ambitious attempt at the pooled model in Europe. It was wound down. The technology worked. The legal basis for centralising customer data across five banks did not.
+        </p>
+        <p>
+            This is the problem ZQUAS is built to solve, and the entire point is to solve it without that central database. Two institutions can compute the overlap between their entities and signals without either revealing its underlying customer data, using private set intersection over elliptic-curve Diffie-Hellman (ECDH-PSI). Joint analysis across several parties runs as secure multi-party computation. In both cases the raw data never leaves the institution that holds it.
+        </p>
+        <p>
+            Only cryptographically protected values ever cross an institutional boundary, and no central platform holds anyone's records. It is not the pooled model that earlier consortia moved away from, and it is not the prohibitive overhead of fully homomorphic encryption. It is private set intersection and multi-party computation, run peer to peer, with GPU acceleration used to reduce the computational cost of the cryptography and the detection itself.
+        </p>
+        <p>
+            GPU acceleration is not what makes the cross-institutional exchange practical. The binding constraints there are communication and protocol rounds, not arithmetic. What the hardware buys is keeping the compute side cheap enough to run at scale.
+        </p>
+        <p>
+            The result is the one thing tuning, modelling, and single-bank graphs cannot provide: network context that is substantially harder for a criminal to manipulate by looking normal at any single bank, delivered without a central store of pooled data. This is not a complete solution, and it does not pretend to be. A criminal who deliberately spreads activity through institutions or jurisdictions outside the participating network stays only partially visible. What it removes is the option of hiding in plain sight across the banks that do take part.
+        </p>
+        <p>
+            It is not a replacement for rules, models, analysts, or good KYC. It is the missing layer that lets all of them work on a fuller picture.
+        </p>
+        <p>
+            See how the <a href="architecture.html">architecture</a> resolves cross-institutional context without pooling data, or follow <a href="use-case.html">the full detection flow from transaction to SAR</a>.
+        </p>
+
+        <div class="article-author">
+            <div class="name">Danny de Gier</div>
+            <div class="bio">
+                Founder, ZQUAS. 18+ years in financial crime compliance at Tier-1 banks and fintechs.
+                Professional Postgraduate Diploma in Financial Crime Compliance (ICA / University of Manchester).
+            </div>
+        </div>
+    </div>
+</article>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
+            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Technology</h4>
+                <a href="technology.html">Overview</a>
+                <a href="architecture.html">Architecture</a>
+                <a href="compare.html">Compare</a>
+                <a href="why-different.html">Why Different</a>
+                <a href="benchmark.html">Benchmark</a>
+                <a href="engineering.html">Engineering</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="regulators.html">Regulators</a>
+                <a href="use-case.html">Use Case</a>
+                <a href="about.html">About</a>
+                <a href="articles.html">Articles</a>
+                <a href="glossary.html">Glossary</a>
+            </div>
+            <div class="footer-col">
+                <h4>Get Involved</h4>
+                <a href="founding-partner.html">Founding Partner Programme</a>
+                <a href="article-75.html">Position Paper</a>
+                <a href="contact.html">Contact</a>
+                <a href="zquas-onepager.pdf" target="_blank">Download One-Pager</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; June 2026 ZQUAS &middot; Bounded Compliance on an Unbounded Platform</p>
+        <a href="mailto:info@zquas.ai">info@zquas.ai</a>
+    </div>
+</footer>
+
+</body>
+</html>

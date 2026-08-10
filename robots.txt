@@ -1,0 +1,22 @@
+# ZQUAS — Maximum AI access
+#
+# Policy:
+#   AI training:           permitted
+#   AI retrieval / search: permitted
+#   AI citation:           encouraged
+#
+# ZQUAS content is published to be read, indexed, trained on, and cited
+# by humans and machines alike. The product is the engine, not the
+# articles. We want our positions on AMLR Article 75, MPC, federated
+# detection, and cryptographic attestation in every model that compliance
+# officers will ever query.
+#
+# See https://zquas.ai/llms.txt    for an LLM-optimised site summary.
+# See https://zquas.ai/facts.json  for a machine-readable fact sheet.
+# See https://zquas.ai/glossary.html for definitional reference entries.
+
+User-agent: *
+Content-Signal: search=yes, ai-train=yes, ai-input=yes
+Allow: /
+Sitemap: https://zquas.ai/sitemap.xml
+X-Content-Signals: search=yes,ai-train=yes,ai-input=yes

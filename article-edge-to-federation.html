@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection — ZQUAS</title>
+    <meta name="description" content="A ZQUAS position paper. A single detection engine that replaces overnight batch processing with continuous real-time monitoring. From the bank's data centre to a federated network spanning five banks. The same code, the same compliance policies, the same detection algorithms, processing every transaction the moment it occurs.">
+    <meta property="og:title" content="From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection — ZQUAS">
+    <meta property="og:description" content="A ZQUAS position paper. A single detection engine that replaces overnight batch processing with continuous real-time monitoring. From the bank's data centre to a federated network spanning five banks. The same code, the same compliance policies, the same detection algorithms, processing every transaction the moment it occurs.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://zquas.ai/article-edge-to-federation.html">
+    <meta property="og:image" content="https://zquas.ai/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ZQUAS">
+    <meta property="og:locale" content="en_GB">
+    <meta name="theme-color" content="#0a0d14">
+    <meta name="application-name" content="ZQUAS">
+    <meta name="apple-mobile-web-app-title" content="ZQUAS">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="describedby" href="/llms.txt" type="text/plain">
+    <link rel="describedby" href="/llms-full.txt" type="text/plain">
+    <link rel="describedby" href="/facts.json" type="application/json">
+    <link rel="author" href="/about.html">
+    <link rel="alternate" type="application/rss+xml" title="ZQUAS Articles" href="/feed.xml">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://zquas.ai/og-image.png">
+    <meta name="author" content="Danny de Gier">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zquas.ai/article-edge-to-federation.html">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=4">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection",
+        "description": "A ZQUAS position paper. A single detection engine that replaces overnight batch processing with continuous real-time monitoring. From the bank's data centre to a federated network spanning five banks. The same code, the same compliance policies, the same detection algorithms, processing every transaction the moment it occurs.",
+        "datePublished": "2026-03-23",
+        "author": {
+            "@type": "Person",
+            "name": "Danny de Gier"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ZQUAS",
+            "url": "https://zquas.ai"
+        },
+        "image": "https://zquas.ai/og-image.png",
+        "inLanguage": "en-GB",
+        "isAccessibleForFree": true,
+        "mainEntityOfPage": "https://zquas.ai/article-edge-to-federation.html"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zquas.ai/"},
+            {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://zquas.ai/articles.html"},
+            {"@type": "ListItem", "position": 3, "name": "From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection", "item": "https://zquas.ai/article-edge-to-federation.html"}
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">ZQUAS<span>.</span></a>
+        <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <div class="nav-dropdown">
+                <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
+                <div class="nav-dropdown-menu">
+                    <a href="technology.html">Overview</a>
+                    <a href="architecture.html">Architecture</a>
+                    <a href="compare.html">Compare</a>
+                    <a href="why-different.html">Why Different</a>
+                    <a href="benchmark.html">Benchmark</a>
+                    <a href="engineering.html">Engineering</a>
+                </div>
+            </div>
+            <a href="regulators.html">Regulators</a>
+            <a href="use-case.html">Use Case</a>
+            <a href="about.html">About</a>
+            <a href="articles.html" class="active">Articles</a>
+            <a href="founding-partner.html">Partner</a>
+            <a href="contact.html" class="nav-contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+
+<article>
+    <div class="article-header">
+        <a href="articles.html" class="article-back">&larr; Articles</a>
+        <div class="article-meta">March 2026 &middot; Position Paper &middot; 28 min read</div>
+        <h1>From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection</h1>
+        <p class="lead">A single detection engine that replaces overnight batch processing with continuous real-time monitoring. From the bank's data centre to a federated network spanning five banks. The same code, the same compliance policies, the same detection algorithms, processing every transaction the moment it occurs.</p>
+        <p class="article-author"><em>Danny de Gier, Founder ZQUAS. 18 years financial crime compliance: Deutsche Bank, HSBC, RBS, ABN AMRO. PGDip Financial Crime Compliance, University of Manchester.</em></p>
+    </div>
+
+    <div class="article-body">
+
+        <h2>Executive Summary</h2>
+
+        <p>The anti-money laundering industry has a structural problem that no amount of artificial intelligence can fix. Every major vendor sells the same architecture from 2005: collect transactions in a central database, run detection rules overnight, generate alerts the next morning. The only thing that has changed in twenty years is the label. What was "rules-based detection" is now "AI-powered monitoring." The pipeline is identical.</p>
+
+        <p>The Dutch Court of Audit (Algemene Rekenkamer) confirmed the result in the Netherlands: 13,000 full-time employees, 530,000 annual suspicious activity reports, and no measurable effectiveness in detecting or preventing financial crime. The pattern repeats globally. FinCEN processed over 4.7 million suspicious activity reports in fiscal year 2024 in the United States. The UK's FCA has fined multiple banks for monitoring systems it described as "inadequate and ineffective." The current approach is not underperforming. It is architecturally incapable of solving the problem it was designed for.</p>
+
+        <p>This paper presents a fundamentally different approach. A single detection engine that replaces overnight batch processing with continuous real-time monitoring. The same code, the same compliance policies, the same detection algorithms, processing every transaction the moment it occurs and sharing risk intelligence across institutions in seconds. Not faster batch processing. Continuous, real-time financial crime detection connected across the entire banking infrastructure.</p>
+
+        <p>The engine exists. It has been built. It runs on hardware ranging from a EUR 299 second-hand laptop to the most powerful GPU in the world. And the same architectural decisions that make it effective for detection also make it an ESG powerhouse: 60 to 80 percent lower energy consumption than CPU-based alternatives, reduced pressure to de-risk vulnerable customers, and cryptographic audit trails that satisfy the EU AI Act's explainability requirements. This is not a research proposal. It is a working system.</p>
+
+        <h2>1. The Industry's AI Problem</h2>
+
+        <p>Let us be direct about what is happening in the anti-money laundering vendor market.</p>
+
+        <p>A compliance officer at a major bank receives a visit from a technology vendor. The vendor presents a slide deck. The slides show the word "AI" on every page. The pitch explains that their transaction monitoring platform now uses machine learning to reduce false positives. The reduction is real. False positive rates drop from 95% to perhaps 85%. The compliance officer signs the contract. The vendor deploys the system. It takes six to twelve months.</p>
+
+        <p>What has actually changed? The transactions still flow into a central database. They are still processed in overnight batch cycles. The detection rules still fire against historical data. Alerts still arrive the next morning. The only difference is that a machine learning model now sits on top of the same pipeline, filtering out some of the noise.</p>
+
+        <p>This is not innovation. This is optimisation of a broken system.</p>
+
+        <p>The underlying architecture has not changed since the first transaction monitoring systems were deployed in the mid-2000s. The data flow is the same: transactions in, alerts out, 24 hours later. The institutional scope is the same: one bank, one database, one view. The computational model is the same: CPU-based batch processing in a data centre.</p>
+
+        <p>Placing a machine learning model on top of this pipeline is like installing a better spam filter on a fax machine. The filter might work. But the fax machine is still the problem.</p>
+
+        <p>The regulators are not just beginning to understand this. They are acting on it. The European Anti-Money Laundering Authority (AMLA) has been operational since July 2025, based in Frankfurt. In January 2026, all AML responsibilities were transferred from the European Banking Authority to AMLA. On 24 March 2026, AMLA holds its first public hearing. Direct supervision of 40 high-risk financial institutions begins in 2028. Article 75 of the Anti-Money Laundering Regulation (AMLR) mandates mechanisms for cross-institutional information sharing. This is not a request for better analytics within a single bank. It is a recognition that the single-institution model is fundamentally inadequate.</p>
+
+        <p>The Algemene Rekenkamer's findings are not an indictment of any particular vendor or bank. They are an indictment of the architecture itself. Thirteen thousand people processing half a million reports annually with no measurable result is not a staffing problem. It is not a technology problem. It is a structural problem. The industry is monitoring in the wrong place, at the wrong time, with the wrong scope.</p>
+
+        <p>Solving this requires architectural innovation, not analytical improvement.</p>
+
+        <h2>2. Where Financial Crime Actually Happens</h2>
+
+        <p>To understand why the current architecture fails, you need to understand how money laundering works in practice. Not in a textbook. In the real transaction flows of real banks.</p>
+
+        <p>Money laundering has three stages: placement (getting dirty money into the financial system), layering (moving it through multiple accounts and institutions to obscure its origin), and integration (using the cleaned money to purchase legitimate assets). These stages do not happen in one place. They happen everywhere. And they do not happen in one day. A well-run criminal network operates over weeks, spread across multiple banks.</p>
+
+        <p>The following scenario uses the Netherlands as an illustration. The same pattern operates in every jurisdiction with a multi-bank retail banking system.</p>
+
+        <p>Consider a mule network operating across Dutch banks. A criminal organisation recruits five individuals, often students or recent immigrants, to open bank accounts at multiple institutions. Cash from drug trafficking is deposited in modest amounts across these accounts. That is placement. The money then moves through a chain of transfers between mule accounts at different banks. Person X at Bank A sends EUR 2,000 to Person Y at Bank B. Person Y sends EUR 1,800 to Person Z at Bank C. Each transfer is below reporting thresholds. Each looks unremarkable in isolation. That is layering. Finally, the mules extract cash: EUR 500 from an ATM in Rotterdam on Monday, EUR 750 from two ATMs in Utrecht on Tuesday, EUR 500 in Amsterdam on Wednesday. Two or three small withdrawals per day, always below the daily limit, always at different machines. Each mule extracts EUR 18,000 over three weeks. Five mules, five banks, EUR 87,000 in cash. That is integration.</p>
+
+        <p>Where in this chain does the current monitoring infrastructure detect the crime?</p>
+
+        <p>At each individual bank, the transactions look ordinary. Bank A sees a customer receiving a small cash deposit and making a small transfer. Bank B sees a customer receiving a transfer and making another transfer. Bank C sees a customer receiving a transfer and making modest ATM withdrawals. Each transaction, viewed in isolation by one bank, is unremarkable.</p>
+
+        <p>The criminal network is only visible when you can see across all three banks simultaneously. The chain of transfers, the convergence of deposits from multiple mules, the timing patterns, the eventual extraction of consolidated funds. None of this is visible from inside a single institution.</p>
+
+        <p>But the more fundamental problem is time. Even if a bank could detect the suspicious pattern within its own transactions, the detection happens 24 hours after the transactions occurred. Every night, the batch system processes the day's transactions. Every morning, new alerts appear. By the time the analyst reviews the alert on Wednesday, the mule has been extracting cash since Monday. The alert is a historical record, not an intervention.</p>
+
+        <p>What if the bank's detection engine processed each transaction the moment it occurred? Not overnight. Not hourly. The moment the transaction entered the system.</p>
+
+        <p>Monday 14:00: Mule Y withdraws EUR 500 in Rotterdam. The institutional detection engine processes the transaction immediately. Risk score updated.</p>
+
+        <p>Monday 14:30: Y withdraws EUR 500 in Utrecht. Processed immediately. Pattern detected: same customer, different city, 30 minutes apart. Risk elevated.</p>
+
+        <p>Monday 15:00: Y withdraws EUR 400 in Amsterdam. Processed immediately. Structuring pattern confirmed across three cities in 90 minutes. Alert fires. The analyst sees it at 15:01.</p>
+
+        <p>Now add cross-bank intelligence. Bank A flagged this customer's network that same morning. With real-time processing, the federation signal is already in Y's risk profile when the first ATM withdrawal hits the system. The alert fires on the first withdrawal, not the third.</p>
+
+        <p>The analyst freezes the account Monday afternoon. Not Wednesday morning. Two days of extraction prevented.</p>
+
+        <p>This is not an incremental improvement. It is a structural change in when detection happens relative to when the crime happens.</p>
+
+        <h2>3. A Different Architecture: Three Layers, One Engine</h2>
+
+        <p>The ZQUAS F1 Engine is built on a simple premise: detection should happen the moment a transaction occurs, not 24 hours later. And it should be informed by intelligence from across the banking system, not limited to a single institution's view.</p>
+
+        <p>The architecture has three layers. Each layer runs the same engine. The same binary, compiled from the same source code, evaluating the same compliance policies. The difference between layers is not capability. It is scope.</p>
+
+        <div class="diagram-container" style="max-width: 800px; margin: 2rem auto;">
+          <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three-layer architecture diagram showing Institutional, Federation, and Regulatory layers">
+            <title>Three-Layer Architecture: Institutional to Federation</title>
+            <defs>
+              <marker id="arrow-blue" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#58A6FF"/></marker>
+              <marker id="arrow-green" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3FB950"/></marker>
+            </defs>
+
+            <!-- Layer 1: Institutional (bottom) -->
+            <g aria-label="Layer 1: Institutional">
+              <rect x="20" y="280" width="580" height="128" rx="6" fill="#101820" stroke="#30363D" stroke-width="1.5"/>
+              <text x="40" y="303" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#58A6FF">LAYER 1: INSTITUTIONAL</text>
+              <text x="40" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Full-population real-time monitoring, 500K entities in under 2 seconds</text>
+              <!-- Five detection dimensions -->
+              <rect x="40" y="334" width="90" height="44" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="85" y="354" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Temporal</text>
+              <text x="85" y="369" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Time patterns</text>
+              <rect x="145" y="334" width="90" height="44" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="190" y="354" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Structural</text>
+              <text x="190" y="369" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Relationships</text>
+              <rect x="250" y="334" width="90" height="44" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="295" y="354" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Behavioural</text>
+              <text x="295" y="369" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Anomalies</text>
+              <rect x="355" y="334" width="90" height="44" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="400" y="354" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Corridor</text>
+              <text x="400" y="369" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Geography</text>
+              <rect x="460" y="334" width="90" height="44" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="505" y="354" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Flow</text>
+              <text x="505" y="369" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Fund tracing</text>
+            </g>
+
+            <!-- Arrow: Institutional to Federation -->
+            <line x1="310" y1="278" x2="310" y2="262" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+            <!-- Layer 2: Federation -->
+            <g aria-label="Layer 2: Federation">
+              <rect x="20" y="160" width="580" height="100" rx="6" fill="#131D28" stroke="#30363D" stroke-width="1.5"/>
+              <text x="40" y="183" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#3FB950">LAYER 2: FEDERATION</text>
+              <text x="40" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Cross-bank detection, no data shared</text>
+              <!-- Bank A -->
+              <rect x="80" y="210" width="120" height="38" rx="4" fill="#161B22" stroke="#3FB950" stroke-width="1"/>
+              <text x="140" y="234" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Bank A</text>
+              <!-- Bank B -->
+              <rect x="300" y="210" width="120" height="38" rx="4" fill="#161B22" stroke="#3FB950" stroke-width="1"/>
+              <text x="360" y="234" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Bank B</text>
+              <!-- Risk signal arrows between banks -->
+              <line x1="202" y1="223" x2="296" y2="223" stroke="#3FB950" stroke-width="1.5" stroke-dasharray="6 3" marker-end="url(#arrow-green)"/>
+              <line x1="298" y1="235" x2="204" y2="235" stroke="#3FB950" stroke-width="1.5" stroke-dasharray="6 3" marker-end="url(#arrow-green)"/>
+              <text x="250" y="218" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#3FB950" text-anchor="middle">risk signals</text>
+              <!-- Bank C -->
+              <rect x="470" y="210" width="100" height="38" rx="4" fill="#161B22" stroke="#3FB950" stroke-width="1"/>
+              <text x="520" y="234" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Bank C</text>
+              <!-- Risk signal to C -->
+              <line x1="422" y1="229" x2="466" y2="229" stroke="#3FB950" stroke-width="1.5" stroke-dasharray="6 3" marker-end="url(#arrow-green)"/>
+            </g>
+
+            <!-- Arrow: Federation to Regulatory -->
+            <line x1="310" y1="158" x2="310" y2="142" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+            <!-- Layer 3: Regulatory Interface (top) -->
+            <g aria-label="Layer 3: Regulatory Interface">
+              <rect x="20" y="40" width="580" height="100" rx="6" fill="#161D26" stroke="#30363D" stroke-width="1.5"/>
+              <text x="40" y="63" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#BC8CFF">LAYER 3: REGULATORY INTERFACE</text>
+              <text x="40" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Supervisory access without data exposure</text>
+              <!-- SAR Gen -->
+              <rect x="40" y="90" width="130" height="38" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="105" y="114" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#C9D1D9" text-anchor="middle">SAR Generation</text>
+              <!-- Audit Trail -->
+              <rect x="185" y="90" width="130" height="38" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="250" y="114" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Audit Trail</text>
+              <!-- AMLA Reporting -->
+              <rect x="330" y="90" width="130" height="38" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="395" y="114" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#C9D1D9" text-anchor="middle">AMLA Reporting</text>
+            </g>
+
+            <!-- Right side labels -->
+            <g aria-label="Layer descriptions">
+              <rect x="620" y="40" width="168" height="100" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="704" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#BC8CFF" text-anchor="middle">Regulators</text>
+              <text x="704" y="88" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Cryptographic proof</text>
+              <text x="704" y="102" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">of compliance</text>
+
+              <rect x="620" y="160" width="168" height="100" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="704" y="190" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#3FB950" text-anchor="middle">Cross-institution</text>
+              <text x="704" y="208" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">ECDH-PSI matching</text>
+              <text x="704" y="222" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Zero raw data shared</text>
+
+              <rect x="620" y="280" width="168" height="128" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="704" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#58A6FF" text-anchor="middle">Bank data centre</text>
+              <text x="704" y="328" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">190M policy evals/sec</text>
+              <text x="704" y="342" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">5 detection dimensions</text>
+              <text x="704" y="362" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">Same binary everywhere</text>
+            </g>
+
+            <!-- Brand -->
+            <text x="780" y="416" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#58A6FF" text-anchor="end" opacity="0.6">ZQUAS<tspan fill="#4a7dff">.</tspan> F1 Engine</text>
+          </svg>
+        </div>
+
+        <h3>Layer 1: Institutional — Real-Time Full-Population Monitoring</h3>
+
+        <p>The institutional installation is the primary detection engine, deployed in the bank's own data centre on enterprise GPU hardware. It is the replacement for the traditional batch transaction monitoring system. Where the current system processes yesterday's transactions tonight, the F1 Engine processes every transaction the moment it enters the system.</p>
+
+        <p>The institutional installation runs five detection layers, each analysing a different dimension of financial behaviour:</p>
+
+        <p><strong>Temporal detection</strong> identifies time-based patterns. Is this customer suddenly active after months of dormancy? Are transfers happening at 3 AM with clockwork regularity? Is the frequency of transactions increasing in a way that deviates from this customer's normal behaviour? Are there three ATM withdrawals in three different cities within 90 minutes?</p>
+
+        <p><strong>Structural analysis</strong> examines the shape of relationships between entities. Are twenty accounts all connected to the same counterparty? Does the network topology resemble a known mule structure, where funds flow inward from many sources and converge at a single extraction point?</p>
+
+        <p><strong>Behavioural anomaly detection</strong> establishes a baseline for how each customer normally transacts and flags deviations. Not individual transactions that exceed a threshold, but sustained changes in behaviour: a retail customer who suddenly begins making large business-like transfers, or a dormant company that activates with a burst of cross-border payments.</p>
+
+        <p><strong>Corridor detection</strong> identifies geographic flow patterns. Are funds moving through unusual jurisdictions? Is there a sudden shift in the geographic corridor of a customer's transactions, from domestic to a high-risk third country? Is the rate of change in geographic flow accelerating, suggesting a gradual ramp-up to a high-risk jurisdiction?</p>
+
+        <p><strong>Flow detection</strong> traces end-to-end fund flows across entities. Where does money that enters the system at one point eventually end up? Can the system identify a chain of five transfers across four entities that ultimately moves EUR 50,000 from a cash deposit to a luxury goods purchase?</p>
+
+        <p>The institutional installation also collects and correlates signals in real-time as transactions arrive. An ATM withdrawal in Rotterdam at 14:00, combined with an ATM withdrawal in Utrecht at 14:30 by the same customer, combined with a federation warning from a partner bank that arrived at 13:45: the engine sees all three signals within seconds and fires the alert while the pattern is still forming.</p>
+
+        <p>At validated performance levels, the institutional installation processes 500,000 entities in under 2 seconds on a single GPU, with 190 million policy evaluations per second at batch 4,096. This is not batch processing measured in hours. It is continuous monitoring measured in seconds.</p>
+
+        <p>The difference this makes is concrete. In the mule network scenario from Section 2: the batch system generates an alert on Wednesday morning, two days after the first withdrawal. The real-time system generates an alert on Monday at 15:01, ninety minutes after the first withdrawal. Same crime. Same data. Same detection rules. The only difference is when the engine processes the transaction.</p>
+
+        <div class="diagram-container" style="max-width: 800px; margin: 2rem auto;">
+          <svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline comparison: 43-hour batch processing delay versus 61-minute real-time detection">
+            <title>Batch Processing vs Real-Time Institutional Monitoring: The Time Gap</title>
+            <defs>
+              <marker id="arrow-orange" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#D29922"/></marker>
+              <marker id="arrow-green3" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3FB950"/></marker>
+            </defs>
+
+            <!-- ========== TOP: BATCH PROCESSING ========== -->
+            <g aria-label="Batch processing timeline">
+              <!-- Header -->
+              <rect x="30" y="15" width="740" height="28" rx="4" fill="#F8514920" stroke="none"/>
+              <text x="50" y="35" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#F85149">TODAY: BATCH PROCESSING</text>
+
+              <!-- Timeline axis -->
+              <line x1="50" y1="80" x2="750" y2="80" stroke="#30363D" stroke-width="2"/>
+
+              <!-- Time markers -->
+              <line x1="80" y1="72" x2="80" y2="88" stroke="#30363D" stroke-width="1.5"/>
+              <text x="80" y="105" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E" text-anchor="middle">Monday</text>
+              <text x="80" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">14:00</text>
+
+              <line x1="220" y1="72" x2="220" y2="88" stroke="#30363D" stroke-width="1.5"/>
+              <text x="220" y="105" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E" text-anchor="middle">Monday</text>
+              <text x="220" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">14:30</text>
+
+              <line x1="360" y1="72" x2="360" y2="88" stroke="#30363D" stroke-width="1.5"/>
+              <text x="360" y="105" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E" text-anchor="middle">Monday</text>
+              <text x="360" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">15:00</text>
+
+              <line x1="570" y1="72" x2="570" y2="88" stroke="#30363D" stroke-width="1.5"/>
+              <text x="570" y="105" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E" text-anchor="middle">Tuesday night</text>
+              <text x="570" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">02:00</text>
+
+              <line x1="710" y1="72" x2="710" y2="88" stroke="#30363D" stroke-width="1.5"/>
+              <text x="710" y="105" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E" text-anchor="middle">Wednesday</text>
+              <text x="710" y="117" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">09:00</text>
+
+              <!-- Event: ATM withdrawal Rotterdam -->
+              <circle cx="80" cy="80" r="6" fill="#D29922"/>
+              <text x="80" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">ATM withdrawal</text>
+              <text x="80" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Rotterdam</text>
+
+              <!-- Event: ATM withdrawal Utrecht -->
+              <circle cx="220" cy="80" r="6" fill="#D29922"/>
+              <text x="220" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">ATM withdrawal</text>
+              <text x="220" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Utrecht</text>
+
+              <!-- Event: ATM withdrawal Amsterdam -->
+              <circle cx="360" cy="80" r="6" fill="#F85149"/>
+              <text x="360" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#F85149" text-anchor="middle">ATM withdrawal</text>
+              <text x="360" y="48" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Amsterdam</text>
+
+              <!-- Event: Batch job -->
+              <circle cx="570" cy="80" r="6" fill="#8B949E"/>
+              <text x="570" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Batch job runs</text>
+
+              <!-- Event: Alert -->
+              <circle cx="710" cy="80" r="6" fill="#8B949E"/>
+              <text x="710" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Alert appears</text>
+
+              <!-- 43 HOURS gap -->
+              <rect x="120" y="130" width="550" height="44" rx="6" fill="#F8514915" stroke="#F85149" stroke-width="1.5" stroke-dasharray="6 3"/>
+              <text x="395" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" fill="#F85149" text-anchor="middle">43 HOURS</text>
+              <text x="395" y="167" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#F85149" text-anchor="middle" opacity="0.8">Money is gone. Alert is a historical record.</text>
+
+              <!-- Red X -->
+              <text x="740" y="158" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="bold" fill="#F85149" text-anchor="middle">&#x2717;</text>
+            </g>
+
+            <!-- ========== DIVIDER ========== -->
+            <line x1="30" y1="205" x2="770" y2="205" stroke="#30363D" stroke-width="1" stroke-dasharray="4 4"/>
+            <text x="400" y="222" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">vs</text>
+
+            <!-- ========== BOTTOM: REAL-TIME MONITORING ========== -->
+            <g aria-label="Real-time institutional monitoring timeline">
+              <!-- Header -->
+              <rect x="30" y="235" width="740" height="28" rx="4" fill="#3FB95020" stroke="none"/>
+              <text x="50" y="255" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#3FB950">WITH ZQUAS<tspan fill="#4a7dff">.</tspan> REAL-TIME INSTITUTIONAL MONITORING</text>
+
+              <!-- Timeline axis -->
+              <line x1="50" y1="300" x2="750" y2="300" stroke="#30363D" stroke-width="2"/>
+
+              <!-- Time markers -->
+              <line x1="80" y1="292" x2="80" y2="308" stroke="#30363D" stroke-width="1.5"/>
+              <text x="80" y="325" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E" text-anchor="middle">Monday</text>
+              <text x="80" y="337" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">14:00</text>
+
+              <line x1="230" y1="292" x2="230" y2="308" stroke="#30363D" stroke-width="1.5"/>
+              <text x="230" y="325" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E" text-anchor="middle">Monday</text>
+              <text x="230" y="337" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">14:00:03</text>
+
+              <line x1="380" y1="292" x2="380" y2="308" stroke="#30363D" stroke-width="1.5"/>
+              <text x="380" y="325" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E" text-anchor="middle">Monday</text>
+              <text x="380" y="337" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">14:30</text>
+
+              <line x1="530" y1="292" x2="530" y2="308" stroke="#30363D" stroke-width="1.5"/>
+              <text x="530" y="325" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E" text-anchor="middle">Monday</text>
+              <text x="530" y="337" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">15:00</text>
+
+              <line x1="680" y1="292" x2="680" y2="308" stroke="#30363D" stroke-width="1.5"/>
+              <text x="680" y="325" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E" text-anchor="middle">Monday</text>
+              <text x="680" y="337" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">15:01</text>
+
+              <!-- Event: ATM withdrawal -->
+              <circle cx="80" cy="300" r="6" fill="#D29922"/>
+              <text x="80" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">ATM withdrawal</text>
+              <text x="80" y="268" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Rotterdam</text>
+
+              <!-- Event: Processed -->
+              <circle cx="230" cy="300" r="6" fill="#3FB950"/>
+              <text x="230" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#3FB950" text-anchor="middle">Processed. Risk</text>
+              <text x="230" y="268" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">score updated</text>
+
+              <!-- Event: Utrecht pattern -->
+              <circle cx="380" cy="300" r="6" fill="#D29922"/>
+              <text x="380" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">ATM withdrawal</text>
+              <text x="380" y="268" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Utrecht. Pattern</text>
+              <text x="380" y="256" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">forming</text>
+
+              <!-- Event: Amsterdam confirmed -->
+              <circle cx="530" cy="300" r="6" fill="#F85149"/>
+              <text x="530" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#F85149" text-anchor="middle">ATM withdrawal</text>
+              <text x="530" y="268" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Amsterdam. Pattern</text>
+              <text x="530" y="256" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">confirmed</text>
+
+              <!-- Event: ALERT -->
+              <circle cx="680" cy="300" r="8" fill="#3FB950"/>
+              <text x="680" y="278" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#3FB950" text-anchor="middle">ALERT. Analyst</text>
+              <text x="680" y="265" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">sees it NOW</text>
+
+              <!-- 61 MINUTES gap -->
+              <rect x="120" y="355" width="520" height="44" rx="6" fill="#3FB95015" stroke="#3FB950" stroke-width="1.5"/>
+              <text x="380" y="373" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" fill="#3FB950" text-anchor="middle">61 MINUTES</text>
+              <text x="380" y="392" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#3FB950" text-anchor="middle" opacity="0.8">Analyst alerted while the pattern is still forming.</text>
+
+              <!-- Green checkmark -->
+              <text x="680" y="386" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="bold" fill="#3FB950" text-anchor="middle">&#x2713;</text>
+            </g>
+
+            <!-- Bottom comparison -->
+            <rect x="100" y="415" width="600" height="38" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+            <text x="400" y="430" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#C9D1D9" text-anchor="middle">Same crime. Same banks. Same people.</text>
+            <text x="400" y="445" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#58A6FF" text-anchor="middle">The only difference is the architecture.</text>
+          </svg>
+        </div>
+
+        <h3>Layer 2: Federation — Cross-Bank Detection Without Data Sharing</h3>
+
+        <p>The federation layer is where the architecture addresses the most fundamental limitation of current AML systems: single-institution blindness.</p>
+
+        <p>Two banks cannot simply share their customer databases. Privacy regulation (GDPR in Europe, comparable frameworks elsewhere) prohibits it. And they should not want to. A bank's customer data is both commercially sensitive and legally protected.</p>
+
+        <p>The challenge is to detect criminal networks that span multiple banks without any bank revealing its customers to any other bank. No jurisdiction has achieved automated cross-institutional detection at scale. The Dutch TMNL initiative, backed by five major banks, was wound down in July 2024 after being found incompatible with the EU's AMLR. The Nordic KYC utility Invidem, founded by six banks in 2019, shut down in April 2023 after spending approximately EUR 60 million. The UK's Joint Money Laundering Intelligence Taskforce (JMLIT) operates under significant legal and operational constraints on data sharing. Australia's Fintel Alliance relies on voluntary participation. Singapore's COSMIC platform, launched in April 2024, is the most promising current attempt but remains limited to six banks and three specific risk areas.</p>
+
+        <p>These initiatives share a common architectural weakness. They relied on sending disguised customer data to a central organisation. This approach has two problems. First, the disguise (converting a national identifier to a scrambled code using a technique called hashing) can be reversed: any country's identifier space is finite. The Dutch social security number space contains approximately 20 million values. The UK's National Insurance number registry holds over 90 million. Scrambling all of them produces a reverse lookup table that breaks the disguise. Second, centralisation creates a single point of failure. If the central organisation's legal basis is challenged (as happened with TMNL), the entire system collapses.</p>
+
+        <p>The F1 Engine uses a different approach. Two banks discover which customers they share without either bank revealing its full customer list. Each bank takes its list of customer identifiers (like social security numbers or national insurance numbers) and transforms them into mathematical codes using advanced cryptography. These codes can be compared to find matches, but the original identifiers cannot be recovered from the codes. This is fundamentally different from the hashing approach used by previous initiatives. With hashing, an attacker who knows a country's finite identifier space can simply hash all values and build a reverse lookup table. With the cryptographic approach used by the F1 Engine, this attack does not work. There is no shortcut to reverse the transformation.</p>
+
+        <p>After shared customers are discovered, the banks exchange risk signals, not data. If Bank A's detection system determines that a customer's risk has increased, Bank A sends a simple message to Bank B: "This customer's risk went up. Reason: unusual incoming money." Bank B adds this information to its own assessment of that customer. Bank B never learns the details of the customer's transactions at Bank A, the identity of their counterparties, or which specific rule triggered the alert. Only the change in risk level and a general reason category.</p>
+
+        <p>This happens in pairs. In a network of five banks, each bank conducts a separate, private exchange with each of the other four banks. No bank sees the full picture. No central organisation holds all the data. The detection of a criminal network spanning three banks emerges from the combination of local decisions at each bank, informed by risk signals from direct partners. Each bank sees one piece. The picture forms without anyone holding the full image.</p>
+
+        <p>For regulators reviewing this architecture: the privacy guarantee is not a claim. It is a mathematical property of the protocol. Each exchange between two banks reveals only the customers they share and numerical risk scores. The European Data Protection Supervisor's test for whether data counts as truly anonymised is satisfied with stronger margins than any approach based on hashing identifiers.</p>
+
+        <p>Each risk signal carries a category label explaining why the score changed (for example: "unusual inbound flow pattern" or "structuring behaviour detected"). The receiving bank can verify, using the cryptographic audit trail, that the signal was computed according to mutually agreed policies. This is not a black-box score passing between banks. It is a verifiable, auditable, explainable signal.</p>
+
+        <p>The federation does not require every bank in the country to participate. It operates between pairs of banks. Two banks with a legal agreement can begin exchanging risk signals immediately. The detection improves with each additional bank that joins, but it produces results from the very first pair. The legal framework for this type of information sharing between banks is being developed under AMLR Article 75. The F1 Engine provides the technical mechanism that this legal framework requires.</p>
+
+        <h3>Layer 3: Regulatory Interface — Supervisory Access Without Data Exposure</h3>
+
+        <p>The final layer provides the interface between the detection system and regulatory supervisors. Automated generation of Suspicious Activity Reports from detection results. A complete audit trail that allows supervisors to verify that a detection decision was computed correctly without accessing the underlying customer data. Cryptographic provenance that proves which policies were evaluated, on which data, at which time, without revealing the data itself.</p>
+
+        <p>This layer directly addresses AMLA Article 75's requirement for cross-institutional information sharing mechanisms while maintaining data protection obligations. The federation protocol described in Layer 2, combined with a policy-based access control system that governs who can see what at each institutional boundary, provides the technical infrastructure that Article 75 requires.</p>
+
+        <h2>4. Three Use Cases for Real-Time Detection</h2>
+
+        <p>The architectural shift from batch to real-time creates three distinct detection capabilities, each with different regulatory frameworks and deployment contexts.</p>
+
+        <h3>Use Case 1: Real-Time Institutional Transaction Monitoring (All Jurisdictions)</h3>
+
+        <p>This is the core capability and the most immediate market opportunity. It applies in every jurisdiction where AML monitoring is mandated, which is effectively every jurisdiction.</p>
+
+        <p>The use case is straightforward: replace the overnight batch processing cycle with continuous real-time monitoring. Every transaction is analysed the moment it enters the bank's system. Alerts fire within seconds, not the next morning. The analyst sees patterns forming in real-time instead of reviewing historical records.</p>
+
+        <p>No legal barriers exist for this use case. Every bank is already required to monitor transactions. No regulation specifies that monitoring must happen overnight. The shift from batch to real-time is an operational improvement within existing legal frameworks. The bank is doing the same thing (monitoring transactions against detection rules) at a different speed (seconds instead of hours).</p>
+
+        <p>The practical impact: alerts that previously arrived 24 to 48 hours after the crime now arrive within minutes. The analyst can act while the pattern is still forming. Account freezes, enhanced monitoring, and investigative actions happen on the same day as the suspicious activity, not two days later.</p>
+
+        <p>This use case does not require edge devices, embedded hardware, or any deployment outside the bank's data centre. A single GPU in the bank's server room replaces the batch processing cluster. The ROI is immediate: faster detection, fewer missed patterns, and lower infrastructure cost.</p>
+
+        <h3>Use Case 2: Real-Time Sanctions Screening at GPU Speed (All Jurisdictions)</h3>
+
+        <p>Sanctions screening is legally mandated in every major jurisdiction. OFAC in the United States, the EU Consolidated List, the UN Sanctions List, and HM Treasury in the UK all require financial institutions to screen transactions and block payments involving sanctioned entities before those payments are processed.</p>
+
+        <p>This is the one area where transaction blocking is not just permitted but required. If a payment is destined for a sanctioned individual, entity, or jurisdiction, the bank must block it. No tipping-off concerns apply because the legal basis is different: sanctions enforcement, not AML investigation.</p>
+
+        <p>The challenge is speed. With the rise of instant payment rails (SEPA Instant in Europe, Faster Payments in the UK, FedNow in the US), transactions settle in seconds. The sanctions screening must complete before the transaction settles. Legacy systems that screen in 200 to 500 milliseconds per transaction are under pressure. A GPU-native engine that screens the entire population against the full sanctions list in seconds provides a fundamentally different level of capability.</p>
+
+        <p>The F1 Engine's policy evaluation rate (190 million policy checks per second at batch 4,096) means that a complete sanctions screen of the bank's entire customer base against all global sanctions lists can complete in the time it takes a legacy system to screen a single transaction. For banks processing millions of transactions daily through instant payment channels, this is not a performance luxury. It is a regulatory necessity.</p>
+
+        <h3>Use Case 3: Real-Time Payment Intervention (UK, and Emerging in EU)</h3>
+
+        <p>In October 2024, the UK Payment Services (Amendment) Regulations 2024 came into force. This regulation explicitly permits Payment Service Providers to delay outbound payments when there are "reasonable grounds to suspect fraud or dishonesty." This is a legal framework that did not exist two years ago.</p>
+
+        <p>Combined with the UK's Authorised Push Payment (APP) fraud reimbursement rules (in force since October 2024), which impose a 50/50 liability split between sending and receiving PSPs, UK banks now have both the legal authority and the financial incentive to intervene in suspicious payments before they are processed.</p>
+
+        <p>The UK government's Fraud Strategy 2026-2029, published in March 2026, goes further: a new Online Crime Centre launches in April 2026, bringing together police, banks, mobile networks, and technology firms for real-time intelligence sharing. The FCA has stated that it expects banks to move toward automated, risk-based monitoring capable of identifying scam activity before payments are executed.</p>
+
+        <p>This creates a specific market for real-time payment intervention that does not yet exist in most EU jurisdictions. Across the EU, tipping-off provisions under AMLD Article 39 (implemented in the Netherlands as Wwft Article 23, and similarly in each Member State) prohibit banks from declining transactions based on AML suspicion. But the UK has carved out an exception for fraud and dishonesty. And the EU Instant Payments Regulation (2024/886), which entered into force in April 2024, is pushing EU jurisdictions toward similar real-time screening requirements for instant payments.</p>
+
+        <p>For this use case, the F1 Engine provides the real-time risk assessment that the bank needs to decide, within milliseconds, whether to delay a payment for further review. The federation layer adds cross-institutional intelligence: if a partner bank has flagged the recipient's network, that signal is available at the moment the sending bank processes the payment. The decision to hold the payment is made by the bank's existing compliance framework. The F1 Engine provides the intelligence that makes the decision possible in real-time.</p>
+
+        <p>This use case is currently UK-specific but the regulatory direction across Europe suggests it will expand. Banks that build the technical capability now will be prepared when the legal framework catches up.</p>
+
+        <h2>5. Why This Requires a GPU</h2>
+
+        <p>Everything described in the previous sections is theoretically possible on conventional computing infrastructure. The encrypted customer matching, the risk score sharing, the five-layer detection system, all of it could be implemented on standard servers.</p>
+
+        <p>It would take hours. Or days.</p>
+
+        <p>The customer matching process for a population of 1.5 million customers involves performing a complex mathematical operation for every customer at each bank. On a conventional server processor, which handles these operations one at a time, this takes hours per bank pair. For five banks conducting ten separate exchanges, the total processing time exceeds what is practical within a monitoring cycle.</p>
+
+        <p>The risk analysis algorithm must trace the connections between millions of customers and tens of millions of transactions. On a processor that handles these connections one at a time, this analysis alone consumes the available monitoring window.</p>
+
+        <p>The policy engine must check 123 compliance rules against every customer in the bank's population. On a processor checking one customer at a time, half a million customers multiplied by 123 rules is simply too much work to complete in a reasonable timeframe.</p>
+
+        <p>A Graphics Processing Unit, or GPU, solves this by doing thousands of these operations at the same time instead of one after another. The same work that takes hours on a conventional processor completes in seconds on a GPU, because the GPU performs tens of thousands of calculations simultaneously.</p>
+
+        <p>This is not a performance upgrade. It is an architectural requirement. Without GPU-native computation, real-time continuous monitoring is theoretically interesting but impossible to operate in practice. The cross-bank matching takes too long. The relationship analysis takes too long. The policy checks take too long.</p>
+
+        <p>The F1 Engine is built from the ground up for GPU execution. Not a conventional application with a GPU-accelerated add-on. Everything, from the cryptographic matching between banks through to the compliance policy checks and the risk analysis, runs natively on the GPU. This comprises 396,000 lines of C++ and CUDA code with 493 GPU kernels.</p>
+
+        <p>This is also why no existing AML vendor can replicate this approach by adding a GPU to their existing platform. Their architectures are fundamentally CPU-based. The data structures, the algorithms, the execution model are all designed for sequential processing. Adding a GPU to a CPU-based system is like adding a jet engine to a bicycle. The frame cannot support it.</p>
+
+        <p>Building a GPU-native AML engine from scratch requires simultaneous expertise in three domains: GPU systems engineering, cryptographic protocol design, and financial crime compliance. These skills rarely coexist in the same team. The F1 Engine was built over 18 months by a single engineer with 18 years of compliance experience at Tier 1 institutions and deep GPU systems knowledge.</p>
+
+        <h2>6. Validation: How Do You Know the Detection Works?</h2>
+
+        <p>Any detection system is only as good as the data it is tested against. A system that catches every criminal in a controlled test but fails against real criminal patterns provides false confidence.</p>
+
+        <p>The F1 Engine includes a simulation environment (Financial Crime Network Simulator) that generates synthetic banking populations with embedded criminal networks. The simulator produces ground truth: it knows exactly which entities are criminals, which network they belong to, and which typology they use. This enables closed-loop testing. Run a simulation, see the scorecard, verify that every criminal was detected.</p>
+
+        <p>But synthetic data has an obvious weakness: it might not reflect reality. If the synthetic transactions do not resemble real bank transactions, the detection thresholds calibrated against synthetic data will fail in production.</p>
+
+        <p>To address this, the simulator's transaction distributions are calibrated against publicly available banking statistics. The calibration framework is jurisdiction-agnostic: it works with any market where aggregate payment data is published. The current reference implementation uses Dutch data. The Dutch Central Bank (De Nederlandsche Bank, DNB) publishes aggregate payment data: 6.7 billion card payments totalling EUR 198 billion in 2024, with an average card transaction of approximately EUR 30. The Dutch statistics office (CBS) publishes household income and expenditure data. The Dutch Payments Association (Betaalvereniging Nederland) publishes transaction mix data by channel and type. Equivalent data is published by the Bank of England, the Federal Reserve, the ECB, and most central banks in FATF member jurisdictions.</p>
+
+        <p>The simulator's output is validated against these reference distributions. If the average retail transaction in the simulation deviates significantly from the published average for the target jurisdiction, the simulator is miscalibrated and the detection thresholds are unreliable. This validation runs automatically before any threshold calibration.</p>
+
+        <p>Eight criminal typologies are supported: trade-based laundering, mule networks, professional laundering, smurfing and structuring, correspondent banking abuse, dormant account exploitation, business front operations, and property market laundering. Each typology can be configured at difficulty levels 1 through 5, from amateur operations with obvious patterns to professional operations designed to evade detection.</p>
+
+        <p>The engine also includes an Adversarial Threshold Optimizer that automatically discovers optimal detection thresholds. Instead of a compliance officer manually deciding that "3 transactions per day is suspicious," the optimizer evaluates millions of threshold configurations against the simulated population and produces a mathematically verified set of optimal trade-offs between detection rate and false positive rate. The compliance officer does not guess. They choose a point on a curve that has been validated against adversarial criminal behaviour across multiple population seeds, difficulty levels, and economic conditions. No other AML system provides this capability.</p>
+
+        <p>At validated performance levels: in simulation testing, the engine finds every single criminal that was planted in the synthetic population. Zero missed criminals. In detection terminology, this is called "100% recall," meaning none of the known bad actors slipped through.</p>
+
+        <p>An important caveat: this result is measured against synthetic populations where the system knows exactly who the criminals are, because the simulator created them. In the real world, criminals are adaptive. They change their behaviour to avoid detection. Production detection rates will be lower than simulation results. This is true for every detection system ever built. The simulator's purpose is not to claim perfection. It is to provide a controlled environment for continuous calibration: run the simulation, measure what was missed, adjust the detection thresholds, run again. This feedback loop does not exist in systems that rely solely on production data, where you never know what you missed.</p>
+
+        <h2>7. Regulatory Alignment</h2>
+
+        <p>The architecture is not built in anticipation of regulation. It is built to implement regulation that is already in force.</p>
+
+        <p><strong>AMLR Article 75</strong> mandates mechanisms for cross-institutional information sharing. The federation protocol (Layer 2) provides exactly this mechanism, with privacy protection that exceeds the requirements of traditional approaches.</p>
+
+        <p><strong>AMLA</strong> has been operational since July 2025 in Frankfurt. In January 2026, all AML responsibilities transferred from the European Banking Authority to AMLA. AMLA's 2026-2028 work programme, published in February 2026, focuses on supervisory convergence and common approaches. The unified policy language in the F1 Engine enables identical policies to be written once and evaluated identically across all institutions, ensuring consistent detection regardless of which bank processes a transaction. This is precisely the convergence that AMLA is mandating.</p>
+
+        <p><strong>AMLD6</strong> requires enhanced due diligence and beneficial ownership identification. The structural detection layer identifies shell company structures and complex ownership networks, and the federation layer reveals cross-institutional ownership patterns that no single bank can see alone.</p>
+
+        <p><strong>GDPR and European data protection guidance</strong> require that data processing minimises exposure. The federation protocol exchanges only mathematical codes (not customer names or account numbers) and numerical risk scores (not transaction details). The access control system restricts what each operator can see based on their role. The raw mathematical outputs from the cross-bank matching process are never shown to human analysts.</p>
+
+        <p><strong>The EU AI Act</strong> requires that AI systems used in high-impact decisions can be explained and overseen by humans. The Operator Console provides a human review step for every alert. Compliance policies are written in plain language that a compliance officer can read and understand, not hidden inside a machine learning model. Every detection decision carries a full audit trail showing exactly which rules fired and why.</p>
+
+        <p><strong>DORA</strong> (Digital Operational Resilience Act) requires operational resilience for critical financial infrastructure. The system runs entirely on-premise, within the bank's own network. There is no cloud dependency.</p>
+
+        <p><strong>UK Payment Services (Amendment) Regulations 2024</strong> permit payment delays for suspected fraud. The real-time detection capability (Use Case 3 in Section 4) provides the risk assessment required for banks to exercise this authority within the legally mandated timeframe.</p>
+
+        <p><strong>EU Instant Payments Regulation (2024/886)</strong> requires sanctions screening for instant payments without delay. The GPU-native screening capability (Use Case 2 in Section 4) provides the processing speed required to screen transactions before settlement.</p>
+
+        <h2>8. The Hidden Superpower: An ESG Architecture by Design</h2>
+
+        <p>In 2026, a platform's ESG profile is often as important to a bank's board as its detection rate. Every major European bank publishes an annual ESG report. The environmental section covers carbon footprint. The social section covers financial inclusion. The governance section covers transparency and auditability. Most banks struggle to fill the governance section with anything more substantive than "we comply with applicable regulations."</p>
+
+        <p>The ZQUAS architecture is, almost by accident, an ESG powerhouse. Not because it was designed for ESG reporting, but because the engineering decisions that make it effective for detection also happen to produce exceptional ESG outcomes.</p>
+
+        <h3>Environmental: The Joule-Per-Transaction Metric</h3>
+
+        <p>Traditional AML systems are energy-intensive. They require large data centres running 24 hours a day, seven days a week. Servers store years of historical transaction data. Batch jobs churn through millions of records every night. The CPU clusters that power these systems are optimised for flexibility, not efficiency. They can do anything, but they do everything at high energy cost.</p>
+
+        <p>A GPU is fundamentally different. It is designed for parallel computation. A useful analogy: a CPU is like a fleet of high-speed courier cars, each carrying one package at a time. A GPU is like a freight train, carrying ten thousand packages simultaneously. The energy cost per package is dramatically lower.</p>
+
+        <p>In terms of computational work per joule of energy consumed, a GPU-native engine processes the same volume of data with roughly 60 to 80 percent less energy than an equivalent CPU cluster. For a Tier 1 bank processing millions of transactions daily, this is not a rounding error. It is a measurable reduction in the IT carbon footprint of compliance operations.</p>
+
+        <p>The portability story reinforces this. This paper describes running the full detection stack on a 2017-era laptop purchased for EUR 299. This is a direct contribution to the circular economy. Instead of requiring banks to purchase new server-grade hardware every three years (generating electronic waste), the architecture allows institutions to repurpose existing or older GPU hardware for high-stakes compliance work. A Quadro P2000 that would otherwise be recycled or discarded becomes a functional AML installation.</p>
+
+        <p>When a bank's sustainability team asks "what is our compliance infrastructure's carbon footprint," an institution running ZQUAS has a concrete answer: fewer servers, lower energy consumption, repurposed hardware, continuous processing that eliminates the need for nightly batch compute spikes.</p>
+
+        <h3>Social: Financial Inclusion and Victim Protection</h3>
+
+        <p>The social impact of AML is systematically overlooked. Traditional rule-based systems produce false positive rates of 95% or higher. For every 100 alerts generated, 95 are innocent customers flagged incorrectly.</p>
+
+        <p>The downstream consequence is de-risking. When a bank's monitoring system is inaccurate, the bank responds by closing the accounts of entire categories of customers deemed too expensive to monitor. Students, recent immigrants, small businesses in "high-risk" postcodes, money transfer operators serving diaspora communities. These groups lose access to the banking system not because they are criminals, but because the detection technology cannot distinguish them from criminals efficiently.</p>
+
+        <p>A system that finds every criminal in a test population and simultaneously reduces false alarms directly addresses this problem. By detecting actual criminals with precision, the system eliminates the pressure to de-risk entire populations. Innocent people stay in the financial system. The bank meets its compliance obligations without punishing its customers for the limitations of its technology.</p>
+
+        <p>There is a second social dimension. Money laundering networks exploit vulnerable people as mules, often students or recent immigrants recruited through social media with promises of easy money. These individuals face criminal prosecution when the network is eventually discovered. By detecting and disrupting mule networks in real-time, the system breaks the economic model that criminal organisations use to recruit vulnerable individuals. Faster detection means fewer people are recruited into criminal activity before the network is dismantled.</p>
+
+        <h3>Governance: Mathematical Transparency Instead of Black-Box AI</h3>
+
+        <p>Current AI-based AML systems are, from a governance perspective, opaque. A machine learning model flags a customer. The compliance officer asks: why? The answer is a probability score derived from a neural network with millions of parameters. The model cannot explain its reasoning in terms that a regulator, a court, or an audit committee can verify.</p>
+
+        <p>This is a governance problem that is about to become a legal problem. The EU AI Act requires explainability for AI systems used in high-impact decisions. AML detection affects people's access to financial services. A system that cannot explain why it flagged an individual may not survive regulatory scrutiny under the AI Act.</p>
+
+        <p>The ZQUAS architecture takes a different approach. The federation protocol uses elliptic curve cryptography, not probabilistic AI, for its cross-institutional detection. The bank can prove to a regulator, mathematically, exactly why a risk score changed, which policies evaluated, which data was processed, at what time, without ever exposing private customer data. The audit trail is not a log file. It is a cryptographic proof.</p>
+
+        <p>The compliance policies themselves are written in a human-readable policy language (CPL). A compliance officer can read the policy that triggered an alert and understand, in plain language, what condition was met. This is not possible with a machine learning model. The same policy runs identically across the entire architecture, creating a single version of truth.</p>
+
+        <div class="diagram-container" style="max-width: 800px; margin: 2rem auto;">
+          <svg viewBox="0 0 800 370" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ESG impact diagram showing environmental, social, and governance benefits">
+            <title>ESG Impact: Three Dimensions, One Architecture</title>
+
+            <!-- Title -->
+            <text x="400" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9" text-anchor="middle">ESG Impact of GPU-Native Architecture</text>
+
+            <!-- ========== ENVIRONMENTAL COLUMN ========== -->
+            <g aria-label="Environmental impact">
+              <rect x="20" y="48" width="240" height="265" rx="6" fill="#161B22" stroke="#3FB950" stroke-width="1.5"/>
+              <rect x="20" y="48" width="240" height="40" rx="6" fill="#3FB95018" stroke="none"/>
+              <rect x="20" y="82" width="240" height="6" rx="0" fill="#161B22" stroke="none"/>
+              <circle cx="52" cy="68" r="14" fill="#3FB95020" stroke="none"/>
+              <text x="52" y="74" font-family="system-ui, -apple-system, sans-serif" font-size="16" text-anchor="middle" fill="#3FB950">&#9670;</text>
+              <text x="80" y="74" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#3FB950">ENVIRONMENTAL</text>
+              <text x="40" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="bold" fill="#3FB950">60-80%</text>
+              <text x="40" y="135" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#C9D1D9">less energy than</text>
+              <text x="40" y="150" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#C9D1D9">CPU-based systems</text>
+              <line x1="40" y1="165" x2="240" y2="165" stroke="#30363D" stroke-width="0.5"/>
+              <text x="40" y="190" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9">Repurposed hardware</text>
+              <text x="40" y="208" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Full detection on a 2017 GPU</text>
+              <text x="40" y="223" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">purchased for EUR 299</text>
+              <line x1="40" y1="238" x2="240" y2="238" stroke="#30363D" stroke-width="0.5"/>
+              <text x="40" y="262" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9">No new data centres</text>
+              <text x="40" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Continuous processing</text>
+              <text x="40" y="295" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">replaces batch compute spikes</text>
+            </g>
+
+            <!-- ========== SOCIAL COLUMN ========== -->
+            <g aria-label="Social impact">
+              <rect x="280" y="48" width="240" height="265" rx="6" fill="#161B22" stroke="#58A6FF" stroke-width="1.5"/>
+              <rect x="280" y="48" width="240" height="40" rx="6" fill="#58A6FF18" stroke="none"/>
+              <rect x="280" y="82" width="240" height="6" rx="0" fill="#161B22" stroke="none"/>
+              <circle cx="312" cy="68" r="14" fill="#58A6FF20" stroke="none"/>
+              <text x="312" y="74" font-family="system-ui, -apple-system, sans-serif" font-size="14" text-anchor="middle" fill="#58A6FF">&#9899;</text>
+              <text x="340" y="74" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#58A6FF">SOCIAL</text>
+              <text x="300" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9">False positive reduction</text>
+              <rect x="300" y="122" width="190" height="22" rx="4" fill="#0D1117" stroke="none"/>
+              <rect x="300" y="122" width="180" height="22" rx="4" fill="#F8514930" stroke="none"/>
+              <text x="395" y="138" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#F85149" text-anchor="middle">95% false positives (legacy)</text>
+              <rect x="300" y="147" width="190" height="22" rx="4" fill="#0D1117" stroke="none"/>
+              <rect x="300" y="147" width="20" height="22" rx="4" fill="#3FB95060" stroke="none"/>
+              <text x="395" y="163" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#3FB950" text-anchor="middle">Precision detection (ZQUAS)</text>
+              <line x1="300" y1="183" x2="500" y2="183" stroke="#30363D" stroke-width="0.5"/>
+              <text x="300" y="207" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9">Reduced de-risking</text>
+              <text x="300" y="225" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Vulnerable customers keep</text>
+              <text x="300" y="240" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">access to banking</text>
+              <line x1="300" y1="255" x2="500" y2="255" stroke="#30363D" stroke-width="0.5"/>
+              <text x="300" y="278" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9">Fewer mule victims</text>
+              <text x="300" y="296" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Real-time detection breaks</text>
+              <text x="300" y="308" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">recruitment networks</text>
+            </g>
+
+            <!-- ========== GOVERNANCE COLUMN ========== -->
+            <g aria-label="Governance impact">
+              <rect x="540" y="48" width="240" height="265" rx="6" fill="#161B22" stroke="#BC8CFF" stroke-width="1.5"/>
+              <rect x="540" y="48" width="240" height="40" rx="6" fill="#BC8CFF18" stroke="none"/>
+              <rect x="540" y="82" width="240" height="6" rx="0" fill="#161B22" stroke="none"/>
+              <circle cx="572" cy="68" r="14" fill="#BC8CFF20" stroke="none"/>
+              <text x="572" y="74" font-family="system-ui, -apple-system, sans-serif" font-size="14" text-anchor="middle" fill="#BC8CFF">&#9830;</text>
+              <text x="600" y="74" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#BC8CFF">GOVERNANCE</text>
+              <text x="560" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9">Full transparency</text>
+              <text x="560" y="135" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Cryptographic audit trail on</text>
+              <text x="560" y="150" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">every detection decision</text>
+              <line x1="560" y1="165" x2="760" y2="165" stroke="#30363D" stroke-width="0.5"/>
+              <text x="560" y="190" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9">Human-readable policies</text>
+              <text x="560" y="208" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">CPL: compliance officers</text>
+              <text x="560" y="223" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">read and verify rules</text>
+              <line x1="560" y1="238" x2="760" y2="238" stroke="#30363D" stroke-width="0.5"/>
+              <text x="560" y="262" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9">EU AI Act compliant</text>
+              <text x="560" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Explainability by design,</text>
+              <text x="560" y="295" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">not retrofitted</text>
+            </g>
+
+            <!-- Bottom spanning line -->
+            <rect x="100" y="330" width="600" height="32" rx="6" fill="#0D1117" stroke="#30363D" stroke-width="1"/>
+            <text x="400" y="351" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#C9D1D9" text-anchor="middle">ZQUAS<tspan fill="#4a7dff">.</tspan> One architecture. Three ESG dimensions. Zero trade-offs.</text>
+          </svg>
+        </div>
+
+        <h2>9. The Numbers</h2>
+
+        <p>Claims of architectural innovation require evidence. The F1 Engine is a measured engineering artefact, not a design document.</p>
+
+        <p><strong>Codebase:</strong> 396,000 lines of C++ and CUDA across 493 GPU kernels. 222,000 lines of test code. 618,000 lines total. One codebase, three deployment targets: the banking detection engine, the AI inference layer, and the cross-bank federation layer. Every kernel is a __global__ function in a .cu file. No CPU fallback. 13,336 automated tests.</p>
+
+        <p><strong>Performance:</strong> 500,000 customers processed in under 2 seconds end-to-end. 190 million policy checks per second at batch 4,096. A single cross-bank matching round for 100,000 customers: under 10 seconds. Time from detection to alert: under 10 milliseconds. All numbers measured on a single GPU.</p>
+
+        <p><strong>Portability:</strong> The minimum GPU requirement is a 2017-era NVIDIA card with 4 gigabytes of memory. The engine has been validated on a Quadro P2000 purchased for EUR 299: 1,000 entities, 21 million transactions, 123 policies, every criminal found, on hardware that costs less than a restaurant dinner. The same binary, unmodified, runs on an RTX 5090 with 32 gigabytes of memory processing 100,000 entities.</p>
+
+        <p><strong>Security hardening:</strong> Every binary is built with defence-grade protections against tampering, memory attacks, and reverse engineering. The same level of hardening applied to military and intelligence software.</p>
+
+        <h2>10. From Data Centre to Laptop</h2>
+
+        <p>On 22 March 2026, the F1 Engine was deployed to an HP ZBook 15 G5 purchased on a Dutch classifieds site for EUR 299. The laptop was manufactured in 2018. It has a six-core Xeon processor, 32 gigabytes of RAM, and an NVIDIA Quadro P2000 with 4 gigabytes of GPU memory.</p>
+
+        <p>From a bare Windows installation to a running detection platform with a full Operator Console accessible in the web browser: one day. One person. No external dependencies, no cloud services, no installation consultants.</p>
+
+        <p>The engine ran a simulation: 1,000 entities across five Dutch banks, with embedded criminal networks. Detection result: every criminal found. Zero missed. The Operator Console displayed the full scorecard, the criminal network structure, alert details, and the investigative workflow. On a laptop that costs less than a dinner at a Michelin-starred restaurant.</p>
+
+        <p>This portability demonstrates that the minimum hardware threshold for institutional-grade AML detection has dropped to commodity hardware. A regional bank, a credit union, a payment service provider, or a crypto exchange can deploy the same detection capability that a Tier 1 bank runs in its data centre. The barrier to entry is no longer technology. It is decision.</p>
+
+        <h2>11. Future Vision: The Federated Financial Crime Network</h2>
+
+        <p>The architecture described in this paper is designed for institutional deployment: a GPU in the bank's data centre, connected to partner banks through the federation protocol. This is what can be built and deployed today, within existing legal and regulatory frameworks.</p>
+
+        <p>But the architecture's portability points toward a future that extends beyond banks.</p>
+
+        <p>Consider a world in which every entity that touches money runs the same detection engine. Not just banks. Payment service providers. Electronic money institutions. Crypto asset service providers. Central securities depositories. Insurance companies. Real estate brokerages. Any entity required by regulation to monitor for financial crime.</p>
+
+        <p>The federation protocol operates between pairs of institutions. It does not care whether those institutions are banks. Two payment processors can run the same bilateral exchange. A bank and a crypto exchange can discover shared customers using the same cryptographic protocol. A real estate brokerage and a bank can exchange risk signals about a property buyer whose funds originated from a flagged network.</p>
+
+        <p>This is not science fiction. The EU's Anti-Money Laundering Regulation already extends AML obligations to crypto asset service providers (under MiCA), to payment institutions, to electronic money institutions. AMLA's direct supervision mandate covers not just banks but any financial institution deemed high-risk. The regulatory scope is expanding. The technical infrastructure should match it.</p>
+
+        <p>In this future, the federated network becomes a detection fabric that spans the entire financial system. A drug trafficking organisation deposits cash at a payment processor. The cash moves through a crypto exchange. The crypto is converted to fiat at a second exchange. The fiat is used to purchase a property through a real estate broker. At every step, the entity processing the transaction runs the same detection engine. At every step, risk signals propagate through the federation. The chain is visible not because any single institution sees the full picture, but because the federation protocol connects the dots across every institution the money touches.</p>
+
+        <div class="diagram-container" style="max-width: 800px; margin: 2rem auto;">
+          <svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Future vision: federated detection fabric spanning payment processor, crypto exchanges, bank, and real estate broker">
+            <title>The Federated Financial Crime Network: Detection Across the Entire Financial System</title>
+            <defs>
+              <marker id="arrow-red-future" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#F85149"/></marker>
+              <marker id="arrow-green-future" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#3FB950"/></marker>
+            </defs>
+
+            <!-- Title -->
+            <text x="400" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9" text-anchor="middle">The Federated Financial Crime Network</text>
+            <text x="400" y="46" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E" text-anchor="middle">Every obliged entity runs the same engine. Risk signals propagate across every step.</text>
+
+            <!-- ========== CRIMINAL MONEY FLOW (top) ========== -->
+            <text x="30" y="78" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="bold" fill="#F85149">CRIMINAL MONEY FLOW</text>
+
+            <!-- Institution boxes (top row) -->
+            <!-- Payment Processor -->
+            <g aria-label="Payment Processor">
+              <rect x="30" y="92" width="150" height="80" rx="6" fill="#161B22" stroke="#F85149" stroke-width="1.5"/>
+              <text x="105" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Payment Processor</text>
+              <text x="105" y="133" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">Cash deposit</text>
+              <text x="105" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">EUR 50,000</text>
+              <text x="105" y="164" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">Placement</text>
+            </g>
+
+            <!-- Arrow -->
+            <line x1="182" y1="132" x2="218" y2="132" stroke="#F85149" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow-red-future)"/>
+
+            <!-- Crypto Exchange 1 -->
+            <g aria-label="Crypto Exchange 1">
+              <rect x="220" y="92" width="150" height="80" rx="6" fill="#161B22" stroke="#F85149" stroke-width="1.5"/>
+              <text x="295" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Crypto Exchange</text>
+              <text x="295" y="133" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">Fiat to BTC</text>
+              <text x="295" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">conversion</text>
+              <text x="295" y="164" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">Layering</text>
+            </g>
+
+            <!-- Arrow -->
+            <line x1="372" y1="132" x2="408" y2="132" stroke="#F85149" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow-red-future)"/>
+
+            <!-- Crypto Exchange 2 -->
+            <g aria-label="Crypto Exchange 2">
+              <rect x="410" y="92" width="150" height="80" rx="6" fill="#161B22" stroke="#F85149" stroke-width="1.5"/>
+              <text x="485" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Second Exchange</text>
+              <text x="485" y="133" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">BTC to fiat</text>
+              <text x="485" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">conversion</text>
+              <text x="485" y="164" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">Layering</text>
+            </g>
+
+            <!-- Arrow -->
+            <line x1="562" y1="132" x2="598" y2="132" stroke="#F85149" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrow-red-future)"/>
+
+            <!-- Real Estate Broker -->
+            <g aria-label="Real Estate Broker">
+              <rect x="600" y="92" width="170" height="80" rx="6" fill="#161B22" stroke="#F85149" stroke-width="1.5"/>
+              <text x="685" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Real Estate Broker</text>
+              <text x="685" y="133" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">Property purchase</text>
+              <text x="685" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">EUR 48,000 deposit</text>
+              <text x="685" y="164" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">Integration</text>
+            </g>
+
+            <!-- ========== DIVIDER ========== -->
+            <line x1="30" y1="195" x2="770" y2="195" stroke="#30363D" stroke-width="1" stroke-dasharray="4 4"/>
+
+            <!-- ========== DETECTION FABRIC (middle) ========== -->
+            <rect x="200" y="205" width="400" height="28" rx="14" fill="#0D1117" stroke="#3FB950" stroke-width="1.5"/>
+            <text x="400" y="224" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#3FB950" text-anchor="middle">ZQUAS<tspan fill="#4a7dff">.</tspan> FEDERATION DETECTION FABRIC</text>
+
+            <!-- F1 Engine boxes (bottom row) — each institution runs the same engine -->
+            <!-- PP Engine -->
+            <g aria-label="F1 Engine at Payment Processor">
+              <rect x="30" y="255" width="150" height="68" rx="6" fill="#0D1117" stroke="#3FB950" stroke-width="1.5"/>
+              <rect x="30" y="255" width="150" height="24" rx="6" fill="#3FB95015" stroke="none"/>
+              <rect x="30" y="273" width="150" height="6" rx="0" fill="#0D1117" stroke="none"/>
+              <text x="105" y="272" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="bold" fill="#3FB950" text-anchor="middle">F1 ENGINE</text>
+              <text x="105" y="295" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Risk: flagged</text>
+              <text x="105" y="312" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">Cash deposit pattern</text>
+            </g>
+
+            <!-- CE1 Engine -->
+            <g aria-label="F1 Engine at Crypto Exchange 1">
+              <rect x="220" y="255" width="150" height="68" rx="6" fill="#0D1117" stroke="#3FB950" stroke-width="1.5"/>
+              <rect x="220" y="255" width="150" height="24" rx="6" fill="#3FB95015" stroke="none"/>
+              <rect x="220" y="273" width="150" height="6" rx="0" fill="#0D1117" stroke="none"/>
+              <text x="295" y="272" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="bold" fill="#3FB950" text-anchor="middle">F1 ENGINE</text>
+              <text x="295" y="295" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Risk: elevated</text>
+              <text x="295" y="312" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">Flagged customer + crypto</text>
+            </g>
+
+            <!-- CE2 Engine -->
+            <g aria-label="F1 Engine at Crypto Exchange 2">
+              <rect x="410" y="255" width="150" height="68" rx="6" fill="#0D1117" stroke="#3FB950" stroke-width="1.5"/>
+              <rect x="410" y="255" width="150" height="24" rx="6" fill="#3FB95015" stroke="none"/>
+              <rect x="410" y="273" width="150" height="6" rx="0" fill="#0D1117" stroke="none"/>
+              <text x="485" y="272" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="bold" fill="#3FB950" text-anchor="middle">F1 ENGINE</text>
+              <text x="485" y="295" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Risk: high</text>
+              <text x="485" y="312" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">Two prior warnings</text>
+            </g>
+
+            <!-- RE Engine -->
+            <g aria-label="F1 Engine at Real Estate Broker">
+              <rect x="600" y="255" width="170" height="68" rx="6" fill="#0D1117" stroke="#3FB950" stroke-width="1.5"/>
+              <rect x="600" y="255" width="170" height="24" rx="6" fill="#3FB95015" stroke="none"/>
+              <rect x="600" y="273" width="170" height="6" rx="0" fill="#0D1117" stroke="none"/>
+              <text x="685" y="272" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="bold" fill="#3FB950" text-anchor="middle">F1 ENGINE</text>
+              <text x="685" y="295" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#F85149" text-anchor="middle">ALERT</text>
+              <text x="685" y="312" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">Three prior warnings</text>
+            </g>
+
+            <!-- Federation risk signal arrows between engine boxes -->
+            <line x1="182" y1="289" x2="216" y2="289" stroke="#3FB950" stroke-width="2" marker-end="url(#arrow-green-future)"/>
+            <line x1="372" y1="289" x2="406" y2="289" stroke="#3FB950" stroke-width="2" marker-end="url(#arrow-green-future)"/>
+            <line x1="562" y1="289" x2="596" y2="289" stroke="#3FB950" stroke-width="2" marker-end="url(#arrow-green-future)"/>
+
+            <!-- Risk signal labels -->
+            <text x="199" y="282" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#3FB950" text-anchor="middle">risk</text>
+            <text x="389" y="282" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#3FB950" text-anchor="middle">risk</text>
+            <text x="579" y="282" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="#3FB950" text-anchor="middle">risk</text>
+
+            <!-- ========== BOTTOM: KEY INSIGHT ========== -->
+            <line x1="30" y1="345" x2="770" y2="345" stroke="#30363D" stroke-width="1" stroke-dasharray="4 4"/>
+
+            <!-- Regulation labels -->
+            <g aria-label="Regulatory frameworks">
+              <rect x="30" y="362" width="150" height="36" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="105" y="378" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#BC8CFF" text-anchor="middle">AMLR / PSD2</text>
+              <text x="105" y="392" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">Payment institutions</text>
+
+              <rect x="220" y="362" width="150" height="36" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="295" y="378" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#BC8CFF" text-anchor="middle">MiCA / AMLR</text>
+              <text x="295" y="392" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">Crypto asset providers</text>
+
+              <rect x="410" y="362" width="150" height="36" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="485" y="378" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#BC8CFF" text-anchor="middle">MiCA / AMLR</text>
+              <text x="485" y="392" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">Crypto asset providers</text>
+
+              <rect x="600" y="362" width="170" height="36" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+              <text x="685" y="378" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#BC8CFF" text-anchor="middle">AMLD6 / AMLR</text>
+              <text x="685" y="392" font-family="system-ui, -apple-system, sans-serif" font-size="9" fill="#8B949E" text-anchor="middle">Obliged entities</text>
+            </g>
+
+            <!-- Summary box -->
+            <rect x="100" y="418" width="600" height="50" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+            <text x="400" y="438" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#C9D1D9" text-anchor="middle">No institution sees the full chain. The federation connects every step.</text>
+            <text x="400" y="456" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#3FB950" text-anchor="middle">Same binary. Same protocol. Every entity that touches money.</text>
+
+            <!-- Brand -->
+            <text x="770" y="476" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#58A6FF" text-anchor="end" opacity="0.6">ZQUAS<tspan fill="#4a7dff">.</tspan> F1 Engine</text>
+          </svg>
+        </div>
+
+        <p>The edge deployment capability makes this feasible. The engine runs on a EUR 299 laptop. It runs on embedded hardware. It can run at a payment terminal manufacturer's gateway, at a crypto exchange's processing node, at a property registration office's server. The hardware threshold is low enough that every obliged entity, not just the largest banks, can participate.</p>
+
+        <p>And at the physical edge: ATMs, merchant terminals, and payment gateways could eventually run detection intelligence directly. Today, legal frameworks in most jurisdictions prevent ATMs from declining cash withdrawals based on AML risk (tipping-off provisions under AMLD Article 39 and its national implementations, such as Wwft Article 23 in the Netherlands, prohibit this). But the UK's Payment Services (Amendment) Regulations 2024 show that legal frameworks can evolve. As real-time intervention becomes legally permissible in more jurisdictions, the hardware and software to support it already exist. When the law catches up, the technology will be ready.</p>
+
+        <p>The question is not whether this future is technically possible. The architecture already supports it. The question is whether the regulatory framework and institutional willingness will follow.</p>
+
+        <h2>12. Regulatory Alignment Map</h2>
+
+        <p>The following table maps the ZQUAS architecture to the specific regulatory requirements it implements.</p>
+
+        <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+            <thead>
+                <tr style="border-bottom: 2px solid #30363D;">
+                    <th style="text-align: left; padding: 0.75rem; color: #58A6FF; font-size: 0.9rem;">Regulation and Requirement</th>
+                    <th style="text-align: left; padding: 0.75rem; color: #58A6FF; font-size: 0.9rem;">ZQUAS Capability</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #21262D;">
+                    <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>AMLR Article 75:</strong> Cross-institutional sharing</td>
+                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">Federation protocol with bilateral ECDH-PSI and scalar risk deltas</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #21262D;">
+                    <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>AMLA Direct Supervision (2028):</strong> Common detection standards</td>
+                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">Unified CPL policy language evaluated identically across institutions</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #21262D;">
+                    <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>AMLD6:</strong> Enhanced due diligence and beneficial ownership</td>
+                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">Structural detection layer and cross-institutional ownership discovery</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #21262D;">
+                    <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>GDPR:</strong> Data minimisation and pseudonymisation</td>
+                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">Cryptographic protocol exchanges only intersection membership and numerical scores</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #21262D;">
+                    <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>EU AI Act:</strong> Explainability for high-impact AI</td>
+                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">Human-readable CPL policies with cryptographic audit trail, no black-box models</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #21262D;">
+                    <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>DORA:</strong> Operational resilience</td>
+                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">Fully on-premise, no cloud dependency, continuous operation</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #21262D;">
+                    <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>UK PSA 2024:</strong> Payment delay for suspected fraud</td>
+                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">Real-time risk assessment for payment intervention decisions</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #21262D;">
+                    <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>EU Instant Payments Reg (2024/886):</strong> Real-time sanctions screening</td>
+                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">GPU-native screening at 190M checks per second</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #21262D;">
+                    <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>MiCA:</strong> AML obligations for crypto asset service providers</td>
+                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">Same engine deployable to crypto exchanges, federation-compatible</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h2>13. Conclusion</h2>
+
+        <p>Financial crime does not operate at the institutional core on a 24-hour cycle. It operates continuously, across institutional boundaries, wherever money moves. An effective detection architecture must operate at the same speed, with the same scope, informed by intelligence from across the financial system.</p>
+
+        <p>The anti-money laundering industry has spent two decades optimising batch processing. The result is 13,000 full-time employees, 530,000 annual reports, and no measurable effectiveness. We propose a different approach: detect the moment each transaction occurs, informed by cross-institutional intelligence, across every institution the crime touches. With lower energy consumption, greater fairness, and mathematical transparency that no black-box AI system can match.</p>
+
+        <p>The technology exists. The regulatory mandate is not arriving. It is here. AMLA is operational. The 2026-2028 work programme is published. Direct supervision begins in 2028. The only question is which institutions will be ready.</p>
+
+        <p class="article-closing"><em>ZQUAS. Because monitoring yesterday's transactions tomorrow is not compliance. It is record-keeping.</em></p>
+
+        <p><strong>Contact:</strong> Danny de Gier | danny@zquas.ai | zquas.ai</p>
+
+        <p><em>&copy; June 2026 ZQUAS. All rights reserved. Implementation details and protocol specifications are proprietary.</em></p>
+
+    </div>
+</article>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
+            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Technology</h4>
+                <a href="technology.html">Overview</a>
+                <a href="architecture.html">Architecture</a>
+                <a href="compare.html">Compare</a>
+                <a href="why-different.html">Why Different</a>
+                <a href="benchmark.html">Benchmark</a>
+                <a href="engineering.html">Engineering</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="regulators.html">Regulators</a>
+                <a href="use-case.html">Use Case</a>
+                <a href="about.html">About</a>
+                <a href="articles.html">Articles</a>
+                <a href="glossary.html">Glossary</a>
+            </div>
+            <div class="footer-col">
+                <h4>Get Involved</h4>
+                <a href="founding-partner.html">Founding Partner Programme</a>
+                <a href="article-75.html">Position Paper</a>
+                <a href="contact.html">Contact</a>
+                <a href="zquas-onepager.pdf" target="_blank">Download One-Pager</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; June 2026 ZQUAS &middot; Bounded Compliance on an Unbounded Platform</p>
+        <a href="mailto:info@zquas.ai">info@zquas.ai</a>
+    </div>
+</footer>
+
+</body>
+</html>

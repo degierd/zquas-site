@@ -1,0 +1,134 @@
+{
+  "name": "ZQUAS",
+  "type": "compliance_technology_platform",
+  "tagline": "Sovereign compliance infrastructure for regulated finance",
+  "description": "GPU-native compliance engine built for cross-institutional financial crime detection without central data pooling. Every decision cryptographically attested. Every verdict independently verifiable.",
+  "website": "https://zquas.ai",
+  "founded": "2024",
+  "stage": "pilot-ready, pre-revenue",
+  "location": {
+    "city": "Zwolle",
+    "country": "Netherlands",
+    "region": "Europe"
+  },
+  "founder": {
+    "name": "Danny de Gier",
+    "title": "Founder & Engineer",
+    "experience_years": 18,
+    "previous_employers": ["RBS", "Deutsche Bank", "HSBC", "Commerzbank", "ClearBank", "Vivid Money", "CoinMetro"],
+    "qualification": "Professional Postgraduate Diploma in Financial Crime Compliance (ICA / University of Manchester)",
+    "technical_skills": ["C++23", "CUDA", "Vulkan", "GPU systems programming"],
+    "linkedin": "https://www.linkedin.com/in/danny-de-gier-prof-pgdip-fcc/",
+    "email": "danny@zquas.ai"
+  },
+  "benchmark": {
+    "hardware": "NVIDIA RTX 5090 (Blackwell, sm_100, 170 SMs, 32GB VRAM)",
+    "published_ceps": "150M+",
+    "published_single_node_500k": "under 2 seconds",
+    "published_alert_lifecycle": "under 10ms",
+    "published_federation_bilateral": "under 10 seconds (measured: 7.8s at 100K entities)",
+    "published_vram_total": "under 1GB",
+    "measured_single_node_500k_ms": 1170,
+    "measured_alert_lifecycle_ms": 3.92,
+    "measured_vram_active_mb": 76,
+    "measured_vram_total_mb": 410,
+    "scaling": "linear",
+    "aml_policies": 29,
+    "aml_rules": 100,
+    "aml_domains": 6,
+    "access_control_policies": 15,
+    "deterministic": true,
+    "conditions": "RelWithDebInfo, MSVC, Windows 11, medians of 3 runs, 10 warmup iterations"
+  },
+  "federation": {
+    "protocol": "ECDH-PSI (X25519) + Yao's Garbled Circuits (Free-XOR) + IKNP OT Extension (Chou-Orlandi base OT on P-256)",
+    "security_model": "semi-honest",
+    "transport": "AES-256-GCM with X25519 key exchange",
+    "bilateral_round_100k_entities_seconds": 7.8,
+    "attestation": "dual Ed25519 (both parties sign)",
+    "raw_data_shared": "zero"
+  },
+  "proofs": {
+    "format": "Cryptographic proof bundle",
+    "bytes_per_evaluation": 912,
+    "signature": "Ed25519 (OpenSSL, RFC 8032 verified)",
+    "merkle_depth": 20,
+    "independent_verification": "public key plus proof bundle only; no engine access required"
+  },
+  "codebase": {
+    "production_lines_cpp_cuda": 396000,
+    "lines_of_test_code": 222000,
+    "total_lines_including_tests": 618000,
+    "gpu_kernels": 493,
+    "audited_subsystems_core_engine": 12
+  },
+  "testing": {
+    "total_automated_tests": 12342,
+    "lines_of_test_code": 222000,
+    "audited_subsystems_core_engine": 12,
+    "crypto_known_answer_tests": ["Ed25519 (RFC 8032)", "SHA-256 (FIPS 180-4)", "Blake3 (official vectors)"]
+  },
+  "capabilities": {
+    "gpu_native_processing": true,
+    "privacy_preserving_mpc": true,
+    "cryptographic_attestation": true,
+    "deterministic_evaluation": true,
+    "cross_institutional_detection": "validated_in_testing",
+    "adversarial_self_testing": true,
+    "predictive_governance": true,
+    "entity_resolution_gpu": true,
+    "build_attestation": true,
+    "siem_integration": true,
+    "constitutional_governance": true,
+    "agent_sar_autonomy": false,
+    "agent_sar_requires_human_mlro": true
+  },
+  "regulatory_frameworks": [
+    "AMLR / 6AMLD",
+    "EU AI Act",
+    "ECCTA Sections 188-189",
+    "FATF Recommendation 15",
+    "NIST AI RMF",
+    "ISO 42001",
+    "MAS TRM",
+    "GDPR",
+    "DORA",
+    "Wwft"
+  ],
+  "key_regulatory_dates": {
+    "amlr_article_75_application": "2027-07-10",
+    "ecca_sections_188_189_in_force": "2024-01-01"
+  },
+  "regulatory_engagement": {
+    "fca_digital_sandbox": "accepted (March 2026)",
+    "dnb_innovationhub": "engaged",
+    "nvidia_inception": "member (April 2026)"
+  },
+  "competitors": {
+    "legacy_incumbents": ["NICE Actimize", "Oracle Financial Crime", "SAS"],
+    "ai_native_challengers": ["Sardine", "Hawk AI", "Featurespace", "ComplyAdvantage"]
+  },
+  "differentiators": [
+    "GPU-native architecture (not GPU-accelerated)",
+    "Privacy-preserving cross-institutional detection via MPC (semi-honest security model)",
+    "Cryptographic proof bundles for every compliance decision (912 bytes, Ed25519 signed)",
+    "Independent regulator verification: public key plus proof bundle, no engine access",
+    "Deterministic evaluation (byte-identical replay)",
+    "Constitutional governance: agents cannot file SARs autonomously",
+    "Adversarial self-testing framework with continuous mutation testing",
+    "12,342 automated tests, 222,000 lines of test code, 396,000 lines of production C++/CUDA, 493 GPU kernels",
+    "3-5 year estimated replication timeline for competitors"
+  ],
+  "business_model": {
+    "deployment": "on-premise (bank's own infrastructure)",
+    "pricing": "annual licensing by transaction volume and policy complexity",
+    "expansion": "cross-institutional MPC network with network effects",
+    "data_sovereignty": "absolute (data never leaves the bank)"
+  },
+  "target_market": {
+    "primary": "Tier-1 and Tier-2 European banks",
+    "secondary": "Fintechs, payment service providers",
+    "geographic_focus": "EU (AMLR Article 75 applies July 10, 2027)"
+  },
+  "last_updated": "2026-05-07"
+}
