@@ -18,11 +18,10 @@
  */
 window.ZQUAS_CONFIG = {
     VIGIL_ENABLED: false,
-    // YouTube video IDs for the click-to-play films (film.js). One setting each, in this
-    // one place. The 11 characters after "v=" in the watch address. While an ID is not a
-    // valid 11-character ID, the poster shows "Film available soon" and no player loads.
-    YOUTUBE_FILM_ID: 'ZG-cMpBz4QU',
-    YOUTUBE_INVESTOR_ID: 'REPLACE_INVESTOR'
+    // YouTube video ID for the click-to-play film (film.js). One setting, in this one place:
+    // the 11 characters after "v=" in the watch address. While it is not a valid
+    // 11-character ID, the poster shows "Film available soon" and no player loads.
+    YOUTUBE_FILM_ID: 'ZG-cMpBz4QU'
 };
 
 (function () {

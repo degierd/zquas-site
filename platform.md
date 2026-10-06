@@ -152,34 +152,6 @@ Methodology per figure on the [benchmark page](benchmark.html).
 
 
 
-        For investors
-
-
-## The investor cut
-
-
-
-            A shorter version of the film for investors and partners.
-
-
-
-
-                ![Title card of the investor cut of the film: The ZQUAS Federation Network.](film-investor-poster.jpg) 
-
-                    ▶
-                    Play the investor cut
-
-
-            Playing loads the video from YouTube.
-
-
-Results in the film are on synthetic data, not real-world detection rates. English captions are available.
-
-
-
-
-
-
         Next step
 
 

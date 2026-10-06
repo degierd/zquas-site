@@ -2,13 +2,12 @@
  *
  * The page shows our own poster image and a play button. No YouTube code loads and no
  * YouTube cookie is set until the visitor clicks play. A click then loads the player
- * from youtube-nocookie.com. Video IDs come from config.js (YOUTUBE_FILM_ID and
- * YOUTUBE_INVESTOR_ID). An ID that is not 11 valid characters leaves the poster in a
+ * from youtube-nocookie.com. The video ID comes from config.js (YOUTUBE_FILM_ID). An ID that is not 11 valid characters leaves the poster in a
  * "Film available soon" state and loads nothing.
  */
 (function () {
     var cfg = window.ZQUAS_CONFIG || {};
-    var IDS = { main: cfg.YOUTUBE_FILM_ID, investor: cfg.YOUTUBE_INVESTOR_ID };
+    var IDS = { main: cfg.YOUTUBE_FILM_ID };
 
     function valid(id) {
         return typeof id === 'string' && /^[A-Za-z0-9_-]{11}$/.test(id);
