@@ -246,6 +246,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle active">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html" class="active">Why Different</a>
@@ -282,7 +283,7 @@
         <div class="wd-prose">
             <p>Today, every bank fights financial crime alone. Each institution monitors its own transactions, flags its own alerts, and files its own reports. Criminals exploit this by spreading activity across multiple banks. The transfer that looks normal at one bank is part of a laundering chain visible only when you combine the picture across institutions. But combining that picture means sharing customer data, which privacy law prohibits.</p>
 
-            <p>This is not a new problem. Attempts to solve it have failed. In the Netherlands, five major banks created TMNL to pool transaction data for joint monitoring. It was shut down after the Data Protection Authority ruled that mass data sharing without a specific legal basis violated privacy law. The technology concept was sound. The architecture was wrong. Centralising data creates the very privacy problem it tries to solve.</p>
+            <p>This is not a new problem. In the Netherlands, five major banks created TMNL to pool transaction data for joint monitoring. TMNL encountered unresolved legal and proportionality objections. The Dutch data protection authority was critical of population-scale joint monitoring, the Council of State concluded that necessity and proportionality had not been demonstrated for the proposed statutory basis and advised its removal, and the bill carrying that basis was declared controversial after the government fell. With the AMLR applying from 10 July 2027, TMNL is winding down its existing model and redesigning to reconcile with it. The technology concept was sound. The architecture was wrong. Centralising data creates the very privacy problem it tries to solve.</p>
 
             <p>The EU has now created the legal basis. AMLR Article 75 (applicable July 2027) explicitly permits cross-institutional information sharing for AML purposes, with mandatory pseudonymisation as a technical safeguard. The legal barrier is removed. The question is now purely technical: how do institutions cooperate without sharing data? The answer is privacy-preserving computation, specifically multi-party computation, where institutions jointly compute over their combined data without any institution revealing its raw information to another.</p>
         </div>
@@ -318,7 +319,7 @@
                         <tr class="wd-main-row">
                             <td class="wd-cap">Data Sharing</td>
                             <td class="wd-trad">Collaboration requires sharing customer data.</td>
-                            <td class="wd-zquas">Banks collaborate without sharing any customer data.</td>
+                            <td class="wd-zquas">Banks collaborate with no raw or directly identifying customer data leaving the institution.</td>
                         </tr>
                         <tr class="wd-why-row">
                             <td></td>
@@ -340,7 +341,7 @@
                         <tr class="wd-main-row">
                             <td class="wd-cap">Processing Speed</td>
                             <td class="wd-trad">Batch processing. Overnight or hourly cycles.</td>
-                            <td class="wd-zquas">190 million compliance policy evaluations per second at batch 4,096.</td>
+                            <td class="wd-zquas">750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set.</td>
                         </tr>
                         <tr class="wd-why-row">
                             <td></td>
@@ -447,20 +448,20 @@
         <h2 class="section-title" style="font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 2rem;">The Numbers</h2>
         <div class="wd-stats-row">
             <div class="wd-stat-box">
-                <div class="wd-stat-val">190M</div>
-                <div class="wd-stat-label">compliance policy evaluations per second</div>
+                <div class="wd-stat-val">750K</div>
+                <div class="wd-stat-label">complex events/sec across the 500K-entity cycle</div>
             </div>
             <div class="wd-stat-box">
                 <div class="wd-stat-val">&lt;10ms</div>
                 <div class="wd-stat-label">alert lifecycle, ingestion to triage</div>
             </div>
             <div class="wd-stat-box">
-                <div class="wd-stat-val">&lt;2s</div>
-                <div class="wd-stat-label">500K entities, 100 policies</div>
+                <div class="wd-stat-val">667 ms</div>
+                <div class="wd-stat-label">500K entities, 56-policy catalogue</div>
             </div>
             <div class="wd-stat-box">
-                <div class="wd-stat-val">13,336</div>
-                <div class="wd-stat-label">automated tests</div>
+                <div class="wd-stat-val">TRL 6</div>
+                <div class="wd-stat-label">synthetic data, no production deployments</div>
             </div>
         </div>
         <p class="wd-stats-note">All numbers measured. Federation benchmarks use realistic Dutch banking entity distributions.</p>
@@ -499,6 +500,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

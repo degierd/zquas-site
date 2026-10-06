@@ -80,6 +80,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -106,7 +107,7 @@
         <h1 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.6rem); max-width: 800px; margin-bottom: 1.5rem;">How Cross-Institutional Detection Works</h1>
         <p class="hero-sub" style="text-align: left; max-width: 760px; margin: 0 0 1.5rem;">From transaction to SAR. The complete operational flow.</p>
         <p class="section-desc" style="max-width: 760px;">
-            Banks already monitor transactions. Criminals exploit the gaps between banks. ZQUAS adds a privacy-preserving federation layer that makes cross-institutional patterns visible without sharing any data. Each bank keeps its existing systems and processes. The federation layer adds one new capability: the ability to detect patterns that span institutional boundaries.
+            Banks already monitor transactions. Criminals exploit the gaps between banks. ZQUAS adds a privacy-preserving federation layer that makes cross-institutional patterns visible with no raw or directly identifying customer data leaving the institution. Each bank keeps its existing systems and processes. The federation layer adds one new capability: the ability to detect patterns that span institutional boundaries.
         </p>
     </div>
 </section>
@@ -168,7 +169,7 @@
         </div>
 
         <div class="callout">
-            <p>TMNL proved that cross-institutional analysis detects patterns that single-bank monitoring misses. The project was shut down because centralising the data violated privacy law. <a href="tmnl.html" style="color: var(--accent);">Read the full analysis.</a></p>
+            <p>TMNL proved that cross-institutional analysis detects patterns that single-bank monitoring misses. TMNL encountered unresolved legal and proportionality objections. The Dutch data protection authority was critical of population-scale joint monitoring, the Council of State concluded that necessity and proportionality had not been demonstrated for the proposed statutory basis and advised its removal, and the bill carrying that basis was declared controversial after the government fell. With the AMLR applying from 10 July 2027, TMNL is winding down its existing model and redesigning to reconcile with it. <a href="tmnl.html" style="color: var(--accent);">Read the full analysis.</a></p>
         </div>
     </div>
 </section>
@@ -349,8 +350,8 @@
                     <h3>Federation Round</h3>
                     <p>On a scheduled basis (nightly, or more frequently), the ZQUAS installations execute bilateral federation rounds. For three banks, this means three rounds: A&harr;B, A&harr;C, B&harr;C.</p>
                     <p style="margin-top: 1rem;">Each round has three phases:</p>
-                    <p style="margin-top: 0.75rem;"><strong style="color: var(--text-primary);">a) Private Set Intersection:</strong> discovers which entities have accounts at both banks. Neither bank learns which entities the other bank has. Only the overlap is revealed.</p>
-                    <p style="margin-top: 0.5rem;"><strong style="color: var(--text-primary);">b) Secure Risk Comparison:</strong> for each shared entity, securely compares the combined risk score against a threshold using standard, peer-reviewed cryptographic techniques. Neither bank learns the other's individual score. The only output is a boolean: combined risk exceeds threshold, or it doesn't.</p>
+                    <p style="margin-top: 0.75rem;"><strong style="color: var(--text-primary);">a) Private Set Intersection:</strong> discovers which entities have accounts at both banks. Each side learns the intersection, so each learns which of its own customers the counterparty also holds. Neither side learns the counterparty's non-shared customers.</p>
+                    <p style="margin-top: 0.5rem;"><strong style="color: var(--text-primary);">b) Secure Risk Comparison:</strong> for each shared entity, securely compares the combined risk score against a threshold using standard, peer-reviewed cryptographic techniques. Neither bank learns the other's risk score or any attribute beyond the binary threshold outcome. Security is against a semi-honest adversary: a participant that follows the protocol but analyses everything it receives. Protection against a participant that deliberately deviates is not implemented.</p>
                     <p style="margin-top: 0.5rem;"><strong style="color: var(--text-primary);">c) Cryptographic Attestation:</strong> both banks cryptographically sign the result. This creates an unforgeable proof that the computation happened correctly.</p>
                 </div>
             </div>
@@ -563,20 +564,16 @@
                         <td>6 (4 criminal, 2 legitimate)</td>
                     </tr>
                     <tr>
-                        <td><strong>Criminal entities detected</strong></td>
-                        <td style="color: var(--success);">4/4 (100%)</td>
+                        <td><strong>Validated typology</strong></td>
+                        <td style="color: var(--success);">Correspondent banking wire stripping, end to end as a named cohort</td>
                     </tr>
                     <tr>
-                        <td><strong>Legitimate entities cleared</strong></td>
-                        <td style="color: var(--success);">2/2 (0% false positives)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Total federation time</strong></td>
-                        <td>~2.4 seconds</td>
+                        <td><strong>Bilateral federation round</strong></td>
+                        <td>3,052 ms at 100,000 entities per party (loopback development transport)</td>
                     </tr>
                     <tr>
                         <td><strong>Data shared between banks</strong></td>
-                        <td>Zero bytes of raw transaction data</td>
+                        <td>No raw or directly identifying customer data leaves the institution</td>
                     </tr>
                     <tr>
                         <td><strong>Cryptographic attestation</strong></td>
@@ -591,7 +588,7 @@
         </div>
 
         <div class="analysis-body">
-            <p>The test reproduced four real-world money laundering typologies: trade-based money laundering (TBML), wire stripping, shell company layering, and funnel account structuring. All four were detected. Both legitimate businesses were correctly cleared.</p>
+            <p>Correspondent banking wire stripping is validated end to end as a named cohort on synthetic data across simulated participants. Trade-based over-invoicing, shell company layering and funnel account structuring are designed and in scope, not validated.</p>
             <p style="margin-top: 1rem;">Independently audited. The test suite, protocol execution, privacy guarantees, and cryptographic attestation have been verified through multiple layers of independent review.</p>
         </div>
     </div>
@@ -701,10 +698,10 @@
             <p>No. The federation runs between bank installations on private connections. No information about the federation reaches the customer or their transactions. From the customer's perspective, nothing changes.</p>
 
             <h3 style="margin-top: 2.5rem;">What about false positives?</h3>
-            <p>The federation layer inherits the risk scores from each bank's existing system. If the local scores are well-calibrated, the combined scores will be too. In our three-bank test, zero legitimate businesses were incorrectly flagged.</p>
+            <p>The federation layer inherits the risk scores from each bank's existing system. If the local scores are well-calibrated, the combined scores will be too. No measured false positive rate is published. Producing one requires the detection baseline suite to be run and recorded, and quantifying it against real or representative data is an objective of the pilot programme.</p>
 
             <h3 style="margin-top: 2.5rem;">Is this what TMNL was trying to do?</h3>
-            <p>TMNL proved that cross-institutional detection catches criminals that single-bank monitoring misses. The project was shut down because centralising the data violated privacy law. ZQUAS achieves the same detection without centralisation, using cryptographic multi-party computation instead of data pooling. <a href="tmnl.html" style="color: var(--accent);">Read the full TMNL analysis.</a></p>
+            <p>TMNL proved that cross-institutional detection catches criminals that single-bank monitoring misses. TMNL encountered unresolved legal and proportionality objections. The Dutch data protection authority was critical of population-scale joint monitoring, the Council of State concluded that necessity and proportionality had not been demonstrated for the proposed statutory basis and advised its removal, and the bill carrying that basis was declared controversial after the government fell. With the AMLR applying from 10 July 2027, TMNL is winding down its existing model and redesigning to reconcile with it. ZQUAS pursues the same detection without centralisation, using cryptographic multi-party computation instead of data pooling. <a href="tmnl.html" style="color: var(--accent);">Read the full TMNL analysis.</a></p>
         </div>
     </div>
 </section>
@@ -750,6 +747,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

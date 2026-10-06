@@ -1,15 +1,16 @@
 # ZQUAS
 
-> Sovereign compliance infrastructure for regulated finance. GPU-native compliance engine built for cross-institutional financial crime detection without central data pooling.
+> ZQUAS lets banks catch scam payments and mule accounts together, without pooling customer data. Built on a GPU governance engine that applies an institution's rules to decisions made by automated systems and AI agents. TRL 6, synthetic data only, no production deployments.
 
-ZQUAS is a GPU-native compliance engine built for financial institutions and regulators. The engine evaluates 500,000 entities against 100 AML policies in under 2 seconds, sustaining 150 million+ compliance policy evaluations per second on NVIDIA RTX 5090. Alert lifecycle under 10ms. Cross-institutional detection uses privacy-preserving multi-party computation: ECDH-PSI (X25519) for entity matching, Yao's Garbled Circuits (Free-XOR) for risk comparison, IKNP OT Extension for oblivious transfer. Every compliance decision produces a 912-byte cryptographic proof bundle (Ed25519 signed, Merkle-included) that regulators verify independently with a public key alone. 396,000 lines of C++ and CUDA across 493 GPU kernels. 12,342 automated tests, 222,000 lines of test code.
+ZQUAS lets banks catch scam payments and mule accounts together, without pooling customer data. The bank that holds the receiving account checks the payments coming into it, and one confirmed scam report protects every member. It is built on a GPU-native governance engine for financial institutions and regulators. The engine completes a full 500,000-entity detection cycle against a 56-policy catalogue in 667 ms, median of three runs, on NVIDIA RTX 5090, CUDA 13.1, Linux, under a 2-second regression bound enforced in CI. Sustained throughput across that cycle is 750,000 complex events per second, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. Cross-institutional detection uses privacy-preserving multi-party computation: ECDH-PSI (X25519) for entity matching, Yao's Garbled Circuits (Free-XOR) for risk comparison, IKNP OT Extension for oblivious transfer. Every compliance decision produces a 912-byte cryptographic proof bundle (Ed25519 signed, Merkle-included) that regulators verify independently with a public key alone. Approximately 753,000 source lines excluding third-party code and 493 GPU kernels.
 
-Founded by Danny de Gier, who combines 18+ years of financial crime compliance experience at Tier-1 banks (RBS, Deutsche Bank, HSBC, Commerzbank) with GPU systems programming (C++23, CUDA, Vulkan). Accepted into the FCA Digital Sandbox (March 2026). Member of the NVIDIA Inception program (April 2026). Currently engaged with DNB InnovationHub.
+Founded by Danny de Gier, who combines 18+ years of financial crime compliance experience at Tier-1 banks (RBS, Deutsche Bank, HSBC, Commerzbank) with GPU systems programming (C++23, CUDA, Vulkan). Accepted into the FCA Digital Sandbox (March 2026). Member of the NVIDIA Inception program (April 2026). DNB InnovationHub submission under review. Taking part in the FCA's Supercharged Sandbox (second cohort, July 2026).
 
 ## Key Pages
 
 - [Home](https://zquas.ai/)
 - [Technology](https://zquas.ai/technology.html)
+- [Platform](https://zquas.ai/platform.html)
 - [Architecture](https://zquas.ai/architecture.html)
 - [For Regulators](https://zquas.ai/regulators.html)
 - [Vendor Comparison](https://zquas.ai/compare.html)
@@ -24,20 +25,27 @@ Founded by Danny de Gier, who combines 18+ years of financial crime compliance e
 ## Core Capabilities
 
 - GPU-native compliance engine (not GPU-accelerated, GPU-native)
-- 150M+ CEPS (compliance policy evaluations per second) on NVIDIA RTX 5090
-- 500K entities x 100 AML policies in under 2 seconds; alert lifecycle under 10ms
-- 29 AML policies (100 rules, 6 domains) plus 15 access control policies
+- 750,000 complex events per second across a full 500,000-entity detection cycle (NVIDIA RTX 5090, CUDA 13.1, Linux)
+- 500,000 entities against a 56-policy catalogue in 667 ms, median of three runs
+- 56-policy logical catalogue, pinned by static assertion to the catalogue array, with a 128-policy corpus (34 fail-closed screening, 94 detection) for scale characterisation
 - Deterministic evaluation: same input plus same policy equals same verdict, byte-identical replay
 - Privacy-preserving federation: ECDH-PSI (X25519) plus Yao's GC (Free-XOR) plus IKNP OT; semi-honest security model
-- Under 10 seconds per bilateral round at 100K entities (measured: 7.8s, TCP localhost); dual Ed25519 attestation per round
-- Cryptographic proof bundles for every compliance decision (912 bytes, Ed25519 signed, Merkle-included)
-- Independent regulator verification via standalone CLI (no vendor software needed)
+- Under 10 seconds per bilateral round at 100K entities per party (measured: 3,052 ms, loopback development transport, not a real inter-participant network); dual Ed25519 attestation per round
+- Cryptographic proof bundles for every compliance decision (Ed25519 signed, Merkle-included)
+- Independent regulator verification via standalone CLI, without relying on the running production engine or its internal state (the verifier is vendor-written and currently links the CUDA runtime; a CPU-only verifier is planned)
 - Zero-knowledge governance proofs (GPU-accelerated PLONK)
 - GPU-resident identity resolution graph with GNN risk propagation
 - Adversarial self-testing framework with continuous mutation testing
 - Predictive governance via forward simulation of compliance state
 - Constitutional governance: agents cannot file SARs autonomously, MLRO sign-off required
 - Build attestation with embedded BLAKE3 plus SHA-256 plus Ed25519 binary integrity verification
+
+## Sandbox results (synthetic data)
+
+- In a synthetic world of 1,000,000 adults at the UK scam rate, each bank's own fraud model alone caught about 1 in 7 scam payments. With the network's receiving-bank signal about 1 in 2 were reviewed, in our model, and about 1 in 3 with the generator's easiest clue removed. Every limit held. Fewer than 1 genuine payment in 10,000 was reviewed. Limits: at most 1 payment in 1,000 held and 1 in 500 reviewed. Network signals add reviews, never automatic holds.
+- Two crypto exchanges joining a four-bank network caught about a quarter more scam payments, in our model, on synthetic data at the UK scam rate. All were payments victims made to buy crypto.
+- Up to 540 simulated bank installations ran together on nine cloud GPUs in one cloud zone. 99 in 100 decisions took under 10 ms, in our test.
+- These are results on synthetic data. They are not real-world detection rates.
 
 ## Regulatory Framework Coverage
 
@@ -57,7 +65,6 @@ Founded by Danny de Gier, who combines 18+ years of financial crime compliance e
 - Legacy incumbents (NICE Actimize, Oracle, SAS): CPU batch processing, no MPC, no cryptographic proofs
 - AI-native challengers (Sardine, Hawk AI, Featurespace, ComplyAdvantage): CPU cloud, ML-based, no cross-institutional detection
 - ZQUAS: GPU-native, MPC cross-institutional, cryptographic attestation, deterministic, on-premise sovereign
-- Estimated replication timeline for competitors: 3-5 years minimum
 
 ## MCP server for AI assistants
 
@@ -88,17 +95,17 @@ for agents that prefer Markdown over HTML.
 
 ## Common Questions
 
-**What is ZQUAS?** A GPU-native compliance engine for cross-institutional financial crime detection without central data pooling.
+**What is ZQUAS?** A network that lets banks catch scam payments and mule accounts together without pooling customer data, built on a GPU governance engine that applies an institution's rules to decisions made by automated systems and AI agents.
 
-**What problem does ZQUAS solve?** TMNL proved cross-institutional detection works. It failed because centralising data violated privacy law. MPC solves the privacy problem.
+**What problem does ZQUAS solve?** TMNL proved cross-institutional detection works. TMNL encountered unresolved legal and proportionality objections. The Dutch data protection authority was critical of population-scale joint monitoring, the Council of State concluded that necessity and proportionality had not been demonstrated for the proposed statutory basis and advised its removal, and the bill carrying that basis was declared controversial after the government fell. With the AMLR applying from 10 July 2027, TMNL is winding down its existing model and redesigning to reconcile with it. MPC is an attempt at an architecture that avoids central pooling.
 
 **What is the deadline driving adoption?** AMLR Article 75 applies on July 10, 2027. Cross-institutional monitoring infrastructure takes 18 to 24 months to build.
 
-**Is ZQUAS production-ready?** Tested and pilot-ready. 12,342 automated tests across 12 audited subsystems on the core engine.
+**Is ZQUAS production-ready?** No. Readiness is TRL 6: an integrated prototype demonstrated in a controlled relevant environment. Synthetic data only, no production deployments, no live counterparty data, semi-honest security only.
 
 **Where is data stored?** On the bank's own infrastructure. Data never leaves the bank. Cross-institutional detection runs over MPC without sharing raw data.
 
-**How does a regulator verify a decision?** With a public key and the proof bundle. No engine access, no vendor software.
+**How does a regulator verify a decision?** With a public key and the proof bundle, without relying on the running production engine or its internal state.
 
 ## Contact
 
@@ -121,7 +128,7 @@ for agents that prefer Markdown over HTML.
 - [The 16-Month Window: Why Banks Must Act Before July 2027](https://zquas.ai/article-july-2027-aml-infrastructure-deadline.html) (March 2026)
 - [UK Banks Can Share AML Data Today: ECCTA Sections 188-189](https://zquas.ai/article-eccta-uk-aml-data-sharing.html) (February 2026)
 - [From TMNL to Article 75: The Netherlands' Path to Collaborative AML](https://zquas.ai/article-tmnl-to-article-75-netherlands.html) (February 2026)
-- [MPC and GDPR: What the EDPB Actually Says](https://zquas.ai/article-edpb-mpc-gdpr-accountability.html) (February 2026)
+- [MPC and GDPR: The Question No Authority Has Answered](https://zquas.ai/article-edpb-mpc-gdpr-accountability.html) (February 2026)
 - [What AMLR Article 75 Means for Dutch Banks](https://zquas.ai/article-amlr-article-75-dutch-banks.html) (February 2026)
 - [Why Cross-Institutional AML Detection Requires a New Architecture](https://zquas.ai/article-cross-institutional-detection.html) (February 2026)
 - [What Running a Multi-Bank Monitoring Network Actually Looks Like](https://zquas.ai/article-interbank-operations.html) (January 2026)

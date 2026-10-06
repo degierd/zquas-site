@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPC and GDPR: What the EDPB Actually Says — ZQUAS</title>
-    <meta name="description" content="The European Data Protection Board has taken a specific position on multi-party computation. Most compliance teams have not read it. Here is what it says and what it means for collaborative AML.">
-    <meta property="og:title" content="MPC and GDPR: What the EDPB Actually Says — ZQUAS">
-    <meta property="og:description" content="The European Data Protection Board has taken a specific position on multi-party computation. Most compliance teams have not read it. Here is what it says and what it means for collaborative AML.">
+    <title>MPC and GDPR: The Question No Authority Has Answered — ZQUAS</title>
+    <meta name="description" content="No EU data protection authority has ruled on the status of MPC protocol messages. Obtaining a formal assessment from a national data protection authority is a stated objective, not an accomplished fact. Here is what is settled and what is not.">
+    <meta property="og:title" content="MPC and GDPR: The Question No Authority Has Answered — ZQUAS">
+    <meta property="og:description" content="No EU data protection authority has ruled on the status of MPC protocol messages. Obtaining a formal assessment from a national data protection authority is a stated objective, not an accomplished fact. Here is what is settled and what is not.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://zquas.ai/article-edpb-mpc-gdpr-accountability.html">
     <meta property="og:image" content="https://zquas.ai/og-image.png">
@@ -37,8 +37,8 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "MPC and GDPR: What the EDPB Actually Says",
-        "description": "The European Data Protection Board has taken a specific position on multi-party computation. Most compliance teams have not read it. Here is what it says and what it means for collaborative AML.",
+        "headline": "MPC and GDPR: The Question No Authority Has Answered",
+        "description": "No EU data protection authority has ruled on the status of MPC protocol messages. Obtaining a formal assessment from a national data protection authority is a stated objective, not an accomplished fact. Here is what is settled and what is not.",
         "datePublished": "2026-02-10",
         "author": {
             "@type": "Person",
@@ -63,7 +63,7 @@
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zquas.ai/"},
             {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://zquas.ai/articles.html"},
-            {"@type": "ListItem", "position": 3, "name": "MPC and GDPR: What the EDPB Actually Says", "item": "https://zquas.ai/article-edpb-mpc-gdpr-accountability.html"}
+            {"@type": "ListItem", "position": 3, "name": "MPC and GDPR: The Question No Authority Has Answered", "item": "https://zquas.ai/article-edpb-mpc-gdpr-accountability.html"}
         ]
     }
     </script>
@@ -81,6 +81,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -104,18 +105,18 @@
     <div class="article-header">
         <a href="articles.html" class="article-back">&larr; Articles</a>
         <div class="article-meta">February 2026 &middot; Privacy &middot; 8 min read</div>
-        <h1>MPC and GDPR: What the EDPB Actually Says</h1>
-        <p class="lead">When banks discuss collaborative AML, the first objection is always GDPR. The European Data Protection Board has answered this question directly. Their position on multi-party computation is more specific, and more supportive, than most compliance teams realise.</p>
+        <h1>MPC and GDPR: The Question No Authority Has Answered</h1>
+        <p class="lead">When banks discuss collaborative AML, the first objection is always GDPR. No EU data protection authority has ruled on the status of MPC protocol messages. Obtaining a formal assessment from a national data protection authority is a stated objective, not an accomplished fact. What follows separates what is settled from what is not.</p>
     </div>
 
     <div class="article-body">
 
-        <h2>The EDPB Position on MPC</h2>
+        <h2>What Has and Has Not Been Decided</h2>
         <p>
-            The EDPB has identified multi-party computation as an "accountability tool" for cross-border data processing. The Board's analysis addresses MPC specifically in the context of sharing personal data across institutional and jurisdictional boundaries. The conclusion is that MPC satisfies the GDPR data minimisation principle in a way that conventional sharing arrangements cannot.
+            No EU data protection authority has ruled on whether MPC protocol messages constitute personal data, and none has assessed this architecture. Published European data protection material describes multi-party computation as a privacy-enhancing technique, but description is not a determination and no such material addresses the ZQUAS design. Nothing here should be read as approval or endorsement by any authority.
         </p>
         <p>
-            The EDPB describes MPC as a technique that "transforms personal data into random auxiliary numbers which are deleted after the computation, rendering them virtually impossible to intercept." This characterisation matters for legal analysis. MPC does not transmit personal data between institutions. It transmits intermediate cryptographic values derived from that data, values that carry no intelligible information about individuals and are discarded once the computation completes.
+            The technical description is not contested: MPC transforms inputs into values that are computationally indistinguishable from random and that are discarded once the computation completes. Whether those values are personal data in the hands of a recipient is precisely the open question. MPC does not transmit customer records between institutions. It transmits intermediate cryptographic values derived from that data, values that carry no intelligible information about individuals and are discarded once the computation completes.
         </p>
         <p>
             The output of an MPC computation, such as a cross-institutional risk signal indicating that a specific entity has elevated risk at multiple banks, is generated from the inputs without any institution ever holding or transmitting another institution's raw data. The intelligence is derived. The source data stays put.
@@ -129,15 +130,15 @@
             Conventional data sharing fails this test when applied broadly. Sharing transaction records, even pseudonymised, provides far more personal data than is necessary to generate a cross-institutional risk signal. The risk signal is what the compliance analyst needs. The underlying transaction detail is not.
         </p>
         <p>
-            MPC satisfies Article 5(1)(c) because the output, the risk intelligence, is generated without transmitting the input. The processing produces the necessary result with minimum data exposure. The EDPB's characterisation of MPC as satisfying data minimisation is grounded in this logic: you cannot minimise data more than by not sharing it at all while still generating the derived intelligence.
+            The argument that MPC satisfies Article 5(1)(c) is that the output, the risk intelligence, is generated without transmitting the input. It is an argument, not a ruling. The counter-argument deserves equal weight: the receiving institution has learned a new fact about its customer that could only have been produced using the counterparty's information, and a supervisor could reasonably hold that what matters is the information learned rather than the bytes transmitted.
         </p>
 
         <h2>Pseudonymous, Not Anonymous</h2>
         <p>
-            Legal teams must understand one important limitation. The EDPB does not treat MPC intermediate values as anonymous data under GDPR. They are treated as pseudonymous. GDPR applies to the processing. The regulation is not disapplied simply because the data takes a cryptographic form during computation.
+            Legal teams should assume the conservative position. Treat MPC intermediate values as pseudonymous rather than anonymous. Assume GDPR applies to the processing. The regulation is not disapplied simply because the data takes a cryptographic form during computation.
         </p>
         <p>
-            The distinction matters for DPIAs. A Data Protection Impact Assessment for an MPC-based collaborative AML system must address the residual privacy risks. The EDPB considers MPC a high-standard technical safeguard that goes significantly beyond basic pseudonymisation, but it does not provide a complete exemption from GDPR obligations. Controllers remain accountable. Records of processing must be maintained. Data subject rights still apply to the underlying personal data held within each institution.
+            The distinction matters for DPIAs. A Data Protection Impact Assessment for an MPC-based collaborative AML system must address the residual privacy risks. MPC is a technical safeguard that goes beyond basic pseudonymisation. It is not an exemption from GDPR obligations, and no authority has characterised it as one. Controllers remain accountable. Records of processing must be maintained. Data subject rights still apply to the underlying personal data held within each institution.
         </p>
         <p>
             For practical purposes, the residual risk is substantially lower than in conventional sharing arrangements. An institution receiving MPC-derived risk signals holds no additional personal data about the other institution's customers. The risk of re-identification, data breach, or misuse at the receiving institution is materially reduced.
@@ -148,7 +149,7 @@
             MPC satisfies the technical requirements. The legal basis question requires separate analysis. GDPR Article 6(1)(c) permits processing that is "necessary for compliance with a legal obligation to which the controller is subject." AMLR Article 75 (Regulation 2024/1624), applying from July 10, 2027, provides that legal obligation for banks participating in information-sharing partnerships.
         </p>
         <p>
-            Article 75 itself mandates pseudonymisation as a required safeguard under Article 75(4)(f). MPC delivers stronger protection than Article 75 requires. The combination of Article 6(1)(c) GDPR and Article 75 AMLR provides a legally sound basis for MPC-based cross-institutional monitoring. DPOs drafting DPIAs can reference both provisions when documenting the legal basis and technical safeguards.
+            Article 75 itself mandates pseudonymisation as a required safeguard under Article 75(4)(f). MPC delivers protection beyond that requirement. Whether the threshold output constitutes information sharing for Article 75 purposes is unresolved and goes to the competent authorities. DPOs drafting DPIAs should document both the argument and its counter-argument rather than assume the question is closed.
         </p>
 
         <h2>Purpose Limitation</h2>
@@ -169,7 +170,7 @@
 
         <h2>What This Means for Legal Teams</h2>
         <p>
-            The GDPR is not a barrier to collaborative AML. It is a framework that demands specific technical safeguards. The EDPB has identified MPC as the technology that satisfies those safeguards in the cross-institutional context. The legal analysis is clear: Article 75 AMLR provides the legal basis, Article 6(1)(c) GDPR supports it, and MPC satisfies Article 5(1)(c) data minimisation.
+            The GDPR is not automatically a barrier to collaborative AML. It is a framework that demands specific technical safeguards and a documented legal basis. The legal analysis is not settled: whether MPC protocol traffic constitutes personal data processing, and whether the threshold output constitutes information sharing under Article 75, are open questions. Obtaining a formal assessment from a national data protection authority is a stated objective of the regulatory engagement programme.
         </p>
         <p>
             DPOs and legal teams should not wait for the July 2027 application date to begin DPIA work. Article 75 partnerships require documented legal analysis before go-live. The technical design determines much of that analysis. Banks that engage with the technical architecture now will have the DPIA documentation ready when the regulation applies.
@@ -197,6 +198,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

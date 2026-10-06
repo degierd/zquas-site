@@ -194,6 +194,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle active">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html" class="active">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -265,7 +266,7 @@
                         <td class="cap-label">Architecture</td>
                         <td>Database and rules engine. SQL queries on stored transactions.</td>
                         <td>Database with ML models. Batch scoring added to existing pipeline.</td>
-                        <td class="zquas-val">GPU-native entity system. Each monitored account carries its own state, risk profile, and decision history, evaluated against the policy set on every change. 190 million policy evaluations per second at batch 4,096. Alert lifecycle under 10ms.</td>
+                        <td class="zquas-val">GPU-native entity system. Each monitored account carries its own state, risk profile, and decision history, evaluated against the policy set on every change. 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path.</td>
                     </tr>
                     <tr>
                         <td class="cap-label">AI Integration</td>
@@ -277,13 +278,13 @@
                         <td class="cap-label">Cross-Institutional Detection</td>
                         <td class="val-no">Not possible. Each institution operates in isolation.</td>
                         <td class="val-no">Not possible. Same data silo, better algorithms.</td>
-                        <td class="zquas-val">Privacy-preserving federation: ECDH-PSI + Garbled Circuits + OT. Banks jointly detect suspicious entities without sharing data. ~3.1 seconds per bilateral round at 100K entities. Dual Ed25519 attestation per round.</td>
+                        <td class="zquas-val">Privacy-preserving federation: ECDH-PSI + Garbled Circuits + OT. Banks jointly detect suspicious entities without sharing data. 3,052 ms per bilateral round at 100K entities per party, over a loopback development transport. Dual Ed25519 attestation per round.</td>
                     </tr>
                     <tr>
                         <td class="cap-label">Processing Speed</td>
                         <td>Batch. Overnight or hourly. Thousands of decisions per second.</td>
                         <td>Near-real-time. Minutes to hours. Tens of thousands per second.</td>
-                        <td class="zquas-val">Sub-10ms alert lifecycle. 500,000 entities evaluated in under 2 seconds on a single GPU. 190M policy evaluations per second at batch 4,096.</td>
+                        <td class="zquas-val">667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux. Sustained throughput across that cycle is 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path.</td>
                     </tr>
                     <tr>
                         <td class="cap-label">Governance Model</td>
@@ -319,7 +320,7 @@
                         <td class="cap-label">Scalability</td>
                         <td>Add servers. Add databases. Linear cost scaling.</td>
                         <td>Add GPU instances for model inference. Separate from core platform.</td>
-                        <td class="zquas-val">Single GPU: 500K entities, 100 policies in under 2 seconds. Under 1GB VRAM for the full pipeline. Headroom for larger populations and concurrent federation.</td>
+                        <td class="zquas-val">Single GPU: 500,000 entities against the 56-policy catalogue in 667 ms, median of three runs. Under 1GB VRAM for the full pipeline. Headroom for larger populations and concurrent federation.</td>
                     </tr>
                     <tr>
                         <td class="cap-label">Multi-Industry</td>
@@ -331,7 +332,7 @@
                         <td class="cap-label">Privacy</td>
                         <td>Data centralisation. Access controls. Pseudonymisation.</td>
                         <td>Same as traditional, plus model access controls.</td>
-                        <td class="zquas-val">Multi-party computation. Zero raw data exposure between institutions. Mathematical privacy guarantees endorsed by the European Data Protection Board.</td>
+                        <td class="zquas-val">Multi-party computation under a semi-honest adversary model. No raw or directly identifying customer data leaves the institution. No EU data protection authority has yet ruled on the status of MPC protocol messages; obtaining a formal assessment from a national data protection authority is a stated objective.</td>
                     </tr>
                 </tbody>
             </table>
@@ -346,23 +347,23 @@
         <h2 class="section-title">The Numbers</h2>
         <div class="stats-row">
             <div class="stat-box">
-                <div class="stat-val">190M</div>
-                <div class="stat-label">compliance policy evaluations per second</div>
+                <div class="stat-val">750K</div>
+                <div class="stat-label">complex events/sec across the 500K-entity cycle</div>
             </div>
             <div class="stat-box">
                 <div class="stat-val">&lt;10ms</div>
                 <div class="stat-label">alert lifecycle, ingestion to triage</div>
             </div>
             <div class="stat-box">
-                <div class="stat-val">&lt;2s</div>
-                <div class="stat-label">500K entities, 100 policies</div>
+                <div class="stat-val">667 ms</div>
+                <div class="stat-label">500K entities, 56-policy catalogue</div>
             </div>
             <div class="stat-box">
-                <div class="stat-val">13,336</div>
-                <div class="stat-label">automated tests</div>
+                <div class="stat-val">TRL 6</div>
+                <div class="stat-label">synthetic data, no production deployments</div>
             </div>
         </div>
-        <p class="stats-note">All numbers measured on NVIDIA RTX 5090. Medians of 3 runs, 10 warmup iterations. Every result signed.</p>
+        <p class="stats-note">The detection cycle figure is a median of three runs on NVIDIA RTX 5090, CUDA 13.1, Linux, against synthetic data. Every result signed.</p>
     </div>
 </section>
 
@@ -387,6 +388,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

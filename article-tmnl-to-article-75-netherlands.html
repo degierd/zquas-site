@@ -81,6 +81,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -143,7 +144,7 @@
             Centralised data pooling creates GDPR problems by design. Any architecture in which multiple banks' customer data flows to a central repository inherits the legal exposure that ended TMNL. The central repository holds combined personal data from multiple controllers. The GDPR framework was not designed for this and does not accommodate it cleanly.
         </p>
         <p>
-            A legal basis must exist before the sharing begins. TMNL operated in a legal gap and eventually the regulators closed it. Any future initiative must establish its legal basis before processing personal data across institutional boundaries, not after launch.
+            A legal basis must exist before the sharing begins. TMNL operated without a settled statutory basis, and the basis proposed for it was not enacted. Any future initiative must establish its legal basis before processing personal data across institutional boundaries, not after launch.
         </p>
         <p>
             The technology must satisfy data minimisation, not just data security. TMNL's approach addressed security, data was held within a controlled environment, but not minimisation. The underlying transaction records, far more data than necessary to generate a risk signal, were shared. GDPR Article 5(1)(c) requires that sharing be limited to what is necessary. Sharing full transaction records is not necessary to generate a cross-institutional risk score.
@@ -180,7 +181,7 @@
             Privacy-preserving computation offers an architecture that satisfies both the legal basis and the technical safeguard requirements simultaneously. Under multi-party computation, each bank computes a risk score from its own transaction data, within its own environment. The computation then compares risk scores across institutions without any raw data, pseudonymised or otherwise, leaving the originating bank. The output is a cross-institutional risk signal. Each bank evaluates that signal independently and decides whether to file a SAR.
         </p>
         <p>
-            The European Data Protection Board has described MPC as transforming personal data into "random auxiliary numbers which are deleted after the computation, rendering them virtually impossible to intercept." MPC satisfies the Article 75(4)(f) pseudonymisation requirement and goes beyond it. The intelligence is generated. The raw data stays within the originating institution.
+            MPC goes beyond the Article 75(4)(f) pseudonymisation requirement in technical terms: the intelligence is generated and no raw or directly identifying customer data leaves the originating institution. No EU data protection authority has ruled on the status of MPC protocol messages. Obtaining a formal assessment from a national data protection authority is a stated objective, not an accomplished fact.
         </p>
 
         <h2>Timeline and Urgency</h2>
@@ -221,6 +222,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

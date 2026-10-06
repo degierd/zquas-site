@@ -2611,3 +2611,183 @@ footer {
     font-weight: 500;
     color: var(--accent);
 }
+
+/* ── HOMEPAGE V2: CLICK-TO-PLAY FILM, FIGURES, PLATFORM PAGE ── */
+.film {
+    margin: 0;
+    min-width: 0;
+}
+.film-frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--bg-card);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+.film-poster {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.film-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.film--playing .film-poster,
+.film--playing .film-play {
+    display: none;
+}
+.film-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1.4rem;
+    border-radius: 100px;
+    border: 1px solid var(--accent);
+    background: rgba(10, 11, 15, 0.82);
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+.film-play:hover:not(:disabled),
+.film-play:focus-visible {
+    background: var(--accent);
+    outline: none;
+}
+.film-play-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding-left: 0.1rem;
+}
+.film-play:hover:not(:disabled) .film-play-icon,
+.film-play:focus-visible .film-play-icon {
+    background: rgba(255, 255, 255, 0.2);
+}
+.film--pending .film-play {
+    cursor: default;
+    border-color: var(--border-accent);
+    color: var(--text-secondary);
+}
+.film--pending .film-play-icon {
+    display: none;
+}
+.film--pending .film-poster {
+    opacity: 0.7;
+}
+.film-notice {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+.film-note {
+    margin-top: 0.35rem;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+.hero-sandbox {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+.source-line {
+    margin-top: 1.25rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+}
+.fact-line {
+    margin-top: 2rem;
+    max-width: 640px;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+.fact-line + .source-line {
+    margin-top: 0.5rem;
+}
+.metric-card .metric-tag {
+    display: block;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+.step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.tenant-card .hero-cta-primary,
+.tenant-card .hero-cta-secondary {
+    margin-top: auto;
+    align-self: flex-start;
+}
+.engine-link {
+    display: inline-block;
+}
+.platform-section .container {
+    max-width: 800px;
+}
+.platform-section .section-desc {
+    max-width: none;
+}
+.platform-section .metric-grid {
+    grid-template-columns: 1fr;
+}
+.platform-section .metric-card p + p {
+    margin-top: 0.75rem;
+}
+@media (max-width: 640px) {
+    .film-play {
+        padding: 0.65rem 1.1rem;
+        font-size: 0.85rem;
+    }
+}
+.film--pending .film-play {
+    top: auto;
+    bottom: 1rem;
+    left: 1rem;
+    transform: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+}
+.film--pending .film-poster {
+    opacity: 1;
+}
+.footer-brand p a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.tenant-card .hero-cta-primary {
+    border: 1px solid var(--accent);
+}
+@media (min-width: 761px) {
+    .platform-section .icon-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

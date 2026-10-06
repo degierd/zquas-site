@@ -81,6 +81,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -115,7 +116,7 @@
             In 2019, ING, Rabobank, ABN AMRO, de Volksbank, and Triodos established Transaction Monitoring Netherlands. The premise was correct. Criminals spread activity across multiple banks because each bank can only see its own transactions. Pooling transaction data would expose patterns that individual banks miss.
         </p>
         <p>
-            By 2025, TMNL was being wound down. Two legal barriers proved fatal. First, the Dutch Wwft requires that transaction monitoring remain an obligation of the individual bank. TMNL was structured as a central entity processing data on behalf of multiple banks, which the Wwft did not accommodate. Second, the Dutch Data Protection Authority advised that mass monitoring of transactions without a specific statutory basis violated GDPR Article 9.2. No EU-level legal basis existed for bank-to-bank AML data sharing of this kind.
+            TMNL encountered unresolved legal and proportionality objections. Two barriers proved decisive. First, the Dutch Wwft requires that transaction monitoring remain an obligation of the individual bank. TMNL was structured as a central entity processing data on behalf of multiple banks, which the Wwft did not accommodate. Second, the Dutch Data Protection Authority advised that mass monitoring of transactions without a specific statutory basis violated GDPR Article 9.2. No EU-level legal basis existed for bank-to-bank AML data sharing of this kind.
         </p>
         <p>
             The technology concept was valid. The legal framework was not ready.
@@ -150,7 +151,7 @@
 
         <h2>What Banks Must Build Before July 2027</h2>
         <p>
-            Article 75 creates the permission. Banks must build the infrastructure. Cross-institutional monitoring under Article 75 requires capabilities that most banks do not currently have.
+            Article 75 creates the permission, not an obligation to build. Acting on it needs capabilities that most banks do not currently have.
         </p>
         <p>
             Entity matching across institutions is the first requirement. Banks must be able to identify that a customer at one bank is the same legal entity as a customer at another bank, without sharing customer databases. This requires standardised entity identifiers, KvK numbers for Dutch entities, LEI codes for legal entities with international operations, and resolution logic that handles name variations and corporate structures.
@@ -176,7 +177,7 @@
             Multi-party computation offers a technically stronger solution. Under MPC, each bank computes a risk score within its own environment. The computation then compares scores across banks without any raw data, pseudonymised or otherwise, leaving the originating institution. The output is a cross-institutional risk signal. The input remains within each bank's data perimeter.
         </p>
         <p>
-            The European Data Protection Board has identified MPC as an accountability tool for cross-border data processing, noting that MPC "transforms personal data into random auxiliary numbers which are deleted after the computation, rendering them virtually impossible to intercept." MPC satisfies the Article 75 pseudonymisation requirement and goes beyond it. The EDPB analysis provides the legal grounding that DPOs and legal teams need when drafting Data Protection Impact Assessments for Article 75 partnerships.
+            MPC goes beyond the Article 75 pseudonymisation requirement in technical terms. It does not resolve the legal question. No EU data protection authority has ruled on the status of MPC protocol messages, and obtaining a formal assessment from a national data protection authority is a stated objective, not an accomplished fact. DPOs drafting Data Protection Impact Assessments for Article 75 partnerships should document the open question rather than assume it is closed.
         </p>
 
         <h2>The Timeline</h2>
@@ -184,7 +185,7 @@
             July 10, 2027 is the Article 75 application date. The 40 institutions selected for direct AMLA supervision in the second half of 2027 will be evaluated partly on their cross-border AML capabilities. Dutch banks, given their direct experience with TMNL, understand the need for collaborative detection better than most institutions in Europe. They also have 16 months to build what TMNL could not.
         </p>
         <p>
-            The legal question is answered. Article 75 permits collaborative AML detection. The technical question is which architecture satisfies both the legal mandate and the privacy requirements. An architecture that shares pseudonymised raw data may satisfy the letter of Article 75(4)(f) while remaining vulnerable to GDPR challenge. An architecture that generates intelligence without sharing raw data satisfies both.
+            Article 75 permits collaborative AML detection within its scope. The status of MPC protocol messages under data protection law remains open. The technical question is which architecture gives the best account of itself against both the legal mandate and the privacy requirements. An architecture that shares pseudonymised raw data may satisfy the letter of Article 75(4)(f) while remaining vulnerable to GDPR challenge. An architecture that generates intelligence without sharing raw data satisfies both.
         </p>
 
         <div class="article-author">
@@ -209,6 +210,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

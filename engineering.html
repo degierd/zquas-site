@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engineering Standards | ZQUAS</title>
-    <meta name="description" content="Engineering standards behind the ZQUAS compliance engine. 13,336 automated tests, 222,000 lines of test code, FCNS detection benchmark, defence-grade build hardening, reproducible binaries, proven cryptography.">
+    <meta name="description" content="Engineering standards behind the ZQUAS compliance engine. FCNS detection benchmark, defence-grade build hardening, reproducible binaries, proven cryptography.">
     <meta property="og:title" content="Engineering Standards | ZQUAS">
-    <meta property="og:description" content="Engineering standards behind the ZQUAS compliance engine. 13,336 automated tests, 222,000 lines of test code, FCNS detection benchmark, defence-grade build hardening, reproducible binaries, proven cryptography.">
+    <meta property="og:description" content="Engineering standards behind the ZQUAS compliance engine. FCNS detection benchmark, defence-grade build hardening, reproducible binaries, proven cryptography.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zquas.ai/engineering.html">
     <meta property="og:image" content="https://zquas.ai/og-image.png">
@@ -38,7 +38,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Engineering Standards | ZQUAS",
-        "description": "Engineering standards behind the ZQUAS compliance engine. 13,336 automated tests, 222,000 lines of test code, FCNS detection benchmark, defence-grade build hardening, reproducible binaries, proven cryptography.",
+        "description": "Engineering standards behind the ZQUAS compliance engine. FCNS detection benchmark, defence-grade build hardening, reproducible binaries, proven cryptography.",
         "url": "https://zquas.ai/engineering.html",
         "publisher": {
             "@type": "Organization",
@@ -131,6 +131,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle active">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -164,23 +165,23 @@
     <div class="container">
 
         <div class="eng-section">
-            <h2>13,336 Tests</h2>
-            <p>The engine is verified by 13,336 automated tests across 222,000 lines of test code: more test code than most companies have production code. Coverage spans cryptographic correctness, GPU compute validation, governance logic, compliance rules, privacy-preserving federation protocols, financial crime detection, synthetic benchmarking, browser-level UI, and infrastructure. The breakdown, counted by each harness's own lister and verified on 12 June 2026: 11,734 GTest, 980 Playwright browser tests, 622 pytest. The shape matters as much as the count: roughly 7 percent are full-scale composition, integration and locked-number proofs at realistic scale, and roughly 93 percent are unit, boundary and single-subsystem correctness tests. A bare count implies more assurance than it delivers, so we publish both. Every test runs on every build. Zero tolerance for failures. Categories include known-answer tests against published cryptographic vectors, cross-validation between independent implementations (GPU vs CPU), boundary value analysis, adversarial input testing, determinism verification across repeated runs, multi-institution federation integration tests with realistic data distributions, and end-to-end browser tests verifying that the operator console renders real data from real detection pipelines.</p>
+            <h2>Test Coverage</h2>
+            <p>The engine is verified by an automated test suite. Coverage spans cryptographic correctness, GPU compute validation, governance logic, compliance rules, privacy-preserving federation protocols, financial crime detection, synthetic benchmarking, browser-level UI, and infrastructure. The breakdown, counted by each harness's own lister and verified on 12 June 2026: 11,734 GTest, 980 Playwright browser tests, 622 pytest. The shape matters as much as the count: roughly 7 percent are full-scale composition, integration and locked-number proofs at realistic scale, and roughly 93 percent are unit, boundary and single-subsystem correctness tests. A bare count implies more assurance than it delivers, so we publish both. Every test runs on every build. Zero tolerance for failures. Categories include known-answer tests against published cryptographic vectors, cross-validation between independent implementations (GPU vs CPU), boundary value analysis, adversarial input testing, determinism verification across repeated runs, multi-institution federation integration tests with realistic data distributions, and end-to-end browser tests verifying that the operator console renders real data from real detection pipelines.</p>
         </div>
 
         <div class="eng-section">
             <h2>FCNS: Falsifiable Detection</h2>
-            <p>The engine includes the Financial Crime Network Simulator (FCNS): the first synthetic benchmark that measures AML detection accuracy against realistic criminal behaviour. Eight FATF typologies. Three jurisdiction packs (NL, UK, DE) calibrated against national statistics. Adversarial criminals that adapt when caught. Systemic noise from real banking infrastructure quirks. Macro-economic shocks. 16 formally defined scoring metrics. Every detection claim is testable, reproducible, and falsifiable. No other vendor can prove their detection works. We publish the proof.</p>
+            <p>The engine includes the Financial Crime Network Simulator (FCNS): a synthetic benchmark that measures AML detection accuracy against realistic criminal behaviour. Eight FATF typologies. Three jurisdiction packs (NL, UK, DE) calibrated against national statistics. Adversarial criminals that adapt when caught. Systemic noise from real banking infrastructure quirks. Macro-economic shocks. 16 formally defined scoring metrics. Every detection claim is testable, reproducible, and falsifiable. No other vendor can prove their detection works. We publish the proof.</p>
         </div>
 
         <div class="eng-section">
             <h2>GPU-Native Computation</h2>
-            <p>All detection, scoring, federation, and simulation runs on GPU. 396,000 lines of C++ and CUDA. 493 GPU kernels covering detection, federation, cryptography, simulation, attestation, and adversarial fuzzing. 190 million policy evaluations per second at batch 4,096. 500,000 entities evaluated in under 2 seconds. Zero CPU fallback paths in the detection pipeline. Every kernel is a CUDA global function in a dedicated compute file. Tests call GPU kernels directly with device memory. No CPU wrappers hiding GPU execution. The engine does not use GPU as an accelerator. GPU is the only execution path.</p>
+            <p>All detection, scoring, federation, and simulation runs on GPU. Approximately 753,000 source lines excluding third-party code, covering detection, federation, cryptography, simulation, attestation, and adversarial fuzzing. 667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux. Sustained throughput across that cycle is 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. Zero CPU fallback paths in the detection pipeline. Every kernel is a CUDA global function in a dedicated compute file. Tests call GPU kernels directly with device memory. No CPU wrappers hiding GPU execution. The engine does not use GPU as an accelerator. GPU is the only execution path.</p>
         </div>
 
         <div class="eng-section">
             <h2>Privacy-Preserving Federation</h2>
-            <p>Cross-bank detection uses Multi-Party Computation: the data never leaves the bank. Private Set Intersection for identity matching. Arithmetic Secret Sharing and Garbled Circuits for joint risk computation. Oblivious Transfer Extension for efficient protocol execution. The federation protocol runs over the open internet. The security is in the cryptography, not the network. Same elliptic curve foundations as Bitcoin, stronger privacy guarantees. Benchmarked across a three-bank topology at 100,000 entities per party: the largest bilateral round completes in 3.1 seconds, the other two in 1.5 and 1.4 seconds, against a 10-second bound enforced in continuous integration.</p>
+            <p>Cross-bank detection uses Multi-Party Computation: the data never leaves the bank. Private Set Intersection for identity matching. Arithmetic Secret Sharing and Garbled Circuits for joint risk computation. Oblivious Transfer Extension for efficient protocol execution. The federation protocol runs over the open internet. The security is in the cryptography, not the network. Same elliptic curve foundations as Bitcoin, stronger privacy guarantees. Benchmarked at 100,000 entities per party: a bilateral round completes in 3,052 ms over a loopback development transport, against a 10-second bound enforced in continuous integration. No real-network inter-participant measurement exists.</p>
         </div>
 
         <div class="eng-section">
@@ -211,8 +212,8 @@
         <div class="eng-section" style="border-bottom: none;">
             <div class="eng-stats-row">
                 <div class="eng-stat-box">
-                    <div class="stat-val">13,336</div>
-                    <div class="stat-label">tests</div>
+                    <div class="stat-val">TRL 6</div>
+                    <div class="stat-label">synthetic data, no production deployments</div>
                 </div>
                 <div class="eng-stat-box">
                     <div class="stat-val">C++23</div>
@@ -231,8 +232,8 @@
                     <div class="stat-label">floating-point in risk logic</div>
                 </div>
                 <div class="eng-stat-box">
-                    <div class="stat-val">190M</div>
-                    <div class="stat-label">policy evaluations per second</div>
+                    <div class="stat-val">750K</div>
+                    <div class="stat-label">complex events/sec across the 500K-entity cycle</div>
                 </div>
                 <div class="eng-stat-box">
                     <div class="stat-val">3</div>
@@ -243,8 +244,8 @@
                     <div class="stat-label">detection metrics</div>
                 </div>
                 <div class="eng-stat-box">
-                    <div class="stat-val">3.1s</div>
-                    <div class="stat-label">largest bilateral round, three-bank, 100K entities each</div>
+                    <div class="stat-val">3,052 ms</div>
+                    <div class="stat-label">bilateral round, 100K entities per party, loopback development transport</div>
                 </div>
             </div>
         </div>
@@ -264,6 +265,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

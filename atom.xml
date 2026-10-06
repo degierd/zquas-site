@@ -55,7 +55,7 @@
 <id>https://zquas.ai/article-75.html</id>
 <published>2026-03-15T09:00:00+00:00</published>
 <updated>2026-03-15T09:00:00+00:00</updated>
-<summary type="text">AMLR Article 75 restricts cross-institutional data sharing to high-risk customers. The criminals who are hardest to catch are the ones who stay low-risk at every bank. Multi-Party Computation resolves the paradox: full customer base federation without sharing a single byte of personal data. The evidence, the legal argument, and the path to a pilot.</summary>
+<summary type="text">AMLR Article 75 restricts cross-institutional data sharing to high-risk customers. The criminals who are hardest to catch are the ones who stay low-risk at every bank. Multi-Party Computation offers a route through: federation in which no raw or directly identifying customer data leaves the institution. The evidence, the legal argument, and the path to a pilot.</summary>
 </entry>
 <entry>
 <title>From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection</title>
@@ -95,7 +95,7 @@
 <id>https://zquas.ai/tmnl.html</id>
 <published>2026-03-15T09:00:00+00:00</published>
 <updated>2026-03-15T09:00:00+00:00</updated>
-<summary type="text">The most ambitious cross-institutional AML initiative in Europe was shut down because its architecture couldn&#x27;t be reconciled with privacy law. A complete analysis of what happened, why it failed, and what the alternative architecture looks like.</summary>
+<summary type="text">Europe&#x27;s most ambitious cross-institutional AML initiative encountered unresolved legal and proportionality objections. A complete analysis of what happened, what the architectural problem was, and what the alternative architecture looks like.</summary>
 </entry>
 <entry>
 <title>The 16-Month Window: Why Banks Must Act Before July 2027</title>
@@ -122,12 +122,12 @@
 <summary type="text">In 2019, five Dutch banks created the most ambitious collaborative AML project in Europe. By 2025, it was being wound down. The technology was right. The legal framework was not ready. AMLR Article 75 changes that.</summary>
 </entry>
 <entry>
-<title>MPC and GDPR: What the EDPB Actually Says</title>
+<title>MPC and GDPR: The Question No Authority Has Answered</title>
 <link href="https://zquas.ai/article-edpb-mpc-gdpr-accountability.html" rel="alternate" type="text/html" />
 <id>https://zquas.ai/article-edpb-mpc-gdpr-accountability.html</id>
 <published>2026-02-15T09:00:00+00:00</published>
 <updated>2026-02-15T09:00:00+00:00</updated>
-<summary type="text">The European Data Protection Board has identified multi-party computation as an accountability tool for cross-border data processing. Their position is more specific and more supportive than most compliance teams realise. Here is what it says and what it means for collaborative AML.</summary>
+<summary type="text">No EU data protection authority has ruled on the status of MPC protocol messages. Obtaining a formal assessment from a national data protection authority is a stated objective, not an accomplished fact. Here is what is settled and what is not.</summary>
 </entry>
 <entry>
 <title>What AMLR Article 75 Means for Dutch Banks</title>

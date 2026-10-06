@@ -434,6 +434,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -456,7 +457,7 @@
     <div class="fp-hero">
         <div class="fp-badge">Founding Partner Programme</div>
         <h1>Three institutions.<br>Three pilot slots.<br>One question answered.</h1>
-        <p class="fp-tagline">Can cross-institutional AML detection work without sharing a single byte of customer data? We have built the platform. Now we need three banks to prove it under regulatory supervision.</p>
+        <p class="fp-tagline">Can cross-institutional AML detection work with no raw or directly identifying customer data leaving the institution? We have built the platform. Now we need three banks to prove it under regulatory supervision.</p>
 
         <div class="fp-slots">
             <div class="fp-slot">
@@ -488,10 +489,10 @@
             The EU Anti-Money Laundering Regulation takes effect on 10 July 2027. For the first time, Article 75 creates a legal framework for cross-institutional AML information sharing. Every bank in Europe is evaluating how to comply.
         </p>
         <p>
-            ZQUAS has built the only platform that enables cross-institutional AML detection without sharing any customer data. Using Multi-Party Computation, banks jointly identify cross-bank laundering patterns while each institution's data remains entirely within its own infrastructure. No data extraction. No central database. No GDPR conflict.
+            ZQUAS has built a platform for cross-institutional AML detection in which no raw or directly identifying customer data leaves the institution. Using Multi-Party Computation, banks jointly identify cross-bank laundering patterns while each institution's data remains within its own infrastructure. No data extraction. No central database. The status of MPC protocol messages under EU data protection law has not been ruled on by any authority, and obtaining a formal assessment from a national data protection authority is a stated objective of the programme.
         </p>
         <p>
-            The platform is built, tested, and stress-tested. 29 compliance policies across 9 regulatory domains. GPU-accelerated. Real-time. Cryptographically attestable. The Founding Partner Programme is how three institutions join first.
+            Readiness is TRL 6: an integrated prototype demonstrated in a controlled relevant environment, validated on synthetic data, with no production deployments. A 56-policy logical catalogue, pinned by static assertion to the catalogue array, with a 128-policy corpus (34 fail-closed screening, 94 detection) used for scale characterisation. GPU-native. Real-time. Cryptographically attestable. The Founding Partner Programme is how three institutions join first.
         </p>
 
         <hr class="section-rule">
@@ -558,7 +559,7 @@
                     </tr>
                     <tr>
                         <td class="td-label">Policies</td>
-                        <td>The full 29-policy compliance framework, adapted to each institution's regulatory perimeter if needed.</td>
+                        <td>The 56-policy logical catalogue, adapted to each institution's regulatory perimeter if needed.</td>
                     </tr>
                     <tr>
                         <td class="td-label">Federation</td>
@@ -566,7 +567,7 @@
                     </tr>
                     <tr>
                         <td class="td-label">Detection targets</td>
-                        <td>Four planted laundering typologies: trade-based money laundering, wire stripping, shell company layering, and funnel account structuring. Plus a legitimate control population. Measured outputs: detection rate, false positive rate, federation time.</td>
+                        <td>Correspondent banking wire stripping, validated end to end as a named cohort on synthetic data across simulated participants. Trade-based over-invoicing, shell company layering and funnel account structuring are designed and in scope, not validated. Plus a legitimate control population. Measured outputs: detection rate, false positive rate, federation time.</td>
                     </tr>
                 </tbody>
             </table>
@@ -586,7 +587,7 @@
                 <div class="timeline-week">Weeks 3&ndash;4</div>
                 <div class="timeline-content">
                     <strong>Validation</strong>
-                    <p>Single-institution policy evaluation. Verify 29 policies produce correct results against the bank's entity data. Calibrate thresholds to the bank's risk appetite.</p>
+                    <p>Single-institution policy evaluation. Verify the policy catalogue produces correct results against the bank's entity data. Calibrate thresholds to the bank's risk appetite.</p>
                 </div>
             </div>
             <div class="timeline-item">
@@ -629,7 +630,7 @@
                     </tr>
                     <tr>
                         <td class="td-label">Infrastructure</td>
-                        <td>One server or VM for the ZQUAS installation. Minimum: 16 GB RAM, 4 cores. GPU optional (CPU fallback available). One outbound TCP connection to peer banks.</td>
+                        <td>One server or VM with an NVIDIA GPU. ZQUAS is GPU-first: CPU execution paths have been progressively removed and there is no CPU fallback in the detection hot path. Any residual CPU path is compile-time marked, non-default and logged at runtime, so GPU failure fails loudly rather than silently degrading. One outbound TCP connection to peer banks.</td>
                     </tr>
                     <tr>
                         <td class="td-label">People</td>
@@ -681,28 +682,20 @@
 
         <div class="metrics-row">
             <div class="metric-box">
-                <span class="val">< 2s</span>
-                <span class="lbl">500,000 entities, 100 AML policies (NVIDIA RTX 5090)</span>
+                <span class="val">667 ms</span>
+                <span class="lbl">500,000-entity detection cycle, 56-policy catalogue, median of three (NVIDIA RTX 5090, CUDA 13.1, Linux)</span>
             </div>
             <div class="metric-box">
                 <span class="val">< 10ms</span>
                 <span class="lbl">Alert lifecycle: ingestion to triage</span>
             </div>
             <div class="metric-box">
-                <span class="val">190M</span>
-                <span class="lbl">CEPS: compliance policy evaluations per second</span>
+                <span class="val">750K</span>
+                <span class="lbl">Complex events/sec across the 500K-entity cycle. One unit is one entity against the full policy set</span>
             </div>
             <div class="metric-box">
-                <span class="val">4/4</span>
-                <span class="lbl">Real-world typologies detected, per-entity verified</span>
-            </div>
-            <div class="metric-box">
-                <span class="val">13,336</span>
-                <span class="lbl">Automated tests across the codebase</span>
-            </div>
-            <div class="metric-box">
-                <span class="val">0 MB</span>
-                <span class="lbl">Memory leak over 50-epoch endurance test</span>
+                <span class="val">TRL 6</span>
+                <span class="lbl">Synthetic data only. No production deployments, no live counterparty data</span>
             </div>
         </div>
 
@@ -778,6 +771,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

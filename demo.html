@@ -111,6 +111,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -182,7 +183,7 @@
         This is the actual ZQUAS engine running on a single NVIDIA RTX 5090. Not a pre-rendered animation. Not a mockup. The transaction stream, risk evaluation, alert generation, and visualization all execute on GPU in real time.
     </p>
     <p class="demo-note" style="font-style: italic;">
-        Note: Transaction throughput varies during the recording as the engine processes different phases. The engine benchmark: 500K entities, 100 AML policies, under 2 seconds on NVIDIA RTX 5090. 190M CEPS (compliance policy evaluations per second) at batch 4,096. Alert lifecycle under 10ms ingestion to triage.
+        Note: Transaction throughput varies during the recording as the engine processes different phases. The engine benchmark: 667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux. Sustained throughput across that cycle is 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path.
     </p>
 </div>
 
@@ -196,6 +197,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

@@ -81,6 +81,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -268,7 +269,7 @@
 
               <rect x="620" y="280" width="168" height="128" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
               <text x="704" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#58A6FF" text-anchor="middle">Bank data centre</text>
-              <text x="704" y="328" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">190M policy evals/sec</text>
+              <text x="704" y="328" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">750K complex events/sec</text>
               <text x="704" y="342" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">5 detection dimensions</text>
               <text x="704" y="362" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">Same binary everywhere</text>
             </g>
@@ -296,7 +297,7 @@
 
         <p>The institutional installation also collects and correlates signals in real-time as transactions arrive. An ATM withdrawal in Rotterdam at 14:00, combined with an ATM withdrawal in Utrecht at 14:30 by the same customer, combined with a federation warning from a partner bank that arrived at 13:45: the engine sees all three signals within seconds and fires the alert while the pattern is still forming.</p>
 
-        <p>At validated performance levels, the institutional installation processes 500,000 entities in under 2 seconds on a single GPU, with 190 million policy evaluations per second at batch 4,096. This is not batch processing measured in hours. It is continuous monitoring measured in seconds.</p>
+        <p>At validated performance levels, the institutional installation completes a full 500,000-entity detection cycle against the 56-policy catalogue in 667 ms, median of three runs, on a single GPU, sustaining 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. This is not batch processing measured in hours. It is continuous monitoring measured in seconds.</p>
 
         <p>The difference this makes is concrete. In the mule network scenario from Section 2: the batch system generates an alert on Wednesday morning, two days after the first withdrawal. The real-time system generates an alert on Monday at 15:01, ninety minutes after the first withdrawal. Same crime. Same data. Same detection rules. The only difference is when the engine processes the transaction.</p>
 
@@ -453,7 +454,7 @@
 
         <p>Two banks cannot simply share their customer databases. Privacy regulation (GDPR in Europe, comparable frameworks elsewhere) prohibits it. And they should not want to. A bank's customer data is both commercially sensitive and legally protected.</p>
 
-        <p>The challenge is to detect criminal networks that span multiple banks without any bank revealing its customers to any other bank. No jurisdiction has achieved automated cross-institutional detection at scale. The Dutch TMNL initiative, backed by five major banks, was wound down in July 2024 after being found incompatible with the EU's AMLR. The Nordic KYC utility Invidem, founded by six banks in 2019, shut down in April 2023 after spending approximately EUR 60 million. The UK's Joint Money Laundering Intelligence Taskforce (JMLIT) operates under significant legal and operational constraints on data sharing. Australia's Fintel Alliance relies on voluntary participation. Singapore's COSMIC platform, launched in April 2024, is the most promising current attempt but remains limited to six banks and three specific risk areas.</p>
+        <p>The challenge is to detect criminal networks that span multiple banks without any bank revealing its customers to any other bank. No jurisdiction has achieved automated cross-institutional detection at scale. The Dutch TMNL initiative, backed by five major banks, began winding down its existing model in July 2024 after being found incompatible with the EU's AMLR. The Nordic KYC utility Invidem, founded by six banks in 2019, shut down in April 2023 after spending approximately EUR 60 million. The UK's Joint Money Laundering Intelligence Taskforce (JMLIT) operates under significant legal and operational constraints on data sharing. Australia's Fintel Alliance relies on voluntary participation. Singapore's COSMIC platform, launched in April 2024, is the most promising current attempt but remains limited to six banks and three specific risk areas.</p>
 
         <p>These initiatives share a common architectural weakness. They relied on sending disguised customer data to a central organisation. This approach has two problems. First, the disguise (converting a national identifier to a scrambled code using a technique called hashing) can be reversed: any country's identifier space is finite. The Dutch social security number space contains approximately 20 million values. The UK's National Insurance number registry holds over 90 million. Scrambling all of them produces a reverse lookup table that breaks the disguise. Second, centralisation creates a single point of failure. If the central organisation's legal basis is challenged (as happened with TMNL), the entire system collapses.</p>
 
@@ -473,7 +474,7 @@
 
         <p>The final layer provides the interface between the detection system and regulatory supervisors. Automated generation of Suspicious Activity Reports from detection results. A complete audit trail that allows supervisors to verify that a detection decision was computed correctly without accessing the underlying customer data. Cryptographic provenance that proves which policies were evaluated, on which data, at which time, without revealing the data itself.</p>
 
-        <p>This layer directly addresses AMLA Article 75's requirement for cross-institutional information sharing mechanisms while maintaining data protection obligations. The federation protocol described in Layer 2, combined with a policy-based access control system that governs who can see what at each institutional boundary, provides the technical infrastructure that Article 75 requires.</p>
+        <p>AMLR Article 75 permits information sharing between obliged entities within a partnership, subject to its safeguards. It does not mandate that banks build sharing mechanisms. Whether the threshold output of this protocol constitutes information sharing for Article 75 purposes is unresolved, and resolving it with the competent authorities is a stated objective. The federation protocol described in Layer 2, combined with a policy-based access control system that governs who can see what at each institutional boundary, is designed to operate inside that permission on either reading.</p>
 
         <h2>4. Three Use Cases for Real-Time Detection</h2>
 
@@ -499,7 +500,7 @@
 
         <p>The challenge is speed. With the rise of instant payment rails (SEPA Instant in Europe, Faster Payments in the UK, FedNow in the US), transactions settle in seconds. The sanctions screening must complete before the transaction settles. Legacy systems that screen in 200 to 500 milliseconds per transaction are under pressure. A GPU-native engine that screens the entire population against the full sanctions list in seconds provides a fundamentally different level of capability.</p>
 
-        <p>The F1 Engine's policy evaluation rate (190 million policy checks per second at batch 4,096) means that a complete sanctions screen of the bank's entire customer base against all global sanctions lists can complete in the time it takes a legacy system to screen a single transaction. For banks processing millions of transactions daily through instant payment channels, this is not a performance luxury. It is a regulatory necessity.</p>
+        <p>The F1 Engine's throughput (750,000 complex events per second across a full 500,000-entity detection cycle) means that a complete sanctions screen of the bank's entire customer base against all global sanctions lists can complete in the time it takes a legacy system to screen a single transaction. For banks processing millions of transactions daily through instant payment channels, this is not a performance luxury. It is a regulatory necessity.</p>
 
         <h3>Use Case 3: Real-Time Payment Intervention (UK, and Emerging in EU)</h3>
 
@@ -531,7 +532,7 @@
 
         <p>This is not a performance upgrade. It is an architectural requirement. Without GPU-native computation, real-time continuous monitoring is theoretically interesting but impossible to operate in practice. The cross-bank matching takes too long. The relationship analysis takes too long. The policy checks take too long.</p>
 
-        <p>The F1 Engine is built from the ground up for GPU execution. Not a conventional application with a GPU-accelerated add-on. Everything, from the cryptographic matching between banks through to the compliance policy checks and the risk analysis, runs natively on the GPU. This comprises 396,000 lines of C++ and CUDA code with 493 GPU kernels.</p>
+        <p>The F1 Engine is built from the ground up for GPU execution. Not a conventional application with a GPU-accelerated add-on. Everything, from the cryptographic matching between banks through to the compliance policy checks and the risk analysis, runs natively on the GPU. This comprises approximately 753,000 source lines excluding third-party code.</p>
 
         <p>This is also why no existing AML vendor can replicate this approach by adding a GPU to their existing platform. Their architectures are fundamentally CPU-based. The data structures, the algorithms, the execution model are all designed for sequential processing. Adding a GPU to a CPU-based system is like adding a jet engine to a bicycle. The frame cannot support it.</p>
 
@@ -561,7 +562,7 @@
 
         <p>The architecture is not built in anticipation of regulation. It is built to implement regulation that is already in force.</p>
 
-        <p><strong>AMLR Article 75</strong> mandates mechanisms for cross-institutional information sharing. The federation protocol (Layer 2) provides exactly this mechanism, with privacy protection that exceeds the requirements of traditional approaches.</p>
+        <p><strong>AMLR Article 75</strong> permits information sharing between obliged entities within a partnership, subject to safeguards including mandatory pseudonymisation under Article 75(4)(f). It does not mandate that banks build sharing mechanisms. Whether this protocol's threshold output constitutes Article 75 information sharing is unresolved and goes to the competent authorities.</p>
 
         <p><strong>AMLA</strong> has been operational since July 2025 in Frankfurt. In January 2026, all AML responsibilities transferred from the European Banking Authority to AMLA. AMLA's 2026-2028 work programme, published in February 2026, focuses on supervisory convergence and common approaches. The unified policy language in the F1 Engine enables identical policies to be written once and evaluated identically across all institutions, ensuring consistent detection regardless of which bank processes a transaction. This is precisely the convergence that AMLA is mandating.</p>
 
@@ -699,11 +700,11 @@
 
         <p>Claims of architectural innovation require evidence. The F1 Engine is a measured engineering artefact, not a design document.</p>
 
-        <p><strong>Codebase:</strong> 396,000 lines of C++ and CUDA across 493 GPU kernels. 222,000 lines of test code. 618,000 lines total. One codebase, three deployment targets: the banking detection engine, the AI inference layer, and the cross-bank federation layer. Every kernel is a __global__ function in a .cu file. No CPU fallback. 13,336 automated tests.</p>
+        <p><strong>Codebase:</strong> Approximately 753,000 source lines excluding third-party code. One codebase, three deployment targets: the banking detection engine, the AI inference layer, and the cross-bank federation layer. Every kernel is a __global__ function in a .cu file. No CPU fallback.</p>
 
-        <p><strong>Performance:</strong> 500,000 customers processed in under 2 seconds end-to-end. 190 million policy checks per second at batch 4,096. A single cross-bank matching round for 100,000 customers: under 10 seconds. Time from detection to alert: under 10 milliseconds. All numbers measured on a single GPU.</p>
+        <p><strong>Performance:</strong> 667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux. Sustained throughput across that cycle is 750,000 complex events per second. A single cross-bank matching round for 100,000 customers: under 10 seconds. Time from detection to alert: under 10 milliseconds. All numbers measured on a single GPU.</p>
 
-        <p><strong>Portability:</strong> The minimum GPU requirement is a 2017-era NVIDIA card with 4 gigabytes of memory. The engine has been validated on a Quadro P2000 purchased for EUR 299: 1,000 entities, 21 million transactions, 123 policies, every criminal found, on hardware that costs less than a restaurant dinner. The same binary, unmodified, runs on an RTX 5090 with 32 gigabytes of memory processing 100,000 entities.</p>
+        <p><strong>Portability:</strong> The minimum GPU requirement is a 2017-era NVIDIA card with 4 gigabytes of memory. The engine has been run on a Quadro P2000 in a second-hand laptop. The same binary, unmodified, runs on an RTX 5090 with 32 gigabytes of memory. No detection or throughput figures are published for the low-end configuration.</p>
 
         <p><strong>Security hardening:</strong> Every binary is built with defence-grade protections against tampering, memory attacks, and reverse engineering. The same level of hardening applied to military and intelligence software.</p>
 
@@ -931,7 +932,7 @@
                 </tr>
                 <tr style="border-bottom: 1px solid #21262D;">
                     <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>EU Instant Payments Reg (2024/886):</strong> Real-time sanctions screening</td>
-                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">GPU-native screening at 190M checks per second</td>
+                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">GPU-native screening across the full 500,000-entity cycle in 667 ms</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #21262D;">
                     <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>MiCA:</strong> AML obligations for crypto asset service providers</td>
@@ -970,6 +971,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

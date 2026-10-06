@@ -6,7 +6,7 @@
 <atom:link href="https://zquas.ai/feed.xml" rel="self" type="application/rss+xml" />
 <description>Analysis and perspective on compliance technology, regulatory architecture, and the future of cross-institutional financial crime detection.</description>
 <language>en-GB</language>
-<lastBuildDate>Thu, 23 Jul 2026 09:00:00 +0000</lastBuildDate>
+<lastBuildDate>Mon, 31 Aug 2026 09:00:00 +0000</lastBuildDate>
 <pubDate>Wed, 15 Jul 2026 09:00:00 +0000</pubDate>
 <image><url>https://zquas.ai/og-image.png</url><title>ZQUAS</title><link>https://zquas.ai/</link></image>
 <copyright>(c) ZQUAS. Bounded Compliance on an Unbounded Platform.</copyright>
@@ -58,7 +58,7 @@
 <title>What Article 75 Was Afraid to Permit</title>
 <link>https://zquas.ai/article-75.html</link>
 <guid isPermaLink="true">https://zquas.ai/article-75.html</guid>
-<description>AMLR Article 75 restricts cross-institutional data sharing to high-risk customers. The criminals who are hardest to catch are the ones who stay low-risk at every bank. Multi-Party Computation resolves the paradox: full customer base federation without sharing a single byte of personal data. The evidence, the legal argument, and the path to a pilot.</description>
+<description>AMLR Article 75 restricts cross-institutional data sharing to high-risk customers. The criminals who are hardest to catch are the ones who stay low-risk at every bank. Multi-Party Computation offers a route through: federation in which no raw or directly identifying customer data leaves the institution. The evidence, the legal argument, and the path to a pilot.</description>
 <pubDate>Sun, 15 Mar 2026 09:00:00 +0000</pubDate>
 <dc:creator>Danny de Gier</dc:creator>
 </item>
@@ -98,7 +98,7 @@
 <title>Transaction Monitoring Netherlands: What Went Wrong, What Comes Next</title>
 <link>https://zquas.ai/tmnl.html</link>
 <guid isPermaLink="true">https://zquas.ai/tmnl.html</guid>
-<description>The most ambitious cross-institutional AML initiative in Europe was shut down because its architecture couldn&#x27;t be reconciled with privacy law. A complete analysis of what happened, why it failed, and what the alternative architecture looks like.</description>
+<description>Europe&#x27;s most ambitious cross-institutional AML initiative encountered unresolved legal and proportionality objections. A complete analysis of what happened, what the architectural problem was, and what the alternative architecture looks like.</description>
 <pubDate>Sun, 15 Mar 2026 09:00:00 +0000</pubDate>
 <dc:creator>Danny de Gier</dc:creator>
 </item>
@@ -127,10 +127,10 @@
 <dc:creator>Danny de Gier</dc:creator>
 </item>
 <item>
-<title>MPC and GDPR: What the EDPB Actually Says</title>
+<title>MPC and GDPR: The Question No Authority Has Answered</title>
 <link>https://zquas.ai/article-edpb-mpc-gdpr-accountability.html</link>
 <guid isPermaLink="true">https://zquas.ai/article-edpb-mpc-gdpr-accountability.html</guid>
-<description>The European Data Protection Board has identified multi-party computation as an accountability tool for cross-border data processing. Their position is more specific and more supportive than most compliance teams realise. Here is what it says and what it means for collaborative AML.</description>
+<description>No EU data protection authority has ruled on the status of MPC protocol messages. Obtaining a formal assessment from a national data protection authority is a stated objective, not an accomplished fact. Here is what is settled and what is not.</description>
 <pubDate>Sun, 15 Feb 2026 09:00:00 +0000</pubDate>
 <dc:creator>Danny de Gier</dc:creator>
 </item>

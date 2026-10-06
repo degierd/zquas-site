@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZQUAS — Sovereign Compliance Infrastructure</title>
-    <meta name="description" content="GPU-native compliance engine for financial institutions. Cross-institutional detection without central data pooling.">
-    <meta property="og:title" content="ZQUAS — Sovereign Compliance Infrastructure">
-    <meta property="og:description" content="GPU-native compliance engine built for cross-institutional AML detection without central data pooling.">
+    <title>ZQUAS: Criminals use many banks. Now banks can act as one.</title>
+    <meta name="description" content="ZQUAS lets banks catch scam payments and mule accounts together, without pooling customer data. TRL 6, synthetic data only, no production deployments.">
+    <meta property="og:title" content="ZQUAS: Criminals use many banks. Now banks can act as one.">
+    <meta property="og:description" content="ZQUAS lets banks catch scam payments and mule accounts together, without pooling customer data. TRL 6, synthetic data only, no production deployments.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zquas.ai">
     <meta property="og:image" content="https://zquas.ai/og-image.png">
@@ -32,16 +32,18 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
-    <script src="config.js?v=4"></script>
+    <link rel="stylesheet" href="style.css?v=5">
+    <script src="config.js?v=5"></script>
+    <script src="film.js?v=1" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "ZQUAS",
+        "legalName": "ZQUAS B.V.",
         "url": "https://zquas.ai",
         "logo": "https://zquas.ai/og-image.png",
-        "description": "GPU-native compliance engine built for cross-institutional financial crime detection without central data pooling. Every decision cryptographically attested. Every verdict independently verifiable.",
+        "description": "ZQUAS lets banks catch scam payments and mule accounts together without pooling customer data. It is built on a GPU governance engine that applies an institution's rules to decisions made by automated systems and AI agents.",
         "founder": {
             "@type": "Person",
             "name": "Danny de Gier",
@@ -75,10 +77,10 @@
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "ZQUAS Compliance Engine",
+        "name": "ZQUAS Governance Engine",
         "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Windows, Linux",
-        "description": "GPU-native compliance engine. 500K entities in under 2 seconds. Alert lifecycle under 10ms. Privacy-preserving cross-institutional detection via MPC. Cryptographic proof bundle for every decision.",
+        "operatingSystem": "Linux",
+        "description": "GPU-native governance engine for decisions made by automated systems and AI agents. 500K entities in under 2 seconds. Alert lifecycle under 10 ms. Alerts carry proofs a supervisor can verify. TRL 6, synthetic data only.",
         "author": {
             "@type": "Organization",
             "name": "ZQUAS"
@@ -95,39 +97,23 @@
                 "name": "What is ZQUAS?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "ZQUAS is a GPU-native compliance engine built for cross-institutional financial crime detection without central data pooling. It evaluates 500,000 entities against 100 AML policies in under 2 seconds and produces a cryptographic proof bundle for every compliance decision that regulators verify independently with a public key alone."
+                    "text": "ZQUAS is a network that lets banks catch scam payments and mule accounts together, without pooling customer data. The bank that holds the receiving account checks the payments coming into it. One confirmed scam report protects every member. It is built on a GPU governance engine that applies an institution's rules to automated decisions."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What problem does ZQUAS solve?",
+                "name": "What problem does ZQUAS address?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Criminal networks deliberately split activity across multiple banks to stay below per-bank detection thresholds. Cross-institutional detection catches them, but data centralisation violates privacy law. TMNL proved this. ZQUAS uses Multi-Party Computation so banks cooperate without sharing raw customer data."
+                    "text": "UK victims lost £576.4 million to APP scams in 2025, up 19%, across 248,070 cases (UK Finance, 2026). One mule account often collects from victims at several banks, and each bank sees only its own piece. ZQUAS lets banks act on one confirmed report together without exchanging customer files."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What is the regulatory deadline driving adoption?",
+                "name": "What has ZQUAS shown?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "AMLR Article 75 applies on July 10, 2027. It permits cross-institutional information sharing for AML purposes with mandatory pseudonymisation. Cross-institutional monitoring infrastructure typically takes 18 to 24 months to build, which puts the practical decision window in 2026."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How does ZQUAS protect customer data during cross-bank detection?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Cross-bank detection runs over Multi-Party Computation: ECDH-PSI on Curve25519 for entity matching, Yao's Garbled Circuits with Free-XOR for risk score comparison, and IKNP OT Extension for oblivious transfer. Each institution retains absolute data sovereignty. Zero raw customer data crosses institutional boundaries."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How does a regulator verify a ZQUAS compliance decision?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "With a public key and the proof bundle. Every compliance decision produces a 912-byte cryptographic proof bundle, Ed25519 signed and Merkle-included. The supervisor runs a standalone command-line verifier. No engine access, no vendor software, no trust in the bank's reporting required."
+                    "text": "On synthetic data, in a world of 1,000,000 adults at the UK scam rate, about half of scam payments were reviewed with the network, against about 1 in 7 for each bank alone, with every limit held. Up to 540 simulated bank installations ran together, and 99 in 100 decisions took under 10 ms. These are not real-world detection rates."
                 }
             },
             {
@@ -135,7 +121,7 @@
                 "name": "Is ZQUAS production-ready?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Tested and pilot-ready. 13,336 automated tests (11,734 GTest, 980 Playwright, 622 pytest); roughly 7 percent are full-scale composition and locked-number proofs, the remainder unit and boundary tests. 222,000 lines of test code. 396,000 lines of production C++ and CUDA across 493 GPU kernels. Accepted into the FCA Digital Sandbox in March 2026 and the second cohort of the FCA Supercharged Sandbox in July 2026. Member of the NVIDIA Inception programme."
+                    "text": "No. Readiness is TRL 6: an integrated prototype demonstrated in a controlled relevant environment. All validation to date is on synthetic data. There are no production deployments, no live counterparty data, and security is semi-honest only. ZQUAS is taking part in the FCA's Supercharged Sandbox."
                 }
             }
         ]
@@ -155,6 +141,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -185,486 +172,160 @@
     <div class="hero-content">
         <div class="hero-grid">
             <div class="hero-copy">
-                <a href="article-fca-sandbox.html" class="hero-eyebrow">
-                    <span class="dot"></span>
-                    <span class="hero-eyebrow-text">FCA Supercharged Sandbox &middot; Second Cohort &middot; July 2026 <span class="hero-eyebrow-arrow">&rarr;</span></span>
-                </a>
                 <h1 class="hero-headline">
-                    Criminals move money<br>
-                    across banks.<br>
-                    <span class="hero-headline-accent">You only see yours.</span>
+                    Criminals use many banks.<br>
+                    <span class="hero-headline-accent">Now banks can act as one.</span>
                 </h1>
                 <p class="hero-resolution">
-                    ZQUAS detects cross-institutional laundering patterns
-                    without sharing a single byte of customer data.
-                </p>
-                <p class="hero-method">
-                    Privacy-preserving multi-party computation across participating banks.
+                    ZQUAS lets banks catch scam payments and mule accounts together, at the moment of payment, without pooling customer data.
                 </p>
                 <div class="hero-actions">
-                    <a href="article-75.html" class="hero-cta-primary">Read the Position Paper &rarr;</a>
-                    <a href="founding-partner.html" class="hero-cta-secondary">Founding Partner Programme</a>
+                    <a href="contact.html" class="hero-cta-primary">Join the pilot</a>
+                    <a href="#film" class="hero-cta-secondary" data-film-play="main">Watch the film</a>
                 </div>
-                <a href="zquas-onepager.pdf" class="hero-download" target="_blank">Download One-Pager (PDF)</a>
+                <p class="hero-sandbox">Taking part in the FCA's Supercharged Sandbox.</p>
             </div>
-            <div class="hero-proof" aria-label="Published benchmark results, verified by deterministic replay">
-                <div class="hero-proof-head">
-                    <span>Supervisory replay</span>
-                    <span>standalone verifier</span>
+            <figure class="film" id="film" data-film="main" data-title="How banks can stop scams together | the ZQUAS Federation Network">
+                <div class="film-frame">
+                    <img class="film-poster" src="film-poster.jpg" width="1280" height="720" alt="Title card of the film: How banks can stop scams together. The ZQUAS Federation Network.">
+                    <button class="film-play" type="button" aria-label="Play the film">
+                        <span class="film-play-icon" aria-hidden="true">&#9654;</span>
+                        <span class="film-play-label">Play the film</span>
+                    </button>
                 </div>
-                <div class="hero-proof-body">
-                    <div class="proof-row proof-row--cmd"><span class="cmd">$ zquas-verify --epoch 2026-07</span></div>
-                    <div class="proof-row"><span class="k">policies</span><span class="v">100 evaluated &middot; deterministic replay</span></div>
-                    <div class="proof-row"><span class="k">entities</span><span class="v">500,000 scored in 1,584 ms</span></div>
-                    <div class="proof-row"><span class="k">alert</span><span class="v">ingestion to triage in 3.92 ms</span></div>
-                    <div class="proof-row"><span class="k">federation</span><span class="v">bilateral round 3.1 s at 100K entities</span></div>
-                    <div class="proof-row"><span class="k">proof</span><span class="v">912-byte bundle &middot; Ed25519 signed</span></div>
-                    <div class="proof-row proof-row--ok"><span class="k">result</span><span class="v">VERIFIED &middot; byte-identical replay</span></div>
-                </div>
-                <a href="benchmark.html" class="hero-proof-link">Every number measured. See the benchmark &#x2197;</a>
-            </div>
+                <figcaption class="film-notice">Playing loads the video from YouTube.</figcaption>
+                <p class="film-note">Results in the film are on synthetic data, not real-world detection rates. English captions are available.</p>
+                <noscript><p class="film-note">Enable JavaScript to play the film, or find it on the ZQUAS YouTube channel.</p></noscript>
+            </figure>
         </div>
         <div class="hero-cred-row">
-            <span>Accepted into the FCA Digital Sandbox &middot; March 2026</span>
-            <span>DNB InnovationHub &middot; Submission under review</span>
-            <span>NVIDIA Inception program member</span>
-            <span>13,336 automated tests</span>
+            <span>TRL 6 &middot; synthetic data only &middot; no production deployments</span>
         </div>
     </div>
 </section>
 
-<section class="docs-section">
+<section class="problem-section" id="problem">
     <div class="container">
-        <div class="section-label">Primary Documents</div>
-        <div class="docs-list">
-            <a href="article-75.html" class="doc-item">
-                <div class="doc-meta">
-                    <span class="doc-type">Position Paper</span>
-                    <span class="doc-format">HTML &middot; 12 min read</span>
-                </div>
-                <div class="doc-title">What Article 75 Was Afraid to Permit</div>
-                <div class="doc-desc">Cross-institutional AML detection without sharing personal data. Legal analysis, MPC architecture, measured benchmark results, and a proposal for regulatory sandbox engagement.</div>
-            </a>
-            <a href="benchmark.html" class="doc-item">
-                <div class="doc-meta">
-                    <span class="doc-type">Technical Benchmark</span>
-                    <span class="doc-format">HTML &middot; Verified results</span>
-                </div>
-                <div class="doc-title">Federation Performance Across the Full Dutch Banking Sector</div>
-                <div class="doc-desc">500,000 entities in under 2 seconds. 190 million policy evaluations per second at batch 4,096. Alert lifecycle under 10ms per alert. NVIDIA RTX 5090, synthetic data. Every result signed.</div>
-            </a>
-            <a href="engineering.html" class="doc-item">
-                <div class="doc-meta">
-                    <span class="doc-type">Engineering Standards</span>
-                    <span class="doc-format">HTML &middot; Technical</span>
-                </div>
-                <div class="doc-title">Cryptographic Architecture and Security Model</div>
-                <div class="doc-desc">ECDH-PSI, garbled circuits, oblivious transfer. AES-256-GCM transport. Ed25519 attestation. Adversarial threat model with 37 findings identified and remediated.</div>
-            </a>
-            <a href="founding-partner.html" class="doc-item">
-                <div class="doc-meta">
-                    <span class="doc-type">Programme Document</span>
-                    <span class="doc-format">HTML &middot; Three slots</span>
-                </div>
-                <div class="doc-title">Founding Partner Programme</div>
-                <div class="doc-desc">Terms, timeline, and requirements for the three-institution pilot. 12 weeks from signature to results. Joint regulatory sandbox engagement included.</div>
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="problem-section" id="platform">
-    <div class="container">
-        <div class="section-label">The Problem</div>
-        <h2 class="section-title">Cross-institutional detection is broken</h2>
+        <div class="section-label">The problem</div>
+        <h2 class="section-title">Scams cost UK victims &pound;576.4 million in 2025.</h2>
         <p class="section-desc">
-            Money laundering networks operate across multiple banks. Individual institutions only see fragments. Joint monitoring initiatives have stalled on a fundamental tension: detection requires shared visibility, but data centralisation violates privacy regulation. <a href="tmnl.html" style="color: var(--accent);">Read our analysis of what happened to the Netherlands' cross-bank monitoring initiative.</a>
-        </p>
-        <div class="problem-grid">
-            <div class="problem-card">
-                <div class="icon">&#x1F3E6;</div>
-                <h3>Siloed Detection</h3>
-                <p>Each bank monitors transactions in isolation. Criminal networks exploit this by spreading activity across institutions. Patterns visible at the system level remain invisible at the bank level.</p>
-            </div>
-            <div class="problem-card">
-                <div class="icon">&#x2696;</div>
-                <h3>Privacy vs. Detection</h3>
-                <p>Centralising transaction data for joint monitoring triggers GDPR objections and regulatory challenges. The EU AMLR (effective mid-2027) restricts data sharing to pre-identified high-risk customers only.</p>
-            </div>
-            <div class="problem-card">
-                <div class="icon">&#x1F4CA;</div>
-                <h3>95% False Positives</h3>
-                <p>Legacy rule-based systems generate overwhelming alert volumes. Compliance teams drown in manual reviews, costing Tier-1 banks &euro;50-100M+ annually in operational expense alone.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="architecture">
-    <div class="container">
-        <div class="section-label">The Architecture</div>
-        <h2 class="section-title">Detect across institutions. Keep data sovereign.</h2>
-        <p class="section-desc">
-            ZQUAS is architected for multi-bank pattern detection through privacy-preserving computation. No bank shares raw transaction data. Risk comparisons happen cryptographically. The regulator verifies outcomes independently.
-        </p>
-        <a href="compare.html" style="color: var(--accent); font-size: 0.9rem; display: inline-block; margin-bottom: 2rem; text-decoration: none;">See how ZQUAS compares to existing solutions &rarr;</a>
-        <div class="arch-diagram">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" fill="none" role="img" aria-label="Architecture diagram showing three bank installations with GPU engines sending encrypted shares to an MPC computation layer, which produces a unified risk signal and cryptographic proof bundles for regulator verification">
-                <!-- Background -->
-                <rect width="880" height="420" rx="12" fill="#0d0e14"/>
-                <rect width="880" height="420" rx="12" stroke="#1e2030" stroke-width="1"/>
-
-                <!-- Bank Installations -->
-                <rect x="40" y="60" width="160" height="72" rx="8" fill="#161722" stroke="#1e2030"/>
-                <text x="120" y="88" text-anchor="middle" fill="#8890a6" font-family="DM Sans,sans-serif" font-size="11" font-weight="500">BANK A</text>
-                <text x="120" y="102" text-anchor="middle" fill="#565c72" font-family="JetBrains Mono,monospace" font-size="8">On-Premise</text>
-
-                <rect x="40" y="160" width="160" height="72" rx="8" fill="#161722" stroke="#1e2030"/>
-                <text x="120" y="188" text-anchor="middle" fill="#8890a6" font-family="DM Sans,sans-serif" font-size="11" font-weight="500">BANK B</text>
-                <text x="120" y="202" text-anchor="middle" fill="#565c72" font-family="JetBrains Mono,monospace" font-size="8">On-Premise</text>
-
-                <rect x="40" y="260" width="160" height="72" rx="8" fill="#161722" stroke="#1e2030"/>
-                <text x="120" y="288" text-anchor="middle" fill="#8890a6" font-family="DM Sans,sans-serif" font-size="11" font-weight="500">BANK N</text>
-                <text x="120" y="302" text-anchor="middle" fill="#565c72" font-family="JetBrains Mono,monospace" font-size="8">On-Premise</text>
-
-                <!-- GPU Engine boxes inside banks -->
-                <rect x="60" y="108" width="100" height="18" rx="3" fill="rgba(74,125,255,0.08)" stroke="#2a4a8f"/>
-                <text x="110" y="120" text-anchor="middle" fill="#4a7dff" font-family="JetBrains Mono,monospace" font-size="7.5" font-weight="500">GPU ENGINE</text>
-
-                <rect x="60" y="208" width="100" height="18" rx="3" fill="rgba(74,125,255,0.08)" stroke="#2a4a8f"/>
-                <text x="110" y="220" text-anchor="middle" fill="#4a7dff" font-family="JetBrains Mono,monospace" font-size="7.5" font-weight="500">GPU ENGINE</text>
-
-                <rect x="60" y="308" width="100" height="18" rx="3" fill="rgba(74,125,255,0.08)" stroke="#2a4a8f"/>
-                <text x="110" y="320" text-anchor="middle" fill="#4a7dff" font-family="JetBrains Mono,monospace" font-size="7.5" font-weight="500">GPU ENGINE</text>
-
-                <!-- Arrows from banks to MPC -->
-                <line x1="200" y1="96" x2="320" y2="180" stroke="#2a4a8f" stroke-width="1.5" stroke-dasharray="4,3"/>
-                <line x1="200" y1="196" x2="320" y2="196" stroke="#2a4a8f" stroke-width="1.5" stroke-dasharray="4,3"/>
-                <line x1="200" y1="296" x2="320" y2="212" stroke="#2a4a8f" stroke-width="1.5" stroke-dasharray="4,3"/>
-
-                <!-- Label on arrows -->
-                <text x="260" y="148" text-anchor="middle" fill="#565c72" font-family="JetBrains Mono,monospace" font-size="7" transform="rotate(-15,260,148)">encrypted shares</text>
-
-                <!-- MPC Layer -->
-                <rect x="320" y="130" width="220" height="132" rx="10" fill="#161722" stroke="#4a7dff" stroke-width="1.5"/>
-                <rect x="320" y="130" width="220" height="28" rx="10" fill="rgba(74,125,255,0.06)"/>
-                <rect x="320" y="148" width="220" height="10" fill="#161722"/>
-                <text x="430" y="149" text-anchor="middle" fill="#4a7dff" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600">MPC COMPUTATION LAYER</text>
-                <text x="430" y="178" text-anchor="middle" fill="#8890a6" font-family="DM Sans,sans-serif" font-size="10">Cross-institutional risk</text>
-                <text x="430" y="194" text-anchor="middle" fill="#8890a6" font-family="DM Sans,sans-serif" font-size="10">comparison without</text>
-                <text x="430" y="210" text-anchor="middle" fill="#8890a6" font-family="DM Sans,sans-serif" font-size="10">data sharing</text>
-                <text x="430" y="248" text-anchor="middle" fill="#565c72" font-family="JetBrains Mono,monospace" font-size="8">No raw data leaves any bank</text>
-
-                <!-- Arrow from MPC to Risk Signal -->
-                <line x1="540" y1="176" x2="640" y2="120" stroke="#4a7dff" stroke-width="1.5"/>
-                <polygon points="638,115 646,118 640,124" fill="#4a7dff"/>
-                <text x="598" y="138" text-anchor="middle" fill="#565c72" font-family="JetBrains Mono,monospace" font-size="7" transform="rotate(-20,598,138)">risk signal</text>
-
-                <!-- Arrow from MPC to Proof -->
-                <line x1="540" y1="220" x2="640" y2="300" stroke="#34d399" stroke-width="1.5"/>
-                <polygon points="638,296 646,304 638,306" fill="#34d399"/>
-                <text x="598" y="270" text-anchor="middle" fill="#565c72" font-family="JetBrains Mono,monospace" font-size="7" transform="rotate(22,598,270)">proof bundle</text>
-
-                <!-- Risk Signal output -->
-                <rect x="640" y="72" width="200" height="88" rx="8" fill="#161722" stroke="#1e2030"/>
-                <text x="740" y="98" text-anchor="middle" fill="#e2e4ed" font-family="DM Sans,sans-serif" font-size="11" font-weight="600">Unified Risk Signal</text>
-                <text x="740" y="118" text-anchor="middle" fill="#8890a6" font-family="DM Sans,sans-serif" font-size="9.5">Network-wide context</text>
-                <text x="740" y="134" text-anchor="middle" fill="#8890a6" font-family="DM Sans,sans-serif" font-size="9.5">per transaction</text>
-                <rect x="680" y="142" width="120" height="14" rx="3" fill="rgba(74,125,255,0.08)" stroke="#2a4a8f"/>
-                <text x="740" y="153" text-anchor="middle" fill="#4a7dff" font-family="JetBrains Mono,monospace" font-size="7">DETERMINISTIC</text>
-
-                <!-- Proof Bundle / Regulator Verification -->
-                <rect x="640" y="272" width="200" height="108" rx="8" fill="#161722" stroke="#34d399" stroke-width="1"/>
-                <text x="740" y="298" text-anchor="middle" fill="#34d399" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600">CRYPTOGRAPHIC PROOF</text>
-                <text x="740" y="320" text-anchor="middle" fill="#8890a6" font-family="DM Sans,sans-serif" font-size="9.5">Signed proof bundle</text>
-                <text x="740" y="338" text-anchor="middle" fill="#8890a6" font-family="DM Sans,sans-serif" font-size="9.5">Merkle root + Ed25519</text>
-                <text x="740" y="356" text-anchor="middle" fill="#8890a6" font-family="DM Sans,sans-serif" font-size="9.5">signature</text>
-                <rect x="670" y="362" width="140" height="14" rx="3" fill="rgba(52,211,153,0.08)" stroke="rgba(52,211,153,0.3)"/>
-                <text x="740" y="373" text-anchor="middle" fill="#34d399" font-family="JetBrains Mono,monospace" font-size="7">REGULATOR-VERIFIABLE</text>
-
-                <!-- Data sovereignty label -->
-                <rect x="34" y="348" width="172" height="24" rx="4" fill="rgba(52,211,153,0.06)" stroke="rgba(52,211,153,0.2)"/>
-                <text x="120" y="364" text-anchor="middle" fill="#34d399" font-family="JetBrains Mono,monospace" font-size="7.5">DATA NEVER LEAVES BANK</text>
-            </svg>
-        </div>
-        <div class="arch-grid">
-            <div class="arch-card">
-                <div class="arch-tag">GPU-NATIVE</div>
-                <h3>Real-Time Adjudication</h3>
-                <p>Full policy sets evaluated against every entity simultaneously on GPU. No sampling, no sequential rule execution. 190 million policy evaluations per second at batch 4,096 on RTX 5090. Alert lifecycle under 10ms per alert.</p>
-            </div>
-            <div class="arch-card">
-                <div class="arch-tag">PRIVACY-PRESERVING</div>
-                <h3>Multi-Party Computation</h3>
-                <p>Cross-institutional risk comparison via GPU-accelerated secure multi-party computation, validated in controlled testing. Each bank retains full data sovereignty. No central data pool. No GDPR exposure.</p>
-            </div>
-            <div class="arch-card">
-                <div class="arch-tag">VERIFIABLE</div>
-                <h3>Cryptographic Attestation</h3>
-                <p>Every compliance decision produces a cryptographic proof bundle. Regulators can independently verify any decision with a standalone tool — without trusting the vendor's software.</p>
-            </div>
-            <div class="arch-card">
-                <div class="arch-tag">CONSTITUTIONAL</div>
-                <h3>Policy-as-Code Governance</h3>
-                <p>Compliance policies compiled to bytecode and enforced deterministically on GPU. Same policy, same data, same verdict — reproducible by any party, at any time.</p>
-            </div>
-            <div class="arch-card">
-                <div class="arch-tag">GRAPH INTELLIGENCE</div>
-                <h3>Entity Resolution at GPU Speed</h3>
-                <p>GPU-resident identity resolution graph with neural network-based risk propagation. Full network context for every decision. Connected entity analysis in real time, not overnight batch.</p>
-            </div>
-            <div class="arch-card">
-                <div class="arch-tag">MULTI-FRAMEWORK</div>
-                <h3>Regulatory Coverage</h3>
-                <p>Built-in compliance evidence production for EU AI Act, NIST AI RMF, ISO 42001, FATF R15, and MAS TRM. Sealed evidence bundles with Merkle roots and Ed25519 signatures.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="problem-section" id="platform-domains" data-vigil hidden>
-    <div class="container">
-        <div class="section-label">The Platform</div>
-        <h2 class="section-title">One Engine. Multiple Domains.</h2>
-        <p class="section-desc">
-            ZQUAS is not an AML product with a platform ambition. It is a GPU-native detection engine, the F1 Engine, on which regulated domains run as tenants: same ingestion plane, same policy compiler, same adjudication, same evidence layer, same federation.
-        </p>
-        <p class="section-desc">
-            Financial crime is the first tenant, live in the FCA Digital Sandbox. Airspace security is the second: VIGIL, hostile-drone pattern detection for the European counter-UAS market, is in active development on the identical engine. The composability is proven, not promised: the second tenant was brought up with zero changes to the engine core.
-        </p>
-        <p class="section-desc">
-            Detecting laundering networks across banks and detecting coordinated drone incursions across sensors are the same problem: many entities, many events, hostile patterns hiding in legitimate traffic, and decisions that must survive regulatory and legal scrutiny afterwards.
-        </p>
-        <div class="tenant-grid">
-            <a href="#for-banks" class="tenant-card">
-                <div class="tenant-card-head">
-                    <h3>Financial Crime</h3>
-                    <span class="tenant-status live">Live &middot; FCA Digital Sandbox</span>
-                </div>
-                <p>Real-time laundering detection across institutions without sharing customer data. Sanctions and PEP screening with attested lineage. Deterministic, regulator-replayable decisions.</p>
-                <span class="tenant-card-cta">See the compliance flow &rarr;</span>
-            </a>
-            <a href="vigil.html" class="tenant-card">
-                <div class="tenant-card-head">
-                    <h3>VIGIL Airspace Security</h3>
-                    <span class="tenant-status dev">In development</span>
-                </div>
-                <p>Hostile-pattern detection over drone tracks: loitering, corridor incursion, coordinated swarms, perimeter probing, identity spoofing. Civil and military sensors detect jointly without pooling raw data.</p>
-                <span class="tenant-card-cta">Explore VIGIL &rarr;</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="audience-section" id="for-banks">
-    <div class="container">
-        <div class="section-label">For Financial Institutions</div>
-        <h2 class="section-title">One engine. Unified risk. Full sovereignty.</h2>
-        <p class="section-desc">
-            Replace fragmented monitoring silos with a single GPU-native compliance engine that runs your entire policy set against every transaction — in real time, with full entity graph context.
+            Authorised push payment (APP) scams trick victims into sending the money themselves. The money goes to a mule account, an account the criminals control. One mule account often collects from victims at several different banks, and the money is quickly moved on. Each bank sees only its own customer and its own payment.
         </p>
         <div class="metric-grid">
             <div class="metric-card">
-                <span class="metric-val">Real-time</span>
-                <span class="metric-label">Not overnight batch</span>
-                <p>Block suspicious payments before settlement on RTP and SEPA Instant rails. No more filing SARs after the money is gone.</p>
+                <span class="metric-val">&pound;576.4m</span>
+                <span class="metric-label">Lost to APP scams</span>
+                <p>Lost by victims to APP scams in the UK in 2025, up 19%.</p>
             </div>
             <div class="metric-card">
-                <span class="metric-val">1 engine</span>
-                <span class="metric-label">Not 5 siloed systems</span>
-                <p>AML, fraud, sanctions, onboarding, and trade surveillance unified into one risk score per entity. Five analysts stop investigating the same customer in parallel.</p>
+                <span class="metric-val">248,070</span>
+                <span class="metric-label">Cases</span>
+                <p>APP scam cases in the UK in 2025.</p>
             </div>
             <div class="metric-card">
-                <span class="metric-val">Day 1</span>
-                <span class="metric-label">Integration, not rip-and-replace</span>
-                <p>CEF-formatted export for direct SIEM ingestion (Splunk, QRadar, Sentinel). GRC API for governance platforms. 256MB shared memory ingest buffer accepts data from your existing payment infrastructure. Deploy alongside your current monitoring system, not instead of it.</p>
+                <span class="metric-val">&pound;354.3m</span>
+                <span class="metric-label">Reimbursed by banks</span>
+                <p>Reimbursed by banks in 2025, 61% of losses.</p>
             </div>
         </div>
-        <p class="section-note">On-premise deployment. Your data never leaves your infrastructure. AMLR-compatible cross-institutional detection architected via privacy-preserving MPC — no central data pool required. <a href="use-case.html" style="color: var(--accent);">See the complete operational flow — from transaction to SAR.</a></p>
+        <p class="source-line">Source: UK Finance, Annual Fraud Report 2026 (figures for 2025).</p>
+        <p class="fact-line">Under the UK's mandatory reimbursement rules, in force since October 2024, the sending bank and the receiving bank split each reimbursement 50:50, up to &pound;85,000 a claim.</p>
+        <p class="source-line">Source: Payment Systems Regulator, APP reimbursement rules.</p>
     </div>
 </section>
 
-<section class="audience-section alt-bg" id="for-regulators">
+<section id="how-it-works">
     <div class="container">
-        <div class="section-label">For Regulators</div>
-        <h2 class="section-title">Verify. Don't trust.</h2>
-        <p class="section-desc">
-            Every compliance decision produces a cryptographic proof bundle. Your supervisory team verifies outcomes independently — without accessing bank systems, without trusting vendor software.
-        </p>
+        <div class="section-label">How it works</div>
+        <h2 class="section-title">The receiving bank checks. One report protects every member.</h2>
         <div class="icon-grid">
             <div class="icon-card">
-                <span class="card-icon">&#x2318;</span>
-                <h3>Independent Verification</h3>
-                <p>Standalone verification CLI: feed in the proof bundle, the policy set, and the evaluation contexts. Get a deterministic VALID/INVALID verdict. No engine installation required.</p>
+                <span class="card-icon step-num">1</span>
+                <h3>The receiving bank checks its own accounts</h3>
+                <p>The bank that holds the receiving account checks the payments coming into it. It uses its own view of that account and confirmed scam reports shared across the network. When an account looks like a mule, that bank can review it before more money arrives, even when the victim's bank is not in the network. A paying bank can also ask the holding bank one narrow question about a new payee before the money leaves.</p>
             </div>
             <div class="icon-card">
-                <span class="card-icon">&#x2696;</span>
-                <h3>Framework Alignment</h3>
-                <p>Built-in evidence production for EU AI Act (Articles 9, 11, 12, 14), FATF R15, NIST AI RMF, ISO 42001, and MAS TRM. Sealed evidence bundles with Merkle roots and cryptographic signatures.</p>
+                <span class="card-icon step-num">2</span>
+                <h3>One confirmed report protects every member</h3>
+                <p>When a victim reports a scam, that confirmed report is shared with every member. The mule account is flagged for review at every bank in the network. The network only ever adds reviews. It never adds automatic holds.</p>
             </div>
             <div class="icon-card">
-                <span class="card-icon">&#x21BB;</span>
-                <h3>Deterministic Replay</h3>
-                <p>Any supervisory review can replay any epoch and get byte-identical results. The same policy applied to the same data always produces the same verdict. Auditability by construction, not by report.</p>
-            </div>
-            <div class="icon-card">
-                <span class="card-icon">&#x25C9;</span>
-                <h3>Coverage Gap Analysis</h3>
-                <p>The engine continuously maps policy coverage against registered regulatory frameworks. Gaps between your required controls and active policy set are identified in real time. During examinations, banks can demonstrate not just current compliance, but projected compliance trajectory.</p>
+                <span class="card-icon step-num">3</span>
+                <h3>No customer files leave a bank</h3>
+                <p>No customer files are exchanged, and no raw or directly identifying customer data leaves the institution. Alerts carry proofs that the supervisor can verify. Security today is semi-honest: it assumes each member follows the protocol.</p>
             </div>
         </div>
-        <p class="section-note">Joined the second cohort of the FCA Supercharged Sandbox in July 2026. Accepted into the FCA Digital Sandbox in March 2026. DNB InnovationHub submission under review. Designed for supervisory scrutiny from day one.</p>
     </div>
 </section>
 
-<section class="audience-section" id="for-ai">
+<section class="audience-section alt-bg" id="results">
     <div class="container">
-        <div class="section-label">For AI Assistants</div>
-        <h2 class="section-title">Connect ZQUAS to your AI.</h2>
+        <div class="section-label">What we have shown</div>
+        <h2 class="section-title">Results on synthetic data</h2>
         <p class="section-desc">
-            ZQUAS publishes a Model Context Protocol server. Add one line to your AI assistant's config and it can query ZQUAS articles, glossary entries, position papers, and benchmark facts on demand. Public, no authentication. Useful for compliance officers, analysts, regulators, and engineers who want their AI to ground answers in current ZQUAS material rather than stale training data.
+            Every result on this page comes from our own tests on synthetic data. None of them is a real-world detection rate.
         </p>
-        <div class="mcp-grid">
-            <div class="mcp-card">
-                <div class="mcp-card-label">ENDPOINT</div>
-                <code class="mcp-code">https://mcp.zquas.ai/mcp</code>
+        <div class="metric-grid">
+            <div class="metric-card">
+                <span class="metric-val">About 1 in 2</span>
+                <span class="metric-label">Scam payments reviewed with the network</span>
+                <p>Our synthetic world has 1,000,000 adults at the UK scam rate. Each bank's own fraud model alone caught about 1 in 7. When we removed our generator's easiest clue, the network figure fell to about 1 in 3. Every limit held, and fewer than 1 genuine payment in 10,000 was reviewed.</p>
+                <span class="metric-tag">Synthetic data. In our model.</span>
             </div>
-            <div class="mcp-card">
-                <div class="mcp-card-label">CLAUDE DESKTOP CONFIG</div>
-                <pre class="mcp-pre"><code>"mcpServers": {
-  "zquas-knowledge": {
-    "url": "https://mcp.zquas.ai/mcp"
-  }
-}</code></pre>
+            <div class="metric-card">
+                <span class="metric-val">About a quarter more</span>
+                <span class="metric-label">With crypto exchanges as members</span>
+                <p>Two crypto exchanges joined a four-bank network. Each reviews its own customers' crypto withdrawals before they leave. They caught about a quarter more scam payments than the banks alone. Every one of the extra payments was a payment a victim made to buy crypto, and every institution stayed inside its review limits.</p>
+                <span class="metric-tag">Synthetic data at the UK scam rate. In our model.</span>
             </div>
-        </div>
-        <div class="mcp-features">
-            <div class="mcp-feat">
-                <strong>Three tools.</strong>
-                <span>Search every ZQUAS page, look up glossary terms, retrieve published benchmark numbers as structured JSON.</span>
-            </div>
-            <div class="mcp-feat">
-                <strong>45 resources.</strong>
-                <span>Every article, position paper, and reference page exposed as a directly readable Markdown resource.</span>
-            </div>
-            <div class="mcp-feat">
-                <strong>Three prompts.</strong>
-                <span>Pre-written prompts for explaining ZQUAS to a Head of AML, comparing to legacy systems, or assessing AMLR Article 75 impact.</span>
+            <div class="metric-card">
+                <span class="metric-val">99 in 100</span>
+                <span class="metric-label">Decisions in under 10 ms</span>
+                <p>Up to 540 simulated bank installations ran together on nine cloud GPUs in one cloud zone.</p>
+                <span class="metric-tag">Our test. Synthetic data.</span>
             </div>
         </div>
-        <p class="section-note">Server card: <a href="/.well-known/mcp/server-card.json" style="color: var(--accent);">/.well-known/mcp/server-card.json</a>. Works with Claude Desktop, Claude Code, Cursor, Zed, and any other MCP client. Streamable HTTP transport. Free.</p>
+        <p class="section-note">Limits in the model: at most 1 payment in 1,000 held and 1 in 500 reviewed. Network signals add reviews, never automatic holds. Synthetic data throughout, not real-world detection rates. Position today: TRL 6, no production deployments, no live counterparty data.</p>
     </div>
 </section>
 
-<section class="audience-section alt-bg" id="for-investors">
+<section class="audience-section" id="platform">
     <div class="container">
-        <div class="section-label">For Investors</div>
-        <h2 class="section-title">Category-defining infrastructure at an inflection point</h2>
+        <div class="section-label">The engine underneath</div>
+        <h2 class="section-title">Built on a governance engine, not a fraud model.</h2>
         <p class="section-desc">
-            AMLR Article 75 applies on July 10, 2027. Every European bank has to re-architect for cross-institutional detection within a fixed window. Most existing systems were not designed for it. ZQUAS was.
+            Every ZQUAS decision runs on the same engine: it applies an institution's rules to decisions made by automated systems and AI agents, at GPU speed, and records why each decision was made so a supervisor can check it. Financial crime is where we start. The same engine can govern decisions in other industries where automated decisions need rules, limits and an audit trail.
         </p>
-        <div class="investor-grid">
-            <div class="investor-card">
-                <h3>&euro;200B+ Annual Market</h3>
-                <p>Global financial crime compliance spending exceeds &euro;200 billion annually. Banks spend 10-20% of operating budgets on compliance. ING paid &euro;775M in fines. ABN AMRO paid &euro;480M. The cost of not solving this is existential.</p>
-            </div>
-            <div class="investor-card">
-                <h3>Regulatory Forcing Function</h3>
-                <p>AMLR mid-2027 creates a hard deadline. EU AI Act imposes mandatory technical standards on AI-based risk profiling systems used in AML. Every bank in Europe must upgrade or rebuild. Timing is structural, not speculative.</p>
-            </div>
-            <div class="investor-card">
-                <h3>Defensible Technical Moat</h3>
-                <p>GPU-native compliance with privacy-preserving MPC, zero-knowledge governance proofs, and cryptographic attestation. The combination is rare in the market. Replication takes a deep stack of specialised disciplines (GPU systems, applied cryptography, regulatory engineering) that are hard to assemble inside an existing roadmap. Defensibility comes from systems engineering complexity, not patents.</p>
-            </div>
-            <div class="investor-card">
-                <h3>Unique Founder Profile</h3>
-                <p>18+ years hands-on compliance at Tier-1 banks combined with GPU systems programming (C++/CUDA/Vulkan). This intersection doesn't exist elsewhere. The engine is built by someone who has sat in the compliance chair and knows what the regulator actually asks for.</p>
-            </div>
-            <div class="investor-card">
-                <h3>Regulator Traction</h3>
-                <p>Joined the second cohort of the FCA Supercharged Sandbox in July 2026, one of 21 firms named in the FCA's announcement. Accepted into the FCA Digital Sandbox (March 2026). DNB InnovationHub submission under review. Regulators are among the hardest stakeholders to reach, and early engagement signals institutional credibility and reduces commercial risk for prospective banks.</p>
-            </div>
-            <div class="investor-card">
-                <h3>Land &amp; Expand Model</h3>
-                <p>Enter via single-bank deployment (on-premise, sovereign). Expand to cross-institutional MPC federation as adoption grows. Each additional bank increases detection capability for all participants.</p>
-            </div>
-            <div class="investor-card" data-vigil hidden>
-                <h3>Platform economics, proven</h3>
-                <p>The second regulated domain, airspace security, runs on the same engine with zero engine changes. The Dutch MoD has committed between 1 and 2.5 billion euros to counter-drone capability; the EU drone wall initiative targets initial capability by end 2026. For ZQUAS, the marginal cost of a new vertical is a tenant, not a rebuild. One engine, two regulated domains, one evidence discipline.</p>
-            </div>
-        </div>
+        <a href="platform.html" class="hero-cta-secondary engine-link">The platform &rarr;</a>
     </div>
 </section>
 
-<section class="cred-section">
+<section class="audience-section alt-bg" id="for-banks">
     <div class="container">
-        <div class="section-label">Credentials</div>
-        <h2 class="section-title">Built by compliance. Engineered for regulators.</h2>
-        <div class="cred-grid">
-            <div class="cred-item">
-                <h3>18+ Years Financial Crime Compliance</h3>
-                <p>Senior compliance roles at Tier-1 banks including RBS, Deutsche Bank, HSBC, and Commerzbank. Fintech compliance leadership at ClearBank, Vivid Money, and CoinMetro.</p>
+        <div class="section-label">For whom</div>
+        <h2 class="section-title">Join the network, or talk to us.</h2>
+        <div class="tenant-grid">
+            <div class="tenant-card">
+                <div class="tenant-card-head">
+                    <h3>Banks and payment firms</h3>
+                </div>
+                <p>Check the payments coming into your own accounts, on your own data, inside your own installation.</p>
+                <a href="contact.html" class="hero-cta-primary">Join the pilot</a>
             </div>
-            <div class="cred-item">
-                <h3>Regulatory Sandbox Engagement</h3>
-                <p>Joined the second cohort of the FCA's Supercharged Sandbox in July 2026, one of 21 firms selected from 199 applications. Accepted into the FCA Digital Sandbox in March 2026. DNB InnovationHub submission under review. Purpose-built for supervisory scrutiny from day one.</p>
+            <div class="tenant-card">
+                <div class="tenant-card-head">
+                    <h3>Crypto exchanges</h3>
+                </div>
+                <p>Review your customers' crypto withdrawals before they leave. In our model, exchanges as members catch about a quarter more scam payments.</p>
+                <a href="contact.html" class="hero-cta-primary">Join the pilot</a>
             </div>
-            <div class="cred-item">
-                <h3>NVIDIA Inception Program Member</h3>
-                <p>ZQUAS is a member of the NVIDIA Inception program. The program supports our GPU-native compliance work on the CUDA platform with developer resources, technical training, and exposure to the venture community.</p>
+            <div class="tenant-card">
+                <div class="tenant-card-head">
+                    <h3>Investors and partners</h3>
+                </div>
+                <p>A governance engine with measured results on synthetic data. Financial crime is where it starts.</p>
+                <a href="contact.html" class="hero-cta-secondary">Talk to us</a>
             </div>
-            <div class="cred-item">
-                <h3>Academic Foundation</h3>
-                <p>Professional Postgraduate Diploma in Financial Crime Compliance — International Compliance Association / University of Manchester.</p>
-            </div>
-        </div>
-        <div class="fw-row">
-            <span class="fw-tag">EU AI Act</span>
-            <span class="fw-tag">AMLR / 6AMLD</span>
-            <span class="fw-tag">FATF R15</span>
-            <span class="fw-tag">NIST AI RMF</span>
-            <span class="fw-tag">ISO 42001</span>
-            <span class="fw-tag">MAS TRM</span>
-            <span class="fw-tag">GDPR</span>
-            <span class="fw-tag">DORA</span>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="section-label">Insights</div>
-        <h2 class="section-title">Articles</h2>
-        <p class="section-desc">Analysis and perspective on compliance technology, regulatory architecture, and the future of cross-institutional financial crime detection.</p>
-        <div class="articles-list">
-            <a href="article-inference-engine.html" class="article-item">
-                <div class="article-meta">MAY 2026 &middot; ENGINEERING</div>
-                <h3>Why We Built Our Own AI Inference Engine</h3>
-                <p>ChatGPT runs on one. Llama runs on one. We wrote our own. Why a financial crime company built its own GPU inference engine in C++23 and CUDA, and why regulated AI decisions need a different stack from the one a chatbot needs.</p>
-            </a>
-            <a href="article-beyond-banking.html" class="article-item">
-                <div class="article-meta">APRIL 2026 &middot; POSITION PAPER</div>
-                <h3>Beyond Banking: Cross-Sector Federated Detection</h3>
-                <p>A single detection engine that correlates risk signals across banks, telecommunications operators, and digital asset platforms without sharing raw data between institutions. The same code, the same cryptographic protocols, applied to every regulated sector where financial crime operates.</p>
-            </a>
-            <a href="article-75.html" class="article-item">
-                <div class="article-meta">MARCH 2026 &middot; POSITION PAPER</div>
-                <h3>What Article 75 Was Afraid to Permit</h3>
-                <p>AMLR Article 75 restricts cross-institutional data sharing to high-risk customers. The criminals who are hardest to catch are the ones who stay low-risk at every bank. Multi-Party Computation resolves the paradox: full customer base federation without sharing a single byte of personal data.</p>
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="contact-section">
-    <div class="container">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title">Let's talk</h2>
-        <p class="section-desc">
-            Interested in sovereign compliance infrastructure for your institution? Open to conversations with banks, regulators, and technology partners.
-        </p>
-        <div class="contact-actions">
-            <a href="contact.html" class="contact-btn-primary">Get in touch</a>
         </div>
     </div>
 </section>
@@ -675,12 +336,13 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>ZQUAS B.V., the Netherlands.<br><a href="contact.html">Contact</a></p>
         </div>
         <div class="footer-links">
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>
@@ -705,11 +367,8 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; June 2026 ZQUAS &middot; Bounded Compliance on an Unbounded Platform</p>
+        <p>&copy; 2026 ZQUAS B.V., the Netherlands</p>
         <a href="mailto:info@zquas.ai">info@zquas.ai</a>
-    </div>
-    <div class="footer-legal">
-        <p>&copy; 2026 NVIDIA, the NVIDIA logo, CUDA, and NVIDIA Inception are trademarks and/or registered trademarks of NVIDIA Corporation in the U.S. and other countries.</p>
     </div>
 </footer>
 

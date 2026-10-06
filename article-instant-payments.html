@@ -81,6 +81,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -203,10 +204,10 @@
             ZQUAS uses private set intersection over elliptic-curve Diffie-Hellman (ECDH-PSI) between two institutions, and secure multi-party computation across several, so only cryptographically protected values ever cross an institutional boundary. It is not central pooling, and it is not the overhead of fully homomorphic encryption. It runs peer to peer, with GPU acceleration used to reduce the computational cost of the cryptographic protocols and the detection itself.
         </p>
         <p>
-            The binding constraint on the cross-institutional exchange is communication and protocol rounds rather than arithmetic. A bilateral federation round completes in under 10 seconds, measured at 3.1 seconds across 100,000 entities. That exchange runs on a longer timescale than the local decision it informs.
+            The binding constraint on the cross-institutional exchange is communication and protocol rounds rather than arithmetic. A bilateral federation round completes in under 10 seconds, measured at 3,052 ms across 100,000 entities per party over a loopback development transport. That exchange runs on a longer timescale than the local decision it informs.
         </p>
         <p>
-            Within a single institution, the alert-processing lifecycle completes in under 10 milliseconds, measured at 3.92ms. That figure covers the engine's own detection path in controlled testing, not the cross-institutional exchange. Speed there is not the boast.
+            Within a single institution, the local decision path completes in under 10 milliseconds, measured at 7 to 8 ms for a single cold alert and 0.25 ms amortised per alert. That figure covers the engine's own detection path in controlled testing, not the cross-institutional exchange. Speed there is not the boast.
         </p>
         <p>
             The point is that a local decision reached that quickly, enriched by network context a central database could not safely provide, arrives while a response can still land. That is what building for speed means on rails that no longer wait.
@@ -237,6 +238,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

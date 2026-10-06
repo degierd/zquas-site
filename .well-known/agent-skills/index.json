@@ -13,7 +13,7 @@
       "description": "LLM-optimised summary of ZQUAS: what it is, who it serves, the engine's published benchmark numbers, and the regulatory frameworks it covers.",
       "url": "https://zquas.ai/llms.txt",
       "media_type": "text/plain",
-      "sha256": "33fddc5569b55db7a1358e16ca770c04206ca29953d505abb629482b03786831"
+      "sha256": "d54b30dd7cfde6db9bce53667ae833a93a3e3642a65358bd7dd9e32897c668bb"
     },
     {
       "name": "site-summary-full",
@@ -21,7 +21,7 @@
       "description": "Long-form companion to llms.txt with the verbatim content of the strongest pages on the site (homepage, technology, regulators, founder timeline).",
       "url": "https://zquas.ai/llms-full.txt",
       "media_type": "text/plain",
-      "sha256": "bed1f180a8491af9fcf11b3ec69754e96f15556913bd6d3a706d5a46b1476506"
+      "sha256": "0cd534a001beb3c429380bcfa853eed3f01434fa539d2cbe5f04b500f06f65e7"
     },
     {
       "name": "facts",
@@ -29,7 +29,7 @@
       "description": "Machine-readable fact sheet: benchmark numbers, federation protocols, regulatory engagement, founder profile, competitor positioning, locked thresholds.",
       "url": "https://zquas.ai/facts.json",
       "media_type": "application/json",
-      "sha256": "95c19e14ff8f8516a7906b5e8796cb1f51bc95664d1469d4eab0b81887c7d745"
+      "sha256": "5bc6f5390ea211b9d61850490050e6e9da9ac85ce48f5697696b4b237a7ffba5"
     },
     {
       "name": "glossary",
@@ -37,7 +37,7 @@
       "description": "Definitions for the cryptographic, regulatory, and architectural terms used across ZQUAS: AMLR Article 75, MPC, ECDH-PSI, Garbled Circuits, GPU-native, cryptographic proof bundle, deterministic evaluation, and more.",
       "url": "https://zquas.ai/glossary.html",
       "media_type": "text/html",
-      "sha256": "b0de22c6d60dae9ccc8cb6118a2a09611f85bcd0870fa95ac06f9e2183ded8c2"
+      "sha256": "beac16dd60cf6335455d1cc5ded182af6c60e3a838e7cfe2d98bf299a36b8b57"
     },
     {
       "name": "position-paper-article-75",
@@ -45,7 +45,7 @@
       "description": "Position paper on AMLR Article 75: how Multi-Party Computation enables full customer base federation for AML detection without sharing personal data. Legal argument, evidence, and a path to a pilot.",
       "url": "https://zquas.ai/article-75.html",
       "media_type": "text/html",
-      "sha256": "238311b5af5abc823a293d635e615ebbb37ab28a4499a184a1e9c3611ededc46"
+      "sha256": "d265bbb288ae7ad6e792e3c18a7e7f2727d4f9b3cc0699ca8cc83dcac7833b8c"
     },
     {
       "name": "position-paper-edge-to-federation",
@@ -53,7 +53,7 @@
       "description": "Position paper on a unified architecture for real-time financial crime detection across institutional, cross-bank, and regulatory layers.",
       "url": "https://zquas.ai/article-edge-to-federation.html",
       "media_type": "text/html",
-      "sha256": "79aa953457d416d1a53a59a0b748bdc0ef956a65f063c1f4240847dfae9ef45b"
+      "sha256": "148ae371d8024c3eceaafcb8539ace0a802ac2116e898e427309027dbf2cc563"
     },
     {
       "name": "position-paper-beyond-banking",
@@ -61,7 +61,7 @@
       "description": "Position paper on cross-sector federated detection across banks, telecommunications operators, and digital asset platforms.",
       "url": "https://zquas.ai/article-beyond-banking.html",
       "media_type": "text/html",
-      "sha256": "30313f06cda6b74aa07adb9af9d4ed635fc5e948de241daca6e02d83bddac26f"
+      "sha256": "581f2c3da9a40106033134c56ddc57a464afd5184b9a4b9f316589cf9264fd4d"
     },
     {
       "name": "one-pager",
@@ -69,7 +69,7 @@
       "description": "Single-page PDF summary of the engine, benchmarks, and regulatory traction. Suitable for buyer hand-out.",
       "url": "https://zquas.ai/zquas-onepager.pdf",
       "media_type": "application/pdf",
-      "sha256": "4bd204f545192df9303f58c707e8afe95a649b13733161c29e95509442f85270"
+      "sha256": "5182cdcf50b34d6a275efa5ccf372c226552d76c9dd1be19167a27ed29ae8fad"
     },
     {
       "name": "articles-feed",
@@ -77,7 +77,7 @@
       "description": "RSS 2.0 feed of all ZQUAS analysis articles, sorted newest-first. Updated whenever a new article is published.",
       "url": "https://zquas.ai/feed.xml",
       "media_type": "application/rss+xml",
-      "sha256": "6ea82e82953fdd9142ca49efee7cd850ba2ca6724a84d45a9a7c09d1a4968ee1"
+      "sha256": "23952da3ba5bdc1376af73f9ad4972809f41cf5e6e9d10b30ef7971d7de9759e"
     },
     {
       "name": "mcp-server",

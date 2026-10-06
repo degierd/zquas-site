@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benchmark: 190M Policy Evaluations/sec, Under 10ms Per Alert — ZQUAS</title>
+    <title>Benchmark: 500,000-Entity Detection Cycle in 667 ms — ZQUAS</title>
     <meta name="description" content="Documented GPU benchmark of the ZQUAS engine. 500K entities in under 2 seconds on NVIDIA RTX 5090. Alert lifecycle under 10ms.">
-    <meta property="og:title" content="Benchmark: 190M Policy Evaluations/sec, Under 10ms Per Alert — ZQUAS">
-    <meta property="og:description" content="Documented GPU benchmark of the ZQUAS engine. 500K entities in 1,584 ms on NVIDIA RTX 5090, synthetic data. Alert lifecycle under 10ms per alert. 13,336 automated tests.">
+    <meta property="og:title" content="Benchmark: 500,000-Entity Detection Cycle in 667 ms — ZQUAS">
+    <meta property="og:description" content="Documented GPU benchmark of the ZQUAS engine. A 500,000-entity full detection cycle against the 56-policy catalogue in 667 ms, median of three runs, on NVIDIA RTX 5090 against synthetic data.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zquas.ai/benchmark.html">
     <meta property="og:image" content="https://zquas.ai/og-image.png">
@@ -37,8 +37,8 @@
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
-        "headline": "Benchmark: 190M CEPS at Batch 4,096, Under 10ms Per Alert",
-        "description": "Documented GPU benchmark of the ZQUAS engine. 500K entities in 1,584 ms on NVIDIA RTX 5090, synthetic data. Alert lifecycle under 10ms per alert. 13,336 automated tests.",
+        "headline": "Benchmark: 500,000-Entity Detection Cycle in 667 ms",
+        "description": "Documented GPU benchmark of the ZQUAS engine. A 500,000-entity full detection cycle against the 56-policy catalogue in 667 ms, median of three runs, on NVIDIA RTX 5090 against synthetic data.",
         "datePublished": "2026-03-01",
         "author": {
             "@type": "Person",
@@ -78,6 +78,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle active">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -100,11 +101,11 @@
 <section class="bench-header">
     <div class="container">
         <div class="section-label">Benchmark Study</div>
-        <h1 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.6rem); max-width: 700px; margin-bottom: 1.5rem;">500,000 entities. 100 policies. Under 2 seconds.</h1>
+        <h1 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.6rem); max-width: 700px; margin-bottom: 1.5rem;">500,000 entities. 56-policy catalogue. 667 ms.</h1>
         <p class="section-desc">
-            A documented benchmark of the ZQUAS engine. 190 million compliance policy evaluations per second at a dispatch batch of 4,096. Alert lifecycle under 10ms per alert, from ingestion to triage. Every result measured on NVIDIA RTX 5090 against synthetic data with realistic parameter distributions. Every decision signed.
+            A documented benchmark of the ZQUAS engine. 667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux. Sustained throughput across that cycle is 750,000 complex events per second, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. Synthetic data throughout. Every decision signed.
         </p>
-        <div class="bench-meta">Benchmark date: March 2026 &middot; Hardware: NVIDIA RTX 5090 (Blackwell, sm_100, 170 SMs, 32GB VRAM)</div>
+        <div class="bench-meta">Hardware: NVIDIA RTX 5090 (Blackwell, sm_100, 170 SMs, 32GB VRAM) &middot; CUDA 13.1 &middot; Linux &middot; Synthetic data</div>
         <div class="bench-meta" style="margin-top: 0.6rem;">ZQUAS is a member of the NVIDIA Inception program.</div>
     </div>
 </section>
@@ -141,18 +142,18 @@
                 </div>
                 <div class="bench-spec-row">
                     <span class="bench-spec-key">OS</span>
-                    <span class="bench-spec-val">Windows 11 Pro</span>
+                    <span class="bench-spec-val">Linux (CUDA 13.1)</span>
                 </div>
             </div>
             <div class="bench-spec-card">
                 <h3>Policy Set</h3>
                 <div class="bench-spec-row">
-                    <span class="bench-spec-key">AML policies</span>
-                    <span class="bench-spec-val">29 (100 rules, 6 domains)</span>
+                    <span class="bench-spec-key">Policy catalogue</span>
+                    <span class="bench-spec-val">56 logical policies (static-assertion pinned)</span>
                 </div>
                 <div class="bench-spec-row">
-                    <span class="bench-spec-key">Access control</span>
-                    <span class="bench-spec-val">15 policies</span>
+                    <span class="bench-spec-key">Scale corpus</span>
+                    <span class="bench-spec-val">128 policies (34 screening, 94 detection)</span>
                 </div>
                 <div class="bench-spec-row">
                     <span class="bench-spec-key">Policy language</span>
@@ -182,16 +183,16 @@
 <section>
     <div class="container">
         <div class="analysis-body">
-            <h2>What CEPS Means</h2>
+            <h2>What the Throughput Figure Means</h2>
 
-            <p>CEPS stands for Compliance Policy Evaluations Per Second. One evaluation is a single entity assessed against one policy. The engine evaluates all entities against all policies in parallel. The measured figure is 190 million CEPS at a dispatch batch of 4,096 entities on an RTX 5090, timed end to end including host-to-device transfer, kernel execution, device-to-host readback, Merkle construction and Ed25519 signing. A regression floor of 100 million CEPS is enforced in continuous integration. The figure is measured at that batch size and is not extrapolated to the 500,000-entity cycle, which is reported separately as wall-clock above.</p>
+            <p>The engine sustains 750,000 complex events per second across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. Policy-set size is not used as a multiplier. Merkle root construction and Ed25519 signing sit inside the measured region rather than being excluded. Both choices make the reported figure smaller than the alternatives, and both are deliberate.</p>
 
-            <p>The key metric for AML monitoring is not raw throughput but latency from event to triage. An alert that takes 24 hours to reach an analyst is an alert that arrives after the money has moved. The engine produces a complete triage decision in 4.93ms: 12 microseconds for ingestion into the semantic entity graph, 271 microseconds for GPU policy evaluation, and 4.64ms for AI agent triage. Total: 4.93ms.</p>
+            <p>The key metric for AML monitoring is not raw throughput but latency from event to triage. An alert that takes 24 hours to reach an analyst is an alert that arrives after the money has moved. A single cold alert completes its local decision path in 7 to 8 ms, against a 10-millisecond bound. Amortised across a batch, the figure is 0.25 ms per alert.</p>
 
-            <p>This matters for real-time payment rails. SEPA Instant requires settlement in under 10 seconds. The engine evaluates the transaction in under 10 milliseconds. The agent triage decision is available before the settlement window closes.</p>
+            <p>This matters for real-time payment rails. SEPA Instant requires settlement in under 10 seconds. The local decision completes in 7 to 8 ms for a cold alert. The triage decision is available before the settlement window closes.</p>
 
             <div class="callout">
-                <p>500K entities &times; 100 policies = 50 million evaluations in under 2 seconds. Millions of times faster than a 24-hour batch cycle.</p>
+                <p>500,000 entities against the full 56-policy catalogue in 667 ms, with cryptographic attestation generated inside that window.</p>
             </div>
         </div>
     </div>
@@ -200,7 +201,7 @@
 <section style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="container">
         <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 0.75rem;">Policy Set Composition</h2>
-        <p class="section-desc">The benchmark used a 29-policy set (100 rules) modelled on a Tier-1 bank's production monitoring requirements, spanning 6 compliance domains:</p>
+        <p class="section-desc">The detection cycle runs against a 56-policy logical catalogue, pinned by static assertion to the catalogue array. A 128-policy corpus (34 fail-closed screening, 94 detection) is used for scale characterisation. The catalogue spans these compliance domains:</p>
         <div class="bench-domain-grid">
             <div class="bench-domain-card">
                 <div class="bench-domain-num">01</div>
@@ -249,12 +250,12 @@
         <h3 style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;">Single Node &mdash; Entity Evaluation at Scale</h3>
         <div class="bench-stat-grid" style="margin-bottom: 2.5rem;">
             <div class="bench-stat-card">
-                <div class="val">< 2s</div>
-                <div class="label">500K entities &times; 100 policies (1,584ms)</div>
+                <div class="val">667 ms</div>
+                <div class="label">500K-entity full detection cycle, 56-policy catalogue</div>
             </div>
             <div class="bench-stat-card">
-                <div class="val">190M</div>
-                <div class="label">CEPS at batch 4,096 (CI floor 100M)</div>
+                <div class="val">750K</div>
+                <div class="label">Complex events/sec across the 500K-entity cycle</div>
             </div>
             <div class="bench-stat-card">
                 <div class="val">< 10ms</div>
@@ -263,9 +264,8 @@
         </div>
 
         <div class="bench-properties" style="margin-bottom: 2.5rem;">
-            <div class="bench-prop"><strong>Alert lifecycle breakdown:</strong> semantic graph ingestion 12&micro;s &rarr; GPU policy evaluation 271&micro;s &rarr; AI agent triage 4,644&micro;s &rarr; total 4.93ms</div>
-            <div class="bench-prop"><strong>Scaling:</strong> Linear confirmed. 2&times; entities = 2&times; time.</div>
-            <div class="bench-prop"><strong>VRAM usage:</strong> 76MB active GPU memory for the policy evaluation pipeline (0.2% of 32GB). Total system memory including the GPU resource manager: 426MB (1.3%).</div>
+            <div class="bench-prop"><strong>Local decision latency:</strong> 7 to 8 ms for a single cold alert. 0.25 ms amortised per alert.</div>
+                        <div class="bench-prop"><strong>Peak VRAM, detection pass working set:</strong> 562 to 616 MB against a 1 GB bound enforced in CI (under 2% of the 32 GB card).</div>
             <div class="bench-prop"><strong>Speedup vs. 24h batch:</strong> Millions of times faster than a standard overnight batch cycle.</div>
         </div>
 
@@ -279,34 +279,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 0.6rem 0.75rem; color: var(--text-primary);">10,000</td>
-                    <td style="text-align: right; padding: 0.6rem 0.75rem; color: var(--text-secondary);">100</td>
-                    <td style="text-align: right; padding: 0.6rem 0.75rem; color: var(--text-secondary);">24.5ms</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 0.6rem 0.75rem; color: var(--text-primary);">50,000</td>
-                    <td style="text-align: right; padding: 0.6rem 0.75rem; color: var(--text-secondary);">100</td>
-                    <td style="text-align: right; padding: 0.6rem 0.75rem; color: var(--text-secondary);">120.8ms</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 0.6rem 0.75rem; color: var(--text-primary);">100,000</td>
-                    <td style="text-align: right; padding: 0.6rem 0.75rem; color: var(--text-secondary);">100</td>
-                    <td style="text-align: right; padding: 0.6rem 0.75rem; color: var(--text-secondary);">237.7ms</td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--border);">
-                    <td style="padding: 0.6rem 0.75rem; color: var(--text-primary);">250,000</td>
-                    <td style="text-align: right; padding: 0.6rem 0.75rem; color: var(--text-secondary);">100</td>
-                    <td style="text-align: right; padding: 0.6rem 0.75rem; color: var(--text-secondary);">607.9ms</td>
-                </tr>
                 <tr>
                     <td style="padding: 0.6rem 0.75rem; color: var(--text-primary); font-weight: 600;">500,000</td>
-                    <td style="text-align: right; padding: 0.6rem 0.75rem; color: var(--text-secondary);">100</td>
-                    <td style="text-align: right; padding: 0.6rem 0.75rem; color: var(--success); font-weight: 600;">1,584ms</td>
+                    <td style="text-align: right; padding: 0.6rem 0.75rem; color: var(--text-secondary);">56</td>
+                    <td style="text-align: right; padding: 0.6rem 0.75rem; color: var(--success); font-weight: 600;">667ms</td>
                 </tr>
             </tbody>
         </table>
-        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: -1.5rem; margin-bottom: 2.5rem;">The 500,000-entity row was re-measured on 24 July 2026 at 1,584 ms, with verdict-leaf audit anchoring live in every epoch. The smaller rows are from the March 2026 run and predate that change, so they understate current wall-clock. Throughput per second is reported separately below, at the batch size it was measured at.</p>
+        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: -1.5rem; margin-bottom: 2.5rem;">The 500,000-entity row is the current figure: 667 ms, median of three runs, against the 56-policy catalogue on NVIDIA RTX 5090, CUDA 13.1, Linux, under a 2-second regression bound enforced in CI. The smaller rows are from an earlier run on a different platform with a different timed function. They are not a comparable baseline and no before-and-after comparison should be drawn from them.</p>
 
         <h3 style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem;">GPU AI Agent System</h3>
         <div class="bench-properties" style="margin-bottom: 2.5rem;">
@@ -318,8 +298,8 @@
 
         <div class="bench-properties">
             <div class="bench-prop"><strong>Determinism:</strong> Verified. Same policy set, same input data, byte-identical verdicts across multiple runs.</div>
-            <div class="bench-prop"><strong>Proof generation:</strong> Each evaluation produces a cryptographic proof bundle (912 bytes, Ed25519 signed, Merkle-included) within the measured wall-clock time.</div>
-            <div class="bench-prop"><strong>Conditions:</strong> RelWithDebInfo build, MSVC, Windows 11, RTX 5090. Medians of 3 runs with 10 warmup iterations. Includes full proof pipeline (Merkle + Ed25519). Federation measured on TCP localhost.</div>
+            <div class="bench-prop"><strong>Proof generation:</strong> Each evaluation produces a cryptographic proof bundle, Ed25519 signed and Merkle-included, within the measured wall-clock time.</div>
+            <div class="bench-prop"><strong>Conditions:</strong> The 500,000-entity detection cycle is 667 ms, median of three runs, on NVIDIA RTX 5090, CUDA 13.1, Linux, with the full proof pipeline (Merkle + Ed25519) inside the measured path. Federation is measured on a TCP loopback transport, not a real inter-institution network. Other figures on this page were measured under different harness configurations.</div>
         </div>
     </div>
 </section>
@@ -345,14 +325,14 @@
         <div class="analysis-body">
             <h2>Why This Matters for Banks</h2>
 
-            <p>A Tier-1 bank with 500,000 monitored entities evaluates its full portfolio against 100 AML policies in under 2 seconds. The same operation in overnight batch takes 24 hours. The engine is millions of times faster than that cycle, measured on the same workload.</p>
+            <p>A Tier-1 bank with 500,000 monitored entities evaluates its full portfolio against the 56-policy catalogue in 667 ms, median of three runs, under a 2-second regression bound enforced in CI. The same operation in overnight batch takes 24 hours.</p>
 
-            <p>For real-time payment rails, the relevant number is alert lifecycle latency. SEPA Instant requires settlement in under 10 seconds. The engine produces a complete triage decision in under 10ms. The analyst receives an alert with entity context, risk score, cross-institutional signal, and agent recommendation before the payment settles.</p>
+            <p>For real-time payment rails, the relevant number is local decision latency. SEPA Instant requires settlement in under 10 seconds. A single cold alert completes in 7 to 8 ms, against a 10-millisecond bound. The analyst receives an alert with entity context, risk score, cross-institutional signal, and agent recommendation before the payment settles.</p>
 
-            <p>VRAM usage at 500K entities is well under 1GB. The RTX 5090 has 32GB. The vast majority of GPU memory is unused at the production benchmark workload. Headroom exists for larger entity populations, simultaneous federation computation, and concurrent agent workloads.</p>
+            <p>Peak VRAM for the detection pass working set is 562 to 616 MB, against a 1 GB bound enforced in CI. The RTX 5090 has 32GB. The vast majority of GPU memory is unused at the benchmark workload. Headroom exists for larger entity populations, simultaneous federation computation, and concurrent agent workloads.</p>
 
             <div class="callout">
-                <p>One GPU. 500K entities. 100 policies. Under 10ms from transaction to triage. Under 1GB total VRAM.</p>
+                <p>One GPU. 500,000 entities. The full 56-policy catalogue. 667 ms for the complete detection cycle.</p>
             </div>
         </div>
     </div>
@@ -365,11 +345,11 @@
 
             <p>Federation benchmarks measure cross-institutional detection performance. The protocol is ECDH-PSI (X25519) for entity matching, combined with Yao's Garbled Circuits (Free-XOR) for risk comparison, and IKNP OT Extension (Chou-Orlandi base OT on P-256) for oblivious transfer. Transport is AES-256-GCM with X25519 key exchange. Security model: semi-honest.</p>
 
-            <p>At 100,000 entities per party with 30,000 matches, a bilateral round completes in 3.1 seconds over TCP localhost, against a 10-second bound enforced in continuous integration. Real network conditions add latency, and the production mesh adds its secure-channel layer. Each bilateral round produces dual Ed25519 attestation: both parties sign, and a regulator can verify the result using only the public keys and the proof bundle. No engine access required.</p>
+            <p>At 100,000 entities per party, a bilateral round completes in 3,052 ms over a loopback development transport, against a 10-second bound enforced in continuous integration. No real-network inter-participant measurement exists. Real network conditions add latency, and the production mesh adds its secure-channel layer. Each bilateral round produces dual Ed25519 attestation: both parties sign, and a regulator can verify the result using only the public keys and the proof bundle. No engine access required.</p>
 
             <p>What each bank learns from a federation round: which shared entities exceed the risk threshold. What each bank does not learn: the other bank's entity list (protected by ECDLP), the other bank's risk scores (protected by the garbled circuit), and the other bank's policy configuration (circuit is opaque). Inherent disclosures: entity count and intersection size (structural to PSI; mitigable by padding).</p>
 
-            <p>Federation tests: 361. Zero critical findings. The protocol is validated for consortium deployment under a semi-honest threat model, appropriate for regulated financial institutions operating under mutual legal obligation.</p>
+            <p>The protocol is exercised under a semi-honest threat model. Protection against a participant that deliberately deviates from the protocol requires malicious-adversary security, which is not implemented for bilateral or multi-party federation.</p>
         </div>
     </div>
 </section>
@@ -381,9 +361,9 @@
 
             <p>The benchmark is deterministic. Running the benchmark suite with the same policy set on the same hardware produces identical results. The benchmark executable is subject to the same build attestation as the main engine: embedded BLAKE3 and SHA-256 hashes, compiler version, git commit, and Ed25519 signature.</p>
 
-            <p>Every benchmark result is covered by 13,336 automated tests across the codebase (11,734 GTest, 980 Playwright, 622 pytest, verified 12 June 2026). Roughly 7 percent are full-scale composition and locked-number proofs and the remainder are unit and boundary tests, because a bare count implies more assurance than it delivers. Coverage spans 12 independently audited subsystems covering adversarial fuzzing, semantic graph, compliance policy language, GPU policy evaluation, AI agent triage, federation, UI, GPU resource management, cryptography, and decision pipelines. Crypto KAT tests cover Ed25519 (RFC 8032), SHA-256 (FIPS 180-4), and Blake3 (official vectors). Hardware differences will affect absolute throughput but not determinism or correctness.</p>
+            <p>Benchmark results are covered by an automated test suite spanning adversarial fuzzing, semantic graph, compliance policy language, GPU policy evaluation, AI agent triage, federation, UI, GPU resource management, cryptography, and decision pipelines. Crypto KAT tests cover Ed25519 (RFC 8032), SHA-256 (FIPS 180-4), and Blake3 (official vectors). Hardware differences will affect absolute throughput but not determinism or correctness.</p>
 
-            <p>Cryptographic proof bundles (912 bytes per evaluation) are independently verifiable. A regulator with the public key can verify any proof bundle offline without engine access. The Merkle inclusion proof supports trees up to depth 20. Field-level tamper detection tests confirm that any modification to the proof bundle is detectable.</p>
+            <p>Cryptographic proof bundles are independently verifiable. A regulator with the public key can verify any proof bundle offline, without relying on the running production engine or its internal state. Field-level tamper detection tests confirm that any modification to the proof bundle is detectable.</p>
         </div>
     </div>
 </section>
@@ -421,6 +401,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

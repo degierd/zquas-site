@@ -56,10 +56,10 @@
             {"@type": "DefinedTerm", "name": "ECCTA Sections 188-189", "description": "Sections 188 and 189 of the UK Economic Crime and Corporate Transparency Act 2023. Provide a legal basis for inter-bank AML information sharing. In force since January 2024."},
             {"@type": "DefinedTerm", "name": "TMNL", "description": "Transaction Monitoring Netherlands. A joint initiative by five Dutch banks to pool transaction data for cross-institutional monitoring. Wound down because centralised data pooling could not be reconciled with privacy law."},
             {"@type": "DefinedTerm", "name": "GPU-native compliance engine", "description": "A compliance engine designed from the ground up to execute on GPU. Distinct from a GPU-accelerated engine, where a CPU pipeline offloads selected operations to a GPU."},
-            {"@type": "DefinedTerm", "name": "CEPS (Compliance Policy Evaluations per Second)", "description": "Throughput metric for compliance engines. One CEPS is one entity evaluated against one policy. The ZQUAS engine sustains 190 million CEPS at a dispatch batch of 4,096 entities on a single NVIDIA RTX 5090, with a 100 million floor enforced in continuous integration."},
-            {"@type": "DefinedTerm", "name": "Alert Lifecycle", "description": "The wall-clock time from a transaction arriving at the engine to a triaged alert being available to a compliance officer. ZQUAS publishes a benchmark of under 10ms (measured: 3.92ms)."},
-            {"@type": "DefinedTerm", "name": "Bilateral Round", "description": "One end-to-end execution of the cross-institutional MPC protocol between two participating institutions. ZQUAS publishes a benchmark of under 10 seconds for 100,000 entities (measured: 3.1s)."},
-            {"@type": "DefinedTerm", "name": "Cryptographic Proof Bundle", "description": "A signed, Merkle-included artefact produced for every compliance decision. Contains the policy hash, input hash, verdict hashes, Merkle root, and Ed25519 signature. 912 bytes per evaluation."},
+            {"@type": "DefinedTerm", "name": "Complex events per second", "description": "Throughput metric for compliance engines. One unit is one entity evaluated against the full policy set. The ZQUAS engine sustains 750,000 complex events per second across a full 500,000-entity detection cycle, with cryptographic attestation generation inside the measured path."},
+            {"@type": "DefinedTerm", "name": "Alert Lifecycle", "description": "The wall-clock time from a transaction arriving at the engine to a triaged alert being available to a compliance officer. ZQUAS publishes a bound of under 10ms, with 7 to 8 ms measured for a single cold alert and 0.25 ms amortised per alert."},
+            {"@type": "DefinedTerm", "name": "Bilateral Round", "description": "One end-to-end execution of the cross-institutional MPC protocol between two participating institutions. ZQUAS publishes a bound of under 10 seconds per round (measured: 3,052 ms at 100,000 entities per party, over a loopback development transport)."},
+            {"@type": "DefinedTerm", "name": "Cryptographic Proof Bundle", "description": "A signed, Merkle-included artefact produced for every compliance decision. Contains the policy hash, input hash, verdict hashes, Merkle root, and Ed25519 signature."},
             {"@type": "DefinedTerm", "name": "Deterministic Evaluation", "description": "Property of an evaluation engine such that the same inputs and the same policy always produce the same output, byte for byte, on any compliant deployment."},
             {"@type": "DefinedTerm", "name": "Constitutional Governance", "description": "An architectural pattern in which AI agents operate under hard-coded rules they cannot modify. In ZQUAS, agents cannot file a Suspicious Activity Report (SAR) without human MLRO sign-off."},
             {"@type": "DefinedTerm", "name": "Federated Detection", "description": "Detection that runs across multiple institutions without those institutions sharing raw data. Achieved in ZQUAS via cryptographic federation rather than data centralisation."},
@@ -117,7 +117,7 @@
                 "name": "How does a regulator verify a ZQUAS compliance decision?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "With a public key and the proof bundle. Every compliance decision produces a 912-byte cryptographic proof bundle, Ed25519 signed and Merkle-included. The supervisor runs a standalone command-line verifier. No engine access, no vendor software, no trust in the bank's reporting required."
+                    "text": "With a public key and the proof bundle. Every compliance decision produces a cryptographic proof bundle, Ed25519 signed and Merkle-included. The supervisor runs a standalone command-line verifier without relying on the running production engine or its internal state. The verifier is written by ZQUAS and currently links the CUDA runtime; a CPU-only verifier is planned."
                 }
             }
         ]
@@ -211,6 +211,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -344,7 +345,7 @@
             <div class="glossary-term" id="proof-bundle">
                 <h3>Cryptographic Proof Bundle</h3>
                 <p>A signed, Merkle-included artefact produced for every compliance decision. Contains a hash of the policy set in effect, a hash of the input data, individual verdict hashes, a Merkle root binding all verdicts together, and an Ed25519 signature.</p>
-                <p>912 bytes per evaluation. Verifiable by a supervisor with a public key alone.</p>
+                <p>Produced for every evaluation. Verifiable by a supervisor with a public key alone.</p>
             </div>
             <div class="glossary-term" id="deterministic-evaluation">
                 <h3>Deterministic Evaluation</h3>
@@ -354,7 +355,7 @@
             <div class="glossary-term" id="bilateral-round">
                 <h3>Bilateral Round</h3>
                 <p>One end-to-end execution of the cross-institutional MPC protocol between two participating institutions.</p>
-                <p>ZQUAS publishes a benchmark of under 10 seconds for 100,000 entities (measured: 3.1 seconds). Both parties sign the result with Ed25519.</p>
+                <p>ZQUAS publishes a bound of under 10 seconds for 100,000 entities per party, measured at 3,052 ms over a loopback development transport. No real-network inter-participant measurement exists. Both parties sign the result with Ed25519.</p>
             </div>
             <div class="glossary-term" id="policy-language">
                 <h3>Policy Language</h3>
@@ -366,14 +367,14 @@
         <div class="glossary-section-label" id="performance">Performance</div>
         <div class="glossary-list">
             <div class="glossary-term" id="ceps">
-                <h3>CEPS (Compliance Policy Evaluations per Second)</h3>
-                <p>Throughput metric for compliance engines. One CEPS is one entity evaluated against one policy.</p>
-                <p>The ZQUAS engine sustains 190 million CEPS at a dispatch batch of 4,096 entities on a single NVIDIA RTX 5090, with a 100 million floor enforced in continuous integration.</p>
+                <h3>Complex events per second</h3>
+                <p>Throughput metric for compliance engines. One unit is one entity evaluated against the full policy set. Policy-set size is not used as a multiplier.</p>
+                <p>The ZQUAS engine sustains 750,000 complex events per second across a full 500,000-entity detection cycle, with cryptographic attestation generation inside the measured path.</p>
             </div>
             <div class="glossary-term" id="alert-lifecycle">
                 <h3>Alert Lifecycle</h3>
                 <p>The wall-clock time from a transaction arriving at the engine to a triaged alert being available to a compliance officer.</p>
-                <p>ZQUAS publishes a benchmark of under 10ms (measured: 3.92ms). Three orders of magnitude below typical real-time payment settlement windows.</p>
+                <p>ZQUAS publishes a bound of under 10ms, with 7 to 8 ms measured for a single cold alert and 0.25 ms amortised per alert. Well below typical real-time payment settlement windows.</p>
             </div>
             <div class="glossary-term" id="real-time">
                 <h3>Real-Time Monitoring</h3>
@@ -418,6 +419,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

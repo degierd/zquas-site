@@ -323,6 +323,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -350,6 +351,7 @@
         <p class="paper-subtitle">How Multi-Party Computation Makes Full Customer Base Federation Legal Under GDPR</p>
         <div class="paper-meta">
             <div class="paper-meta-item">Date<span>March 2026</span></div>
+            <div class="paper-meta-item">Updated<span>October 2026</span></div>
             <div class="paper-meta-item">Audience<span>Regulators, MLROs, Compliance Leaders, Privacy Officers</span></div>
             <div class="paper-meta-item">Reading time<span>12 min</span></div>
         </div>
@@ -376,7 +378,7 @@
             The Netherlands came closest. Transaction Monitoring Netherlands (TMNL), a joint initiative of the five largest Dutch banks, demonstrated that cross-institutional transaction analysis could identify laundering patterns invisible to individual institutions. The detection worked.
         </p>
         <p>
-            Then the Dutch Data Protection Authority intervened. TMNL required centralising pseudonymised transaction data from all participating banks. The DPA ruled that pseudonymised data is still personal data under GDPR. A correct legal interpretation. The processing lacked an adequate legal basis. TMNL was effectively suspended.
+            TMNL encountered unresolved legal and proportionality objections. The Dutch data protection authority was critical of population-scale joint monitoring, the Council of State concluded that necessity and proportionality had not been demonstrated for the proposed statutory basis and advised its removal, and the bill carrying that basis was declared controversial after the government fell. With the AMLR applying from 10 July 2027, TMNL is winding down its existing model and redesigning to reconcile with it.
         </p>
         <p>
             The lesson was clear: centralising data, even pseudonymised data, is not a viable path to cross-institutional AML detection in Europe.
@@ -542,8 +544,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="td-label">Single node: 500,000 entities, 100 AML policies</td>
-                        <td class="td-accent">under 2 seconds (measured: 1,584ms)</td>
+                        <td class="td-label">Single node: 500,000 entities, 56-policy catalogue</td>
+                        <td class="td-accent">667 ms, median of three runs (2-second regression bound enforced in CI)</td>
                     </tr>
                     <tr>
                         <td class="td-label">Alert lifecycle: ingestion to agent triage</td>
@@ -551,19 +553,19 @@
                     </tr>
                     <tr>
                         <td class="td-label">Sustained throughput</td>
-                        <td class="td-accent">190 million CEPS at batch 4,096 (compliance policy evaluations per second)</td>
+                        <td class="td-accent">750,000 complex events per second across the full 500,000-entity cycle. One unit is one entity evaluated against the full policy set, with attestation generation inside the measured path</td>
                     </tr>
                     <tr>
                         <td class="td-label">Detection accuracy</td>
-                        <td>4/4 typologies detected at every scale, per-entity verified</td>
+                        <td>Correspondent banking wire stripping validated end to end as a named cohort on synthetic data across simulated participants</td>
                     </tr>
                     <tr>
                         <td class="td-label">Federation: 100K entities, bilateral round</td>
-                        <td>~3.1 seconds per bilateral round at 100K entities per party (TCP localhost, 10s bound enforced in CI; real network adds latency)</td>
+                        <td>3,052 ms per bilateral round at 100,000 entities per party, against a 10-second bound enforced in CI. Loopback development transport, not a real inter-participant network.</td>
                     </tr>
                     <tr>
-                        <td class="td-label">Memory stability (50-epoch endurance test)</td>
-                        <td>0 MB VRAM leak, 0 MB RSS growth</td>
+                        <td class="td-label">Security model</td>
+                        <td>Semi-honest. Protection against a participant that deliberately deviates from the protocol is not implemented</td>
                     </tr>
                     <tr>
                         <td class="td-label">Transport security</td>
@@ -571,14 +573,14 @@
                     </tr>
                     <tr>
                         <td class="td-label">Policy framework</td>
-                        <td>29 policies, 100 CPL rules, 9 domains, audited line-by-line against 38-page manual, 0 critical discrepancies</td>
+                        <td>56-policy logical catalogue, pinned by static assertion to the catalogue array, with a 128-policy corpus (34 fail-closed screening, 94 detection) used for scale characterisation</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <p>
-            Four real-world money laundering typologies were tested: trade-based money laundering (over-invoicing across three banks), correspondent banking wire stripping, shell company layering networks, and funnel account structuring with cryptocurrency exit. In each case, no individual bank's monitoring system would have escalated the entity. Only cross-institutional federation detected the pattern.
+            Correspondent banking wire stripping is validated end to end as a named cohort on synthetic data across simulated participants. Trade-based over-invoicing, shell company layering and funnel account structuring are designed and in scope, not validated. In the validated cohort, no individual simulated bank's monitoring would have escalated the entity. Only cross-institutional federation detected the pattern.
         </p>
         <p>
             Each policy evaluation produces a cryptographic proof bundle: an attestation of the policy that fired, the inputs it read, and the verdict it produced. A regulator can independently verify, years after the fact, that the system correctly applied the approved policy to the available data.
@@ -637,53 +639,18 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="td-label">1,000</td>
-                        <td class="td-accent">228 ms</td>
-                        <td>—</td>
-                        <td>4/4</td>
-                        <td>29 (100 rules)</td>
-                    </tr>
-                    <tr>
-                        <td class="td-label">5,000</td>
-                        <td class="td-accent">344 ms</td>
-                        <td>—</td>
-                        <td>4/4</td>
-                        <td>29 (100 rules)</td>
-                    </tr>
-                    <tr>
-                        <td class="td-label">10,000</td>
-                        <td class="td-accent">492 ms</td>
-                        <td>—</td>
-                        <td>4/4</td>
-                        <td>29 (100 rules)</td>
-                    </tr>
-                    <tr>
-                        <td class="td-label">50,000</td>
-                        <td class="td-accent">1.4 seconds</td>
-                        <td>—</td>
-                        <td>4/4</td>
-                        <td>29 (100 rules)</td>
-                    </tr>
-                    <tr>
-                        <td class="td-label">100,000</td>
-                        <td class="td-accent">2.1 seconds</td>
-                        <td>—</td>
-                        <td>4/4</td>
-                        <td>29 (100 rules)</td>
-                    </tr>
-                    <tr>
                         <td class="td-label">500,000</td>
-                        <td class="td-accent">under 2 seconds</td>
-                        <td>190M CEPS at batch 4,096</td>
-                        <td>4/4</td>
-                        <td>29 (100 rules)</td>
+                        <td class="td-accent">667 ms (median of three)</td>
+                        <td>750K complex events/sec</td>
+                        <td>Wire stripping cohort</td>
+                        <td>56-policy catalogue</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <p>
-            Three things to note. Throughput increases with batch size because larger batches amortise the fixed cost of GPU kernel launches. At the engine's maximum dispatch batch of 4,096 entities, it sustains 190 million compliance policy evaluations per second, with a 100 million floor enforced in continuous integration. That rate is measured at batch scale and is not extrapolated to the 500,000-entity cycle, which is reported as wall-clock time above. These times are for GPU policy evaluation including full proof generation (Merkle root + Ed25519 signature). The 29 policies are not simplified test rules. They are the complete policy set spanning sanctions screening, PEP/EDD, transaction monitoring, fraud, KYC, crypto, and conduct, audited line-by-line with zero critical discrepancies.
+            Three things to note. Throughput is reported as 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. Policy-set size is not used as a multiplier. These times are for GPU policy evaluation including full proof generation (Merkle root + Ed25519 signature). The catalogue is 56 logical policies, pinned by static assertion to the catalogue array, spanning sanctions screening, PEP/EDD, transaction monitoring, fraud, KYC, crypto, and conduct. A 128-policy corpus (34 fail-closed screening, 94 detection) is used for scale characterisation.
         </p>
 
         <h2>Privacy-preserving federation performance</h2>
@@ -702,7 +669,7 @@
                     <tr>
                         <td class="td-label">2-bank bilateral round</td>
                         <td>100,000</td>
-                        <td class="td-accent">~3.1 seconds (TCP localhost)</td>
+                        <td class="td-accent">3,052 ms (loopback development transport)</td>
                         <td>ECDH-PSI + GC + IKNP OT</td>
                     </tr>
                     <tr>
@@ -713,7 +680,7 @@
                     </tr>
                     <tr>
                         <td class="td-label">Raw data shared</td>
-                        <td colspan="3">Zero bytes. Encrypted protocol messages only (ECDLP-protected)</td>
+                        <td colspan="3">No raw or directly identifying customer data leaves the institution. Encrypted protocol messages only (ECDLP-protected)</td>
                     </tr>
                 </tbody>
             </table>
@@ -737,20 +704,14 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="td-label">100,000 entities, 100 policies</td>
-                        <td class="td-accent">237.7ms</td>
-                        <td>24 hours</td>
-                        <td class="td-strong">hundreds of thousands&times;</td>
-                    </tr>
-                    <tr>
-                        <td class="td-label">500,000 entities, 100 policies</td>
-                        <td class="td-accent">under 2 seconds</td>
+                                                <td class="td-label">500,000 entities, 56-policy catalogue</td>
+                        <td class="td-accent">667 ms (median of three)</td>
                         <td>24 hours</td>
                         <td class="td-strong">millions&times;</td>
                     </tr>
                     <tr>
-                        <td class="td-label">Alert: ingestion to triage</td>
-                        <td class="td-accent">under 10ms</td>
+                        <td class="td-label">Alert: local decision, single cold alert</td>
+                        <td class="td-accent">7 to 8 ms</td>
                         <td>24 hours</td>
                         <td class="td-strong">millions&times;</td>
                     </tr>
@@ -759,7 +720,7 @@
         </div>
 
         <p>
-            For comparison: a conventional CPU-based system evaluating 29 policies against 100,000 entities requires extracting the data, running sequential rule evaluation, and waiting for the batch cycle to complete. Conservative estimate: 4 to 12 hours. ZQUAS evaluates the same 100,000 entities in 237.7 milliseconds.
+            For comparison: a conventional CPU-based system evaluating a full policy set against every entity requires extracting the data, running sequential rule evaluation, and waiting for the batch cycle to complete. ZQUAS completes a 500,000-entity detection cycle against its 56-policy catalogue in 667 ms, median of three runs.
         </p>
 
         <hr class="section-rule">
@@ -789,18 +750,18 @@
 
         <h2>"The performance numbers can't be real with production-grade policies."</h2>
         <p>
-            This is the most important objection to address. The 29 policies used in the benchmark are not toy rules. They are the complete policy set from a 38-page compliance policy manual: 100 individual rules across 9 regulatory domains, 5 cross-domain chains, regulatory traceability to FATF 40, EU AMLD5/6, Wwft, BSA, FCA Handbook, OFAC, and MiCA, and decision logic that includes multi-threshold scoring, temporal aggregation, counterparty risk assessment, and composite EDD weighting. The policies have been audited line-by-line. Zero critical discrepancies remain.
+            This is the most important objection to address. The benchmark runs against a 56-policy logical catalogue, pinned by static assertion to the catalogue array, with a 128-policy corpus (34 fail-closed screening, 94 detection) used for scale characterisation. These are not toy rules. The decision logic includes multi-threshold scoring, temporal aggregation, counterparty risk assessment, and composite EDD weighting.
         </p>
         <p>
-            The performance is real because the bottleneck in cross-institutional detection is not policy evaluation. It is the cryptographic protocol. The 29 policies evaluate in microseconds per entity on GPU. The MPC round (PSI, garbled circuit, oblivious transfer) takes milliseconds. Even if policies were 100 times more complex, the round time would increase only marginally, because the policy evaluation component is already the smaller term.
+            The performance is real because the bottleneck in cross-institutional detection is not policy evaluation. It is the cryptographic protocol. The policy catalogue evaluates in microseconds per entity on GPU. The MPC round (PSI, garbled circuit, oblivious transfer) takes milliseconds. Even if policies were 100 times more complex, the round time would increase only marginally, because the policy evaluation component is already the smaller term.
         </p>
 
         <h2>"What about false positives at scale?"</h2>
         <p>
-            In the production benchmark, 4.1% of background entities produced non-zero risk scores through real policy evaluation. Zero of these entities were falsely escalated through federation, because individual risk scores remained below the combined threshold. The cross-bank correlation acts as a natural filter. Moderate risk at one bank is not suspicious unless corroborated by risk at another bank.
+            No measured false positive rate is published. Producing one requires the detection baseline suite to be run and recorded, and until that exists no figure appears here. What the synthetic cohort showed is that entities below the combined threshold were not escalated through federation. The cross-bank correlation acts as a natural filter. Moderate risk at one bank is not suspicious unless corroborated by risk at another bank.
         </p>
         <p>
-            The relevant question is whether the false positive rate will remain this low with real customer data. We expect it to increase. Real customer bases have sanctions name collisions, PEPs with legitimate business, and cash-intensive entities with ambiguous profiles. Industry-standard AML false positive rates are 90 to 95 percent. A production rate of 1 to 5 percent would be a significant operational improvement. Quantifying this requires a pilot with real or representative data, which is one of the objectives of the sandbox engagement.
+            The relevant question is what the false positive rate will be on real customer data. Real customer bases have sanctions name collisions, PEPs with legitimate business, and cash-intensive entities with ambiguous profiles. Industry-standard AML false positive rates are 90 to 95 percent. A production rate of 1 to 5 percent would be a significant operational improvement. Quantifying this requires a pilot with real or representative data, which is one of the objectives of the sandbox engagement.
         </p>
 
         <h2>"How does this integrate with our existing Actimize, Oracle, or SAS stack?"</h2>
@@ -899,6 +860,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

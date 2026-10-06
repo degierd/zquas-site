@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction Monitoring Netherlands: What Went Wrong, What Comes Next — ZQUAS</title>
-    <meta name="description" content="Analysis of the TMNL cross-institutional AML initiative. Why it was shut down, what the architectural problem was, and how privacy-preserving MPC provides the alternative.">
+    <meta name="description" content="Analysis of the TMNL cross-institutional AML initiative. The legal and proportionality objections it encountered, the architectural problem underneath them, and how privacy-preserving MPC offers an alternative.">
     <meta name="keywords" content="TMNL, Transaction Monitoring Netherlands, cross-bank AML, TMNL alternative, cross-institutional AML Netherlands, privacy-preserving AML, multi-party computation AML">
     <meta property="og:title" content="Transaction Monitoring Netherlands: What Went Wrong, What Comes Next — ZQUAS">
-    <meta property="og:description" content="Analysis of the TMNL cross-institutional AML initiative. Why it was shut down, what the architectural problem was, and how privacy-preserving MPC provides the alternative.">
+    <meta property="og:description" content="Analysis of the TMNL cross-institutional AML initiative. The legal and proportionality objections it encountered, the architectural problem underneath them, and how privacy-preserving MPC offers an alternative.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://zquas.ai/tmnl.html">
     <meta property="og:image" content="https://zquas.ai/og-image.png">
@@ -40,7 +40,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "Transaction Monitoring Netherlands: What Went Wrong, What Comes Next",
-        "description": "The most ambitious cross-institutional AML initiative in Europe was shut down because its architecture couldn't be reconciled with privacy law. A complete analysis of what happened, why it failed, and what the alternative architecture looks like.",
+        "description": "Europe's most ambitious cross-institutional AML initiative encountered unresolved legal and proportionality objections. A complete analysis of what happened, what the architectural problem was, and what the alternative architecture looks like.",
         "datePublished": "2026-03-08",
         "author": {
             "@type": "Person",
@@ -83,6 +83,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -107,7 +108,7 @@
         <div class="section-label">Case Analysis &middot; March 2026</div>
         <h1 class="section-title" style="font-size: clamp(1.8rem, 4vw, 2.6rem); max-width: 800px; margin-bottom: 1.5rem;">Transaction Monitoring Netherlands: What Went Wrong, What Comes Next</h1>
         <p class="section-desc" style="max-width: 760px;">
-            Five Dutch banks spent four years and tens of millions of euros building the world's most ambitious cross-institutional AML monitoring initiative. It was shut down in 2024. Not because it failed at detection. Because its architecture couldn't survive contact with privacy law. Here's the full story, and the architectural alternative that resolves the conflict.
+            Five Dutch banks spent four years and tens of millions of euros building Europe's most ambitious cross-institutional AML monitoring initiative. It did not fail at detection. Its architecture ran into unresolved legal and proportionality objections. Here is the full story, and the architectural alternative.
         </p>
         <div class="analysis-updated">Last updated: March 2026</div>
     </div>
@@ -132,19 +133,19 @@
 <section style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="container">
         <div class="analysis-body">
-            <h2>Why It Was Shut Down</h2>
+            <h2>Why It Stalled</h2>
 
             <p>TMNL's architecture centralised raw transaction data from five banks into a single platform. This was the most intuitive approach to joint analysis, and it worked technically. But it created a fundamental conflict with privacy rights.</p>
 
             <p>In April 2024, the human rights organisation HRIF.EU, together with other organisations representing investors' rights, submitted a petition to the Dutch Parliament on behalf of nearly 15,000 banking customers. The petition demanded that TMNL stop processing data, cease its entrusted transaction monitoring from the five banks, and destroy all collected data. HRIF.EU argued that TMNL infringed on GDPR protections around automated decision-making and lacked transparency about how it handled large volumes of transaction information.</p>
 
-            <p>The Dutch Data Protection Authority raised concerns. The Council of State questioned the legal basis. Political support, once strong, became uncertain as the privacy implications became clearer.</p>
+            <p>The Dutch data protection authority was critical of population-scale joint monitoring. The Council of State concluded that necessity and proportionality had not been demonstrated for the proposed statutory basis and advised its removal, and the bill carrying that basis was declared controversial after the government fell. No enforcement decision was taken against TMNL.</p>
 
             <p>Then the EU Anti-Money Laundering Regulation (AMLR) was finalised in May 2024. AMLR provides a legal framework for inter-bank cooperation, but it restricts data sharing to customers who are already identified as high-risk or where additional information is needed to assess their risk level. Broad-based pooling of transaction data across banks, which was TMNL's entire operational model, was no longer legally viable under the incoming EU framework.</p>
 
             <p>In July 2024, TMNL announced it would wind down its existing activities and restructure. By January 2025, most staff had departed. The CEO, Norbert Siegers, described the initiative as 'unique, special and educational' and expressed hope that 'politicians, supervisors, public and private parties will find each other in a new route to collaboration.'</p>
 
-            <p>TMNL, in its current form, ceased to exist.</p>
+            <p>With the AMLR applying from 10 July 2027, TMNL is winding down its existing model and redesigning to reconcile with it.</p>
         </div>
     </div>
 </section>
@@ -324,6 +325,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>

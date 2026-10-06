@@ -81,6 +81,7 @@
                 <a href="technology.html" class="nav-dropdown-toggle">Technology <span class="nav-arrow">&#x25BE;</span></a>
                 <div class="nav-dropdown-menu">
                     <a href="technology.html">Overview</a>
+                    <a href="platform.html">Platform</a>
                     <a href="architecture.html">Architecture</a>
                     <a href="compare.html">Compare</a>
                     <a href="why-different.html">Why Different</a>
@@ -193,9 +194,9 @@
 
         <h2>2. What Exists Today</h2>
 
-        <p>Before describing the cross-sector architecture, it is important to establish what is already built and operational. This paper describes a vision that extends from a production-ready foundation, not a theoretical concept that requires everything to be built from scratch.</p>
+        <p>Before describing the cross-sector architecture, it is important to establish what is already built. This paper describes a vision that extends from a working prototype at TRL 6, validated on synthetic data, not a theoretical concept that requires everything to be built from scratch.</p>
 
-        <p>The ZQUAS F1 Engine is a GPU-native financial crime detection engine comprising approximately 396,000 lines of C++ and CUDA code with 493 GPU kernels. It is not a prototype, a proof of concept, or a roadmap. The banking detection pipeline is production-ready.</p>
+        <p>The ZQUAS F1 Engine is a GPU-native financial crime detection engine of approximately 753,000 source lines excluding third-party code. Readiness is TRL 6: an integrated prototype demonstrated in a controlled relevant environment, validated on synthetic populations, with no production deployments.</p>
 
         <h3>2.1 Banking Detection: Production-Ready</h3>
 
@@ -227,31 +228,31 @@
             <tbody>
                 <tr>
                     <td><strong>Banking transaction ingestion</strong></td>
-                    <td>Production-ready. Deployed.</td>
+                    <td>Built and tested on synthetic data.</td>
                 </tr>
                 <tr>
                     <td><strong>Bank-to-bank federation (ECDH-PSI, escalation propagation)</strong></td>
-                    <td>Production-ready. Tested.</td>
+                    <td>Built and tested on synthetic data.</td>
                 </tr>
                 <tr>
                     <td><strong>Five-layer detection pipeline (GPU-native)</strong></td>
-                    <td>Production-ready. Over 100 policies compiled.</td>
+                    <td>Built and tested. 56-policy logical catalogue, with a 128-policy corpus used for scale characterisation.</td>
                 </tr>
                 <tr>
                     <td><strong>Financial Crime Network Simulator (15 typologies)</strong></td>
-                    <td>Production-ready. Over 300 tests.</td>
+                    <td>Built and tested on synthetic data.</td>
                 </tr>
                 <tr>
                     <td><strong>Evidence system with blind assessment workflow</strong></td>
-                    <td>Production-ready. Implemented.</td>
+                    <td>Built and tested on synthetic data.</td>
                 </tr>
                 <tr>
                     <td><strong>Deterministic entity hashing (pre-PSI)</strong></td>
-                    <td>Production-ready. Implemented.</td>
+                    <td>Built and tested on synthetic data.</td>
                 </tr>
                 <tr>
                     <td><strong>Cryptographic erasure (hierarchical per-entity keys)</strong></td>
-                    <td>Production-ready. Implemented.</td>
+                    <td>Built and tested on synthetic data.</td>
                 </tr>
                 <tr>
                     <td><strong>Differential privacy on federation signals</strong></td>
@@ -374,7 +375,7 @@
 
         <h3>3.3 European Union: AMLR Article 75 and MiCA</h3>
 
-        <p>The Anti-Money Laundering Regulation (AMLR) Article 75 mandates mechanisms for cross-institutional information sharing. The Anti-Money Laundering Authority (AMLA) will assume oversight tasks from 2027, as confirmed by the <a href="https://english.rekenkamer.nl/latest/current-audits/consequences-of-anti-money-laundering-policy" target="_blank" rel="noopener">Netherlands Court of Audit</a>.</p>
+        <p>The Anti-Money Laundering Regulation (AMLR) Article 75 permits information sharing between obliged entities within a partnership, subject to its safeguards. It does not mandate that banks build sharing mechanisms. The Anti-Money Laundering Authority (AMLA) will assume oversight tasks from 2027, as confirmed by the <a href="https://english.rekenkamer.nl/latest/current-audits/consequences-of-anti-money-laundering-policy" target="_blank" rel="noopener">Netherlands Court of Audit</a>.</p>
 
         <p>The Markets in Crypto-Assets Regulation (MiCA) became fully applicable in December 2024, following a phased rollout in which stablecoin provisions took effect from June 2024. MiCA requires crypto-asset service providers to implement transaction monitoring, suspicious activity reporting, and customer due diligence equivalent to traditional financial institutions. CASPs are now regulated entities with the same compliance obligations as banks.</p>
 
@@ -399,7 +400,7 @@
 
         <p>This does not mean that all data sources are equally simple to process. Financial crime detection within a single sector depends on rich, sector-specific features. A banking installation analyses transaction narratives, merchant categories, and payment patterns. A telco installation analyses call patterns, SIM lifecycle events, and network behaviour. A crypto installation analyses wallet clustering, bridge usage, and mixer proximity. These sector-specific features produce entity-level risk assessments that are comparable across sectors through calibration (Section 4.7), even though the underlying feature sets are different.</p>
 
-        <p>The banking pipeline is production-ready today. The telecommunications and blockchain pipelines are planned engineering milestones. The detection engine, federation protocol, and scoring infrastructure are already operational and data-agnostic. What remains is building the sector-specific ingestion adapters and tuning the detection parameters per data domain.</p>
+        <p>The banking pipeline is built and tested on synthetic data at TRL 6. The telecommunications and blockchain pipelines are planned engineering milestones. The detection engine, federation protocol, and scoring infrastructure are already operational and data-agnostic. What remains is building the sector-specific ingestion adapters and tuning the detection parameters per data domain.</p>
 
         <h3>4.2 The Four-Installation Federation</h3>
 
@@ -425,7 +426,7 @@
             <rect x="50" y="155" width="180" height="28" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
             <text x="140" y="174" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Entity risk assessment</text>
             <rect x="50" y="190" width="180" height="28" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
-            <text x="140" y="209" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#3FB950" text-anchor="middle">Production-ready</text>
+            <text x="140" y="209" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#3FB950" text-anchor="middle">Built and tested</text>
 
             <!-- Telco installation -->
             <rect x="550" y="60" width="220" height="180" rx="6" fill="#101820" stroke="#D29922" stroke-width="1.5"/>
@@ -777,7 +778,7 @@
 
         <h3>5.1 No Raw Data Sharing</h3>
 
-        <p>No institution shares raw customer data, transaction records, CDRs, or blockchain addresses. The federation shares binary escalation signals: derived decisions, not personal data.</p>
+        <p>No institution shares raw customer data, transaction records, CDRs, or blockchain addresses. The federation shares binary escalation signals. Whether those signals and the underlying protocol traffic constitute personal data processing is unresolved, and no EU data protection authority has ruled on it.</p>
 
         <h3>5.2 Cryptographic Entity Matching</h3>
 
@@ -891,7 +892,7 @@
             <rect x="80" y="258" width="640" height="100" rx="8" fill="#131D28" stroke="#3FB950" stroke-width="2"/>
             <text x="400" y="286" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#3FB950" text-anchor="middle">ZQUAS F1 Engine</text>
             <text x="400" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#C9D1D9" text-anchor="middle">Single GPU-native detection pipeline. Privacy-preserving federation protocol. All three sectors.</text>
-            <text x="400" y="332" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#C9D1D9" text-anchor="middle">Banking: production-ready. Telecommunications: Phase 2. Digital assets: Phase 3.</text>
+            <text x="400" y="332" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#C9D1D9" text-anchor="middle">Banking: TRL 6, synthetic data. Telecommunications: Phase 2. Digital assets: Phase 3.</text>
             <text x="400" y="350" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">No existing vendor bridges banking, telecommunications, and digital asset detection.</text>
 
             <!-- Brand -->
@@ -901,7 +902,7 @@
 
         <p>In the Netherlands, Transactie Monitoring Nederland (TMNL) pioneered joint transaction monitoring across five banks. TMNL operated on a centralised model: banks sent pseudonymised data to a shared utility. The initiative faced sustained scrutiny from the Autoriteit Persoonsgegevens over proportionality. ZQUAS addresses a different architecture and a different scope. The architecture is peer-to-peer: no central database. The scope extends beyond banking to telecommunications and digital assets. The distinction is structural.</p>
 
-        <p>ZQUAS is the only platform architected to process banking, telecommunications, and blockchain data in a single GPU-native detection pipeline, connected by a privacy-preserving federation protocol across all three sectors. The banking pipeline is production-ready. The federation protocol is production-ready. The cross-sector extensions are engineering milestones on an operational foundation.</p>
+        <p>ZQUAS is architected to process banking, telecommunications, and blockchain data in a single GPU-native detection pipeline, connected by a privacy-preserving federation protocol across all three sectors. In the competitive landscape reviewed, no current system has been identified that performs cross-institutional risk determination without disclosure across those sectors. The banking pipeline is built and tested on synthetic data at TRL 6. The federation protocol is production-ready. The cross-sector extensions are engineering milestones on an operational foundation.</p>
 
 
         <h2>9. Honest Limitations</h2>
@@ -954,7 +955,7 @@
             <text x="135" y="116" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">Current</text>
             <text x="135" y="136" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Banking federation</text>
             <text x="135" y="152" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Pilot validation</text>
-            <text x="135" y="175" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="bold" fill="#3FB950" text-anchor="middle">Production-ready</text>
+            <text x="135" y="175" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="bold" fill="#3FB950" text-anchor="middle">Built and tested</text>
 
             <!-- Phase 2 -->
             <circle cx="320" cy="60" r="8" fill="#D29922" stroke="#131D28" stroke-width="2"/>
@@ -980,7 +981,7 @@
             <text x="680" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#58A6FF" text-anchor="middle">PHASE 4</text>
             <text x="680" y="116" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#58A6FF" text-anchor="middle">2027</text>
             <text x="680" y="136" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Regulatory interface</text>
-            <text x="680" y="152" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">AMLA Article 75 reporting</text>
+            <text x="680" y="152" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">AMLR Article 75 reporting</text>
             <text x="680" y="168" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Hub-spoke topology</text>
 
             <!-- Key milestone -->
@@ -993,13 +994,13 @@
           </svg>
         </div>
 
-        <p><strong>Phase 1 (Current):</strong> Banking federation. Pilot validation. Production-ready.</p>
+        <p><strong>Phase 1 (Current):</strong> Banking federation. Pilot validation. TRL 6, synthetic data only.</p>
 
         <p><strong>Phase 2 (Q3 2026):</strong> Telecommunications integration. CDR/TMDR ingestion. Cross-sector PSI on phone number and government ID. Quantitative risk deltas, differential privacy, signal velocity circuit breaker, full normalisation pipeline, cross-sector calibration.</p>
 
         <p><strong>Phase 3 (Q4 2026):</strong> Digital asset integration. Blockchain event ingestion. Wallet-to-identity linking via exchange KYC.</p>
 
-        <p><strong>Phase 4 (2027):</strong> Regulatory interface. AMLA Article 75 reporting. Hub-spoke topology.</p>
+        <p><strong>Phase 4 (2027):</strong> Regulatory interface. AMLR Article 75 reporting. Hub-spoke topology.</p>
 
 
         <h2>11. Conclusion</h2>
@@ -1037,6 +1038,7 @@
             <div class="footer-col">
                 <h4>Technology</h4>
                 <a href="technology.html">Overview</a>
+                <a href="platform.html">Platform</a>
                 <a href="architecture.html">Architecture</a>
                 <a href="compare.html">Compare</a>
                 <a href="why-different.html">Why Different</a>
