@@ -27,6 +27,7 @@
         }
 
         function play() {
+            window.dispatchEvent(new Event('zquas:film-play'));
             var frame = box.querySelector('.film-frame');
             if (!frame || frame.querySelector('iframe')) return;
             var iframe = document.createElement('iframe');
@@ -44,6 +45,15 @@
         btn.addEventListener('click', play);
         box._filmPlay = play;
     }
+
+    window.addEventListener('zquas:story-start', function () {
+        var frames = document.querySelectorAll('[data-film] iframe');
+        for (var i = 0; i < frames.length; i++) {
+            var box = frames[i].closest('[data-film]');
+            frames[i].remove();
+            if (box) box.classList.remove('film--playing');
+        }
+    });
 
     function init() {
         var boxes = document.querySelectorAll('[data-film]');

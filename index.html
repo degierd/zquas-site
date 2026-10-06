@@ -31,10 +31,22 @@
     <link rel="canonical" href="https://zquas.ai">
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=5">
+    <style>
+        #zquas-story { padding-top:65px; background:#0a0b0f; }
+        #zquas-story .story-fallback { min-height:calc(100svh - 65px); max-width:none; margin:0; padding:12px 24px 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; color:#a1a9bf; }
+        .story-fallback picture { display:block; width:min(1100px,100%); }
+        .story-fallback img { display:block; width:100%; height:auto; }
+        .story-fallback a { color:#c2d4ff; }
+        .story-fallback p { margin:0; text-align:center; }
+        .story-fallback .story-loading-note { max-width:90ch; font-size:12px; line-height:1.5; }
+        @media(max-width:640px) and (orientation:portrait) { .story-fallback picture { width:min(100%,calc((100svh - 230px)*1080/1280)); } }
+    </style>
+    <link rel="preload" as="image" href="story-assets/film/poster.jpg" media="(min-width:641px), (orientation:landscape)">
+    <link rel="preload" as="image" href="story-assets/film/poster-portrait.jpg" media="(max-width:640px) and (orientation:portrait)">
+    <link rel="stylesheet" href="story-assets/story.css?v=7">
     <script src="config.js?v=5"></script>
-    <script src="film.js?v=1" defer></script>
+    <script src="story-assets/story.js?v=7" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -121,7 +133,7 @@
                 "name": "Is ZQUAS production-ready?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No. Readiness is TRL 6: an integrated prototype demonstrated in a controlled relevant environment. All validation to date is on synthetic data. There are no production deployments, no live counterparty data, and security is semi-honest only. ZQUAS is taking part in the FCA's Supercharged Sandbox."
+                    "text": "No. Readiness is TRL 6: an integrated prototype demonstrated in a controlled relevant environment. All validation to date is on synthetic data. There are no production deployments, no live counterparty data, and security is semi-honest only. ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results."
                 }
             }
         ]
@@ -168,43 +180,143 @@
 
 <main>
 
-<section class="hero hero--home">
-    <div class="hero-content">
-        <div class="hero-grid">
-            <div class="hero-copy">
-                <h1 class="hero-headline">
-                    Criminals use many banks.<br>
-                    <span class="hero-headline-accent">Now banks can act as one.</span>
-                </h1>
-                <p class="hero-resolution">
-                    ZQUAS lets banks catch scam payments and mule accounts together, at the moment of payment, without pooling customer data.
-                </p>
-                <div class="hero-actions">
-                    <a href="contact.html" class="hero-cta-primary">Join the pilot</a>
-                    <a href="#film" class="hero-cta-secondary" data-film-play="main">Watch the film</a>
-                </div>
-                <p class="hero-sandbox">Taking part in the FCA's Supercharged Sandbox.</p>
-            </div>
-            <figure class="film" id="film" data-film="main" data-title="How banks can stop scams together | the ZQUAS Federation Network">
-                <div class="film-frame">
-                    <img class="film-poster" src="film-poster.jpg" width="1280" height="720" alt="Title card of the film: How banks can stop scams together. The ZQUAS Federation Network.">
-                    <button class="film-play" type="button" aria-label="Play the film">
-                        <span class="film-play-icon" aria-hidden="true">&#9654;</span>
-                        <span class="film-play-label">Play the film</span>
-                    </button>
-                </div>
-                <figcaption class="film-notice">Playing loads the video from YouTube.</figcaption>
-                <p class="film-note">Results in the film are on synthetic data, not real-world detection rates. English captions are available.</p>
-                <noscript><p class="film-note">Enable JavaScript to play the film, or find it on the ZQUAS YouTube channel.</p></noscript>
-            </figure>
+<h1 class="story-page-title">How banks can stop scams together</h1>
+<div id="zquas-story" data-assets="story-assets" data-continue="#for-banks">
+    <div class="story-fallback">
+        <picture>
+            <source media="(max-width:640px) and (orientation:portrait)" srcset="story-assets/film/poster-portrait.jpg">
+            <img src="story-assets/film/poster.jpg" alt="How banks can stop scams together. The ZQUAS Federation Network." width="1280" height="720" fetchpriority="high">
+        </picture>
+        <p><a href="#for-banks">Explore the pilot and evidence ↓</a></p>
+        <p class="story-loading-note">ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.</p>
+        <noscript><p>Enable JavaScript to follow the interactive story.</p></noscript>
+    </div>
+</div>
+
+<section class="home-pilot" id="for-banks" tabindex="-1">
+    <div class="container">
+        <div class="pilot-intro">
+            <div class="section-label">The pilot</div>
+            <h2 class="section-title">Join the pilot</h2>
+            <p class="pilot-readiness">TRL 6. Synthetic data only. No production deployments.</p>
+            <div class="evidence-links"><a href="#results">Explore the evidence <span aria-hidden="true">↓</span></a></div>
         </div>
-        <div class="hero-cred-row">
-            <span>TRL 6 &middot; synthetic data only &middot; no production deployments</span>
+        <div class="tenant-grid">
+            <div class="tenant-card">
+                <div class="tenant-card-head">
+                    <h3>Banks and payment firms</h3>
+                </div>
+                <p>Check the payments coming into your own accounts, on your own data, inside your own installation.</p>
+                <a href="contact.html" class="hero-cta-primary">Join the pilot</a>
+            </div>
+            <div class="tenant-card">
+                <div class="tenant-card-head">
+                    <h3>Crypto exchanges</h3>
+                </div>
+                <p>Review your customers' crypto withdrawals before they leave. In our model, exchanges as members catch about a quarter more scam payments.</p>
+                <a href="contact.html" class="hero-cta-primary">Join the pilot</a>
+            </div>
+            <div class="tenant-card">
+                <div class="tenant-card-head">
+                    <h3>Investors and partners</h3>
+                </div>
+                <p>A governance engine with measured results on synthetic data. Financial crime is where it starts.</p>
+                <a href="contact.html" class="hero-cta-secondary">Talk to us</a>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="problem-section" id="problem">
+<section class="home-evidence" id="results">
+    <div class="container">
+        <div class="section-label">What we have shown</div>
+        <h2 class="section-title">Results on synthetic data</h2>
+        <p class="section-desc">
+            Every result on this page comes from our own tests on synthetic data. None of them is a real-world detection rate.
+        </p>
+        <div class="metric-grid">
+            <div class="metric-card">
+                <span class="metric-val">About 1 in 2</span>
+                <span class="metric-label">Scam payments reviewed with the network</span>
+                <span class="metric-tag">Synthetic data. In our model.</span>
+                <details>
+                    <summary>Read the test detail</summary>
+                <p>Our synthetic world has 1,000,000 adults at the UK scam rate. Each bank's own fraud model alone caught about 1 in 7. When we removed our generator's easiest clue, the network figure fell to about 1 in 3. Every limit held, and fewer than 1 genuine payment in 10,000 was reviewed.</p>
+                </details>
+            </div>
+            <div class="metric-card">
+                <span class="metric-val">About a quarter more</span>
+                <span class="metric-label">With crypto exchanges as members</span>
+                <span class="metric-tag">Synthetic data at the UK scam rate. In our model.</span>
+                <details>
+                    <summary>Read the test detail</summary>
+                <p>Two crypto exchanges joined a four-bank network. Each reviews its own customers' crypto withdrawals before they leave. They caught about a quarter more scam payments than the banks alone. Every one of the extra payments was a payment a victim made to buy crypto, and every institution stayed inside its review limits.</p>
+                </details>
+            </div>
+            <div class="metric-card">
+                <span class="metric-val">99 in 100</span>
+                <span class="metric-label">Decisions in under 10 ms</span>
+                <span class="metric-tag">Our test. Synthetic data.</span>
+                <details>
+                    <summary>Read the test detail</summary>
+                <p>Up to 540 simulated bank installations ran together on nine cloud GPUs in one cloud zone.</p>
+                </details>
+            </div>
+        </div>
+        <p class="section-note">Limits in the model: at most 1 payment in 1,000 held and 1 in 500 reviewed. Network signals add reviews, never automatic holds. Synthetic data throughout, not real-world detection rates. Position today: TRL 6, no production deployments, no live counterparty data.</p>
+        <div class="evidence-links">
+            <a href="zquas-onepager.pdf">Download the briefing <span aria-hidden="true">↗</span></a>
+            <a href="benchmark.html">Engine benchmarks <span aria-hidden="true">↗</span></a>
+        </div>
+    </div>
+</section>
+
+<section class="home-platform" id="platform">
+    <div class="container">
+        <div class="platform-intro">
+        <div class="section-label">The engine underneath</div>
+        <h2 class="section-title">Built on a governance engine, not a fraud model.</h2>
+        </div>
+        <div>
+        <p class="section-desc">
+            Every ZQUAS decision runs on the same engine: it applies an institution's rules to decisions made by automated systems and AI agents, at GPU speed, and records why each decision was made so a supervisor can check it. Financial crime is where we start. The same engine can govern decisions in other industries where automated decisions need rules, limits and an audit trail.
+        </p>
+        <a href="platform.html" class="hero-cta-secondary engine-link">The platform &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<div class="home-background">
+    <h2>Explore the details</h2>
+<details class="home-detail" id="how-it-works">
+    <summary>How the network works</summary>
+<section>
+    <div class="container">
+        <div class="section-label">How it works</div>
+        <h2 class="section-title">The receiving bank checks. One report protects every member.</h2>
+        <div class="icon-grid">
+            <div class="icon-card">
+                <span class="card-icon step-num">1</span>
+                <h3>The receiving bank checks its own accounts</h3>
+                <p>The bank that holds the receiving account checks the payments coming into it. It uses its own view of that account and confirmed scam reports shared across the network. When an account looks like a mule, that bank can review it before more money arrives, even when the victim's bank is not in the network. A paying bank can also ask the holding bank one narrow question about a new payee before the money leaves.</p>
+            </div>
+            <div class="icon-card">
+                <span class="card-icon step-num">2</span>
+                <h3>One confirmed report protects every member</h3>
+                <p>When a victim reports a scam, that confirmed report is shared with every member. The mule account is flagged for review at every bank in the network. The network only ever adds reviews. It never adds automatic holds.</p>
+            </div>
+            <div class="icon-card">
+                <span class="card-icon step-num">3</span>
+                <h3>No customer files leave a bank</h3>
+                <p>No customer files are exchanged, and no raw or directly identifying customer data leaves the institution. Alerts carry proofs that the supervisor can verify. Security today is semi-honest: it assumes each member follows the protocol.</p>
+            </div>
+        </div>
+    </div>
+</section>
+</details>
+<details class="home-detail" id="problem">
+    <summary>The scam problem and its sources</summary>
+<section class="problem-section">
     <div class="container">
         <div class="section-label">The problem</div>
         <h2 class="section-title">Scams cost UK victims &pound;576.4 million in 2025.</h2>
@@ -233,102 +345,8 @@
         <p class="source-line">Source: Payment Systems Regulator, APP reimbursement rules.</p>
     </div>
 </section>
-
-<section id="how-it-works">
-    <div class="container">
-        <div class="section-label">How it works</div>
-        <h2 class="section-title">The receiving bank checks. One report protects every member.</h2>
-        <div class="icon-grid">
-            <div class="icon-card">
-                <span class="card-icon step-num">1</span>
-                <h3>The receiving bank checks its own accounts</h3>
-                <p>The bank that holds the receiving account checks the payments coming into it. It uses its own view of that account and confirmed scam reports shared across the network. When an account looks like a mule, that bank can review it before more money arrives, even when the victim's bank is not in the network. A paying bank can also ask the holding bank one narrow question about a new payee before the money leaves.</p>
-            </div>
-            <div class="icon-card">
-                <span class="card-icon step-num">2</span>
-                <h3>One confirmed report protects every member</h3>
-                <p>When a victim reports a scam, that confirmed report is shared with every member. The mule account is flagged for review at every bank in the network. The network only ever adds reviews. It never adds automatic holds.</p>
-            </div>
-            <div class="icon-card">
-                <span class="card-icon step-num">3</span>
-                <h3>No customer files leave a bank</h3>
-                <p>No customer files are exchanged, and no raw or directly identifying customer data leaves the institution. Alerts carry proofs that the supervisor can verify. Security today is semi-honest: it assumes each member follows the protocol.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="audience-section alt-bg" id="results">
-    <div class="container">
-        <div class="section-label">What we have shown</div>
-        <h2 class="section-title">Results on synthetic data</h2>
-        <p class="section-desc">
-            Every result on this page comes from our own tests on synthetic data. None of them is a real-world detection rate.
-        </p>
-        <div class="metric-grid">
-            <div class="metric-card">
-                <span class="metric-val">About 1 in 2</span>
-                <span class="metric-label">Scam payments reviewed with the network</span>
-                <p>Our synthetic world has 1,000,000 adults at the UK scam rate. Each bank's own fraud model alone caught about 1 in 7. When we removed our generator's easiest clue, the network figure fell to about 1 in 3. Every limit held, and fewer than 1 genuine payment in 10,000 was reviewed.</p>
-                <span class="metric-tag">Synthetic data. In our model.</span>
-            </div>
-            <div class="metric-card">
-                <span class="metric-val">About a quarter more</span>
-                <span class="metric-label">With crypto exchanges as members</span>
-                <p>Two crypto exchanges joined a four-bank network. Each reviews its own customers' crypto withdrawals before they leave. They caught about a quarter more scam payments than the banks alone. Every one of the extra payments was a payment a victim made to buy crypto, and every institution stayed inside its review limits.</p>
-                <span class="metric-tag">Synthetic data at the UK scam rate. In our model.</span>
-            </div>
-            <div class="metric-card">
-                <span class="metric-val">99 in 100</span>
-                <span class="metric-label">Decisions in under 10 ms</span>
-                <p>Up to 540 simulated bank installations ran together on nine cloud GPUs in one cloud zone.</p>
-                <span class="metric-tag">Our test. Synthetic data.</span>
-            </div>
-        </div>
-        <p class="section-note">Limits in the model: at most 1 payment in 1,000 held and 1 in 500 reviewed. Network signals add reviews, never automatic holds. Synthetic data throughout, not real-world detection rates. Position today: TRL 6, no production deployments, no live counterparty data.</p>
-    </div>
-</section>
-
-<section class="audience-section" id="platform">
-    <div class="container">
-        <div class="section-label">The engine underneath</div>
-        <h2 class="section-title">Built on a governance engine, not a fraud model.</h2>
-        <p class="section-desc">
-            Every ZQUAS decision runs on the same engine: it applies an institution's rules to decisions made by automated systems and AI agents, at GPU speed, and records why each decision was made so a supervisor can check it. Financial crime is where we start. The same engine can govern decisions in other industries where automated decisions need rules, limits and an audit trail.
-        </p>
-        <a href="platform.html" class="hero-cta-secondary engine-link">The platform &rarr;</a>
-    </div>
-</section>
-
-<section class="audience-section alt-bg" id="for-banks">
-    <div class="container">
-        <div class="section-label">For whom</div>
-        <h2 class="section-title">Join the network, or talk to us.</h2>
-        <div class="tenant-grid">
-            <div class="tenant-card">
-                <div class="tenant-card-head">
-                    <h3>Banks and payment firms</h3>
-                </div>
-                <p>Check the payments coming into your own accounts, on your own data, inside your own installation.</p>
-                <a href="contact.html" class="hero-cta-primary">Join the pilot</a>
-            </div>
-            <div class="tenant-card">
-                <div class="tenant-card-head">
-                    <h3>Crypto exchanges</h3>
-                </div>
-                <p>Review your customers' crypto withdrawals before they leave. In our model, exchanges as members catch about a quarter more scam payments.</p>
-                <a href="contact.html" class="hero-cta-primary">Join the pilot</a>
-            </div>
-            <div class="tenant-card">
-                <div class="tenant-card-head">
-                    <h3>Investors and partners</h3>
-                </div>
-                <p>A governance engine with measured results on synthetic data. Financial crime is where it starts.</p>
-                <a href="contact.html" class="hero-cta-secondary">Talk to us</a>
-            </div>
-        </div>
-    </div>
-</section>
+</details>
+</div>
 
 </main>
 
