@@ -1,6 +1,6 @@
 # A 12-week local pilot
 
-> Evaluate local transaction monitoring in a 12-week pilot on your own data and infrastructure. An optional network phase follows by separate agreement.
+> Evaluate scam review and local transaction monitoring in a 12-week local pilot on your own data and infrastructure. An optional network phase follows by separate agreement.
 
 Source: https://zquas.ai/founding-partner.html
 Site: https://zquas.ai
@@ -8,10 +8,12 @@ Site: https://zquas.ai
 ---
 The ZQUAS pilot
 
+Updated: 7 October 2026
+
 # Start inside
 your own institution.
 
-A 12-week local pilot to evaluate transaction monitoring on your own data and infrastructure. An optional network phase can follow after you review the local results.
+A 12-week local pilot for scam review and local transaction monitoring on your own data and infrastructure. An optional network phase can follow after you review the local results.
 
 TRL 6. Synthetic data only. No production deployments.
 
@@ -25,7 +27,7 @@ Before you begin
 
 ### Who should participate
 
-A bank or payment firm exploring local transaction monitoring. Bring a compliance owner, an analyst or operations lead, and an IT contact. Agree the evaluation question together.
+A bank or payment firm evaluating scam review and local transaction monitoring. Bring a compliance owner, an analyst or operations lead, and an IT contact. Agree the evaluation question together.
 
 02
 
@@ -37,13 +39,13 @@ An agreed local dataset and its permitted use, account and payment history, and 
 
 ### What ZQUAS supplies
 
-The pilot software, support to configure the local monitor, the signed decision log and its verification check. We agree the setup, evaluation support and report with your team before the pilot starts.
+The pilot software, support to configure scam review and local monitoring, the signed decision log and its verification check. We agree the setup, evaluation support and report with your team before the pilot starts.
 
 04
 
 ### What gets measured
 
-Scam payments caught, analyst workload, and whether every decision can be verified in the signed log. Where payment review and hold policies are evaluated, the limits are at most 1 review per 500 payments and 1 hold per 1,000. These are evaluation limits, not a promised detection rate. Local transaction monitoring itself selects investigation work and does not hold payments.
+Scam payments caught, at most 1 review per 500 payments and 1 hold per 1,000, analyst workload, local monitoring workload and coverage, every decision verifiable in the signed log. These are evaluation measures and limits, not promised detection rates. Local transaction monitoring selects investigation work and does not itself hold payments.
 
 05
 
@@ -65,21 +67,21 @@ Confirm the evaluation question, local data, access, responsibilities and succes
 
 2. Weeks 3 to 4
 
-### Configure the local monitor
+### Configure the local pilot
 
-Prepare the local inputs and configuration. Check the decision log and verification process.
+Prepare local inputs and configuration for scam review and transaction monitoring. Check the decision log and verification process.
 
 3. Weeks 5 to 8
 
 ### Run the local evaluation
 
-Review the nominated work with analysts. Record the outcomes and workload against the agreed limits.
+Evaluate scam review and local transaction monitoring. Review nominated work with analysts. Record outcomes, monitoring coverage and workload against the agreed limits.
 
 4. Weeks 9 to 10
 
 ### Assess the results
 
-Examine scam payments caught, review and hold rates where applicable, analyst workload and log verification.
+Examine scam payments caught, adherence to review and hold limits, analyst workload, local monitoring workload and coverage, and signed-log verification.
 
 5. Weeks 11 to 12
 

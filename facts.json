@@ -179,11 +179,13 @@
     "optional_phase": "Network phase afterwards by separate agreement",
     "measures": [
       "Scam payments caught",
-      "At most 1 review per 500 payments and 1 hold per 1,000 where payment review and hold policies are evaluated",
+      "At most 1 review per 500 payments and 1 hold per 1,000",
       "Analyst workload",
+      "Local monitoring workload and coverage",
       "Every decision verifiable in the signed log"
     ],
-    "scope": "Local transaction monitoring selects investigation work. It does not itself hold payments. These are evaluation limits, not promised detection rates."
+    "scope": "Scam review and local transaction monitoring on the institution's own data and infrastructure. Local transaction monitoring selects investigation work and does not itself hold payments. These are evaluation measures and limits, not promised detection rates.",
+    "offer": "12-week local pilot for scam review and local transaction monitoring"
   },
   "local_monitor": {
     "command": "kit tm-run",

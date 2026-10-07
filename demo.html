@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Synthetic engine demonstration | ZQUAS</title>
-    <meta name="description" content="A recorded development visualisation using synthetic data, with four separately scoped engine test figures. No real-world detection rates.">
+    <title>Synthetic monitoring demonstration | ZQUAS</title>
+    <meta name="description" content="A synthetic local monitoring example, from incoming payments to the analyst queue and signed decision log. Four engine test figures with their measurement limits.">
     <meta name="robots" content="noindex, nofollow">
-    <meta property="og:title" content="Synthetic engine demonstration | ZQUAS">
-    <meta property="og:description" content="A recorded development visualisation using synthetic data, with four separately scoped engine test figures. No real-world detection rates.">
-    <meta property="og:type" content="video.other">
+    <meta property="og:title" content="Synthetic monitoring demonstration | ZQUAS">
+    <meta property="og:description" content="A synthetic local monitoring example, from incoming payments to the analyst queue and signed decision log. Four engine test figures with their measurement limits.">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://zquas.ai/demo.html">
     <meta property="og:image" content="https://zquas.ai/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -33,71 +33,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=6">
-    <style>
-        .demo-header {
-            padding: 8rem 2rem 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .demo-video-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 2rem 2rem;
-        }
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            background: #000;
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        .demo-details {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 2rem 4rem;
-        }
-        .demo-specs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .demo-spec {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1.5rem;
-        }
-        .demo-spec .val {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-        .demo-spec .label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-        }
-        .demo-note {
-            margin-top: 2rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-    </style>
     <link rel="stylesheet" href="pilot-content.css?v=1">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Synthetic monitoring demonstration",
+  "description": "A synthetic local monitoring example with four separately scoped engine test figures.",
+  "url": "https://zquas.ai/demo.html",
+  "dateModified": "2026-10-07"
+}
+    </script>
 </head>
 <body>
 
@@ -130,17 +76,22 @@
     </div>
 </nav>
 
-<main class="review-page"><header class="review-hero"><p class="review-kicker">Engine demo · Synthetic data</p><h1>A development view<br>of the engine.</h1><p class="review-intro">This recording uses synthetic data. It illustrates the development visualisation, not a production deployment or a measured detection rate.</p><p class="review-status">TRL 6. Synthetic data only. No production deployments.</p></header><section aria-label="Synthetic development recording"><p class="review-notice">The counters in this development recording are not validated benchmark results or counts of confirmed scams. Only the four separately scoped test figures below are used as engine performance claims on this page.</p><div class="demo-video-container">
-    <div class="video-wrapper">
-        <iframe
-            src="https://www.youtube-nocookie.com/embed/3jNht-xOFX0?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&playsinline=1&cc_load_policy=0&origin=https://zquas.ai"
-            title="Recorded ZQUAS development visualisation using synthetic data"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy"
-        ></iframe>
-    </div>
-</div></section><section class="review-section"><p class="review-kicker">Separate engine tests</p><h2>The agreed figures, with their limits.</h2><div class="review-metrics"><article><p class="metric-value">500K</p><h3>Entities under 2 seconds</h3><p>500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</p><span class="synthetic-tag">Synthetic data</span></article><article><p class="metric-value">Under 10 ms</p><h3>Alert lifecycle, per alert</h3><p>Alert lifecycle under 10 ms per alert, from a detection result to a persisted, queryable alert. Batch results are amortised per alert.</p><span class="synthetic-tag">Synthetic data</span></article><article><p class="metric-value">Under 10 seconds</p><h3>Federation bilateral round</h3><p>Federation bilateral round under 10 seconds on TCP loopback development transport. Semi-honest security. This does not measure a real inter-bank network.</p><span class="synthetic-tag">Synthetic data</span></article><article><p class="metric-value">Under 1 GB</p><h3>Measured detection-pass VRAM</h3><p>VRAM under 1 GB in the measured detection-pass working set after warm-up. Resident ingestion and model inference are excluded. This is not total-system memory.</p><span class="synthetic-tag">Synthetic data</span></article></div><a class="review-link" href="benchmark.html">Read the benchmark methods and exclusions →</a></section><section class="review-section"><h2>Follow the bank's work.</h2><p>See one synthetic example of local transaction monitoring, from incoming payments to the analyst queue and the signed decision.</p><a class="review-link" href="use-case.html">Follow the synthetic walkthrough →</a></section></main>
+<main class="review-page">
+<header class="review-hero">
+    <p class="review-kicker">Demonstration · Synthetic data</p>
+    <p class="content-updated">Updated: 7 October 2026</p>
+    <h1>One local pattern.<br>The bank's decision.</h1>
+    <p class="review-intro">Follow a fictional account through local transaction monitoring, from incoming payments to the analyst queue and signed decision log.</p>
+    <p class="review-status">TRL 6. Synthetic data only. No production deployments.</p>
+</header>
+<section class="review-section review-proof" aria-labelledby="demo-example">
+    <p class="review-kicker">Synthetic data · Synthetic example</p>
+    <h2 id="demo-example">Follow the bank's work.</h2>
+    <p>Several payers in, money out within a day, a local pattern score, an analyst queue with a daily limit, a signed decision line, and the bank's own decision.</p>
+    <p>The walkthrough uses fictional people, accounts and payments. No detection rates or alert counts are claimed.</p>
+    <div class="review-actions"><a class="btn-primary" href="use-case.html">Open the synthetic walkthrough <span aria-hidden="true">→</span></a></div>
+</section>
+<section class="review-section"><p class="review-kicker">Separate engine tests</p><h2>The agreed figures, with their limits.</h2><div class="review-metrics"><article><p class="metric-value">500K</p><h3>Entities under 2 seconds</h3><p>500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</p><span class="synthetic-tag">Synthetic data</span></article><article><p class="metric-value">Under 10 ms</p><h3>Alert lifecycle, per alert</h3><p>Alert lifecycle under 10 ms per alert, from a detection result to a persisted, queryable alert. Batch results are amortised per alert.</p><span class="synthetic-tag">Synthetic data</span></article><article><p class="metric-value">Under 10 seconds</p><h3>Federation bilateral round</h3><p>Federation bilateral round under 10 seconds on TCP loopback development transport. Semi-honest security. This does not measure a real inter-bank network.</p><span class="synthetic-tag">Synthetic data</span></article><article><p class="metric-value">Under 1 GB</p><h3>Measured detection-pass VRAM</h3><p>VRAM under 1 GB in the measured detection-pass working set after warm-up. Resident ingestion and model inference are excluded. This is not total-system memory.</p><span class="synthetic-tag">Synthetic data</span></article></div><a class="review-link" href="benchmark.html">Read the benchmark methods and exclusions →</a></section></main>
 
 <footer>
     <div class="footer-inner">

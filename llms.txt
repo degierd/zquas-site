@@ -36,9 +36,9 @@ These figures come from internal tests on synthetic data. They are not an extern
 
 ## Pilot
 
-12 weeks locally, starting after scope, agreements, access and data readiness are confirmed. Optional network phase afterwards by separate agreement. The bank supplies local data, infrastructure and its own compliance, analyst and IT contacts. ZQUAS supplies the pilot software, configuration and evaluation support, the signed log and its verification check.
+A 12-week local pilot for scam review and local transaction monitoring, starting after scope, agreements, access and data readiness are confirmed. Optional network phase afterwards by separate agreement. The bank supplies local data, infrastructure and its own compliance, analyst and IT contacts. ZQUAS supplies the pilot software, configuration and evaluation support, the signed log and its verification check.
 
-Measure scam payments caught, analyst workload and every decision's verification in the signed log. Where payment review and hold policies are evaluated, the limits are at most 1 review per 500 payments and 1 hold per 1,000. These are evaluation limits, not promised detection rates. Local transaction monitoring selects investigation work and does not itself hold payments.
+Scam payments caught, at most 1 review per 500 payments and 1 hold per 1,000, analyst workload, local monitoring workload and coverage, every decision verifiable in the signed log. These are evaluation measures and limits, not promised detection rates. Local transaction monitoring selects investigation work and does not itself hold payments.
 
 No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log.
 
