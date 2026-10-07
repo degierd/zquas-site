@@ -14,7 +14,7 @@
       ending: 'your pilot.', lede: 'Start with the question your exchange wants to answer.',
       title: 'Explore a pilot for your exchange.',
       description: 'Tell me what your team wants to investigate. We can discuss crypto withdrawals, the evidence and what a pilot would need.',
-      topics: [['Your use case', 'The crypto withdrawals or scam patterns you want to investigate.'], ['The evidence', 'Results with exchanges in our model, on synthetic data.'], ['A possible pilot', "Your team's requirements and what you would want to evaluate."]],
+      topics: [['Your use case', 'The crypto withdrawals or scam patterns you want to investigate.'], ['The evidence', 'Results will be published when the test is complete.'], ['A possible pilot', "Your team's requirements and what you would want to evaluate."]],
       subject: 'ZQUAS pilot enquiry: crypto exchange',
       body: "Hi Danny,\n\nI'd like to discuss a ZQUAS pilot for our crypto exchange.\n\nOrganisation:\nMy role:\nThe question we'd like to explore:"
     },

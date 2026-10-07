@@ -60,7 +60,7 @@ Check the payments coming into your own accounts, on your own data, inside your 
 
 
 
-Review your customers' crypto withdrawals before they leave. In our model, exchanges as members catch about a quarter more scam payments.
+Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.
 
                 [Join the pilot](contact.html?audience=exchanges)
 
@@ -105,15 +105,12 @@ Our synthetic world has 1,000,000 adults at the UK scam rate. Each bank's own fr
 
 
 
-                About a quarter more
-                With crypto exchanges as members
-                Synthetic data at the UK scam rate. In our model.
-
-                    Read the test detail
+                Testing
+                Withdrawal check
+                Test in progress. No result published.
 
 
-Two crypto exchanges joined a four-bank network. Each reviews its own customers' crypto withdrawals before they leave. They caught about a quarter more scam payments than the banks alone. Every one of the extra payments was a payment a victim made to buy crypto, and every institution stayed inside its review limits.
-
+Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.
 
 
 

@@ -4,6 +4,10 @@
 
 The homepage explains the network's synthetic-data results. The Use Case page illustrates the local transaction monitor built in October 2026. The local monitor has not yet been measured on the full synthetic worlds. Do not attribute the network's detection results to the new local monitor.
 
+## Exchanges as members
+
+Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.
+
 ## Programmes and sandboxes
 
 - ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.

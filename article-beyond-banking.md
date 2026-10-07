@@ -744,11 +744,11 @@ MiCA requires CASPs to implement transaction monitoring equivalent to traditiona
 
 
 
-### 7.2 The Private Chain Transition
+### 7.2 Withdrawal check under test
 
 
 
-As institutional adoption moves settlement onto permissioned blockchains, public transparency diminishes. Exchanges that correlate risk signals across both public and private chains have a structural advantage.
+Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.
 
 
 

@@ -13,7 +13,7 @@
       "description": "LLM-optimised summary of ZQUAS: what it is, who it serves, the engine's published benchmark numbers, and the regulatory frameworks it covers.",
       "url": "https://zquas.ai/llms.txt",
       "media_type": "text/plain",
-      "sha256": "726cf9bcef0bc99a9e4a06a0b4c9e865e02455f8c35788791e362c08f91d3dab"
+      "sha256": "50013c310936b256e607223bbdae60004b803ed6e5d55a273f032a2d04f1d71a"
     },
     {
       "name": "site-summary-full",
@@ -21,7 +21,7 @@
       "description": "Long-form companion to llms.txt with the verbatim content of the strongest pages on the site (homepage, technology, regulators, founder timeline).",
       "url": "https://zquas.ai/llms-full.txt",
       "media_type": "text/plain",
-      "sha256": "0fc2558c87fedaf93285b60371ab88babcfd062550353e59cf745e06916c9632"
+      "sha256": "5f2833ffd93aa6ffa616fe4af391ab7b45dabf3a79cd482c1bdaa7bd8ad3e51a"
     },
     {
       "name": "facts",
@@ -29,7 +29,7 @@
       "description": "Machine-readable fact sheet: benchmark numbers, federation protocols, regulatory engagement, founder profile, competitor positioning, locked thresholds.",
       "url": "https://zquas.ai/facts.json",
       "media_type": "application/json",
-      "sha256": "c66e2d9afab6d9079682c7126062f88ee58132554a2568889ba0c80cd176f4e3"
+      "sha256": "87f33900d6604c8342ba71b1dc08410c7f73bd9e8191e5b491b863e5c3dac8f4"
     },
     {
       "name": "glossary",
@@ -61,7 +61,7 @@
       "description": "Position paper on cross-sector federated detection across banks, telecommunications operators, and digital asset platforms.",
       "url": "https://zquas.ai/article-beyond-banking.html",
       "media_type": "text/html",
-      "sha256": "135b4fba18a9bbaef9fac3d1fafa82d72bbdd900e62adb6d90f33d2179957813"
+      "sha256": "ce88033efd9f74f228877e833068e0e6c9d2c96fe515b69f2e7843424d85db8c"
     },
     {
       "name": "one-pager",

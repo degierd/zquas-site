@@ -32,7 +32,7 @@ Explore a pilot for your exchange.
 Tell me what your team wants to investigate. We can discuss crypto withdrawals, the evidence and what a pilot would need.
 
 1. **Your use case** The crypto withdrawals or scam patterns you want to investigate.
-2. **The evidence** Results with exchanges in our model, on synthetic data.
+2. **The evidence** Results will be published when the test is complete.
 3. **A possible pilot** Your team's requirements and what you would want to evaluate.
 
 [Open this enquiry](https://zquas.ai/contact.html?audience=exchanges).
