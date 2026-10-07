@@ -606,7 +606,7 @@ The privacy guarantee is mathematical, not administrative.
 
 
 
-            Conduct a live pilot with 3 to 5 Dutch or UK banks, using the bilateral MPC protocol over direct encrypted peer-to-peer connections. No relay infrastructure required. The pilot would federate real or representative customer risk data across institutions, detect cross-bank patterns, and produce auditable results. No institution accesses any other institution's customer data.
+            Begin with a 12-week local pilot on the institution's own data and infrastructure. Review the local results before deciding on an optional network phase. Any network phase requires a separate agreement on participating institutions, sharing policy, legal basis and success measures.
 
 
 
@@ -622,7 +622,7 @@ The privacy guarantee is mathematical, not administrative.
 
 
 
-Three Founding Partner slots available. Direct engagement with your regulator included.
+12 weeks of local evaluation. An optional network phase follows by separate agreement.
 
 
 

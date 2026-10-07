@@ -21,7 +21,7 @@
       "description": "Long-form companion to llms.txt with the verbatim content of the strongest pages on the site (homepage, technology, regulators, founder timeline).",
       "url": "https://zquas.ai/llms-full.txt",
       "media_type": "text/plain",
-      "sha256": "02786affa904aeeda4bd07fcaa8ac8eb031235892695c4af3676c48905192040"
+      "sha256": "975ecfbc5a4a9ba0fd88b903b846e0d3e013f6066e47cac1150dad6d887012e4"
     },
     {
       "name": "facts",
@@ -45,7 +45,7 @@
       "description": "Position paper on AMLR Article 75: how Multi-Party Computation enables full customer base federation for AML detection without sharing personal data. Legal argument, evidence, and a path to a pilot.",
       "url": "https://zquas.ai/article-75.html",
       "media_type": "text/html",
-      "sha256": "371e26b3cbda01977a1cae8462d373111f2d6abec753ec9526beb2718721aee0"
+      "sha256": "e3fda4828194a0b1ccdeb894dfe0186b60efbdcb5e97730189ecb0277a079e8a"
     },
     {
       "name": "position-paper-edge-to-federation",
