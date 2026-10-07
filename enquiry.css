@@ -1,0 +1,84 @@
+@font-face{font-family:"DM Sans";src:url("story-assets/fonts/DMSans-normal-400.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"DM Sans";src:url("story-assets/fonts/DMSans-normal-500.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"DM Sans";src:url("story-assets/fonts/DMSans-normal-700.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url("story-assets/fonts/SourceSerif4-normal-400.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url("story-assets/fonts/SourceSerif4-italic-400.woff2") format("woff2");font-style:italic;font-weight:400;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url("story-assets/fonts/JetBrainsMono-normal-400.woff2") format("woff2");font-weight:400;font-display:swap}
+:root{color-scheme:dark}
+[hidden]{display:none!important}
+.enquiry-page{max-width:1100px;margin:0 auto;padding:90px 32px 66px;position:relative}
+.enquiry-page:before{content:"";position:absolute;z-index:-1;pointer-events:none;top:56px;right:0;width:520px;height:390px;background:radial-gradient(ellipse at center,#15254b38,transparent 66%)}
+.enquiry-page a{text-decoration:none}
+.enquiry-page button,.enquiry-page input,.enquiry-page textarea{font:inherit}
+.enquiry-page :is(a,button,input,textarea):focus-visible,.enquiry-skip:focus-visible{outline:2px solid #9ab8ff;outline-offset:5px}
+.enquiry-skip{position:fixed;z-index:200;top:8px;left:16px;padding:10px 18px;background:#14254a;color:white;transform:translateY(-180%)}
+.enquiry-skip:focus{transform:none}
+.back-story{display:inline-flex;align-items:center;gap:10px;min-height:32px;font-size:12px;color:#9da8bd}
+.back-story span{font-size:18px;color:#7396ee}
+.back-story:hover{color:#fff}
+.enquiry-intro{display:grid;grid-template-columns:1fr auto;align-items:center;gap:36px;margin-top:20px}
+.enquiry-eyebrow{font:400 10px/1.6 "JetBrains Mono",monospace;letter-spacing:.17em;color:#91aeff}
+.enquiry-intro h1{font:400 clamp(44px,4.7vw,56px)/1.08 "Source Serif 4",Georgia,serif;letter-spacing:-.026em;margin-top:12px;color:#f0f1f7}
+.enquiry-intro h1 em{font-weight:400;color:#81a3ff}
+.enquiry-lede{margin-top:14px;color:#a9b3c8;font-size:15px;line-height:1.7}
+.founder-contact{display:flex;align-items:center;gap:17px;margin-top:22px;padding:0 0 0 35px;border-left:1px solid #28334b}
+.founder-mark{position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0;width:68px;height:68px;border-radius:50%;color:#e0e7f8;background:radial-gradient(circle at 38% 30%,#23335180,transparent 72%);font:400 23px/1 "Source Serif 4",Georgia,serif;letter-spacing:-.12em}
+.founder-mark span{color:#90acfb}
+.founder-mark svg{position:absolute;width:100%;height:100%;inset:0;stroke:#3e537c;stroke-width:.7}
+.founder-name{font-size:16px;font-weight:500;line-height:1.6;color:#e6eaf2}
+.founder-role{font-size:12px;color:#9aa6bc}
+.founder-email{display:inline-block;margin-top:8px;color:#a9c1ff;font-size:13px}
+.founder-email span{margin-left:9px}
+.audience-heading{margin-top:28px;margin-bottom:13px;font-size:12px;color:#a9b3c8}
+.audience-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid #293247}
+.audience-tabs button{position:relative;display:flex;align-items:center;gap:14px;min-height:60px;padding:12px 17px;border:0;border-right:1px solid #293247;background:transparent;color:#a8b2c8;text-align:left;font-size:14px;line-height:1.4;cursor:pointer;transition:background .16s,color .16s}
+.audience-tabs button:last-child{border-right:0}
+.audience-tabs button:after{position:absolute;content:"";bottom:-1px;left:0;right:0;height:2px;background:#7097ff;transform:scaleX(0);transform-origin:left;transition:transform .16s}
+.audience-tabs button[aria-selected="true"]{background:linear-gradient(120deg,#2031566b,#15203338);color:#eef2fc}
+.audience-tabs button[aria-selected="true"]:after{transform:scaleX(1)}
+.audience-tabs button:hover{color:#eef2fc;background-color:#1b263b55}
+.tab-number{color:#9cabca;font:10px/1 "JetBrains Mono",monospace}
+.audience-tabs [aria-selected="true"] .tab-number{color:#9fbbff}
+.tab-arrow{margin-left:auto;color:#8faef8;font-size:18px;opacity:0}
+[aria-selected="true"] .tab-arrow{opacity:1}
+.enquiry-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);align-items:start;gap:66px;margin-top:30px}
+.conversation-context h2{font:400 32px/1.2 "Source Serif 4",Georgia,serif;letter-spacing:-.015em;margin-top:12px;color:#e9edf5;max-width:23ch}
+.context-description{font-size:14px;line-height:1.75;color:#acb6cb;margin-top:16px;max-width:47ch;min-height:74px}
+.conversation-topics{list-style:none;padding:0;margin:21px 0 0}
+.conversation-topics li{display:flex;gap:17px;border-top:1px solid #263044;padding:14px 0}
+.topic-marker{flex-shrink:0;padding-top:5px;color:#7f9cde;font:10px/1.6 "JetBrains Mono",monospace}
+.conversation-topics h3{font-size:14px;font-weight:500;line-height:1.7;color:#e1e7f2}
+.conversation-topics p{font-size:12px;line-height:1.65;color:#a0adc5;margin-top:3px;max-width:43ch}
+.enquiry-readiness{margin-top:17px;border-left:2px solid #597bc8;padding:1px 0 1px 14px}
+.enquiry-readiness>span{font:9px/1.5 "JetBrains Mono",monospace;letter-spacing:.12em;color:#96a5c1}
+.enquiry-readiness p{font-size:12px;line-height:1.7;color:#b5bfd3;margin-top:4px}
+.enquiry-evidence{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:20px}
+.enquiry-evidence a{font-size:12px;color:#b2c9ff;display:inline-flex;align-items:center;gap:10px;min-height:32px}
+.enquiry-evidence a:hover,.founder-email:hover{color:white}
+.email-card{position:relative;padding:24px 25px 15px;background:linear-gradient(135deg,#141c2b,#10141e 65%);border:1px solid #33415d;border-radius:10px;box-shadow:0 20px 60px #0002}
+.email-card:before{content:"";position:absolute;left:18px;right:18px;top:-1px;height:1px;background:linear-gradient(90deg,transparent,#7694cd99,transparent)}
+.email-card-heading{display:flex;align-items:center;justify-content:space-between;color:#95a9d1;font:10px/1.6 "JetBrains Mono",monospace;letter-spacing:.14em;margin-bottom:17px}
+.email-card-heading svg{color:#91ace4}
+.email-recipient,.email-subject{display:grid;grid-template-columns:52px minmax(0,1fr);align-items:start;gap:8px;padding-bottom:15px;border-bottom:1px solid #2a3448;font-size:12px;line-height:1.8;color:#d5dfef}
+.email-recipient>span:first-child,.email-subject>span:first-child{color:#95a3bd}
+.recipient-address{color:#9facbf;font-size:11px;white-space:nowrap}
+.email-subject{padding-top:14px;align-items:center}
+.email-subject input{width:100%;min-width:0;min-height:26px;background:transparent;border:0;border-radius:0;padding:0;color:#dce4f1;font-size:12px;text-overflow:ellipsis}
+.draft-label{display:block;font-size:11px;color:#98a8c3;margin-top:19px;margin-bottom:8px}
+#email-body{display:block;width:100%;min-height:205px;resize:vertical;border:0;background:transparent;color:#d7dfef;font:400 14px/1.7 "DM Sans",sans-serif;padding:0 2px;caret-color:#90b0ff;border-radius:0}
+.email-actions{display:flex;align-items:center;gap:12px;border-top:1px solid #2a3448;padding-top:20px;margin-top:13px}
+.email-primary{display:flex;align-items:center;justify-content:space-between;gap:24px;flex:1;min-height:46px;padding:10px 17px;border:1px solid #6996ff;border-radius:5px;background:#4475f0;color:white;font-size:13px;font-weight:500;transition:background .16s}
+.email-primary span{font-size:18px;font-weight:400}
+.email-primary:hover{background:#5385ff}
+.email-copy{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;flex-shrink:0;padding:4px 3px;border:0;background:transparent;color:#b9c7e2;font-size:12px!important;cursor:pointer}
+.email-copy:hover{color:white}
+.email-helper{font-size:11px;color:#a4b0c6;line-height:1.6;margin-top:14px}
+.email-helper a{color:#bdd0ff}
+.copy-status{font-size:11px;color:#bdd2ff;line-height:1.5;min-height:17px;margin-top:7px}
+.enquiry-other{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid #293247;padding-top:25px;margin-top:49px;color:#aab5ca;font-size:13px}
+.enquiry-other a{color:#b1c8fc;min-height:32px;display:inline-flex;align-items:center;gap:10px}
+.nav-dropdown:focus-within .nav-dropdown-menu{display:block}
+@media(max-width:1000px){.enquiry-grid{gap:36px}.founder-contact{padding-left:22px;gap:12px}.founder-mark{width:51px;height:51px;font-size:20px}.audience-tabs button{gap:9px;font-size:13px;padding-inline:12px}.email-card{padding-inline:20px}.recipient-address{display:block}.tab-arrow{display:none}}
+@media(max-width:760px){.enquiry-page{padding:87px 22px 43px}.enquiry-page:before{width:100%;right:0;height:300px}.enquiry-intro{grid-template-columns:1fr;gap:22px;margin-top:19px}.enquiry-intro h1{font-size:46px}.enquiry-lede{font-size:14px;max-width:32ch;margin-top:16px}.founder-contact{justify-self:start;border:0;padding:0;margin-top:0;gap:12px}.founder-mark{width:44px;height:44px;font-size:17px}.founder-name{font-size:14px}.founder-role{display:inline;margin-right:10px;font-size:11px}.founder-email{font-size:12px;margin-top:0}.founder-email span{margin-left:4px}.audience-heading{margin-top:30px}.audience-tabs button{flex-direction:column;align-items:flex-start;justify-content:flex-start;font-size:12px;gap:7px;min-height:88px;padding:13px 10px;line-height:1.4}.tab-number{font-size:9px}.enquiry-grid{grid-template-columns:1fr;gap:34px;margin-top:25px}.email-card{grid-row:1;padding:20px 18px 14px}.email-card-heading{margin-bottom:18px}.email-recipient,.email-subject{grid-template-columns:42px minmax(0,1fr);font-size:12px}.email-subject input{font-size:16px}.recipient-address{display:block}.draft-label{font-size:12px}#email-body{font-size:16px;min-height:308px;line-height:1.8}.email-actions{gap:14px}.email-primary{font-size:12px;padding-inline:12px;gap:10px}.email-copy{font-size:11px!important;gap:6px}.email-copy svg{width:14px}.conversation-context h2{font-size:32px;max-width:23ch}.context-description{min-height:0;font-size:14px}.conversation-topics h3{font-size:15px}.conversation-topics p{font-size:13px;max-width:none}.enquiry-readiness p{font-size:13px}.enquiry-other{flex-direction:column;align-items:flex-start;gap:4px;margin-top:33px;padding-top:20px;font-size:12px}.enquiry-evidence{gap:18px}}
+@media(max-width:359px){.enquiry-page{padding-inline:17px}.enquiry-intro h1{font-size:39px}.founder-role{display:block}.audience-tabs button{font-size:11px;padding-inline:8px}.email-card{padding-inline:14px}.email-actions{gap:9px}.email-primary{padding-inline:10px;font-size:11px}.email-copy{font-size:10px!important}.email-copy svg{display:none}}
+@media(prefers-reduced-motion:reduce){.enquiry-page *{transition:none!important}}

@@ -49,7 +49,7 @@ TRL 6. Synthetic data only. No production deployments.
 
 Check the payments coming into your own accounts, on your own data, inside your own installation.
 
-                [Join the pilot](contact.html)
+                [Join the pilot](contact.html?audience=banks)
 
 
 
@@ -62,7 +62,7 @@ Check the payments coming into your own accounts, on your own data, inside your 
 
 Review your customers' crypto withdrawals before they leave. In our model, exchanges as members catch about a quarter more scam payments.
 
-                [Join the pilot](contact.html)
+                [Join the pilot](contact.html?audience=exchanges)
 
 
 
@@ -75,7 +75,7 @@ Review your customers' crypto withdrawals before they leave. In our model, excha
 
 A governance engine with measured results on synthetic data. Financial crime is where it starts.
 
-                [Talk to us](contact.html)
+                [Talk to us](contact.html?audience=investors)
 
 
 
