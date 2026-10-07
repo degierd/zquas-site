@@ -10,6 +10,10 @@ Site: https://zquas.ai
         April 2026 · Position Paper · 30 min read
 
 
+Updated: 7 October 2026
+
+
+
 # Beyond Banking: Cross-Sector Federated Detection for Financial Crime, Telecommunications Fraud, and Digital Asset Compliance
 
 
@@ -121,45 +125,45 @@ The simulator enables closed-loop calibration: generate a population with known 
 
 
 
-| 
-                    Capability | 
-                    Status 
-| 
-                    **Banking transaction ingestion** | 
-                    Built and tested on synthetic data. 
-| 
-                    **Bank-to-bank federation (ECDH-PSI, escalation propagation)** | 
-                    Built and tested on synthetic data. 
-| 
-                    **Five-layer detection pipeline (GPU-native)** | 
-                    Built and tested. 56-policy logical catalogue, with a 128-policy corpus used for scale characterisation. 
-| 
-                    **Financial Crime Network Simulator (15 typologies)** | 
-                    Built and tested on synthetic data. 
-| 
-                    **Evidence system with blind assessment workflow** | 
-                    Built and tested on synthetic data. 
-| 
-                    **Deterministic entity hashing (pre-PSI)** | 
-                    Built and tested on synthetic data. 
-| 
-                    **Cryptographic erasure (hierarchical per-entity keys)** | 
-                    Built and tested on synthetic data. 
-| 
-                    **Differential privacy on federation signals** | 
-                    Architecture designed. Phase 2. 
-| 
-                    **Signal velocity circuit breaker on federation** | 
-                    Architecture designed. Phase 2. 
-| 
-                    **Cross-sector score calibration** | 
-                    Architecture designed. Calibration infrastructure exists. Phase 2. 
-| 
-                    **Telecommunications ingestion pipeline (CDR/TMDR)** | 
-                    Planned. Phase 2 (Q3 2026). 
-| 
-                    **Blockchain ingestion pipeline (EVM/UTXO)** | 
-                    Planned. Phase 3 (Q4 2026). 
+|
+                    Capability |
+                    Status
+|
+                    **Banking transaction ingestion** |
+                    Built and tested on synthetic data.
+|
+                    **Bank-to-bank federation (ECDH-PSI, escalation propagation)** |
+                    Built and tested on synthetic data.
+|
+                    **Five-layer detection pipeline (GPU-native)** |
+                    Built and tested. 56-policy logical catalogue, with a 128-policy corpus used for scale characterisation.
+|
+                    **Financial Crime Network Simulator (15 typologies)** |
+                    Built and tested on synthetic data.
+|
+                    **Evidence system with blind assessment workflow** |
+                    Built and tested on synthetic data.
+|
+                    **Deterministic entity hashing (pre-PSI)** |
+                    Built and tested on synthetic data.
+|
+                    **Cryptographic erasure (hierarchical per-entity keys)** |
+                    Built and tested on synthetic data.
+|
+                    **Differential privacy on federation signals** |
+                    Architecture designed. Phase 2.
+|
+                    **Signal velocity circuit breaker on federation** |
+                    Architecture designed. Phase 2.
+|
+                    **Cross-sector score calibration** |
+                    Architecture designed. Calibration infrastructure exists. Phase 2.
+|
+                    **Telecommunications ingestion pipeline (CDR/TMDR)** |
+                    Planned. Phase 2 (Q3 2026).
+|
+                    **Blockchain ingestion pipeline (EVM/UTXO)** |
+                    Planned. Phase 3 (Q4 2026).
 Everything in this paper that is described as "architecture" or "planned" is clearly labelled as such. Everything described without qualification is built, tested, and operational.
 
 
@@ -620,7 +624,7 @@ Each institution compiles its own detection policies into GPU-evaluable rules us
 
 
 
-The typology lives inside the installation, not inside the protocol. If the FCA publishes guidance on a new APP fraud variant tomorrow, the UK bank updates its policies and recompiles. The Dutch bank does not need to change anything. The federation protocol does not change. The bank's escalation signals for affected entities change, and those signals propagate normally.
+The typology lives inside the installation, not inside the protocol. If the FCA publishes guidance on a new APP fraud variant tomorrow, the UK bank updates its policies and recompiles. The Dutch bank does not need to change anything. The federation protocol does not change. The bank's escalation signals for affected entities change, and those signals propagate normally.ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 

@@ -10,6 +10,10 @@ Site: https://zquas.ai
         March 2026 · Technology · 18 min read
 
 
+Updated: 7 October 2026
+
+
+
 # The AML Industry Has Never Proven Detection Works. We Built a Way to Measure It.
 
 
@@ -285,7 +289,7 @@ The Netherlands pack is calibrated to CBS data, Dutch banks, Dutch brands, and D
 
 
 
-AMLR Article 75 enables cross-border information sharing between obliged entities. AMLA (the new EU Anti-Money Laundering Authority) will demand consistent and demonstrable effectiveness. The FCA pushes for outcome-based regulation. FATF mutual evaluations increasingly focus on effectiveness ratings. DNB now asks whether AML controls actually detect criminal exploitation, not just whether controls exist.
+AMLR Article 75 enables cross-border information sharing between obliged entities. AMLA (the new EU Anti-Money Laundering Authority) will demand consistent and demonstrable effectiveness. The FCA pushes for outcome-based regulation. FATF mutual evaluations increasingly focus on effectiveness ratings. DNB now asks whether AML controls actually detect criminal exploitation, not just whether controls exist.ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 

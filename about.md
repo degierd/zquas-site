@@ -26,7 +26,7 @@ About
 
 
 
-                ![Danny de Gier](team/danny-de-gier.jpg) 
+                ![Danny de Gier](team/danny-de-gier.jpg)
 
                     Danny de Gier
                     Founder & Engineer
@@ -51,7 +51,7 @@ Self-taught GPU engineer. Writes the C++, CUDA, and Vulkan that ZQUAS runs on. E
 
 
 
-                ![Martin van Aalderen](team/martin-van-aalderen.jpg) 
+                ![Martin van Aalderen](team/martin-van-aalderen.jpg)
 
                     Martin van Aalderen
                     Chief Commercial & Corporate Development Officer
@@ -82,7 +82,7 @@ Spent his career at the intersection of banking, capital markets, and enterprise
 
 
 
-### Frenkel Drevers — Regulatory Advisor
+### Frenkel Drevers, Regulatory Advisor
 
 
 
@@ -103,13 +103,13 @@ Frenkel brings direct regulatory experience from both sides of the table: as reg
         Programmes & Recognition
 
 
-## Backed by the institutions that matter
+## Programmes and sandboxes
 
 
 
 
 
-                ![NVIDIA Inception Program](nvidia-inception-badge.png) 
+                ![NVIDIA Inception Program](nvidia-inception-badge.png)
 
 
 
@@ -127,7 +127,7 @@ ZQUAS is a member of the NVIDIA Inception program. Inception is NVIDIA's global 
 
 
 
-ZQUAS joined the second cohort of the Financial Conduct Authority's Supercharged Sandbox, announced by the FCA on 22 July 2026. The Supercharged Sandbox is the FCA's environment for experimenting with advanced AI in financial services, built on the Digital Sandbox with support from NayaOne and NVIDIA, and with Anthropic providing participants access to Claude for this cohort. ZQUAS is one of 21 organisations selected from 199 applications. Read [why we applied](article-fca-sandbox.html).
+ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results. Read [why we applied](article-fca-sandbox.html).
 
 
 
@@ -137,7 +137,7 @@ ZQUAS joined the second cohort of the Financial Conduct Authority's Supercharged
 
 
 
-ZQUAS was accepted into the Financial Conduct Authority's Digital Sandbox in March 2026. The Digital Sandbox is the FCA's environment for testing innovations against synthetic regulatory data, with access to mentors and supervisory feedback.
+ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.
 
 
 

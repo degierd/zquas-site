@@ -1,4 +1,4 @@
-# The &euro;200 Billion Compliance Market Nobody Has Disrupted
+# The €200 Billion Compliance Market Nobody Has Disrupted
 
 > Financial institutions spend more on compliance than on almost any other technology category. The tooling hasn't fundamentally changed in 15 years.
 
@@ -8,6 +8,10 @@ Site: https://zquas.ai
 ---
 [← Articles](articles.html)
         January 2026 · Investors · 7 min read
+
+
+Updated: 7 October 2026
+
 
 
 # The €200 Billion Compliance Market Nobody Has Disrupted
@@ -127,8 +131,8 @@ Financial institutions spend more on compliance than on almost any other technol
 
 
 
-            Early traction includes engagement with DNB InnovationHub and FCA sandbox programmes. In a market where regulator acceptance is the primary buying signal, early regulatory engagement is the highest-value traction indicator possible.
-
+            Early traction includes engagement with DNB InnovationHub and FCA sandbox programmes. These programmes provide opportunities for testing and discussion. Participation is not an endorsement or an approval.
+        ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 

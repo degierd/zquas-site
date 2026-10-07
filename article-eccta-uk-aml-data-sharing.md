@@ -10,6 +10,10 @@ Site: https://zquas.ai
         February 2026 · Regulation · 8 min read
 
 
+Updated: 7 October 2026
+
+
+
 # UK Banks Can Share AML Data Today: ECCTA Sections 188-189
 
 
@@ -121,13 +125,13 @@ While the EU waits until July 2027 for AMLR Article 75, the United Kingdom has a
 
 
 
-            The FCA operates a Digital Sandbox that provides a regulatory-approved environment for testing innovative financial crime detection technologies. The Sandbox includes synthetic data sets representative of real transaction patterns, enabling vendors and banks to demonstrate detection performance without using live customer data.
+            The FCA operates a Digital Sandbox that provides a controlled environment for testing innovative financial crime detection technologies. The Sandbox includes synthetic data sets representative of real transaction patterns, enabling vendors and banks to demonstrate detection performance without using live customer data.
+        ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.
 
 
 
-
-            For collaborative AML technologies, the Digital Sandbox provides a safe environment for bilateral testing between institutions. Banks can validate entity matching accuracy, cross-institutional risk signal quality, and integration performance before deploying in production. FCA engagement through the Sandbox also informs the regulator's understanding of new approaches, which supports subsequent supervisory approval.
-
+            For collaborative AML technologies, the Digital Sandbox provides a safe environment for bilateral testing between institutions. Banks can validate entity matching accuracy, cross-institutional risk signal quality, and integration performance before deploying in production. FCA engagement through the Sandbox also informs the regulator's understanding of new approaches, without implying supervisory approval.
+        ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.
 
 
 

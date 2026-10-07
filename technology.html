@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technology — ZQUAS</title>
+    <title>Technology | ZQUAS</title>
     <meta name="description" content="Technical overview of the ZQUAS engine architecture: GPU adjudication, policy compiler, identity graph, cryptographic attestation, and privacy-preserving MPC.">
-    <meta property="og:title" content="Technology — ZQUAS">
+    <meta property="og:title" content="Technology | ZQUAS">
     <meta property="og:description" content="Technical overview of the ZQUAS engine architecture for CTOs, technical evaluators, and due diligence teams.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zquas.ai/technology.html">
@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=6">
 
     <script type="application/ld+json">
     {
@@ -86,7 +86,7 @@
     </p>
 </div>
 
-<!-- Screenshots section — hidden until assets ready
+<!-- Screenshots section, hidden until assets ready
 <section>
     <div class="container">
         <div class="section-label">Live Engine</div>
@@ -120,7 +120,7 @@
             <div class="layer-card-inner">
                 <div class="arch-tag">LAYER 2</div>
                 <h3>GPU Adjudication Engine</h3>
-                <p>The compiled policy bytecode executes on GPU. Each entity is evaluated against the full policy set in parallel. 667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux. Sustained throughput across that cycle is 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. Results are deterministic: same policy version, same input data, same verdict.</p>
+                <p>The compiled policy bytecode executes on GPU. Each entity is evaluated against the policy set. 500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</p>
             </div>
         </div>
         <div class="layer-card">

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection — ZQUAS</title>
-    <meta name="description" content="A ZQUAS position paper. A single detection engine that replaces overnight batch processing with continuous real-time monitoring. From the bank's data centre to a federated network spanning five banks. The same code, the same compliance policies, the same detection algorithms, processing every transaction the moment it occurs.">
-    <meta property="og:title" content="From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection — ZQUAS">
-    <meta property="og:description" content="A ZQUAS position paper. A single detection engine that replaces overnight batch processing with continuous real-time monitoring. From the bank's data centre to a federated network spanning five banks. The same code, the same compliance policies, the same detection algorithms, processing every transaction the moment it occurs.">
+    <title>From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection | ZQUAS</title>
+    <meta name="description" content="A ZQUAS position paper. A single detection engine that replaces overnight batch processing with continuous real-time monitoring. From the bank&#x27;s data centre to a federated network spanning five banks. The same code, the same compliance policies, the same detection algorithms, processing every transaction the moment it occurs.">
+    <meta property="og:title" content="From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection | ZQUAS">
+    <meta property="og:description" content="A ZQUAS position paper. A single detection engine that replaces overnight batch processing with continuous real-time monitoring. From the bank&#x27;s data centre to a federated network spanning five banks. The same code, the same compliance policies, the same detection algorithms, processing every transaction the moment it occurs.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://zquas.ai/article-edge-to-federation.html">
     <meta property="og:image" content="https://zquas.ai/og-image.png">
@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=6">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -105,6 +105,7 @@
     <div class="article-header">
         <a href="articles.html" class="article-back">&larr; Articles</a>
         <div class="article-meta">March 2026 &middot; Position Paper &middot; 28 min read</div>
+        <p class="content-updated">Updated: 7 October 2026</p>
         <h1>From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection</h1>
         <p class="lead">A single detection engine that replaces overnight batch processing with continuous real-time monitoring. From the bank's data centre to a federated network spanning five banks. The same code, the same compliance policies, the same detection algorithms, processing every transaction the moment it occurs.</p>
         <p class="article-author"><em>Danny de Gier, Founder ZQUAS. 18 years financial crime compliance: Deutsche Bank, HSBC, RBS, ABN AMRO. PGDip Financial Crime Compliance, University of Manchester.</em></p>
@@ -116,7 +117,7 @@
 
         <p>The anti-money laundering industry has a structural problem that no amount of artificial intelligence can fix. Every major vendor sells the same architecture from 2005: collect transactions in a central database, run detection rules overnight, generate alerts the next morning. The only thing that has changed in twenty years is the label. What was "rules-based detection" is now "AI-powered monitoring." The pipeline is identical.</p>
 
-        <p>The Dutch Court of Audit (Algemene Rekenkamer) confirmed the result in the Netherlands: 13,000 full-time employees, 530,000 annual suspicious activity reports, and no measurable effectiveness in detecting or preventing financial crime. The pattern repeats globally. FinCEN processed over 4.7 million suspicious activity reports in fiscal year 2024 in the United States. The UK's FCA has fined multiple banks for monitoring systems it described as "inadequate and ineffective." The current approach is not underperforming. It is architecturally incapable of solving the problem it was designed for.</p>
+        <p>The Dutch Court of Audit (Algemene Rekenkamer) confirmed the result in the Netherlands: 13,000 full-time employees, 530,000 annual suspicious activity reports, and no measurable effectiveness in detecting or preventing financial crime. The pattern repeats globally. FinCEN processed over 4.7 million suspicious activity reports in fiscal year 2024 in the United States. The UK's FCA has fined multiple banks for monitoring systems it described as "inadequate and ineffective." The current approach is not underperforming. It is architecturally incapable of solving the problem it was designed for.<span class="fca-disclaimer">ZQUAS is taking part in the FCA&#x27;s Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.</span></p>
 
         <p>This paper presents a fundamentally different approach. A single detection engine that replaces overnight batch processing with continuous real-time monitoring. The same code, the same compliance policies, the same detection algorithms, processing every transaction the moment it occurs and sharing risk intelligence across institutions in seconds. Not faster batch processing. Continuous, real-time financial crime detection connected across the entire banking infrastructure.</p>
 
@@ -269,7 +270,7 @@
 
               <rect x="620" y="280" width="168" height="128" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
               <text x="704" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#58A6FF" text-anchor="middle">Bank data centre</text>
-              <text x="704" y="328" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">750K complex events/sec</text>
+              <text x="704" y="328" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Fixed synthetic fixture</text>
               <text x="704" y="342" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">5 detection dimensions</text>
               <text x="704" y="362" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">Same binary everywhere</text>
             </g>
@@ -279,7 +280,7 @@
           </svg>
         </div>
 
-        <h3>Layer 1: Institutional — Real-Time Full-Population Monitoring</h3>
+        <h3>Layer 1: Institutional: Real-Time Full-Population Monitoring</h3>
 
         <p>The institutional installation is the primary detection engine, deployed in the bank's own data centre on enterprise GPU hardware. It is the replacement for the traditional batch transaction monitoring system. Where the current system processes yesterday's transactions tonight, the F1 Engine processes every transaction the moment it enters the system.</p>
 
@@ -297,7 +298,7 @@
 
         <p>The institutional installation also collects and correlates signals in real-time as transactions arrive. An ATM withdrawal in Rotterdam at 14:00, combined with an ATM withdrawal in Utrecht at 14:30 by the same customer, combined with a federation warning from a partner bank that arrived at 13:45: the engine sees all three signals within seconds and fires the alert while the pattern is still forming.</p>
 
-        <p>At validated performance levels, the institutional installation completes a full 500,000-entity detection cycle against the 56-policy catalogue in 667 ms, median of three runs, on a single GPU, sustaining 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. This is not batch processing measured in hours. It is continuous monitoring measured in seconds.</p>
+        <p>500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</p>
 
         <p>The difference this makes is concrete. In the mule network scenario from Section 2: the batch system generates an alert on Wednesday morning, two days after the first withdrawal. The real-time system generates an alert on Monday at 15:01, ninety minutes after the first withdrawal. Same crime. Same data. Same detection rules. The only difference is when the engine processes the transaction.</p>
 
@@ -448,7 +449,7 @@
           </svg>
         </div>
 
-        <h3>Layer 2: Federation — Cross-Bank Detection Without Data Sharing</h3>
+        <h3>Layer 2: Federation: Cross-Bank Detection Without Data Sharing</h3>
 
         <p>The federation layer is where the architecture addresses the most fundamental limitation of current AML systems: single-institution blindness.</p>
 
@@ -470,7 +471,7 @@
 
         <p>The federation does not require every bank in the country to participate. It operates between pairs of banks. Two banks with a legal agreement can begin exchanging risk signals immediately. The detection improves with each additional bank that joins, but it produces results from the very first pair. The legal framework for this type of information sharing between banks is being developed under AMLR Article 75. The F1 Engine provides the technical mechanism that this legal framework requires.</p>
 
-        <h3>Layer 3: Regulatory Interface — Supervisory Access Without Data Exposure</h3>
+        <h3>Layer 3: Regulatory Interface: Supervisory Access Without Data Exposure</h3>
 
         <p>The final layer provides the interface between the detection system and regulatory supervisors. Automated generation of Suspicious Activity Reports from detection results. A complete audit trail that allows supervisors to verify that a detection decision was computed correctly without accessing the underlying customer data. Cryptographic provenance that proves which policies were evaluated, on which data, at which time, without revealing the data itself.</p>
 
@@ -500,7 +501,7 @@
 
         <p>The challenge is speed. With the rise of instant payment rails (SEPA Instant in Europe, Faster Payments in the UK, FedNow in the US), transactions settle in seconds. The sanctions screening must complete before the transaction settles. Legacy systems that screen in 200 to 500 milliseconds per transaction are under pressure. A GPU-native engine that screens the entire population against the full sanctions list in seconds provides a fundamentally different level of capability.</p>
 
-        <p>The F1 Engine's throughput (750,000 complex events per second across a full 500,000-entity detection cycle) means that a complete sanctions screen of the bank's entire customer base against all global sanctions lists can complete in the time it takes a legacy system to screen a single transaction. For banks processing millions of transactions daily through instant payment channels, this is not a performance luxury. It is a regulatory necessity.</p>
+        <p>500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</p>
 
         <h3>Use Case 3: Real-Time Payment Intervention (UK, and Emerging in EU)</h3>
 
@@ -508,7 +509,7 @@
 
         <p>Combined with the UK's Authorised Push Payment (APP) fraud reimbursement rules (in force since October 2024), which impose a 50/50 liability split between sending and receiving PSPs, UK banks now have both the legal authority and the financial incentive to intervene in suspicious payments before they are processed.</p>
 
-        <p>The UK government's Fraud Strategy 2026-2029, published in March 2026, goes further: a new Online Crime Centre launches in April 2026, bringing together police, banks, mobile networks, and technology firms for real-time intelligence sharing. The FCA has stated that it expects banks to move toward automated, risk-based monitoring capable of identifying scam activity before payments are executed.</p>
+        <p>The UK government's Fraud Strategy 2026-2029, published in March 2026, goes further: a new Online Crime Centre launches in April 2026, bringing together police, banks, mobile networks, and technology firms for real-time intelligence sharing. The FCA has stated that it expects banks to move toward automated, risk-based monitoring capable of identifying scam activity before payments are executed.<span class="fca-disclaimer">ZQUAS is taking part in the FCA&#x27;s Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.</span></p>
 
         <p>This creates a specific market for real-time payment intervention that does not yet exist in most EU jurisdictions. Across the EU, tipping-off provisions under AMLD Article 39 (implemented in the Netherlands as Wwft Article 23, and similarly in each Member State) prohibit banks from declining transactions based on AML suspicion. But the UK has carved out an exception for fraud and dishonesty. And the EU Instant Payments Regulation (2024/886), which entered into force in April 2024, is pushing EU jurisdictions toward similar real-time screening requirements for instant payments.</p>
 
@@ -554,7 +555,7 @@
 
         <p>The engine also includes an Adversarial Threshold Optimizer that automatically discovers optimal detection thresholds. Instead of a compliance officer manually deciding that "3 transactions per day is suspicious," the optimizer evaluates millions of threshold configurations against the simulated population and produces a mathematically verified set of optimal trade-offs between detection rate and false positive rate. The compliance officer does not guess. They choose a point on a curve that has been validated against adversarial criminal behaviour across multiple population seeds, difficulty levels, and economic conditions. No other AML system provides this capability.</p>
 
-        <p>At validated performance levels: in simulation testing, the engine finds every single criminal that was planted in the synthetic population. Zero missed criminals. In detection terminology, this is called "100% recall," meaning none of the known bad actors slipped through.</p>
+        <p>Detection results depend on the test population and the pattern evaluated. The published results use synthetic data and do not establish a real-world detection rate. See the homepage for the specific network tests and their limitations.</p>
 
         <p>An important caveat: this result is measured against synthetic populations where the system knows exactly who the criminals are, because the simulator created them. In the real world, criminals are adaptive. They change their behaviour to avoid detection. Production detection rates will be lower than simulation results. This is true for every detection system ever built. The simulator's purpose is not to claim perfection. It is to provide a controlled environment for continuous calibration: run the simulation, measure what was missed, adjust the detection thresholds, run again. This feedback loop does not exist in systems that rely solely on production data, where you never know what you missed.</p>
 
@@ -702,7 +703,7 @@
 
         <p><strong>Codebase:</strong> Approximately 753,000 source lines excluding third-party code. One codebase, three deployment targets: the banking detection engine, the AI inference layer, and the cross-bank federation layer. Every kernel is a __global__ function in a .cu file. No CPU fallback.</p>
 
-        <p><strong>Performance:</strong> 667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux. Sustained throughput across that cycle is 750,000 complex events per second. A single cross-bank matching round for 100,000 customers: under 10 seconds. Time from detection to alert: under 10 milliseconds. All numbers measured on a single GPU.</p>
+        <p>500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</p>
 
         <p><strong>Portability:</strong> The minimum GPU requirement is a 2017-era NVIDIA card with 4 gigabytes of memory. The engine has been run on a Quadro P2000 in a second-hand laptop. The same binary, unmodified, runs on an RTX 5090 with 32 gigabytes of memory. No detection or throughput figures are published for the low-end configuration.</p>
 
@@ -800,7 +801,7 @@
             <rect x="200" y="205" width="400" height="28" rx="14" fill="#0D1117" stroke="#3FB950" stroke-width="1.5"/>
             <text x="400" y="224" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#3FB950" text-anchor="middle">ZQUAS<tspan fill="#4a7dff">.</tspan> FEDERATION DETECTION FABRIC</text>
 
-            <!-- F1 Engine boxes (bottom row) — each institution runs the same engine -->
+            <!-- F1 Engine boxes (bottom row): each institution runs the same engine -->
             <!-- PP Engine -->
             <g aria-label="F1 Engine at Payment Processor">
               <rect x="30" y="255" width="150" height="68" rx="6" fill="#0D1117" stroke="#3FB950" stroke-width="1.5"/>
@@ -932,7 +933,7 @@
                 </tr>
                 <tr style="border-bottom: 1px solid #21262D;">
                     <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>EU Instant Payments Reg (2024/886):</strong> Real-time sanctions screening</td>
-                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">GPU-native screening across the full 500,000-entity cycle in 667 ms</td>
+                    <td style="padding: 0.75rem; color: #8B949E; font-size: 0.9rem;">500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #21262D;">
                     <td style="padding: 0.75rem; color: #C9D1D9; font-size: 0.9rem;"><strong>MiCA:</strong> AML obligations for crypto asset service providers</td>

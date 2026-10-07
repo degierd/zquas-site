@@ -69,24 +69,24 @@ Alerts carry proofs that a supervisor can verify with a public key and a standal
 
 
 
-            Each figure is enforced as a bound in our test suite. Each carries its own method.
+            These internal test results have different workloads and measurement boundaries. Read each figure with its scope.
 
 
 
 
                 500,000 entities under 2 seconds
-                Full detection cycle
+                Detection on a fixed fixture
 
 
-Enforced as a bound in our test suite. Every one of the 500,000 entities is confirmed evaluated, not sampled. Synthetic population. Method on the [benchmark page](benchmark.html).
+500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle. Every entity is evaluated, not sampled. Method on the [benchmark page](benchmark.html).
 
 
 
                 Alert lifecycle under 10 ms
-                Local decision latency
+                Per-alert handling after detection
 
 
-The bound is enforced. A single cold alert took 7 to 8 ms. Amortised, an alert takes 0.25 ms.
+Alert lifecycle under 10 ms per alert, from a detection result to a persisted, queryable alert. Batch results are amortised per alert.
 
 
 
@@ -94,7 +94,7 @@ The bound is enforced. A single cold alert took 7 to 8 ms. Amortised, an alert t
                 Bilateral round between two institutions
 
 
-The bound is enforced in CI. We measured 3,052 ms at 100,000 entities per party. The transport is a loopback development transport, not a real inter-participant network. The semi-honest trust model applies.
+Federation bilateral round under 10 seconds on TCP loopback development transport. Semi-honest security. This does not measure a real inter-bank network.
 
 
 
@@ -102,7 +102,7 @@ The bound is enforced in CI. We measured 3,052 ms at 100,000 entities per party.
                 Detection pass working set
 
 
-The bound is enforced. We measured 562 to 616 MB.
+VRAM under 1 GB in the measured detection-pass working set after warm-up. Resident ingestion and model inference are excluded. This is not total-system memory. The regression gate is 1 GiB.
 
 
 

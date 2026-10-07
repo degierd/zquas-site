@@ -16,9 +16,18 @@ For Supervisory Authorities
             ZQUAS produces cryptographic proof of every compliance decision. Your supervisory team verifies outcomes independently, without relying on the running production engine or its internal state, and without seeing underlying transaction data.
 
 
+        Programmes and sandboxes
 
 
-            FCA Supercharged Sandbox second cohort · FCA Digital Sandbox · DNB InnovationHub under review
+ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
+
+
+
+ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.
+
+
+
+DNB InnovationHub submission under review.
 
 
 
@@ -338,7 +347,7 @@ The predictive compliance engine simulates governance state forward in time. It 
 
 
             ZQUAS is purpose-built for supervisory evaluation. Accepted into the FCA Digital Sandbox in March 2026. Joined the second cohort of the FCA Supercharged Sandbox in July 2026. DNB InnovationHub submission under review.
-
+        ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 
@@ -373,7 +382,7 @@ As CEN/CENELEC drafts technical standards for the EU AI Act's high-risk AI requi
             **Three Founding Partner slots available**
 
 
-12 weeks from signature to results. Joint regulatory sandbox engagement included. No customer data leaves your infrastructure.
+12-week local pilot. Optional network phase afterwards, by separate agreement. Customer records stay inside your institution.
 
 
 

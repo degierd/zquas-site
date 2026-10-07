@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glossary — ZQUAS</title>
+    <title>Glossary | ZQUAS</title>
     <meta name="description" content="Definitions for the cryptographic, regulatory, and architectural terms used across the ZQUAS platform. Cross-institutional AML, MPC, AMLR Article 75, ECDH-PSI, Garbled Circuits, and more.">
-    <meta property="og:title" content="Glossary — ZQUAS">
+    <meta property="og:title" content="Glossary | ZQUAS">
     <meta property="og:description" content="Definitions for the cryptographic, regulatory, and architectural terms used across the ZQUAS platform.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zquas.ai/glossary.html">
@@ -32,41 +32,113 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=6">
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "ZQUAS Glossary",
+  "description": "Definitions for the cryptographic, regulatory, and architectural terms used across the ZQUAS platform.",
+  "url": "https://zquas.ai/glossary.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "ZQUAS",
+    "url": "https://zquas.ai"
+  },
+  "hasDefinedTerm": [
     {
-        "@context": "https://schema.org",
-        "@type": "DefinedTermSet",
-        "name": "ZQUAS Glossary",
-        "description": "Definitions for the cryptographic, regulatory, and architectural terms used across the ZQUAS platform.",
-        "url": "https://zquas.ai/glossary.html",
-        "publisher": {
-            "@type": "Organization",
-            "name": "ZQUAS",
-            "url": "https://zquas.ai"
-        },
-        "hasDefinedTerm": [
-            {"@type": "DefinedTerm", "name": "Cross-Institutional AML Detection", "description": "Detecting financial crime patterns that span multiple banks by comparing risk indicators across institutions, without any institution exposing its raw customer data."},
-            {"@type": "DefinedTerm", "name": "Multi-Party Computation (MPC)", "description": "A family of cryptographic protocols that allow several parties to jointly compute a function over their combined inputs while keeping each input private from the others."},
-            {"@type": "DefinedTerm", "name": "Private Set Intersection (PSI)", "description": "An MPC primitive that lets two parties identify entities they have in common without either party revealing its full set."},
-            {"@type": "DefinedTerm", "name": "ECDH-PSI", "description": "A Private Set Intersection construction built on Elliptic Curve Diffie-Hellman key agreement, used in ZQUAS over Curve25519 (X25519) for cross-institutional entity matching."},
-            {"@type": "DefinedTerm", "name": "Yao's Garbled Circuits", "description": "An MPC technique that lets two parties evaluate a Boolean circuit on their joint inputs while learning only the circuit's output. ZQUAS uses the Free-XOR optimisation."},
-            {"@type": "DefinedTerm", "name": "Oblivious Transfer (OT)", "description": "A cryptographic primitive in which a sender transfers one of several messages to a receiver without learning which message was selected."},
-            {"@type": "DefinedTerm", "name": "AMLR Article 75", "description": "Article 75 of the EU Anti-Money Laundering Regulation. Permits cross-institutional information sharing for AML purposes with mandatory pseudonymisation. Applies from July 10, 2027."},
-            {"@type": "DefinedTerm", "name": "ECCTA Sections 188-189", "description": "Sections 188 and 189 of the UK Economic Crime and Corporate Transparency Act 2023. Provide a legal basis for inter-bank AML information sharing. In force since January 2024."},
-            {"@type": "DefinedTerm", "name": "TMNL", "description": "Transaction Monitoring Netherlands. A joint initiative by five Dutch banks to pool transaction data for cross-institutional monitoring. Wound down because centralised data pooling could not be reconciled with privacy law."},
-            {"@type": "DefinedTerm", "name": "GPU-native compliance engine", "description": "A compliance engine designed from the ground up to execute on GPU. Distinct from a GPU-accelerated engine, where a CPU pipeline offloads selected operations to a GPU."},
-            {"@type": "DefinedTerm", "name": "Complex events per second", "description": "Throughput metric for compliance engines. One unit is one entity evaluated against the full policy set. The ZQUAS engine sustains 750,000 complex events per second across a full 500,000-entity detection cycle, with cryptographic attestation generation inside the measured path."},
-            {"@type": "DefinedTerm", "name": "Alert Lifecycle", "description": "The wall-clock time from a transaction arriving at the engine to a triaged alert being available to a compliance officer. ZQUAS publishes a bound of under 10ms, with 7 to 8 ms measured for a single cold alert and 0.25 ms amortised per alert."},
-            {"@type": "DefinedTerm", "name": "Bilateral Round", "description": "One end-to-end execution of the cross-institutional MPC protocol between two participating institutions. ZQUAS publishes a bound of under 10 seconds per round (measured: 3,052 ms at 100,000 entities per party, over a loopback development transport)."},
-            {"@type": "DefinedTerm", "name": "Cryptographic Proof Bundle", "description": "A signed, Merkle-included artefact produced for every compliance decision. Contains the policy hash, input hash, verdict hashes, Merkle root, and Ed25519 signature."},
-            {"@type": "DefinedTerm", "name": "Deterministic Evaluation", "description": "Property of an evaluation engine such that the same inputs and the same policy always produce the same output, byte for byte, on any compliant deployment."},
-            {"@type": "DefinedTerm", "name": "Constitutional Governance", "description": "An architectural pattern in which AI agents operate under hard-coded rules they cannot modify. In ZQUAS, agents cannot file a Suspicious Activity Report (SAR) without human MLRO sign-off."},
-            {"@type": "DefinedTerm", "name": "Federated Detection", "description": "Detection that runs across multiple institutions without those institutions sharing raw data. Achieved in ZQUAS via cryptographic federation rather than data centralisation."},
-            {"@type": "DefinedTerm", "name": "Sovereign Compliance", "description": "A deployment model in which a regulated institution retains absolute control of its compliance data and infrastructure. The vendor cannot read, copy, or relocate the institution's data."}
-        ]
+      "@type": "DefinedTerm",
+      "name": "Cross-Institutional AML Detection",
+      "description": "Detecting financial crime patterns that span multiple banks by comparing risk indicators across institutions, without any institution exposing its raw customer data."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Multi-Party Computation (MPC)",
+      "description": "A family of cryptographic protocols that allow several parties to jointly compute a function over their combined inputs while keeping each input private from the others."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Private Set Intersection (PSI)",
+      "description": "An MPC primitive that lets two parties identify entities they have in common without either party revealing its full set."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "ECDH-PSI",
+      "description": "A Private Set Intersection construction built on Elliptic Curve Diffie-Hellman key agreement, used in ZQUAS over Curve25519 (X25519) for cross-institutional entity matching."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Yao's Garbled Circuits",
+      "description": "An MPC technique that lets two parties evaluate a Boolean circuit on their joint inputs while learning only the circuit's output. ZQUAS uses the Free-XOR optimisation."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Oblivious Transfer (OT)",
+      "description": "A cryptographic primitive in which a sender transfers one of several messages to a receiver without learning which message was selected."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "AMLR Article 75",
+      "description": "Article 75 of the EU Anti-Money Laundering Regulation. Permits cross-institutional information sharing for AML purposes with mandatory pseudonymisation. Applies from July 10, 2027."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "ECCTA Sections 188-189",
+      "description": "Sections 188 and 189 of the UK Economic Crime and Corporate Transparency Act 2023. Provide a legal basis for inter-bank AML information sharing. In force since January 2024."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "TMNL",
+      "description": "Transaction Monitoring Netherlands. A joint initiative by five Dutch banks to pool transaction data for cross-institutional monitoring. Wound down because centralised data pooling could not be reconciled with privacy law."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "GPU-native compliance engine",
+      "description": "A compliance engine designed from the ground up to execute on GPU. Distinct from a GPU-accelerated engine, where a CPU pipeline offloads selected operations to a GPU."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Complex events per second",
+      "description": "500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Alert Lifecycle",
+      "description": "The wall-clock time from a transaction arriving at the engine to a triaged alert being available to a compliance officer. ZQUAS publishes a bound of under 10ms, with 7 to 8 ms measured for a single cold alert and 0.25 ms amortised per alert."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Bilateral Round",
+      "description": "One end-to-end execution of the cross-institutional MPC protocol between two participating institutions. ZQUAS publishes a bound of under 10 seconds per round (measured: 3,052 ms at 100,000 entities per party, over a loopback development transport)."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Cryptographic Proof Bundle",
+      "description": "A signed, Merkle-included artefact produced for every compliance decision. Contains the policy hash, input hash, verdict hashes, Merkle root, and Ed25519 signature."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Deterministic Evaluation",
+      "description": "Property of an evaluation engine such that the same inputs and the same policy always produce the same output, byte for byte, on any compliant deployment."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Constitutional Governance",
+      "description": "An architectural pattern in which AI agents operate under hard-coded rules they cannot modify. In ZQUAS, agents cannot file a Suspicious Activity Report (SAR) without human MLRO sign-off."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Federated Detection",
+      "description": "Detection that runs across multiple institutions without those institutions sharing raw data. Achieved in ZQUAS via cryptographic federation rather than data centralisation."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Sovereign Compliance",
+      "description": "A deployment model in which a regulated institution retains absolute control of its compliance data and infrastructure. The vendor cannot read, copy, or relocate the institution's data."
     }
-    </script>
+  ]
+}
+</script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -369,7 +441,7 @@
             <div class="glossary-term" id="ceps">
                 <h3>Complex events per second</h3>
                 <p>Throughput metric for compliance engines. One unit is one entity evaluated against the full policy set. Policy-set size is not used as a multiplier.</p>
-                <p>The ZQUAS engine sustains 750,000 complex events per second across a full 500,000-entity detection cycle, with cryptographic attestation generation inside the measured path.</p>
+                <p>500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</p>
             </div>
             <div class="glossary-term" id="alert-lifecycle">
                 <h3>Alert Lifecycle</h3>

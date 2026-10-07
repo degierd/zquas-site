@@ -10,6 +10,10 @@ Site: https://zquas.ai
         January 2026 · Updated June 2026 · Banks · 6 min read
 
 
+Updated: 7 October 2026
+
+
+
 # Batch Processing Is a Liability on Real-Time Payment Rails
 
 
@@ -103,8 +107,7 @@ Your payment infrastructure settles in seconds. Your AML monitoring runs overnig
 
 
 
-            This is what 750,000 complex events per second looks like in practice. A full 500,000-entity detection cycle against the 56-policy catalogue in 667 ms, median of three runs, on NVIDIA RTX 5090, CUDA 13.1, Linux, under a 2-second regression bound enforced in CI. Synthetic data.
-
+500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
 
 
 

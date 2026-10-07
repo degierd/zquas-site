@@ -10,6 +10,10 @@ Site: https://zquas.ai
         November 2025 · Investors · 7 min read
 
 
+Updated: 7 October 2026
+
+
+
 # Why GPU-Native Compliance Is a Moat, Not a Feature
 
 
@@ -94,7 +98,7 @@ Competitors can copy a feature in a sprint. They can't replicate a GPU-native ar
 
 
             What does a realistic Tier-1 bank policy set look like? How do you handle the interaction between sanctions screening and transaction monitoring when they run simultaneously? What does the FCA actually ask for during a s166 skilled persons review? How does the ECB's SREP assessment evaluate monitoring effectiveness? What constitutes adequate record-keeping under EU AI Act Article 12?
-
+        ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 

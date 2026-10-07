@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=6">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -266,7 +266,7 @@
                         <td class="cap-label">Architecture</td>
                         <td>Database and rules engine. SQL queries on stored transactions.</td>
                         <td>Database with ML models. Batch scoring added to existing pipeline.</td>
-                        <td class="zquas-val">GPU-native entity system. Each monitored account carries its own state, risk profile, and decision history, evaluated against the policy set on every change. 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path.</td>
+                        <td class="zquas-val">500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</td>
                     </tr>
                     <tr>
                         <td class="cap-label">AI Integration</td>
@@ -284,7 +284,7 @@
                         <td class="cap-label">Processing Speed</td>
                         <td>Batch. Overnight or hourly. Thousands of decisions per second.</td>
                         <td>Near-real-time. Minutes to hours. Tens of thousands per second.</td>
-                        <td class="zquas-val">667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux. Sustained throughput across that cycle is 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path.</td>
+                        <td class="zquas-val">500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</td>
                     </tr>
                     <tr>
                         <td class="cap-label">Governance Model</td>
@@ -320,7 +320,7 @@
                         <td class="cap-label">Scalability</td>
                         <td>Add servers. Add databases. Linear cost scaling.</td>
                         <td>Add GPU instances for model inference. Separate from core platform.</td>
-                        <td class="zquas-val">Single GPU: 500,000 entities against the 56-policy catalogue in 667 ms, median of three runs. Under 1GB VRAM for the full pipeline. Headroom for larger populations and concurrent federation.</td>
+                        <td class="zquas-val">500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</td>
                     </tr>
                     <tr>
                         <td class="cap-label">Multi-Industry</td>
@@ -346,18 +346,12 @@
         <div class="section-label">Measured, Not Projected</div>
         <h2 class="section-title">The Numbers</h2>
         <div class="stats-row">
-            <div class="stat-box">
-                <div class="stat-val">750K</div>
-                <div class="stat-label">complex events/sec across the 500K-entity cycle</div>
-            </div>
+            <div class="stat-box"><strong class="stat-val">500K</strong><p>Entities under 2 seconds in a fixed synthetic test, about 55K transactions. Detection test only.</p></div>
             <div class="stat-box">
                 <div class="stat-val">&lt;10ms</div>
-                <div class="stat-label">alert lifecycle, ingestion to triage</div>
+                <div class="stat-label">per-alert handling after detection, synthetic test</div>
             </div>
-            <div class="stat-box">
-                <div class="stat-val">667 ms</div>
-                <div class="stat-label">500K entities, 56-policy catalogue</div>
-            </div>
+            <div class="stat-box"><strong class="stat-val">Under 1 GB</strong><p>Measured detection-pass working set only. Synthetic data. Resident ingestion and model inference excluded.</p></div>
             <div class="stat-box">
                 <div class="stat-val">TRL 6</div>
                 <div class="stat-label">synthetic data, no production deployments</div>

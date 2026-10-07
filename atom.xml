@@ -15,7 +15,7 @@
 <id>https://zquas.ai/article-fca-sandbox.html</id>
 <published>2026-07-15T09:00:00+00:00</published>
 <updated>2026-07-15T09:00:00+00:00</updated>
-<summary type="text">We have joined the second cohort of the FCA&#x27;s Supercharged Sandbox. Why we applied, how we use AI in a system that has to answer to regulators, where determinism ends and the model begins, and what participation does and does not mean.</summary>
+<summary type="text">We have joined the second cohort of the FCA&#x27;s Supercharged Sandbox. Why we applied, how we use AI in a system that has to answer to regulators, where determinism ends and the model begins, and what participation does and does not mean. ZQUAS is taking part in the FCA&#x27;s Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.</summary>
 </entry>
 <entry>
 <title>When the Money Has Already Moved</title>
@@ -143,7 +143,7 @@
 <id>https://zquas.ai/article-cross-institutional-detection.html</id>
 <published>2026-02-15T09:00:00+00:00</published>
 <updated>2026-02-15T09:00:00+00:00</updated>
-<summary type="text">Joint transaction monitoring initiatives have stalled across Europe. The core assumption — that centralising data is the path to better detection — is architecturally flawed. Privacy-preserving computation offers a fundamentally different approach.</summary>
+<summary type="text">Joint transaction monitoring initiatives have stalled across Europe. The core assumption, that centralising data is the path to better detection, is architecturally flawed. Privacy-preserving computation offers a fundamentally different approach.</summary>
 </entry>
 <entry>
 <title>What Running a Multi-Bank Monitoring Network Actually Looks Like</title>
@@ -154,7 +154,7 @@
 <summary type="text">The architecture papers write themselves. The hard part is operations. How do banks join? Who sets the rules? What happens when one bank&#x27;s policy change affects another bank&#x27;s alerts? These are the questions that determine whether a network works or collapses.</summary>
 </entry>
 <entry>
-<title>The EUR 200 Billion Compliance Market Nobody Has Disrupted</title>
+<title>The €200 Billion Compliance Market Nobody Has Disrupted</title>
 <link href="https://zquas.ai/article-200b-market.html" rel="alternate" type="text/html" />
 <id>https://zquas.ai/article-200b-market.html</id>
 <published>2026-01-15T09:00:00+00:00</published>

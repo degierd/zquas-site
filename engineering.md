@@ -1,4 +1,4 @@
-# Engineering Standards | ZQUAS
+# Engineering Standards
 
 > Engineering standards behind the ZQUAS compliance engine. FCNS detection benchmark, defence-grade build hardening, reproducible binaries, proven cryptography.
 
@@ -48,7 +48,7 @@ The engine includes the Financial Crime Network Simulator (FCNS): a synthetic be
 
 
 
-All detection, scoring, federation, and simulation runs on GPU. Approximately 753,000 source lines excluding third-party code, covering detection, federation, cryptography, simulation, attestation, and adversarial fuzzing. 667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux. Sustained throughput across that cycle is 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. Zero CPU fallback paths in the detection pipeline. Every kernel is a CUDA global function in a dedicated compute file. Tests call GPU kernels directly with device memory. No CPU wrappers hiding GPU execution. The engine does not use GPU as an accelerator. GPU is the only execution path.
+500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
 
 
 
@@ -140,9 +140,9 @@ Financial computations use fixed-point arithmetic with explicit precision guaran
                     0
                     floating-point in risk logic
 
+                **500K**
 
-                    750K
-                    complex events/sec across the 500K-entity cycle
+Entities under 2 seconds in a fixed synthetic test, about 55K transactions. Detection test only.
 
 
                     3

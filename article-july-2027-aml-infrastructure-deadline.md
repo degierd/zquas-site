@@ -10,6 +10,10 @@ Site: https://zquas.ai
         March 2026 · Strategy · 8 min read
 
 
+Updated: 7 October 2026
+
+
+
 # The 16-Month Window: Why Banks Must Act Before July 2027
 
 
@@ -76,7 +80,7 @@ AMLR Article 75 applies on July 10, 2027. Banks that want to participate in coll
 
 
             Cryptographic audit trails are required for supervisor verification. DNB, the FCA, and AMLA will expect to verify that the monitoring system applied documented policies to documented data at documented times. An audit trail that relies on bank self-reporting does not satisfy this expectation. The trail must be independently verifiable without requiring access to the underlying personal data.
-
+        ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 

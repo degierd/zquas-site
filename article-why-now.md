@@ -10,6 +10,10 @@ Site: https://zquas.ai
         November 2025 · Investors · 7 min read
 
 
+Updated: 7 October 2026
+
+
+
 # Why Compliance Tech Hasn't Been Disrupted Yet, and What Changes That
 
 
@@ -74,8 +78,8 @@ The most conservative buyers in the most regulated industry, using tools that ha
 
 
 
-            Regulatory validation is being addressed through sandbox programmes. The FCA's regulatory sandbox and DNB's InnovationHub exist specifically to break the chicken-and-egg problem. A startup that enters the sandbox and gets a positive assessment from the regulator has solved the validation problem without needing existing bank deployments. This is a recent institutional innovation, and it fundamentally changes the go-to-market dynamics for compliance technology startups.
-
+            Regulatory validation is being addressed through sandbox programmes. The FCA's regulatory sandbox and DNB's InnovationHub exist specifically to break the chicken-and-egg problem. Sandbox participation provides a setting for testing and dialogue. It does not establish regulatory approval, product validation or production readiness. This is a recent institutional innovation, and it fundamentally changes the go-to-market dynamics for compliance technology startups.
+        ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 

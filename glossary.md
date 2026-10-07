@@ -338,7 +338,7 @@ Throughput metric for compliance engines. One unit is one entity evaluated again
 
 
 
-The ZQUAS engine sustains 750,000 complex events per second across a full 500,000-entity detection cycle, with cryptographic attestation generation inside the measured path.
+500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
 
 
 

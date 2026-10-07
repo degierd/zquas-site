@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
     <script src="config.js?v=5"></script>
     <script src="film.js?v=1" defer></script>
     <script type="application/ld+json">
@@ -55,7 +55,7 @@
     }
     </script>
 </head>
-<body>
+<body class="platform-page">
 
 <nav>
     <div class="nav-inner">
@@ -125,28 +125,28 @@
         <div class="section-label">Measured on the engine</div>
         <h2 class="section-title">Four measured figures</h2>
         <p class="section-desc">
-            Each figure is enforced as a bound in our test suite. Each carries its own method.
+            These internal test results have different workloads and measurement boundaries. Read each figure with its scope.
         </p>
         <div class="metric-grid">
             <div class="metric-card">
                 <span class="metric-val">500,000 entities under 2 seconds</span>
-                <span class="metric-label">Full detection cycle</span>
-                <p>Enforced as a bound in our test suite. Every one of the 500,000 entities is confirmed evaluated, not sampled. Synthetic population. Method on the <a href="benchmark.html" style="color: var(--accent);">benchmark page</a>.</p>
+                <span class="metric-label">Detection on a fixed fixture</span>
+                <p>500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle. Every entity is evaluated, not sampled. Method on the <a href="benchmark.html" style="color: var(--accent);">benchmark page</a>.</p>
             </div>
             <div class="metric-card">
                 <span class="metric-val">Alert lifecycle under 10 ms</span>
-                <span class="metric-label">Local decision latency</span>
-                <p>The bound is enforced. A single cold alert took 7 to 8 ms. Amortised, an alert takes 0.25 ms.</p>
+                <span class="metric-label">Per-alert handling after detection</span>
+                <p>Alert lifecycle under 10 ms per alert, from a detection result to a persisted, queryable alert. Batch results are amortised per alert.</p>
             </div>
             <div class="metric-card">
                 <span class="metric-val">Federation round under 10 seconds</span>
                 <span class="metric-label">Bilateral round between two institutions</span>
-                <p>The bound is enforced in CI. We measured 3,052 ms at 100,000 entities per party. The transport is a loopback development transport, not a real inter-participant network. The semi-honest trust model applies.</p>
+                <p>Federation bilateral round under 10 seconds on TCP loopback development transport. Semi-honest security. This does not measure a real inter-bank network.</p>
             </div>
             <div class="metric-card">
                 <span class="metric-val">GPU memory under 1 GB</span>
                 <span class="metric-label">Detection pass working set</span>
-                <p>The bound is enforced. We measured 562 to 616 MB.</p>
+                <p>VRAM under 1 GB in the measured detection-pass working set after warm-up. Resident ingestion and model inference are excluded. This is not total-system memory. The regression gate is 1 GiB.</p>
             </div>
         </div>
         <p class="source-line">Methodology per figure on the <a href="benchmark.html" style="color: var(--accent);">benchmark page</a>.</p>

@@ -1,365 +1,120 @@
-# Founding Partner Programme
+# A 12-week local pilot
 
-> Three pilot slots for institutions ready to lead cross-institutional AML detection. 12 weeks from signature to results. No data leaves your infrastructure.
+> Evaluate local transaction monitoring in a 12-week pilot on your own data and infrastructure. An optional network phase follows by separate agreement.
 
 Source: https://zquas.ai/founding-partner.html
 Site: https://zquas.ai
 
 ---
-Founding Partner Programme
+The ZQUAS pilot
 
+# Start inside
+your own institution.
 
-# Three institutions.
-Three pilot slots.
-One question answered.
+A 12-week local pilot to evaluate transaction monitoring on your own data and infrastructure. An optional network phase can follow after you review the local results.
 
+TRL 6. Synthetic data only. No production deployments.
 
+[Discuss your pilot ↗](contact.html?audience=banks)[See the synthetic walkthrough →](use-case.html)
 
-Can cross-institutional AML detection work with no raw or directly identifying customer data leaving the institution? We have built the platform. Now we need three banks to prove it under regulatory supervision.
+Before you begin
 
+## Five practical answers.
 
+01
 
+### Who should participate
 
-                Slot 1 — Available
+A bank or payment firm exploring local transaction monitoring. Bring a compliance owner, an analyst or operations lead, and an IT contact. Agree the evaluation question together.
 
+02
 
+### What your team supplies
 
-                Slot 2 — Available
+An agreed local dataset and its permitted use, account and payment history, and the outcomes available for evaluation. Your team provides access to suitable infrastructure, including an NVIDIA GPU, and completes its own security, legal and procurement checks.
 
+03
 
+### What ZQUAS supplies
 
-                Slot 3 — Available
+The pilot software, support to configure the local monitor, the signed decision log and its verification check. We agree the setup, evaluation support and report with your team before the pilot starts.
 
+04
 
+### What gets measured
 
+Scam payments caught, analyst workload, and whether every decision can be verified in the signed log. Where payment review and hold policies are evaluated, the limits are at most 1 review per 500 payments and 1 hold per 1,000. These are evaluation limits, not a promised detection rate. Local transaction monitoring itself selects investigation work and does not hold payments.
 
-            [Express interest](contact.html)
-            [Read the position paper](article-75.html)
+05
 
+### What happens afterwards
 
+Review the evidence, limitations and operational fit together. Decide whether to continue locally, change the scope, or stop. An optional network phase requires a separate agreement on participants, sharing policy, security, legal basis and success measures.
 
+The local phase
 
+## 12 weeks, with a clear review at the end.
 
+The local pilot starts after scope, agreements, access and data readiness are confirmed. The plan below is agreed with your team before the start.
 
+1. Weeks 1 to 2
 
+### Agree the scope
 
-## The Opportunity
+Confirm the evaluation question, local data, access, responsibilities and success measures.
 
+2. Weeks 3 to 4
 
+### Configure the local monitor
 
-            The EU Anti-Money Laundering Regulation takes effect on 10 July 2027. For the first time, Article 75 creates a legal framework for cross-institutional AML information sharing. Every bank in Europe is evaluating how to comply.
+Prepare the local inputs and configuration. Check the decision log and verification process.
 
+3. Weeks 5 to 8
 
+### Run the local evaluation
 
+Review the nominated work with analysts. Record the outcomes and workload against the agreed limits.
 
-            ZQUAS has built a platform for cross-institutional AML detection in which no raw or directly identifying customer data leaves the institution. Using Multi-Party Computation, banks jointly identify cross-bank laundering patterns while each institution's data remains within its own infrastructure. No data extraction. No central database. The status of MPC protocol messages under EU data protection law has not been ruled on by any authority, and obtaining a formal assessment from a national data protection authority is a stated objective of the programme.
+4. Weeks 9 to 10
 
+### Assess the results
 
+Examine scam payments caught, review and hold rates where applicable, analyst workload and log verification.
 
+5. Weeks 11 to 12
 
-            Readiness is TRL 6: an integrated prototype demonstrated in a controlled relevant environment, validated on synthetic data, with no production deployments. A 56-policy logical catalogue, pinned by static assertion to the catalogue array, with a 128-policy corpus (34 fail-closed screening, 94 detection) used for scale characterisation. GPU-native. Real-time. Cryptographically attestable. The Founding Partner Programme is how three institutions join first.
+### Make the next decision
 
+Document results and limitations. Decide whether to continue locally or scope an optional network phase.
 
+Data sovereignty
 
+## Your records stay with you.
 
----
+No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log.
 
+Network participation is optional and follows the local phase by separate agreement. Current federation security is semi-honest: it assumes participants follow the protocol.
 
+Evidence today
 
+## A prototype with results to examine.
 
-## What Founding Partners Receive
+TRL 6. Synthetic data only. No production deployments. Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys).
 
+ZQUAS governs decisions made by automated systems and AI agents. Financial crime is where it starts.
 
+[Read the scoped engine figures →](benchmark.html)[Download the briefing ↗](zquas-onepager.pdf)
 
-                Benefit 01
-                Founding Partner Pricing
-                50% reduction on all ZQUAS licence fees for 24 months from production go-live. Not a trial discount. A two-year commercial agreement at half the standard rate, in recognition of the early commitment.
+Programmes and sandboxes
 
+## Testing and engagement.
 
-                Benefit 02
-                Policy Advisory Board Seat
-                Permanent seat on the ZQUAS Policy Advisory Board. Quarterly input on policy development, threshold calibration, and product roadmap. Membership persists beyond the 24-month pricing period.
+ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
+The next step
 
-                Benefit 03
-                Joint Regulatory Sandbox
-                ZQUAS co-presents with the Founding Partner at the relevant sandbox: DNB InnovationHub, FCA Digital Sandbox, or national FSA. Joint sandbox participation gives the bank innovation credit with their regulator.
+## Explore a local pilot.
 
+12 weeks inside your institution. An optional network phase follows only by agreement.
 
-                Benefit 04
-                Co-Authored Case Study
-                Published on both parties' websites. Submitted to ACAMS, BAFT, and Sibos. A published credential for the compliance team: the MLRO can present it at industry events and reference it in regulatory submissions.
-
-
-                Benefit 05
-                Dedicated Integration Engineer
-                One ZQUAS engineer assigned to the bank for the full pilot duration. Handles deployment, data feed configuration, and results compilation. Part-time from the bank: one IT contact, one compliance contact.
-
-
-                Benefit 06
-                Data Sovereignty Guarantee
-                Contractually guaranteed: no customer data leaves the bank's infrastructure at any point. Not a policy. A property of the cryptographic protocol. Independently verifiable by technical audit.
-
-
-
-
-
----
-
-
-
-
-## The Pilot
-
-
-
-            The pilot validates one capability: cross-institutional AML detection using MPC federation, with real compliance policies, against realistic data, under regulatory observation.
-
-
-
-
-### Scope
-
-
-
-
-
-
-| 
-                        Dimension | 
-                        Detail 
-| 
-                        Entities | 
-                        Minimum 5,000 per institution, up to 500,000. Synthetic data with planted typologies, or representative data from the bank's existing monitoring system. 
-| 
-                        Policies | 
-                        The 56-policy logical catalogue, adapted to each institution's regulatory perimeter if needed. 
-| 
-                        Federation | 
-                        Direct peer-to-peer MPC rounds between all Founding Partners. End-to-end encrypted (AES-256-GCM), authenticated (Ed25519), with cryptographic attestation on every verdict. 
-| 
-                        Detection targets | 
-                        Correspondent banking wire stripping, validated end to end as a named cohort on synthetic data across simulated participants. Trade-based over-invoicing, shell company layering and funnel account structuring are designed and in scope, not validated. Plus a legitimate control population. Measured outputs: detection rate, false positive rate, federation time. 
-### Timeline: 12 weeks from signature to results
-
-
-
-                Weeks 1–2
-
-                    **Onboarding**
-
-
-Legal agreements signed. ZQUAS installation deployed. Data feed configured. Integration engineer assigned on-site or remote.
-
-
-
-
-                Weeks 3–4
-
-                    **Validation**
-
-
-Single-institution policy evaluation. Verify the policy catalogue produces correct results against the bank's entity data. Calibrate thresholds to the bank's risk appetite.
-
-
-
-
-                Weeks 5–8
-
-                    **Federation**
-
-
-Cross-institutional MPC rounds between Founding Partners. Bilateral detection. Measure results. Resolve any integration issues.
-
-
-
-
-                Weeks 9–10
-
-                    **Results**
-
-
-Compile detection results. Benchmark report. Case study draft. Regulatory sandbox submission prepared.
-
-
-
-
-                Weeks 11–12
-
-                    **Sandbox**
-
-
-Joint presentation to regulator. Demonstrate detection. Discuss GDPR position on MPC protocol messages. Obtain regulatory feedback.
-
-
-
-
-
-
-
-### What the bank needs to provide
-
-
-
-
-
-
-| 
-                        Requirement | 
-                        Detail 
-| 
-                        Entity risk data | 
-                        Entity identifier plus risk score per entity. Synthetic or representative. No raw transaction data required. 
-| 
-                        Infrastructure | 
-                        One server or VM with an NVIDIA GPU. ZQUAS is GPU-first: CPU execution paths have been progressively removed and there is no CPU fallback in the detection hot path. Any residual CPU path is compile-time marked, non-default and logged at runtime, so GPU failure fails loudly rather than silently degrading. One outbound TCP connection to peer banks. 
-| 
-                        People | 
-                        One IT contact for deployment. One compliance contact for policy calibration and results review. Part-time commitment, not full-time. 
-| 
-                        Regulatory relationship | 
-                        Willingness to participate in a joint sandbox submission to the relevant regulator (DNB, FCA, or national FSA). 
-| 
-                        Legal | 
-                        Standard NDA plus pilot agreement. ZQUAS provides templates. Typical legal review: 2 to 4 weeks. No procurement RFP required. 
----
-
-
-
-
-## Why Now
-
-
-
-            AMLR applies directly from 10 July 2027. Unlike previous directives, there is no national transposition period. The regulation is directly applicable in all EU member states from that date. AMLA begins direct supervision of high-risk cross-border institutions in 2028.
-
-
-
-
-            Banks that can demonstrate cross-institutional detection capability before July 2027 are ahead of the compliance curve. Banks that cannot will be responding to regulatory requests after the deadline.
-
-
-
-
-            Cross-institutional detection is a network. It becomes more valuable with each institution that joins. The first three banks to deploy MPC federation establish the network. Every subsequent bank that joins benefits from the detection capability the founders built. Founding Partners are not just early customers. They are the initial participants in a network that will ultimately span the entire banking sector.
-
-
-
-
-            The window in which Founding Partners can shape the platform, the policies, and the market is measured in months, not years.
-
-
-
-
----
-
-
-
-
-## About ZQUAS
-
-
-
-            ZQUAS is a GPU-native governance and financial crime compliance platform. The core engine executes deterministic compliance policies in real time on GPU, producing cryptographically attestable decisions for each verdict. Each decision produces a cryptographic proof bundle: a record of the policy that fired, the inputs it read, and the verdict it produced. A regulator can verify this independently, years after the fact.
-
-
-
-
-            The federation layer enables privacy-preserving cross-institutional detection using Multi-Party Computation: ECDH-PSI for entity matching, Yao's Garbled Circuits for risk comparison, and Oblivious Transfer for secure key exchange. Banks detect cross-bank laundering patterns without any institution accessing any other institution's data.
-
-
-
-
-### Key metrics (measured, not projected)
-
-
-
-                667 ms
-                500,000-entity detection cycle, 56-policy catalogue, median of three (NVIDIA RTX 5090, CUDA 13.1, Linux)
-
-
-                < 10ms
-                Alert lifecycle: ingestion to triage
-
-
-                750K
-                Complex events/sec across the 500K-entity cycle. One unit is one entity against the full policy set
-
-
-                TRL 6
-                Synthetic data only. No production deployments, no live counterparty data
-
-
-
-
-
-### Leadership
-
-
-
-            Founded by Danny de Gier. 18+ years of financial crime compliance across Deutsche Bank, HSBC, RBS, and ABN AMRO. ICA Postgraduate Diploma in Financial Crime (University of Manchester). Former CRO at Vivid Money. Direct regulatory experience across FCA, DNB, BaFin, and ECB supervised institutions.
-
-
-
-
----
-
-
-
-
-## Next Steps
-
-
-
-Three slots. When they are committed, the programme closes.
-
-
-
-                01
-
-                    Expression of Interest
-                    Email info@zquas.ai with your institution name, jurisdiction, and primary contact. No commitment required at this stage.
-
-
-
-                02
-
-                    Technical Briefing
-                    90-minute session, remote or in-person, with ZQUAS engineering and your compliance and IT teams. Live demonstration of the platform. Full Q&A.
-
-
-
-                03
-
-                    NDA and Pilot Agreement
-                    ZQUAS provides template agreements. Typical legal review: 2 to 4 weeks. No procurement RFP required. This is a pilot, not a full deployment.
-
-
-
-                04
-
-                    Kick-off
-                    Installation deployment. Data feed configuration. Integration engineer assigned. The 12-week clock starts.
-
-
-
-
-
-
-
-## Ready to discuss?
-
-
-
-Contact us directly. No sales process. A conversation with the founder.
-
-            [info@zquas.ai](mailto:info@zquas.ai)
-
-                [Get in touch](contact.html)
-                [Read the position paper](article-75.html)
-
-
-
-
-            The Founding Partner Programme is limited to three institutions. Terms are subject to formal agreement. Performance figures are from testing on production hardware with synthetic data. False positive rates on live customer data should be established through the pilot. This page does not constitute a contractual offer.
-            © June 2026 ZQUAS. All rights reserved.
+[Discuss your pilot ↗](contact.html?audience=banks)

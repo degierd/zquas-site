@@ -220,32 +220,32 @@ The privacy guarantee is mathematical, not administrative.
 
 
 
-                        Article 75 Sharing | 
-                        MPC Federation 
-| 
-                        Scope | 
-                        Higher-risk customers and post-suspicion only | 
-                        Entire customer base 
-| 
-                        Data exposed | 
-                        Customer IDs, transactions, risk factors, beneficial ownership | 
-                        Nothing. Cryptographic material only. 
-| 
-                        Privacy model | 
-                        Administrative: contracts, access controls, supervision | 
-                        Mathematical: cryptographic guarantee 
-| 
-                        GDPR basis required | 
-                        Yes: proportionality analysis, DPIA, supervisory approval | 
-                        Arguable that GDPR does not apply to non-personal data 
-| 
-                        Detects low-risk profile criminals | 
-                        No. Excluded from sharing scope. | 
-                        Yes. All customers are federated. 
-| 
-                        DPA risk | 
-                        Moderate. TMNL precedent shows DPA will scrutinise. | 
-                        Low. No personal data leaves the institution. 
+                        Article 75 Sharing |
+                        MPC Federation
+|
+                        Scope |
+                        Higher-risk customers and post-suspicion only |
+                        Entire customer base
+|
+                        Data exposed |
+                        Customer IDs, transactions, risk factors, beneficial ownership |
+                        Nothing. Cryptographic material only.
+|
+                        Privacy model |
+                        Administrative: contracts, access controls, supervision |
+                        Mathematical: cryptographic guarantee
+|
+                        GDPR basis required |
+                        Yes: proportionality analysis, DPIA, supervisory approval |
+                        Arguable that GDPR does not apply to non-personal data
+|
+                        Detects low-risk profile criminals |
+                        No. Excluded from sharing scope. |
+                        Yes. All customers are federated.
+|
+                        DPA risk |
+                        Moderate. TMNL precedent shows DPA will scrutinise. |
+                        Low. No personal data leaves the institution.
             The criminals Article 75 cannot reach are those who deliberately maintain low-risk profiles at each institution and distribute their laundering across the banking system. MPC federation is designed to detect them. Their combined risk is computed without any institution revealing its individual assessment.
 
 
@@ -268,33 +268,33 @@ The privacy guarantee is mathematical, not administrative.
 
 
 
-| 
-                        Capability | 
-                        Measured result 
-| 
-                        Single node: 500,000 entities, 56-policy catalogue | 
-                        667 ms, median of three runs (2-second regression bound enforced in CI) 
-| 
-                        Alert lifecycle: ingestion to agent triage | 
-                        under 10ms (full lifecycle breakdown on benchmark page) 
-| 
-                        Sustained throughput | 
-                        750,000 complex events per second across the full 500,000-entity cycle. One unit is one entity evaluated against the full policy set, with attestation generation inside the measured path 
-| 
-                        Detection accuracy | 
-                        Correspondent banking wire stripping validated end to end as a named cohort on synthetic data across simulated participants 
-| 
-                        Federation: 100K entities, bilateral round | 
-                        3,052 ms per bilateral round at 100,000 entities per party, against a 10-second bound enforced in CI. Loopback development transport, not a real inter-participant network. 
-| 
-                        Security model | 
-                        Semi-honest. Protection against a participant that deliberately deviates from the protocol is not implemented 
-| 
-                        Transport security | 
-                        AES-256-GCM encryption, Ed25519 authentication, active on every round 
-| 
-                        Policy framework | 
-                        56-policy logical catalogue, pinned by static assertion to the catalogue array, with a 128-policy corpus (34 fail-closed screening, 94 detection) used for scale characterisation 
+|
+                        Capability |
+                        Measured result
+|
+                        Fixed synthetic detection fixture |
+                        500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
+|
+                        Per-alert handling after detection |
+                        Under 10 ms per alert, from detection result to persisted, queryable alert. Synthetic test.
+|
+                        Detection-pass memory |
+                        VRAM under 1 GB in the measured detection-pass working set after warm-up. Resident ingestion and model inference are excluded. This is not total-system memory.
+|
+                        Detection accuracy |
+                        Correspondent banking wire stripping validated end to end as a named cohort on synthetic data across simulated participants
+|
+                        Federation: 100K entities, bilateral round |
+                        3,052 ms per bilateral round at 100,000 entities per party, against a 10-second bound enforced in CI. Loopback development transport, not a real inter-participant network.
+|
+                        Security model |
+                        Semi-honest. Protection against a participant that deliberately deviates from the protocol is not implemented
+|
+                        Transport security |
+                        AES-256-GCM encryption, Ed25519 authentication, active on every round
+|
+                        Policy framework |
+                        56-policy logical catalogue, pinned by static assertion to the catalogue array, with a 128-policy corpus (34 fail-closed screening, 94 detection) used for scale characterisation
             Correspondent banking wire stripping is validated end to end as a named cohort on synthetic data across simulated participants. Trade-based over-invoicing, shell company layering and funnel account structuring are designed and in scope, not validated. In the validated cohort, no individual simulated bank's monitoring would have escalated the entity. Only cross-institutional federation detected the pattern.
 
 
@@ -376,20 +376,19 @@ The privacy guarantee is mathematical, not administrative.
 
 
 
-| 
-                        Entities per bank | 
-                        Pipeline time | 
-                        Throughput | 
-                        Detection | 
-                        Policies 
-| 
-                        500,000 | 
-                        667 ms (median of three) | 
-                        750K complex events/sec | 
-                        Wire stripping cohort | 
-                        56-policy catalogue 
-            Three things to note. Throughput is reported as 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. Policy-set size is not used as a multiplier. These times are for GPU policy evaluation including full proof generation (Merkle root + Ed25519 signature). The catalogue is 56 logical policies, pinned by static assertion to the catalogue array, spanning sanctions screening, PEP/EDD, transaction monitoring, fraud, KYC, crypto, and conduct. A 128-policy corpus (34 fail-closed screening, 94 detection) is used for scale characterisation.
-
+|
+                        Entities per bank |
+                        Pipeline time |
+                        Scope |
+                        Detection |
+                        Policies
+|
+                        500,000 |
+                        500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle. |
+                        Fixed synthetic fixture, about 55K transactions. Not a full product cycle. |
+                        Wire stripping cohort |
+                        56-policy catalogue
+500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
 
 
 
@@ -400,24 +399,24 @@ The privacy guarantee is mathematical, not administrative.
 
 
 
-| 
-                        Configuration | 
-                        Entities per bank | 
-                        Per-round time | 
-                        Protocol 
-| 
-                        2-bank bilateral round | 
-                        100,000 | 
-                        3,052 ms (loopback development transport) | 
-                        ECDH-PSI + GC + IKNP OT 
-| 
-                        Attestation per round | 
-                        Any scale | 
-                        Dual Ed25519 | 
-                        Both parties sign; regulator verifies 
-| 
-                        Raw data shared | 
-                        No raw or directly identifying customer data leaves the institution. Encrypted protocol messages only (ECDLP-protected) 
+|
+                        Configuration |
+                        Entities per bank |
+                        Per-round time |
+                        Protocol
+|
+                        2-bank bilateral round |
+                        100,000 |
+                        3,052 ms (loopback development transport) |
+                        ECDH-PSI + GC + IKNP OT
+|
+                        Attestation per round |
+                        Any scale |
+                        Dual Ed25519 |
+                        Both parties sign; regulator verifies
+|
+                        Raw data shared |
+                        No raw or directly identifying customer data leaves the institution. Encrypted protocol messages only (ECDLP-protected)
             Real network conditions add latency. The ~15 second figure is measured over TCP localhost. Federation rounds are expected to run nightly or on a configurable schedule aligned with existing monitoring cycles.
 
 
@@ -430,23 +429,22 @@ The privacy guarantee is mathematical, not administrative.
 
 
 
-| 
-                        Scale | 
-                        ZQUAS F1 | 
-                        Traditional 24h batch | 
-                        Speedup 
-| 
-                                                500,000 entities, 56-policy catalogue | 
-                        667 ms (median of three) | 
-                        24 hours | 
-                        millions× 
-| 
-                        Alert: local decision, single cold alert | 
-                        7 to 8 ms | 
-                        24 hours | 
-                        millions× 
-            For comparison: a conventional CPU-based system evaluating a full policy set against every entity requires extracting the data, running sequential rule evaluation, and waiting for the batch cycle to complete. ZQUAS completes a 500,000-entity detection cycle against its 56-policy catalogue in 667 ms, median of three runs.
-
+|
+                        Scale |
+                        ZQUAS F1 |
+                        Traditional 24h batch |
+                        Speedup
+|
+                                                500,000 entities, 56-policy catalogue |
+                        500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle. |
+                        24 hours |
+                        millions×
+|
+                        Alert: local decision, single cold alert |
+                        7 to 8 ms |
+                        24 hours |
+                        millions×
+500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
 
 
 
@@ -586,7 +584,7 @@ The privacy guarantee is mathematical, not administrative.
 
 
 
-1. Regulatory sandbox engagement (DNB InnovationHub / FCA Digital Sandbox)
+1. Regulatory sandbox engagement (DNB InnovationHub / FCA Digital Sandbox)ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.
 
 
 

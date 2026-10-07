@@ -15,45 +15,63 @@
     "name": "Danny de Gier",
     "title": "Founder & Engineer",
     "experience_years": 18,
-    "previous_employers": ["RBS", "Deutsche Bank", "HSBC", "Commerzbank", "ClearBank", "Vivid Money", "CoinMetro"],
+    "previous_employers": [
+      "RBS",
+      "Deutsche Bank",
+      "HSBC",
+      "Commerzbank",
+      "ClearBank",
+      "Vivid Money",
+      "CoinMetro"
+    ],
     "qualification": "Professional Postgraduate Diploma in Financial Crime Compliance (ICA / University of Manchester)",
-    "technical_skills": ["C++23", "CUDA", "Vulkan", "GPU systems programming"],
+    "technical_skills": [
+      "C++23",
+      "CUDA",
+      "Vulkan",
+      "GPU systems programming"
+    ],
     "linkedin": "https://www.linkedin.com/in/danny-de-gier-prof-pgdip-fcc/",
     "email": "danny@zquas.ai"
   },
   "benchmark": {
-    "hardware": "NVIDIA RTX 5090 (Blackwell, sm_100, 170 SMs, 32GB VRAM)",
-    "published_throughput": "750,000 complex events per second across a full 500,000-entity detection cycle; one unit is one entity evaluated against the full policy set, with attestation generation inside the measured path",
-    "published_single_node_500k": "667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux",
-    "published_alert_lifecycle": "under 10ms enforced (measured 7 to 8 ms for a single cold alert, 0.25 ms amortised per alert)",
-    "published_federation_bilateral": "under 10 seconds per bilateral round, bound enforced in CI (measured 3,052 ms at 100K entities per party; loopback development transport, not a real inter-participant network)",
-    "published_vram_total": "under 1 GB enforced (measured 562 to 616 MB peak, detection pass working set)",
-    "measured_single_node_500k_ms": 667,
-    "measured_alert_lifecycle_cold_ms": "7 to 8",
-    "measured_alert_lifecycle_amortised_ms": 0.25,
-    "measured_peak_vram_mb": "562 to 616",
-    "scaling": "linear",
-    "policy_catalogue_logical": 56,
-    "policy_catalogue_pinned_by": "static assertion to the catalogue array",
-    "scale_characterisation_corpus": 128,
-    "scale_corpus_fail_closed_screening": 34,
-    "scale_corpus_detection": 94,
-    "deterministic": true,
-    "conditions": "The 500,000-entity detection cycle is a median of three runs on NVIDIA RTX 5090, CUDA 13.1, Linux. Other figures were measured under different harness configurations and methodology is stated per figure, not globally."
+    "data": "Synthetic fixtures. Internal tests, not an external audit.",
+    "detection_500k": {
+      "published": "500K entities under 2 seconds",
+      "scope": "500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.",
+      "test": "DetectionCycleThemis.Latency_500K_FullCycle"
+    },
+    "alert_lifecycle": {
+      "published": "alert lifecycle under 10 ms",
+      "scope": "Alert lifecycle under 10 ms per alert, from a detection result to a persisted, queryable alert. Batch results are amortised per alert.",
+      "test": "AlertLifecycleLatency"
+    },
+    "federation_bilateral": {
+      "published": "federation bilateral round under 10 seconds",
+      "scope": "Federation bilateral round under 10 seconds on TCP loopback development transport. Semi-honest security. This does not measure a real inter-bank network.",
+      "test": "ThreeBankTMNL.RealisticScaleBenchmarkIknp"
+    },
+    "detection_pass_vram": {
+      "published": "VRAM under 1 GB",
+      "scope": "VRAM under 1 GB in the measured detection-pass working set after warm-up. Resident ingestion and model inference are excluded. This is not total-system memory.",
+      "regression_gate": "1 GiB. The recorded working set is below 1 GB. The gate is not a total-application memory cap.",
+      "test": "DetectionPeakVram.HardCap_500K_4M_UnderBound"
+    },
+    "checked": "2026-10-07",
+    "qualification": "These scopes apply separately. They are not a full product performance guarantee."
   },
   "federation": {
     "protocol": "ECDH-PSI (X25519) + Yao's Garbled Circuits (Free-XOR) + IKNP OT Extension (Chou-Orlandi base OT on P-256)",
     "security_model": "semi-honest",
     "transport": "AES-256-GCM with X25519 key exchange",
-    "bilateral_round_100k_entities_ms": 3052,
-    "transport_note": "loopback development transport; no real-network inter-participant measurement exists",
+    "transport_note": "Federation bilateral round under 10 seconds on TCP loopback development transport. Semi-honest security. This does not measure a real inter-bank network.",
     "attestation": "dual Ed25519 (both parties sign)",
-    "raw_data_shared": "no raw or directly identifying customer data leaves the institution"
+    "raw_data_shared": "no raw or directly identifying customer data leaves the institution",
+    "sharing": "No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log."
   },
   "proofs": {
-    "format": "Cryptographic proof bundle",
-    "signature": "Ed25519 (OpenSSL, RFC 8032 verified)",
-    "independent_verification": "public key plus proof bundle only; no reliance on the running production engine or its internal state"
+    "statement": "Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys)",
+    "scope": "Synthetic data, development keys. Internal tests, including run R43.0 B. This is verification of the signed record, not an external audit or proof that a transaction is criminal."
   },
   "codebase": {
     "source_lines_excluding_third_party": 753000
@@ -61,7 +79,11 @@
   "testing": {
     "test_count_published": false,
     "test_count_note": "No clean cross-platform figure exists. Unlike-platform counts are not added together.",
-    "crypto_known_answer_tests": ["Ed25519 (RFC 8032)", "SHA-256 (FIPS 180-4)", "Blake3 (official vectors)"]
+    "crypto_known_answer_tests": [
+      "Ed25519 (RFC 8032)",
+      "SHA-256 (FIPS 180-4)",
+      "Blake3 (official vectors)"
+    ]
   },
   "capabilities": {
     "gpu_native_processing": true,
@@ -95,14 +117,23 @@
     "ecca_sections_188_189_in_force": "2024-01-01"
   },
   "regulatory_engagement": {
-    "fca_digital_sandbox": "accepted (March 2026)",
+    "fca_digital_sandbox": "ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.",
     "dnb_innovationhub": "submission under review",
-    "fca_supercharged_sandbox": "taking part (second cohort, July 2026)",
+    "fca_supercharged_sandbox": "ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.",
     "nvidia_inception": "member (April 2026)"
   },
   "competitors": {
-    "legacy_incumbents": ["NICE Actimize", "Oracle Financial Crime", "SAS"],
-    "ai_native_challengers": ["Sardine", "Hawk AI", "Featurespace", "ComplyAdvantage"]
+    "legacy_incumbents": [
+      "NICE Actimize",
+      "Oracle Financial Crime",
+      "SAS"
+    ],
+    "ai_native_challengers": [
+      "Sardine",
+      "Hawk AI",
+      "Featurespace",
+      "ComplyAdvantage"
+    ]
   },
   "differentiators": [
     "GPU-native architecture (not GPU-accelerated)",
@@ -118,7 +149,7 @@
     "deployment": "on-premise (bank's own infrastructure)",
     "pricing": "annual licensing by transaction volume and policy complexity",
     "expansion": "cross-institutional MPC network with network effects",
-    "data_sovereignty": "no raw or directly identifying customer data leaves the institution"
+    "data_sovereignty": "No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log."
   },
   "target_market": {
     "primary": "Tier-1 and Tier-2 European banks",
@@ -142,5 +173,21 @@
     "live_counterparty_data": false,
     "threat_model": "semi-honest; malicious-adversary security not implemented"
   },
-  "last_updated": "2026-10-05"
+  "last_updated": "2026-10-07",
+  "pilot": {
+    "duration": "12 weeks locally, starting after scope, agreements, access and data readiness are confirmed",
+    "optional_phase": "Network phase afterwards by separate agreement",
+    "measures": [
+      "Scam payments caught",
+      "At most 1 review per 500 payments and 1 hold per 1,000 where payment review and hold policies are evaluated",
+      "Analyst workload",
+      "Every decision verifiable in the signed log"
+    ],
+    "scope": "Local transaction monitoring selects investigation work. It does not itself hold payments. These are evaluation limits, not promised detection rates."
+  },
+  "local_monitor": {
+    "command": "kit tm-run",
+    "status": "Built. Full-world evaluation not yet measured. No detection rates or alert counts published.",
+    "walkthrough": "Synthetic example at every step: several payers in; money out within a day; funnel or rapid pass-through pattern score; analyst queue within a daily analyst-time limit and monthly investigation allowance; tm-alert in the signed decision log; the bank decides."
+  }
 }

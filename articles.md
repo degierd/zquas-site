@@ -21,10 +21,10 @@ Analysis and perspective on compliance technology, regulatory architecture, and 
 
 
 
-We have joined the second cohort of the FCA's Supercharged Sandbox. Why we applied, how we use AI in a system that has to answer to regulators, where determinism ends and the model begins, and what participation does and does not mean.
+We have joined the second cohort of the FCA's Supercharged Sandbox. Why we applied, how we use AI in a system that has to answer to regulators, where determinism ends and the model begins, and what participation does and does not mean.ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
         ](article-fca-sandbox.html)
-
+    ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
     [
         June 2026 · Banks · 7 min read
 
@@ -198,7 +198,7 @@ The Netherlands tried collaborative AML detection. It failed because the law was
 
 
 
-Joint transaction monitoring initiatives have stalled across Europe. The core assumption — that centralising data is the path to better detection — is architecturally flawed. Privacy-preserving computation offers a fundamentally different approach.
+Joint transaction monitoring initiatives have stalled across Europe. The core assumption, that centralising data is the path to better detection, is architecturally flawed. Privacy-preserving computation offers a fundamentally different approach.
 
     ](article-cross-institutional-detection.html)
     [

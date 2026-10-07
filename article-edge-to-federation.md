@@ -10,6 +10,10 @@ Site: https://zquas.ai
         March 2026 · Position Paper · 28 min read
 
 
+Updated: 7 October 2026
+
+
+
 # From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection
 
 
@@ -34,7 +38,7 @@ The anti-money laundering industry has a structural problem that no amount of ar
 
 
 
-The Dutch Court of Audit (Algemene Rekenkamer) confirmed the result in the Netherlands: 13,000 full-time employees, 530,000 annual suspicious activity reports, and no measurable effectiveness in detecting or preventing financial crime. The pattern repeats globally. FinCEN processed over 4.7 million suspicious activity reports in fiscal year 2024 in the United States. The UK's FCA has fined multiple banks for monitoring systems it described as "inadequate and ineffective." The current approach is not underperforming. It is architecturally incapable of solving the problem it was designed for.
+The Dutch Court of Audit (Algemene Rekenkamer) confirmed the result in the Netherlands: 13,000 full-time employees, 530,000 annual suspicious activity reports, and no measurable effectiveness in detecting or preventing financial crime. The pattern repeats globally. FinCEN processed over 4.7 million suspicious activity reports in fiscal year 2024 in the United States. The UK's FCA has fined multiple banks for monitoring systems it described as "inadequate and ineffective." The current approach is not underperforming. It is architecturally incapable of solving the problem it was designed for.ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 
@@ -166,7 +170,7 @@ The architecture has three layers. Each layer runs the same engine. The same bin
 
 
 
-### Layer 1: Institutional — Real-Time Full-Population Monitoring
+### Layer 1: Institutional: Real-Time Full-Population Monitoring
 
 
 
@@ -202,7 +206,7 @@ The institutional installation also collects and correlates signals in real-time
 
 
 
-At validated performance levels, the institutional installation completes a full 500,000-entity detection cycle against the 56-policy catalogue in 667 ms, median of three runs, on a single GPU, sustaining 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. This is not batch processing measured in hours. It is continuous monitoring measured in seconds.
+500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
 
 
 
@@ -214,7 +218,7 @@ The difference this makes is concrete. In the mule network scenario from Section
 
 
 
-### Layer 2: Federation — Cross-Bank Detection Without Data Sharing
+### Layer 2: Federation: Cross-Bank Detection Without Data Sharing
 
 
 
@@ -258,7 +262,7 @@ The federation does not require every bank in the country to participate. It ope
 
 
 
-### Layer 3: Regulatory Interface — Supervisory Access Without Data Exposure
+### Layer 3: Regulatory Interface: Supervisory Access Without Data Exposure
 
 
 
@@ -318,7 +322,7 @@ The challenge is speed. With the rise of instant payment rails (SEPA Instant in 
 
 
 
-The F1 Engine's throughput (750,000 complex events per second across a full 500,000-entity detection cycle) means that a complete sanctions screen of the bank's entire customer base against all global sanctions lists can complete in the time it takes a legacy system to screen a single transaction. For banks processing millions of transactions daily through instant payment channels, this is not a performance luxury. It is a regulatory necessity.
+500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
 
 
 
@@ -334,7 +338,7 @@ Combined with the UK's Authorised Push Payment (APP) fraud reimbursement rules (
 
 
 
-The UK government's Fraud Strategy 2026-2029, published in March 2026, goes further: a new Online Crime Centre launches in April 2026, bringing together police, banks, mobile networks, and technology firms for real-time intelligence sharing. The FCA has stated that it expects banks to move toward automated, risk-based monitoring capable of identifying scam activity before payments are executed.
+The UK government's Fraud Strategy 2026-2029, published in March 2026, goes further: a new Online Crime Centre launches in April 2026, bringing together police, banks, mobile networks, and technology firms for real-time intelligence sharing. The FCA has stated that it expects banks to move toward automated, risk-based monitoring capable of identifying scam activity before payments are executed.ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 
@@ -426,7 +430,7 @@ The engine also includes an Adversarial Threshold Optimizer that automatically d
 
 
 
-At validated performance levels: in simulation testing, the engine finds every single criminal that was planted in the synthetic population. Zero missed criminals. In detection terminology, this is called "100% recall," meaning none of the known bad actors slipped through.
+Detection results depend on the test population and the pattern evaluated. The published results use synthetic data and do not establish a real-world detection rate. See the homepage for the specific network tests and their limitations.
 
 
 
@@ -566,7 +570,7 @@ Claims of architectural innovation require evidence. The F1 Engine is a measured
 
 
 
-**Performance:** 667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux. Sustained throughput across that cycle is 750,000 complex events per second. A single cross-bank matching round for 100,000 customers: under 10 seconds. Time from detection to alert: under 10 milliseconds. All numbers measured on a single GPU.
+500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
 
 
 
@@ -653,36 +657,36 @@ The following table maps the ZQUAS architecture to the specific regulatory requi
 
 
 
-| 
-                    Regulation and Requirement | 
-                    ZQUAS Capability 
-| 
-                    **AMLR Article 75:** Cross-institutional sharing | 
-                    Federation protocol with bilateral ECDH-PSI and scalar risk deltas 
-| 
-                    **AMLA Direct Supervision (2028):** Common detection standards | 
-                    Unified CPL policy language evaluated identically across institutions 
-| 
-                    **AMLD6:** Enhanced due diligence and beneficial ownership | 
-                    Structural detection layer and cross-institutional ownership discovery 
-| 
-                    **GDPR:** Data minimisation and pseudonymisation | 
-                    Cryptographic protocol exchanges only intersection membership and numerical scores 
-| 
-                    **EU AI Act:** Explainability for high-impact AI | 
-                    Human-readable CPL policies with cryptographic audit trail, no black-box models 
-| 
-                    **DORA:** Operational resilience | 
-                    Fully on-premise, no cloud dependency, continuous operation 
-| 
-                    **UK PSA 2024:** Payment delay for suspected fraud | 
-                    Real-time risk assessment for payment intervention decisions 
-| 
-                    **EU Instant Payments Reg (2024/886):** Real-time sanctions screening | 
-                    GPU-native screening across the full 500,000-entity cycle in 667 ms 
-| 
-                    **MiCA:** AML obligations for crypto asset service providers | 
-                    Same engine deployable to crypto exchanges, federation-compatible 
+|
+                    Regulation and Requirement |
+                    ZQUAS Capability
+|
+                    **AMLR Article 75:** Cross-institutional sharing |
+                    Federation protocol with bilateral ECDH-PSI and scalar risk deltas
+|
+                    **AMLA Direct Supervision (2028):** Common detection standards |
+                    Unified CPL policy language evaluated identically across institutions
+|
+                    **AMLD6:** Enhanced due diligence and beneficial ownership |
+                    Structural detection layer and cross-institutional ownership discovery
+|
+                    **GDPR:** Data minimisation and pseudonymisation |
+                    Cryptographic protocol exchanges only intersection membership and numerical scores
+|
+                    **EU AI Act:** Explainability for high-impact AI |
+                    Human-readable CPL policies with cryptographic audit trail, no black-box models
+|
+                    **DORA:** Operational resilience |
+                    Fully on-premise, no cloud dependency, continuous operation
+|
+                    **UK PSA 2024:** Payment delay for suspected fraud |
+                    Real-time risk assessment for payment intervention decisions
+|
+                    **EU Instant Payments Reg (2024/886):** Real-time sanctions screening |
+                    500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
+|
+                    **MiCA:** AML obligations for crypto asset service providers |
+                    Same engine deployable to crypto exchanges, federation-compatible
 ## 13. Conclusion
 
 

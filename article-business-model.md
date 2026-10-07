@@ -10,6 +10,10 @@ Site: https://zquas.ai
         November 2025 · Investors · 6 min read
 
 
+Updated: 7 October 2026
+
+
+
 # Land, Expand, Network: How Sovereign Compliance Scales
 
 
@@ -55,8 +59,8 @@ Start with one bank. Add cross-institutional detection as the network grows. Eac
 
 
 
-            The sales cycle for a Tier-1 bank is typically 12-18 months. For mid-market banks and fintechs, 3-6 months. Regulator traction (DNB, FCA sandbox engagement) shortens the cycle because it addresses the buyer's primary concern: "will my regulator accept this?"
-
+            The sales cycle for a Tier-1 bank is typically 12-18 months. For mid-market banks and fintechs, 3-6 months. Sandbox engagement with DNB or the FCA provides an opportunity to discuss the approach. Participation does not determine whether a regulator will accept a bank's proposed use.
+        ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 
@@ -156,8 +160,8 @@ Start with one bank. Add cross-institutional detection as the network grows. Eac
 
 
 
-            The critical risk is the land phase. Getting the first 2-3 banks through procurement is the hardest step. Regulatory sandbox engagement (DNB, FCA) is designed specifically to de-risk this phase by providing third-party validation that compliance buyers require.
-
+            The critical risk is the land phase. Getting the first 2-3 banks through procurement is the hardest step. Regulatory sandbox engagement (DNB, FCA) provides a setting for testing and discussion. It does not replace a bank's own due diligence or provide third-party validation of the product.
+        ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
             Danny de Gier

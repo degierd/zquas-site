@@ -10,6 +10,10 @@ Site: https://zquas.ai
         March 2026 · Technology · 8 min read
 
 
+Updated: 7 October 2026
+
+
+
 # What Does Real-Time Actually Mean?
 
 
@@ -147,8 +151,7 @@ Every transaction monitoring vendor claims real-time. The term appears on every 
 
 
 
-            A Level 3 system evaluates the entire customer population, potentially millions of entities, multiple times per second. Every entity's risk is current at all times. When a transaction arrives, the governance decision has already been made. Graph relationships, network topology, and cross-entity patterns are continuously evaluated, not deferred. The 29 transactions per second arrive into a system sustaining 750,000 complex events per second across a full 500,000-entity detection cycle. The transaction is not the trigger for computation. It is a data point absorbed into a computation that is already running.
-
+500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
 
 
 

@@ -51,7 +51,7 @@ Compliance policies are written in a domain-specific language designed for regul
 
 
 
-The compiled policy bytecode executes on GPU. Each entity is evaluated against the full policy set in parallel. 667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux. Sustained throughput across that cycle is 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. Results are deterministic: same policy version, same input data, same verdict.
+The compiled policy bytecode executes on GPU. Each entity is evaluated against the policy set. 500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
 
 
 

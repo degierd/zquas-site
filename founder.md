@@ -92,7 +92,7 @@ ZQUAS is the engine I wished I'd had during every compliance role I ever held. I
 #### ZQUAS
 
                 Founder & Engineer
-                GPU-native compliance engine. C++/CUDA/Vulkan. Accepted into the FCA Digital Sandbox (March 2026). DNB InnovationHub submission under review. NVIDIA Inception programme member.
+                GPU-native compliance engine. C++/CUDA/Vulkan. Accepted into the FCA Digital Sandbox (March 2026). DNB InnovationHub submission under review. NVIDIA Inception programme member.ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.
 
 
 
@@ -164,7 +164,7 @@ ZQUAS is the engine I wished I'd had during every compliance role I ever held. I
 #### Commerzbank
 
                 Senior Strategic Advisor: Trade Finance Financial Crime
-                Enhanced financial crime controls in response to FCA s166 Skilled Person findings. Strategic roadmap for global Trade Finance.
+                Enhanced financial crime controls in response to FCA s166 Skilled Person findings. Strategic roadmap for global Trade Finance.ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 
@@ -176,7 +176,7 @@ ZQUAS is the engine I wished I'd had during every compliance role I ever held. I
 #### Deutsche Bank
 
                 Global Strategic Lead: Anti-Financial Crime Strategy & Sanctions
-                40+ project compliance improvement program. Regulatory liaison with FED, FCA, and Independent Monitor.
+                40+ project compliance improvement program. Regulatory liaison with FED, FCA, and Independent Monitor.ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 
@@ -239,13 +239,13 @@ ZQUAS is the engine I wished I'd had during every compliance role I ever held. I
 
 
 
-- **Professional Postgraduate Diploma in Financial Crime Compliance** — International Compliance Association / University of Manchester
+- **Professional Postgraduate Diploma in Financial Crime Compliance**: International Compliance Association / University of Manchester
 
-- **Business Analysis Diploma** | **PRINCE2 Practitioner** — Project Management
+- **Business Analysis Diploma** | **PRINCE2 Practitioner**: Project Management
 
-- **GPU Systems Programming** — C++23, CUDA (sm_86/89/100/120), Vulkan
+- **GPU Systems Programming**: C++23, CUDA (sm_86/89/100/120), Vulkan
 
-- **Domain expertise spanning 8 compliance domains** — AML, sanctions screening, fraud detection, KYC/KYB, trade surveillance, correspondent banking, crypto compliance, regulatory reporting
+- **Domain expertise spanning 8 compliance domains**: AML, sanctions screening, fraud detection, KYC/KYB, trade surveillance, correspondent banking, crypto compliance, regulatory reporting
 
 
 

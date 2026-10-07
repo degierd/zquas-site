@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engine Demo — ZQUAS</title>
-    <meta name="description" content="Live demonstration of the ZQUAS GPU-native compliance engine processing 3.34M transactions per second across 1 million accounts.">
+    <title>Synthetic engine demonstration | ZQUAS</title>
+    <meta name="description" content="A recorded development visualisation using synthetic data, with four separately scoped engine test figures. No real-world detection rates.">
     <meta name="robots" content="noindex, nofollow">
-    <meta property="og:title" content="Engine Demo — ZQUAS">
-    <meta property="og:description" content="Live demonstration of the ZQUAS GPU-native compliance engine processing 3.34M transactions per second across 1 million accounts.">
+    <meta property="og:title" content="Synthetic engine demonstration | ZQUAS">
+    <meta property="og:description" content="A recorded development visualisation using synthetic data, with four separately scoped engine test figures. No real-world detection rates.">
     <meta property="og:type" content="video.other">
     <meta property="og:url" content="https://zquas.ai/demo.html">
     <meta property="og:image" content="https://zquas.ai/og-image.png">
@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=6">
     <style>
         .demo-header {
             padding: 8rem 2rem 2rem;
@@ -97,6 +97,7 @@
             line-height: 1.7;
         }
     </style>
+    <link rel="stylesheet" href="pilot-content.css?v=1">
 </head>
 <body>
 
@@ -129,63 +130,17 @@
     </div>
 </nav>
 
-<div class="demo-header">
-    <div class="section-label" style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #4a7dff; margin-bottom: 1rem;">Engine Demo</div>
-    <h1 style="font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem;">The engine running. Not a simulation.</h1>
-    <p style="font-size: 1.05rem; color: #8890a6; max-width: 640px; margin: 0 auto; line-height: 1.7;">GPU-native compliance engine processing millions of transactions in real time. Each building is an entity cluster. Each window is an account. Colors represent risk levels propagating through the entity graph.</p>
-</div>
-
-<div class="demo-video-container">
+<main class="review-page"><header class="review-hero"><p class="review-kicker">Engine demo · Synthetic data</p><h1>A development view<br>of the engine.</h1><p class="review-intro">This recording uses synthetic data. It illustrates the development visualisation, not a production deployment or a measured detection rate.</p><p class="review-status">TRL 6. Synthetic data only. No production deployments.</p></header><section aria-label="Synthetic development recording"><p class="review-notice">The counters in this development recording are not validated benchmark results or counts of confirmed scams. Only the four separately scoped test figures below are used as engine performance claims on this page.</p><div class="demo-video-container">
     <div class="video-wrapper">
         <iframe
             src="https://www.youtube-nocookie.com/embed/3jNht-xOFX0?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&playsinline=1&cc_load_policy=0&origin=https://zquas.ai"
-            title="ZQUAS Engine Demo"
+            title="Recorded ZQUAS development visualisation using synthetic data"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
             loading="lazy"
         ></iframe>
     </div>
-</div>
-
-<div class="demo-details">
-    <h2 style="font-size: 1.2rem; font-weight: 600;">What you're seeing</h2>
-    <div class="demo-specs">
-        <div class="demo-spec">
-            <div class="val">3.34M</div>
-            <div class="label">Live transactions per second</div>
-        </div>
-        <div class="demo-spec">
-            <div class="val">1,042,061</div>
-            <div class="label">Accounts rendered in real time</div>
-        </div>
-        <div class="demo-spec">
-            <div class="val">19.15M</div>
-            <div class="label">Transactions ingested</div>
-        </div>
-        <div class="demo-spec">
-            <div class="val">4.27M</div>
-            <div class="label">Alerts generated</div>
-        </div>
-        <div class="demo-spec">
-            <div class="val">2,924</div>
-            <div class="label">Entity clusters (buildings)</div>
-        </div>
-        <div class="demo-spec">
-            <div class="val">5 tiers</div>
-            <div class="label">Risk classification levels</div>
-        </div>
-    </div>
-
-    <p class="demo-note">
-        The visualization maps a compliance monitoring network larger than Amsterdam. Each building represents an entity cluster (a bank branch, a corporate group, a correspondent chain). Each illuminated window represents an individual account. Window color reflects real-time risk classification: safe (blue/cyan), review (yellow), elevated (orange), high (red), critical (red pulse). Risk scores propagate through the entity graph via GPU-accelerated GNN inference. The drill-down panel shows individual account details including financial activity, risk flags, alert status, and neural lattice ML scoring.
-    </p>
-    <p class="demo-note">
-        This is the actual ZQUAS engine running on a single NVIDIA RTX 5090. Not a pre-rendered animation. Not a mockup. The transaction stream, risk evaluation, alert generation, and visualization all execute on GPU in real time.
-    </p>
-    <p class="demo-note" style="font-style: italic;">
-        Note: Transaction throughput varies during the recording as the engine processes different phases. The engine benchmark: 667 ms median of three runs for a 500,000-entity full detection cycle against the 56-policy catalogue, enforced under a 2-second regression bound in CI. NVIDIA RTX 5090, CUDA 13.1, Linux. Sustained throughput across that cycle is 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path.
-    </p>
-</div>
+</div></section><section class="review-section"><p class="review-kicker">Separate engine tests</p><h2>The agreed figures, with their limits.</h2><div class="review-metrics"><article><p class="metric-value">500K</p><h3>Entities under 2 seconds</h3><p>500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</p><span class="synthetic-tag">Synthetic data</span></article><article><p class="metric-value">Under 10 ms</p><h3>Alert lifecycle, per alert</h3><p>Alert lifecycle under 10 ms per alert, from a detection result to a persisted, queryable alert. Batch results are amortised per alert.</p><span class="synthetic-tag">Synthetic data</span></article><article><p class="metric-value">Under 10 seconds</p><h3>Federation bilateral round</h3><p>Federation bilateral round under 10 seconds on TCP loopback development transport. Semi-honest security. This does not measure a real inter-bank network.</p><span class="synthetic-tag">Synthetic data</span></article><article><p class="metric-value">Under 1 GB</p><h3>Measured detection-pass VRAM</h3><p>VRAM under 1 GB in the measured detection-pass working set after warm-up. Resident ingestion and model inference are excluded. This is not total-system memory.</p><span class="synthetic-tag">Synthetic data</span></article></div><a class="review-link" href="benchmark.html">Read the benchmark methods and exclusions →</a></section><section class="review-section"><h2>Follow the bank's work.</h2><p>See one synthetic example of local transaction monitoring, from incoming payments to the analyst queue and the signed decision.</p><a class="review-link" href="use-case.html">Follow the synthetic walkthrough →</a></section></main>
 
 <footer>
     <div class="footer-inner">

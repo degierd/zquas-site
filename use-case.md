@@ -1,713 +1,129 @@
-# How Cross-Institutional Detection Works | ZQUAS
+# Local monitoring: a synthetic walkthrough
 
-> Complete end-to-end operational flow for cross-institutional transaction monitoring using privacy-preserving multi-party computation. From transaction to SAR.
+> A synthetic example of local transaction monitoring: incoming payments, onward movement, a pattern score, an analyst queue, a signed decision and the bank's decision.
 
 Source: https://zquas.ai/use-case.html
 Site: https://zquas.ai
 
 ---
-Use Case
+Use case · Synthetic walkthrough
 
+# From a local pattern
+to a bank decision.
 
-# How Cross-Institutional Detection Works
+Follow one account through local transaction monitoring. Several payers in, money out within a day, a pattern score, and a decision the bank can check.
 
+TRL 6. Synthetic data only. No production deployments.
 
+[Follow the example ↓](#walkthrough)[Explore the pilot →](founding-partner.html)
+**Synthetic throughout.** All people, accounts and payments in this walkthrough are fictional. It illustrates the sequence of work. The local monitor has not yet been measured on the full synthetic worlds. No detection rates or alert counts are claimed here.
 
-From transaction to SAR. The complete operational flow.
+1.
 
+Step 01 Synthetic example
 
+## Several payers in
 
-            Banks already monitor transactions. Criminals exploit the gaps between banks. ZQUAS adds a privacy-preserving federation layer that makes cross-institutional patterns visible with no raw or directly identifying customer data leaving the institution. Each bank keeps its existing systems and processes. The federation layer adds one new capability: the ability to detect patterns that span institutional boundaries.
+Several synthetic payers send money into the same account. The bank uses the incoming payments recorded in its own journal.
 
+Synthetic example
 
+Payer APayer BPayer C↓Account A
 
+2.
 
+Step 02 Synthetic example
 
-        The Problem
+## Money out within a day
 
+In this synthetic example, money is debited out of the account within a day of arriving. The local monitor uses the bank's own records. An outgoing debit is not proof that another bank received it.
 
-## What single-bank monitoring misses
+Synthetic example
 
+Account A↓Money debited outWithin a day of the incoming payments
 
+3.
 
+Step 03 Synthetic example
 
-A criminal entity (say, a trading company) has accounts at three banks. At each bank, the transaction pattern looks normal. Across all three, the pattern is classic money laundering: money enters through one bank, fragments through a second, and reconsolidates through a third.
+## The pattern score
 
+The local monitor scores a funnel or rapid pass-through pattern using the bank's own observations and a frozen calibration. With sufficient history, the score combines movement with context from earlier activity. The score can nominate work for review. It does not establish that a crime occurred.
 
+Synthetic example
 
-No single bank can see this. Each bank's monitoring system scores the entity as low-risk because the local transactions are individually unremarkable.
+ObservedSeveral payers inFollow-upMoney out within a dayOutputLocal pattern score
 
+4.
 
+Step 04 Synthetic example
 
+## The analyst queue
 
+The score can nominate the customer for review. The queue ranks nominations and admits work within the bank's daily analyst-time limit and monthly investigation allowance. This local monitoring step does not hold a payment.
 
+Synthetic example
 
+**Account A**Local pattern nominated for review
 
+Admission depends on rank, the daily analyst-time limit and the monthly allowance.
 
+5.
 
+Step 05 Synthetic example
 
+## The signed decision line
 
-TMNL proved that cross-institutional analysis detects patterns that single-bank monitoring misses. TMNL encountered unresolved legal and proportionality objections. The Dutch data protection authority was critical of population-scale joint monitoring, the Council of State concluded that necessity and proportionality had not been demonstrated for the proposed statutory basis and advised its removal, and the bill carrying that basis was declared controversial after the government fell. With the AMLR applying from 10 July 2027, TMNL is winding down its existing model and redesigning to reconcile with it. [Read the full analysis.](tmnl.html)
+The monitor writes a tm-alert line in the decision log for a new queue entry, an admission or an expiry. Review and refusal decisions carry a proof, and the institution signs the log head. The supervisor can check the record using the institution's public key. This example uses synthetic data and development keys.
 
+Synthetic example
 
+CustomerSynthetic account AEvidenceLocal movement patternRecordtm-alert in the signed decision logKeyDevelopment key
 
+Illustration of the record, not an exported log.
 
+6.
 
-        Architecture
+Step 06 Synthetic example
 
+## The bank decides
 
-## Federation without centralisation
+The analyst examines the bank's own evidence and follows its investigation procedures. The bank decides what action is justified. The synthetic pattern alone does not establish wrongdoing.
 
+Synthetic example
 
+✓**The bank decides**
 
+Its evidence. Its policy. Its decision.
 
-Each participating bank installs ZQUAS on their own infrastructure. The installation sits alongside the bank's existing transaction monitoring system: NICE Actimize, Oracle, SAS, or any other. It reads risk scores that the existing system already produces. No replacement. No migration.
+A checkable record
 
+## The decision stays with the bank.
 
+Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys).
 
+The check covers the signed record. It does not establish that a transaction is criminal or that an investigation has reached the right conclusion.
 
+Optional network phase
 
+## Start locally. Decide separately about sharing.
 
+No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log.
 
+Current federation security is semi-honest: it assumes participants follow the protocol. The network adds reviews, never automatic holds.
 
+One pilot offer
 
+## 12 weeks locally. A network phase by agreement.
 
-                PEER-TO-PEER
+Start with local transaction monitoring on your institution's own data and infrastructure. Review the results before deciding whether to explore an optional network phase.
 
+[See the pilot scope and what your team needs →](founding-partner.html)
 
-### No central system
+The next step
 
+## Explore a local pilot.
 
+12 weeks inside your institution. An optional network phase follows only by agreement.
 
-Peer-to-peer federation. No central database, no central operator, no single point of failure or breach.
-
-
-
-                SOVEREIGN
-
-
-### No data leaves any bank
-
-
-
-Only cryptographic protocol messages cross the private connection. Transaction data, risk scores, and entity information stay on-premise.
-
-
-
-                NON-INVASIVE
-
-
-### Existing monitoring continues
-
-
-
-The ZQUAS installation reads risk scores and produces alerts. The bank's existing TM system and case management workflow are unchanged.
-
-
-
-
-
-
-        Operational Flow
-
-
-## From transaction to SAR in six steps
-
-
-
-
-                    STEP 1 / EXISTING PROCESS
-
-
-### Local Monitoring
-
-
-
-Banks monitor transactions using their existing systems. Each bank's system produces risk scores per entity based on local transaction patterns. Banks already do this. Nothing changes.
-
-
-
-
-
-
-                    STEP 2 / NEW: THE ZQUAS LAYER
-
-
-### Federation Round
-
-
-
-On a scheduled basis (nightly, or more frequently), the ZQUAS installations execute bilateral federation rounds. For three banks, this means three rounds: A↔B, A↔C, B↔C.
-
-
-
-Each round has three phases:
-
-
-
-**a) Private Set Intersection:** discovers which entities have accounts at both banks. Each side learns the intersection, so each learns which of its own customers the counterparty also holds. Neither side learns the counterparty's non-shared customers.
-
-
-
-**b) Secure Risk Comparison:** for each shared entity, securely compares the combined risk score against a threshold using standard, peer-reviewed cryptographic techniques. Neither bank learns the other's risk score or any attribute beyond the binary threshold outcome. Security is against a semi-honest adversary: a participant that follows the protocol but analyses everything it receives. Protection against a participant that deliberately deviates is not implemented.
-
-
-
-**c) Cryptographic Attestation:** both banks cryptographically sign the result. This creates an unforgeable proof that the computation happened correctly.
-
-
-
-
-
-
-                    STEP 3 / NEW: DELIVERED TO EXISTING SYSTEMS
-
-
-### Escalation Alert
-
-
-
-If an entity's combined risk exceeds the threshold in any bilateral round, both participating banks receive an escalation alert.
-
-
-
-**The alert contains:**
-
-
-
-
-- Entity identifier (the bank already knows this customer)
-
-- Escalation flag: combined cross-institutional risk threshold exceeded
-
-- Number of bilateral rounds that triggered escalation
-
-- Cryptographic attestation (verifiable proof)
-
-
-
-
-**The alert does NOT contain:**
-
-
-
-
-- The other bank's risk score
-
-- The other bank's transaction data
-
-- Which specific bank triggered the escalation (configurable)
-
-
-
-
-The alert is delivered to the bank's existing case management system via API or file import. No new investigation interface needed.
-
-
-
-
-
-
-                    STEP 4 / EXISTING PROCESS
-
-
-### Enhanced Due Diligence
-
-
-
-The bank's compliance analyst receives the alert in their normal workflow. They open the entity's dossier and review their own transactions, the same data they already have access to. The difference: they now know this entity has elevated cross-institutional risk.
-
-
-
-Transactions that looked normal in isolation are now suspicious in the cross-institutional context. The analyst applies Enhanced Due Diligence using the bank's existing procedures.
-
-
-
-
-
-
-                    STEP 5 / EXISTING PROCESS
-
-
-### SAR Decision
-
-
-
-Each bank independently decides whether to file a Suspicious Activity Report with FIU-Nederland. The bank uses only its own transaction data in the SAR. The cross-institutional escalation is the trigger, not the content.
-
-
-
-The SAR references the cross-institutional detection: *"This entity was identified through privacy-preserving cross-institutional analysis. The combined risk score at multiple institutions exceeded the monitoring threshold. Cryptographic attestation of the analysis is available."*
-
-
-
-Each participating bank files their own SAR independently. Not a joint SAR. Each bank reports on its own customer relationship.
-
-
-
-
-
-
-                    STEP 6 / EXISTING PROCESS
-
-
-### FIU Investigation
-
-
-
-FIU-Nederland receives separate SARs from multiple banks about the same entity. The FIU can now see the complete picture: money entered through Bank A, fragmented through Bank B, and reconsolidated through Bank C. This is the pattern that no single bank could see but that TMNL was designed to reveal.
-
-
-
-The FIU investigates using its existing powers and processes. Nothing changes except that they receive more, and more accurate, intelligence.
-
-
-
-
-
-
-
-        Privacy by Design
-
-
-## Who knows what
-
-
-
-
-
-
-| 
-                        Information | 
-                        Bank A | 
-                        Bank B | 
-                        Bank C | 
-                        FIU 
-| 
-                        **Own transactions** | 
-                        Yes | 
-                        Yes | 
-                        Yes | 
-                        Via SAR 
-| 
-                        **Own risk scores** | 
-                        Yes | 
-                        Yes | 
-                        Yes | 
-                        Via SAR 
-| 
-                        **Other bank's transactions** | 
-                        No | 
-                        No | 
-                        No | 
-                        Via combined SARs 
-| 
-                        **Other bank's risk scores** | 
-                        No | 
-                        No | 
-                        No | 
-                        No 
-| 
-                        **Which entities are shared** | 
-                        Yes (from PSI) | 
-                        Yes (from PSI) | 
-                        Yes (from PSI) | 
-                        Via combined SARs 
-| 
-                        **Combined risk exceeds threshold** | 
-                        Yes (boolean) | 
-                        Yes (boolean) | 
-                        Yes (boolean) | 
-                        Inferred from SARs 
-| 
-                        **Cryptographic attestation** | 
-                        Yes | 
-                        Yes | 
-                        Yes | 
-                        Can verify 
-The MPC protocol ensures that each bank learns exactly one new fact about a shared entity: whether the combined risk exceeds the agreed threshold. Not the other bank's score. Not their transactions. One bit of information. Enough to trigger investigation, not enough to compromise privacy.
-
-
-
-
-
-        Deployment
-
-
-## What each bank needs
-
-
-
-
-### Per Bank
-
-
-
-
-- One server (on-premise or in the bank's own cloud environment)
-
-- ZQUAS software installed
-
-- Connection to existing TM system (API or file-based risk score export)
-
-- Connection to existing case management (API or file-based alert import)
-
-- Network connection to other participating banks (private VPN or dedicated link)
-
-
-
-
-### Network Options
-
-
-
-From most to least isolated:
-
-
-
-
-
-                OPTION 1
-
-
-### Dedicated Private Network
-
-
-
-Physical or logical private network between participating banks. Highest security isolation. Suitable for production deployment.
-
-
-
-                OPTION 2
-
-
-### Point-to-Point VPN
-
-
-
-VPN tunnels between bank pairs. Practical for pilot programmes. Each bank controls their own tunnel endpoint.
-
-
-
-                OPTION 3
-
-
-### Private Cloud Peering
-
-
-
-AWS PrivateLink, Azure Private Endpoint. Each bank in their own VPC. Traffic never traverses the public internet.
-
-
-
-
-
-
-
-No central server. No central database. No central operator. The only shared infrastructure is the private connection between banks, and even that carries only encrypted protocol messages that are computationally indistinguishable from random data.
-
-
-
-### Trust Registry
-
-
-
-Each bank's ZQUAS installation is configured with the public keys of all participating banks. An industry body (such as NVB in the Netherlands) can manage the registry, or banks can configure it bilaterally. The trust registry contains only public keys and connection addresses. No transaction data, no risk scores, no entity information.
-
-
-
-### Entity Identification
-
-
-
-Participating banks agree on a common entity identifier. For Dutch entities, the KvK (Chamber of Commerce) number is the natural choice. For international entities, the LEI (Legal Entity Identifier). The protocol hashes these identifiers before comparison. The raw identifiers never cross the connection.
-
-
-
-
-
-        Validation
-
-
-## Tested with three simulated Dutch banks
-
-
-
-
-
-
-| 
-                        Metric | 
-                        Result 
-| 
-                        **Banks** | 
-                        3 (5,000 + 5,000 + 2,000 accounts) 
-| 
-                        **Total entities** | 
-                        12,017 
-| 
-                        **Shared entities** | 
-                        6 (4 criminal, 2 legitimate) 
-| 
-                        **Validated typology** | 
-                        Correspondent banking wire stripping, end to end as a named cohort 
-| 
-                        **Bilateral federation round** | 
-                        3,052 ms at 100,000 entities per party (loopback development transport) 
-| 
-                        **Data shared between banks** | 
-                        No raw or directly identifying customer data leaves the institution 
-| 
-                        **Cryptographic attestation** | 
-                        Ed25519 dual-signature per round 
-| 
-                        **Privacy protocol** | 
-                        ECDH-PSI + Garbled Circuits + Oblivious Transfer 
-Correspondent banking wire stripping is validated end to end as a named cohort on synthetic data across simulated participants. Trade-based over-invoicing, shell company layering and funnel account structuring are designed and in scope, not validated.
-
-
-
-Independently audited. The test suite, protocol execution, privacy guarantees, and cryptographic attestation have been verified through multiple layers of independent review.
-
-
-
-
-
-        Regulatory Framework
-
-
-## Built for the regulatory framework
-
-
-
-
-
-### AMLR Article 75
-
-
-
-Effective July 2027. Cross-institutional information sharing framework: delivered. Privacy-preserving federation enables detection without data centralisation.
-
-
-
-
-
-### GDPR Article 6
-
-
-
-No personal data shared between institutions. By cryptographic construction. Privacy compliance is a mathematical property, not a policy promise.
-
-
-
-
-
-### DORA Article 9
-
-
-
-Cryptographic attestation of all compliance decisions. Ed25519 signed proof bundles for every federation round. Digital operational resilience by design.
-
-
-
-
-
-### EU AI Act
-
-
-
-Deterministic, auditable policy evaluation. GPU-native processing with cryptographic proof bundles. Full traceability of every automated decision.
-
-
-
-
-
-### Wwft
-
-
-
-Dutch AML law. Enhanced due diligence triggers via cross-institutional escalation alerts. Integrates with existing reporting obligations to FIU-Nederland.
-
-
-
-
-
-
-
-Every compliance decision is cryptographically attested. Every federation round produces verifiable proofs. Regulators can independently verify the correctness of the protocol using standard cryptographic tools.
-
-
-
-
-
-        Pilot Programme
-
-
-## 20-week pilot. From proof to production.
-
-
-
-
-                    PHASE 0 / 4 WEEKS
-
-
-### Preparation
-
-
-
-Bank selection, scope agreement, legal framework. Define entity identifiers, risk score format, and escalation alert schema. Establish network connectivity between pilot participants.
-
-
-
-
-
-                    PHASE 1 / 4 WEEKS
-
-
-### Sandbox
-
-
-
-Synthetic data, verify protocol on real infrastructure. Confirm federation rounds execute correctly, privacy guarantees hold, and escalation alerts integrate with existing case management.
-
-
-
-
-
-                    PHASE 2 / 8 WEEKS
-
-
-### Controlled Pilot
-
-
-
-Historical data, measure against known outcomes. Run federation rounds on real (anonymised) risk scores. Compare detection against known cases to validate detection lift and false positive rate.
-
-
-
-
-
-                    PHASE 3 / 4 WEEKS
-
-
-### Evaluation
-
-
-
-Results analysis, DNB review, expansion decision. Produce regulatory evidence package. Determine go/no-go for production deployment and network expansion.
-
-
-
-
-
-
-
-
-ZQUAS has been accepted into the FCA Digital Sandbox. The DNB InnovationHub submission is under review. The technology has been tested. The pilot design is ready. AMLR Article 75 applies on July 10, 2027. The window for pilot initiation is now.
-
-
-
-
-
-        FAQ
-
-
-## Frequently asked questions
-
-
-
-
-### Do we need to replace our existing transaction monitoring system?
-
-
-
-No. ZQUAS sits alongside your existing system. It reads risk scores your system already produces. Your monitoring continues unchanged.
-
-
-
-### What data leaves our bank?
-
-
-
-Zero transaction data. The only data that crosses the network are cryptographic protocol messages: elliptic curve points, garbled circuit tables, and encrypted values. These are computationally indistinguishable from random data.
-
-
-
-### Who operates the central system?
-
-
-
-There is no central system. Each bank runs its own ZQUAS installation on its own infrastructure. The installations communicate peer-to-peer over a private connection.
-
-
-
-### How often do federation rounds run?
-
-
-
-Configurable. Nightly batches align with existing monitoring cycles. More frequent rounds (hourly, real-time) are technically possible.
-
-
-
-### What if a bank joins or leaves the network?
-
-
-
-Adding a bank: install ZQUAS, register public keys with existing participants, begin federation rounds. Removing a bank: decommission the installation, remove public keys. No impact on remaining participants.
-
-
-
-### Can criminals detect they are being monitored cross-institutionally?
-
-
-
-No. The federation runs between bank installations on private connections. No information about the federation reaches the customer or their transactions. From the customer's perspective, nothing changes.
-
-
-
-### What about false positives?
-
-
-
-The federation layer inherits the risk scores from each bank's existing system. If the local scores are well-calibrated, the combined scores will be too. No measured false positive rate is published. Producing one requires the detection baseline suite to be run and recorded, and quantifying it against real or representative data is an objective of the pilot programme.
-
-
-
-### Is this what TMNL was trying to do?
-
-
-
-TMNL proved that cross-institutional detection catches criminals that single-bank monitoring misses. TMNL encountered unresolved legal and proportionality objections. The Dutch data protection authority was critical of population-scale joint monitoring, the Council of State concluded that necessity and proportionality had not been demonstrated for the proposed statutory basis and advised its removal, and the bill carrying that basis was declared controversial after the government fell. With the AMLR applying from 10 July 2027, TMNL is winding down its existing model and redesigning to reconcile with it. ZQUAS pursues the same detection without centralisation, using cryptographic multi-party computation instead of data pooling. [Read the full TMNL analysis.](tmnl.html)
-
-
-
-
-
-        Contact
-
-
-## Discuss a pilot
-
-
-
-            If your institution is exploring cross-institutional AML detection, or if you're a regulator evaluating privacy-preserving approaches, I'd like to hear from you.
-
-
-
-            [danny@zquas.ai](mailto:danny@zquas.ai?subject=Cross-Institutional%20Detection%20/%20Pilot%20Inquiry)
-            [LinkedIn](https://www.linkedin.com/in/danny-de-gier-prof-pgdip-fcc/)
-
-        Zwolle, Netherlands
-
-
-
-
-            **Three Founding Partner slots available**
-
-
-12 weeks from signature to results. Joint regulatory sandbox engagement included. No customer data leaves your infrastructure.
-
-
-
-            [View Programme](founding-partner.html)
-            [Position Paper](article-75.html)
+[Discuss your pilot ↗](contact.html?audience=banks)

@@ -10,6 +10,10 @@ Site: https://zquas.ai
         May 2026 · Engineering · 9 min read
 
 
+Updated: 7 October 2026
+
+
+
 # Why We Built Our Own AI Inference Engine
 
 
@@ -220,7 +224,7 @@ ChatGPT runs on one. Llama runs on one. We wrote our own. Financial crime detect
 
 
             The engine has been accepted into the FCA Digital Sandbox and ZQUAS is a member of the NVIDIA Inception programme. Acceptance into the FCA Digital Sandbox is not an endorsement of any firm or product.
-
+        ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.
 
 
             Danny de Gier

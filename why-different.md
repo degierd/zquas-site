@@ -1,4 +1,4 @@
-# Why the Current Approach Fails | ZQUAS
+# Why the Current Approach Fails
 
 > Banks spend billions on compliance. Detection rates remain below 2%. The architecture is the problem. ZQUAS replaces isolated monitoring with cross-institutional detection.
 
@@ -46,99 +46,99 @@ The EU has now created the legal basis. AMLR Article 75 (applicable July 2027) e
 
 
 
-| 
-                        Capability | 
-                        Traditional AML Systems | 
-                        ZQUAS 
-| 
-                            Visibility | 
-                            Each bank monitors only its own transactions. | 
-                            Detection runs across all participating institutions. 
+|
+                        Capability |
+                        Traditional AML Systems |
+                        ZQUAS
+|
+                            Visibility |
+                            Each bank monitors only its own transactions. |
+                            Detection runs across all participating institutions.
 
-                            Criminal networks move money between banks. Monitoring one bank means missing the pattern that spans three. 
-| 
-                            Data Sharing | 
-                            Collaboration requires sharing customer data. | 
-                            Banks collaborate with no raw or directly identifying customer data leaving the institution. 
+                            Criminal networks move money between banks. Monitoring one bank means missing the pattern that spans three.
+|
+                            Data Sharing |
+                            Collaboration requires sharing customer data. |
+                            Banks collaborate with no raw or directly identifying customer data leaving the institution.
 
-                            Multi-party computation allows joint detection with mathematical privacy guarantees. No raw data leaves any institution. 
-| 
-                            Detection Model | 
-                            Static rules tested against historical transactions. | 
-                            Real-time federated analysis across the network. 
+                            Multi-party computation allows joint detection with mathematical privacy guarantees. No raw data leaves any institution.
+|
+                            Detection Model |
+                            Static rules tested against historical transactions. |
+                            Real-time federated analysis across the network.
 
-                            Suspicious patterns are detected as they form, not months later during a manual investigation. 
-| 
-                            Processing Speed | 
-                            Batch processing. Overnight or hourly cycles. | 
-                            750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set. 
+                            Suspicious patterns are detected as they form, not months later during a manual investigation.
+|
+                            Processing Speed |
+                            Batch processing. Overnight or hourly cycles. |
+                            500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
 
-                            GPU-native computation evaluates the entire entity population continuously. There is no queue. There is no overnight batch. 
-| 
-                            Compliance Assurance | 
-                            Systems produce logs and reports for auditors. | 
-                            Every decision is cryptographically signed and independently verifiable. 
+                            GPU-native computation evaluates the entire entity population continuously. There is no queue. There is no overnight batch.
+|
+                            Compliance Assurance |
+                            Systems produce logs and reports for auditors. |
+                            Every decision is cryptographically signed and independently verifiable.
 
-                            Regulators can mathematically verify that a compliance decision was made correctly, not just trust the documentation. 
-| 
-                            Security Testing | 
-                            Periodic penetration testing and vulnerability scans. | 
-                            Continuous adversarial self-testing built into the engine. 
+                            Regulators can mathematically verify that a compliance decision was made correctly, not just trust the documentation.
+|
+                            Security Testing |
+                            Periodic penetration testing and vulnerability scans. |
+                            Continuous adversarial self-testing built into the engine.
 
-                            The system attacks its own detection logic continuously, finding weaknesses before criminals do. 
-| 
-                            Knowledge Sharing | 
-                            Laundering typologies shared slowly via industry reports. | 
-                            New patterns propagate across the network automatically. 
+                            The system attacks its own detection logic continuously, finding weaknesses before criminals do.
+|
+                            Knowledge Sharing |
+                            Laundering typologies shared slowly via industry reports. |
+                            New patterns propagate across the network automatically.
 
-                            When one institution discovers a new laundering tactic, every participating institution benefits immediately. 
-| 
-                            Regulatory Audits | 
-                            Audits rely on documentation and sampling. | 
-                            Audit evidence is machine-verifiable. 
+                            When one institution discovers a new laundering tactic, every participating institution benefits immediately.
+|
+                            Regulatory Audits |
+                            Audits rely on documentation and sampling. |
+                            Audit evidence is machine-verifiable.
 
-                            Compliance examinations become faster and more reliable because every decision carries a cryptographic proof chain. 
-| 
-                            AI Integration | 
-                            ML models bolted onto existing rule engines. | 
-                            AI sits inside the same governance perimeter as the rule engine, with the same audit trail and the same constraints. 
+                            Compliance examinations become faster and more reliable because every decision carries a cryptographic proof chain.
+|
+                            AI Integration |
+                            ML models bolted onto existing rule engines. |
+                            AI sits inside the same governance perimeter as the rule engine, with the same audit trail and the same constraints.
 
-                            AI components and policy components run under the same deterministic, attestable governance model. No model output reaches a regulator-facing decision without passing through the same controls as a hand-written rule. 
-| 
-                            Scalability | 
-                            Scale by adding servers and databases. | 
-                            Single GPU: 8 million accounts. Adding banks does not increase processing time. 
+                            AI components and policy components run under the same deterministic, attestable governance model. No model output reaches a regulator-facing decision without passing through the same controls as a hand-written rule.
+|
+                            Scalability |
+                            Scale by adding servers and databases. |
+                            Single GPU: 8 million accounts. Adding banks does not increase processing time.
 
-                            Parallel execution means the system processes 5 banks as fast as 2 banks. Scale is a hardware property, not an infrastructure project. 
-| 
-                            Multi-Industry | 
-                            Separate products for each regulation and sector. | 
-                            Industry-agnostic governance engine. Financial crime is the first application. 
+                            Parallel execution means the system processes 5 banks as fast as 2 banks. Scale is a hardware property, not an infrastructure project.
+|
+                            Multi-Industry |
+                            Separate products for each regulation and sector. |
+                            Industry-agnostic governance engine. Financial crime is the first application.
 
-                            The same engine governs any domain where autonomous entities must operate under verifiable rules. 
-| 
-                            Philosophy | 
-                            Each bank fights financial crime alone. | 
-                            Collective defence across institutions. 
+                            The same engine governs any domain where autonomous entities must operate under verifiable rules.
+|
+                            Philosophy |
+                            Each bank fights financial crime alone. |
+                            Collective defence across institutions.
 
-                            Criminal networks cooperate globally. The financial system must do the same, without sacrificing privacy. 
+                            Criminal networks cooperate globally. The financial system must do the same, without sacrificing privacy.
         Measured, Not Projected
 
 
 ## The Numbers
 
 
+            **500K**
 
-                750K
-                complex events/sec across the 500K-entity cycle
+Entities under 2 seconds in a fixed synthetic test, about 55K transactions. Detection test only.
 
 
                 <10ms
-                alert lifecycle, ingestion to triage
+                per-alert handling after detection, synthetic test
 
+            **Under 1 GB**
 
-                667 ms
-                500K entities, 56-policy catalogue
+Measured detection-pass working set only. Synthetic data. Resident ingestion and model inference excluded.
 
 
                 TRL 6
@@ -147,7 +147,7 @@ The EU has now created the legal basis. AMLR Article 75 (applicable July 2027) e
 
 
 
-All numbers measured. Federation benchmarks use realistic Dutch banking entity distributions.
+Internal tests on synthetic data. Each figure has a separate scope. Federation timing uses loopback development transport.
 
 
 

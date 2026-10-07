@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What Article 75 Was Afraid to Permit — ZQUAS Position Paper</title>
+    <title>What Article 75 Was Afraid to Permit | ZQUAS Position Paper</title>
     <meta name="description" content="How Multi-Party Computation enables full customer base federation for AML detection without sharing personal data. ZQUAS position paper on AMLR Article 75 and GDPR.">
-    <meta property="og:title" content="What Article 75 Was Afraid to Permit — ZQUAS">
+    <meta property="og:title" content="What Article 75 Was Afraid to Permit | ZQUAS">
     <meta property="og:description" content="How Multi-Party Computation enables full customer base federation for AML detection without sharing personal data. ZQUAS position paper on AMLR Article 75 and GDPR.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://zquas.ai/article-75.html">
@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=6">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -544,16 +544,16 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="td-label">Single node: 500,000 entities, 56-policy catalogue</td>
-                        <td class="td-accent">667 ms, median of three runs (2-second regression bound enforced in CI)</td>
+                        <td class="td-label">Fixed synthetic detection fixture</td>
+                        <td class="td-accent">500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</td>
                     </tr>
                     <tr>
-                        <td class="td-label">Alert lifecycle: ingestion to agent triage</td>
-                        <td class="td-accent">under 10ms (full lifecycle breakdown on benchmark page)</td>
+                        <td class="td-label">Per-alert handling after detection</td>
+                        <td class="td-accent">Under 10 ms per alert, from detection result to persisted, queryable alert. Synthetic test.</td>
                     </tr>
                     <tr>
-                        <td class="td-label">Sustained throughput</td>
-                        <td class="td-accent">750,000 complex events per second across the full 500,000-entity cycle. One unit is one entity evaluated against the full policy set, with attestation generation inside the measured path</td>
+                        <td class="td-label">Detection-pass memory</td>
+                        <td class="td-accent">VRAM under 1 GB in the measured detection-pass working set after warm-up. Resident ingestion and model inference are excluded. This is not total-system memory.</td>
                     </tr>
                     <tr>
                         <td class="td-label">Detection accuracy</td>
@@ -632,7 +632,7 @@
                     <tr>
                         <th>Entities per bank</th>
                         <th>Pipeline time</th>
-                        <th>Throughput</th>
+                        <th>Scope</th>
                         <th>Detection</th>
                         <th>Policies</th>
                     </tr>
@@ -640,8 +640,8 @@
                 <tbody>
                     <tr>
                         <td class="td-label">500,000</td>
-                        <td class="td-accent">667 ms (median of three)</td>
-                        <td>750K complex events/sec</td>
+                        <td class="td-accent">500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</td>
+                        <td>Fixed synthetic fixture, about 55K transactions. Not a full product cycle.</td>
                         <td>Wire stripping cohort</td>
                         <td>56-policy catalogue</td>
                     </tr>
@@ -649,9 +649,7 @@
             </table>
         </div>
 
-        <p>
-            Three things to note. Throughput is reported as 750,000 complex events per second sustained across a full 500,000-entity detection cycle, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. Policy-set size is not used as a multiplier. These times are for GPU policy evaluation including full proof generation (Merkle root + Ed25519 signature). The catalogue is 56 logical policies, pinned by static assertion to the catalogue array, spanning sanctions screening, PEP/EDD, transaction monitoring, fraud, KYC, crypto, and conduct. A 128-policy corpus (34 fail-closed screening, 94 detection) is used for scale characterisation.
-        </p>
+        <p>500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</p>
 
         <h2>Privacy-preserving federation performance</h2>
 
@@ -705,7 +703,7 @@
                 <tbody>
                     <tr>
                                                 <td class="td-label">500,000 entities, 56-policy catalogue</td>
-                        <td class="td-accent">667 ms (median of three)</td>
+                        <td class="td-accent">500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</td>
                         <td>24 hours</td>
                         <td class="td-strong">millions&times;</td>
                     </tr>
@@ -719,9 +717,7 @@
             </table>
         </div>
 
-        <p>
-            For comparison: a conventional CPU-based system evaluating a full policy set against every entity requires extracting the data, running sequential rule evaluation, and waiting for the batch cycle to complete. ZQUAS completes a 500,000-entity detection cycle against its 56-policy catalogue in 667 ms, median of three runs.
-        </p>
+        <p>500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.</p>
 
         <hr class="section-rule">
 
@@ -803,7 +799,7 @@
             We are not asking regulators to take our word for it. We are asking for the opportunity to demonstrate, in a supervised environment, that MPC federation achieves the detection capability that Article 75 partnerships seek, without the privacy trade-off that Article 75 was forced to accept.
         </p>
 
-        <p class="p-bold">1. Regulatory sandbox engagement (DNB InnovationHub / FCA Digital Sandbox)</p>
+        <p class="p-bold">1. Regulatory sandbox engagement (DNB InnovationHub / FCA Digital Sandbox)<span class="fca-disclaimer">ZQUAS was accepted into the FCA&#x27;s Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.</span></p>
         <p>
             Deploy the ZQUAS federation platform in a sandbox environment with synthetic or historical data from participating banks. Demonstrate cross-institutional detection of known laundering typologies. Measure false positive rates. Validate the cryptographic attestation mechanism. Establish whether MPC protocol messages constitute personal data under GDPR.
         </p>

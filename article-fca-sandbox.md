@@ -1,6 +1,6 @@
 # Why We Applied to the FCA's Supercharged Sandbox
 
-> Why ZQUAS applied to the FCA's Supercharged Sandbox: how we use AI in a compliance setting, determinism, governance and human oversight, and what participation does and does not mean.
+> Why ZQUAS applied to the FCA's Supercharged Sandbox: how we use AI in a compliance setting, determinism, governance and human oversight, and what participation does and does not mean. ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 Source: https://zquas.ai/article-fca-sandbox.html
 Site: https://zquas.ai
@@ -10,11 +10,15 @@ Site: https://zquas.ai
         July 2026 · Company · 7 min read
 
 
+Updated: 7 October 2026
+
+
+
 # Why We Applied to the FCA's Supercharged Sandbox
 
 
 
-We have joined the second cohort of the FCA's Supercharged Sandbox. This note explains why we applied, how we think about AI in a system that has to answer to regulators, and, just as importantly, what being there does and does not mean. It is the second FCA sandbox we have been admitted to this year, after the FCA's Digital Sandbox in the spring.
+We have joined the second cohort of the FCA's Supercharged Sandbox. This note explains why we applied, how we think about AI in a system that has to answer to regulators, and, just as importantly, what being there does and does not mean. It is the second FCA sandbox we have been admitted to this year, after the FCA's Digital Sandbox in the spring.ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 
@@ -26,12 +30,12 @@ We have joined the second cohort of the FCA's Supercharged Sandbox. This note ex
 
 
             The Supercharged Sandbox is the FCA's environment for experimenting with advanced AI in financial services. Built on the FCA's Digital Sandbox, it gives participating firms a secure, controlled setting with GPU-accelerated compute, synthetic datasets, technical tooling, and access to regulatory and expert support. The programme builds on support from NayaOne and NVIDIA, and for this cohort Anthropic provides participants with access to Claude, including Claude Code, to accelerate development work. It is cohort-based, and it is aimed at testing and developing AI use cases rather than deploying them.
-
+        ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 
             The FCA has been explicit that one of the programme's purposes is to generate insight that can inform future regulatory thinking. The FCA [announced the second cohort](https://www.fca.org.uk/news/press-releases/anthropic-supercharged-sandbox) on 22 July 2026: 21 organisations, selected from 199 applications against 132 for the first cohort. The use cases it invites include fraud detection and economic crime, which is our field.
-
+        ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
 
 
 

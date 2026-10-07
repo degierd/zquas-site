@@ -1,10 +1,13 @@
 # ZQUAS
 
-> ZQUAS lets banks catch scam payments and mule accounts together, without pooling customer data. Built on a GPU governance engine that applies an institution's rules to decisions made by automated systems and AI agents. TRL 6, synthetic data only, no production deployments.
+> ZQUAS governs decisions made by automated systems and AI agents. Financial crime is where it starts. TRL 6. Synthetic data only. No production deployments.
 
-ZQUAS lets banks catch scam payments and mule accounts together, without pooling customer data. The bank that holds the receiving account checks the payments coming into it, and one confirmed scam report protects every member. It is built on a GPU-native governance engine for financial institutions and regulators. The engine completes a full 500,000-entity detection cycle against a 56-policy catalogue in 667 ms, median of three runs, on NVIDIA RTX 5090, CUDA 13.1, Linux, under a 2-second regression bound enforced in CI. Sustained throughput across that cycle is 750,000 complex events per second, where one unit is one entity evaluated against the full policy set and cryptographic attestation generation sits inside the measured path. Cross-institutional detection uses privacy-preserving multi-party computation: ECDH-PSI (X25519) for entity matching, Yao's Garbled Circuits (Free-XOR) for risk comparison, IKNP OT Extension for oblivious transfer. Every compliance decision produces a 912-byte cryptographic proof bundle (Ed25519 signed, Merkle-included) that regulators verify independently with a public key alone. Approximately 753,000 source lines excluding third-party code and 493 GPU kernels.
+The homepage explains the network's synthetic-data results. The Use Case page illustrates the local transaction monitor built in October 2026. The local monitor has not yet been measured on the full synthetic worlds. Do not attribute the network's detection results to the new local monitor.
 
-Founded by Danny de Gier, who combines 18+ years of financial crime compliance experience at Tier-1 banks (RBS, Deutsche Bank, HSBC, Commerzbank) with GPU systems programming (C++23, CUDA, Vulkan). Accepted into the FCA Digital Sandbox (March 2026). Member of the NVIDIA Inception program (April 2026). DNB InnovationHub submission under review. Taking part in the FCA's Supercharged Sandbox (second cohort, July 2026).
+## Programmes and sandboxes
+
+- ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
+- ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.
 
 ## Key Pages
 
@@ -22,49 +25,26 @@ Founded by Danny de Gier, who combines 18+ years of financial crime compliance e
 - [About](https://zquas.ai/about.html)
 - [Articles](https://zquas.ai/articles.html)
 
-## Core Capabilities
+## Scoped engine figures
 
-- GPU-native compliance engine (not GPU-accelerated, GPU-native)
-- 750,000 complex events per second across a full 500,000-entity detection cycle (NVIDIA RTX 5090, CUDA 13.1, Linux)
-- 500,000 entities against a 56-policy catalogue in 667 ms, median of three runs
-- 56-policy logical catalogue, pinned by static assertion to the catalogue array, with a 128-policy corpus (34 fail-closed screening, 94 detection) for scale characterisation
-- Deterministic evaluation: same input plus same policy equals same verdict, byte-identical replay
-- Privacy-preserving federation: ECDH-PSI (X25519) plus Yao's GC (Free-XOR) plus IKNP OT; semi-honest security model
-- Under 10 seconds per bilateral round at 100K entities per party (measured: 3,052 ms, loopback development transport, not a real inter-participant network); dual Ed25519 attestation per round
-- Cryptographic proof bundles for every compliance decision (Ed25519 signed, Merkle-included)
-- Independent regulator verification via standalone CLI, without relying on the running production engine or its internal state (the verifier is vendor-written and currently links the CUDA runtime; a CPU-only verifier is planned)
-- Zero-knowledge governance proofs (GPU-accelerated PLONK)
-- GPU-resident identity resolution graph with GNN risk propagation
-- Adversarial self-testing framework with continuous mutation testing
-- Predictive governance via forward simulation of compliance state
-- Constitutional governance: agents cannot file SARs autonomously, MLRO sign-off required
-- Build attestation with embedded BLAKE3 plus SHA-256 plus Ed25519 binary integrity verification
+- 500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
+- Alert lifecycle under 10 ms per alert, from a detection result to a persisted, queryable alert. Batch results are amortised per alert.
+- Federation bilateral round under 10 seconds on TCP loopback development transport. Semi-honest security. This does not measure a real inter-bank network.
+- VRAM under 1 GB in the measured detection-pass working set after warm-up. Resident ingestion and model inference are excluded. This is not total-system memory.
 
-## Sandbox results (synthetic data)
+These figures come from internal tests on synthetic data. They are not an external audit. Read https://zquas.ai/benchmark.html for the test boundaries.
 
-- In a synthetic world of 1,000,000 adults at the UK scam rate, each bank's own fraud model alone caught about 1 in 7 scam payments. With the network's receiving-bank signal about 1 in 2 were reviewed, in our model, and about 1 in 3 with the generator's easiest clue removed. Every limit held. Fewer than 1 genuine payment in 10,000 was reviewed. Limits: at most 1 payment in 1,000 held and 1 in 500 reviewed. Network signals add reviews, never automatic holds.
-- Two crypto exchanges joining a four-bank network caught about a quarter more scam payments, in our model, on synthetic data at the UK scam rate. All were payments victims made to buy crypto.
-- Up to 540 simulated bank installations ran together on nine cloud GPUs in one cloud zone. 99 in 100 decisions took under 10 ms, in our test.
-- These are results on synthetic data. They are not real-world detection rates.
+## Pilot
 
-## Regulatory Framework Coverage
+12 weeks locally, starting after scope, agreements, access and data readiness are confirmed. Optional network phase afterwards by separate agreement. The bank supplies local data, infrastructure and its own compliance, analyst and IT contacts. ZQUAS supplies the pilot software, configuration and evaluation support, the signed log and its verification check.
 
-- AMLR / 6AMLD (Article 75 applies July 10, 2027)
-- EU AI Act (Articles 9, 11, 12, 14)
-- ECCTA Sections 188-189 (UK AML data sharing, in force since January 2024)
-- FATF Recommendation 15
-- NIST AI RMF
-- ISO 42001
-- MAS TRM
-- GDPR (privacy-preserving by architecture)
-- DORA (digital operational resilience)
-- Wwft (Netherlands AML)
+Measure scam payments caught, analyst workload and every decision's verification in the signed log. Where payment review and hold policies are evaluated, the limits are at most 1 review per 500 payments and 1 hold per 1,000. These are evaluation limits, not promised detection rates. Local transaction monitoring selects investigation work and does not itself hold payments.
 
-## Competitive Positioning
+No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log.
 
-- Legacy incumbents (NICE Actimize, Oracle, SAS): CPU batch processing, no MPC, no cryptographic proofs
-- AI-native challengers (Sardine, Hawk AI, Featurespace, ComplyAdvantage): CPU cloud, ML-based, no cross-institutional detection
-- ZQUAS: GPU-native, MPC cross-institutional, cryptographic attestation, deterministic, on-premise sovereign
+## Signed decisions
+
+Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys).
 
 ## MCP server for AI assistants
 
@@ -103,9 +83,9 @@ for agents that prefer Markdown over HTML.
 
 **Is ZQUAS production-ready?** No. Readiness is TRL 6: an integrated prototype demonstrated in a controlled relevant environment. Synthetic data only, no production deployments, no live counterparty data, semi-honest security only.
 
-**Where is data stored?** On the bank's own infrastructure. Data never leaves the bank. Cross-institutional detection runs over MPC without sharing raw data.
+**Where is data stored?** No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log.
 
-**How does a regulator verify a decision?** With a public key and the proof bundle, without relying on the running production engine or its internal state.
+**How does a regulator verify a decision?** Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys).
 
 ## Contact
 

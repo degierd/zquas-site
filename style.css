@@ -2791,3 +2791,25 @@ footer {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
+
+.fca-disclaimer {
+    display: block;
+    margin-top: 0.8rem;
+    color: #adb8cd;
+    font-size: 0.85rem;
+    line-height: 1.65;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+.content-updated {
+    color: #adb8cd;
+    font-size: 0.8rem;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.regulators-page .problem-grid,
+.regulators-page .arch-grid,
+.platform-page .icon-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+.regulators-page .pilot-cta-links { flex-wrap: wrap; min-width: 0; max-width: 100%; }

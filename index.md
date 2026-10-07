@@ -11,7 +11,7 @@ Site: https://zquas.ai
 
 
 
-![How banks can stop scams together. The ZQUAS Federation Network.](story-assets/film/poster.jpg)
+            ![How banks can stop scams together. The ZQUAS Federation Network.](story-assets/film/poster.jpg)
 
 
 
@@ -35,7 +35,7 @@ ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse
 
 TRL 6. Synthetic data only. No production deployments.
 
-            [Explore the evidence ↓](#results)
+            [The 12-week local pilot →](founding-partner.html#pilot-scope)[A synthetic walkthrough →](use-case.html)[Explore the evidence ↓](#results)
 
 
 
