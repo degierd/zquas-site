@@ -81,7 +81,7 @@ Verification
 
 These results come from our own tests. They are not an external audit. Hardware and workload affect timings.
 
-Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys).
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 The performance statements were checked against the F1_ENGINE test definitions, claim register and retained run reports on 7 October 2026. The relevant tests are DetectionCycleThemis.Latency_500K_FullCycle, AlertLifecycleLatency, ThreeBankTMNL.RealisticScaleBenchmarkIknp and DetectionPeakVram.HardCap_500K_4M_UnderBound.
 

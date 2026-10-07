@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=12">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -141,9 +141,7 @@
         <p>
             Imagine a different model. Instead of the bank describing how the system works and the examiner trusting that description, the system produces a mathematical proof of what it did.
         </p>
-        <p>
-            Each batch of compliance decisions generates a proof bundle. This bundle contains: a hash of the policy set that was in effect, a hash of the input data that was evaluated, the verdicts that were produced, a timestamp, and a cryptographic signature that binds all of these together. The bundle also includes a Merkle root over the individual verdict hashes, which means any individual verdict can be verified as part of the batch without revealing all the others.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p>
             The examiner receives this proof bundle and runs it through a standalone verification tool. The tool checks: does the signature verify? Does the policy hash match the registered policy set? Does the Merkle root correctly cover the claimed verdicts? Is the timestamp consistent with the claimed evaluation period?
         </p>
@@ -186,9 +184,7 @@
         <p>
             Continuous supervision becomes feasible. Instead of periodic examinations where the examiner reviews a sample of the bank's activity, the regulator could receive proof bundles on an ongoing basis and verify them automatically. Anomalies (missing epochs, policy hash changes, signature failures) could trigger alerts for human review. This shifts supervision from periodic sampling to continuous monitoring, which is a meaningful improvement in supervisory effectiveness.
         </p>
-        <p>
-            Cross-jurisdictional supervision also benefits. When a bank operates in multiple jurisdictions, each regulator currently conducts its own examination independently. With cryptographic proofs, a proof bundle from one jurisdiction can be verified by another jurisdiction's examiner without any data sharing or system access. The proof is self-contained. This could simplify supervisory cooperation under frameworks like the ECB's Single Supervisory Mechanism.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p>
             The technology for all of this exists now. The question for supervisory authorities is whether to incorporate cryptographic verification into their supervisory expectations, initially as best practice and eventually as a standard. Regulatory sandbox programmes provide the appropriate testing ground.
         </p>
@@ -209,7 +205,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>Bounded Compliance on an Unbounded Platform.<br>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">

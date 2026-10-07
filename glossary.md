@@ -114,7 +114,7 @@ A family of cryptographic protocols that allow several parties to jointly comput
 
 
 
-In AML, MPC enables banks to compare risk scores or detect shared customers without sharing the underlying data. The privacy property is mathematical, not contractual.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -124,7 +124,7 @@ In AML, MPC enables banks to compare risk scores or detect shared customers with
 
 
 
-An MPC primitive that lets two parties identify the entities they have in common without either party revealing its full set to the other.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -142,7 +142,7 @@ A Private Set Intersection construction built on Elliptic Curve Diffie-Hellman k
 
 
 
-Each party hashes its identifiers to a curve point, applies its private key, exchanges results, and applies its key again. Matching points indicate shared entities. Non-matching points reveal nothing.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -200,11 +200,7 @@ A high-performance cryptographic hash function used in ZQUAS for policy hashing,
 
 
 
-Cryptographic proofs that a computation was performed correctly without revealing the inputs or intermediate state.
-
-
-
-ZQUAS uses GPU-accelerated PLONK to optionally include zero-knowledge governance proofs in proof bundles. Useful when the policy logic itself is sensitive but the supervisor still needs to verify correct execution.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -232,7 +228,7 @@ In a GPU-native engine, data structures, control flow, scheduling, and memory la
 
 
 
-Detecting financial crime patterns that span multiple banks by comparing risk indicators across institutions, without any institution exposing its raw customer data.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -246,7 +242,7 @@ Required to catch criminal networks that deliberately split activity across mult
 
 
 
-Detection that runs across multiple institutions without those institutions sharing raw data. Achieved in ZQUAS via cryptographic federation rather than data centralisation.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -274,11 +270,7 @@ ZQUAS deploys on the bank's own infrastructure. Cross-institutional detection is
 
 
 
-A signed, Merkle-included artefact produced for every compliance decision. Contains a hash of the policy set in effect, a hash of the input data, individual verdict hashes, a Merkle root binding all verdicts together, and an Ed25519 signature.
-
-
-
-Produced for every evaluation. Verifiable by a supervisor with a public key alone.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

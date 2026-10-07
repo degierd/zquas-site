@@ -179,8 +179,7 @@ Every transaction monitoring vendor claims real-time. The term appears on every 
 
 
 
-            Level 3 systems can perform cross-institutional detection through multi-party computation. Banks jointly evaluate shared entities without sharing underlying data. The MPC protocols run at GPU speed, matching the performance of local evaluation. Each bank's data remains within its own infrastructure. The computation produces correct risk assessments without revealing inputs. Privacy is mathematically guaranteed by the cryptographic protocol, not dependent on data sharing agreements or access controls.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

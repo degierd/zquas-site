@@ -144,8 +144,7 @@ While the EU waits until July 2027 for AMLR Article 75, the United Kingdom has a
 
 
 
-            The legal basis exists. The sandbox infrastructure exists. The entity data infrastructure is improving. The technology to generate intelligence without sharing raw data exists. UK banks have the conditions to implement collaborative detection now, demonstrate results before EU banks begin, and build the operational experience that will define best practice when cross-border UK-EU partnerships become possible under future arrangements.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
             Danny de Gier

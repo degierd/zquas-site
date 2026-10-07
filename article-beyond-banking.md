@@ -1,6 +1,6 @@
 # Beyond Banking: Cross-Sector Federated Detection for Financial Crime, Telecommunications Fraud, and Digital Asset Compliance
 
-> A ZQUAS position paper. A single detection engine that correlates risk signals across banks, telecommunications operators, and digital asset platforms without sharing raw data between institutions. The same code, the same cryptographic protocols, the same GPU-native detection pipeline, applied to every regulated sector where financial crime operates.
+> The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 Source: https://zquas.ai/article-beyond-banking.html
 Site: https://zquas.ai
@@ -18,7 +18,7 @@ Updated: 7 October 2026
 
 
 
-A single detection engine that correlates risk signals across banks, telecommunications operators, and digital asset platforms without sharing raw data between institutions. The same code, the same cryptographic protocols, the same GPU-native detection pipeline, applied to every regulated sector where financial crime operates.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -83,11 +83,11 @@ The ZQUAS F1 Engine is a GPU-native financial crime detection engine of approxim
 
 
 
-### 2.1 Banking Detection: Production-Ready
+### 2.1 Banking Detection: Synthetic Evaluation
 
 
 
-The engine processes 500,000 entities in under 2 seconds with an alert lifecycle under 10 milliseconds. Total VRAM consumption is under 1 gigabyte. It runs on hardware ranging from a consumer-grade laptop GPU to data centre GPUs (A100, H100). The same binary, the same detection pipeline, different throughput.
+The engine processes 500,000 entities in under 2 seconds with an alert lifecycle under 10 milliseconds. It runs on hardware ranging from a consumer-grade laptop GPU to data centre GPUs (A100, H100). The same binary, the same detection pipeline, different throughput.
 
 
 
@@ -95,7 +95,7 @@ The detection pipeline evaluates five layers covering temporal analysis, structu
 
 
 
-### 2.2 Bank-to-Bank Federation: Production-Ready
+### 2.2 Bank-to-Bank Federation: Prototype
 
 
 
@@ -107,7 +107,7 @@ This is not a theoretical protocol. It is compiled code that runs, produces veri
 
 
 
-### 2.3 Financial Crime Network Simulator: Production-Ready
+### 2.3 Financial Crime Network Simulator: Synthetic Evaluation
 
 
 
@@ -275,15 +275,7 @@ The ZQUAS F1 Engine operates on entities and relationships between entities. A b
 
 
 
-At the federation layer, the engine treats all data sources uniformly: a sender, a receiver, a value, and a timestamp. This uniformity enables the same federation protocol to operate between a bank and a telco as between two banks.
-
-
-
-This does not mean that all data sources are equally simple to process. Financial crime detection within a single sector depends on rich, sector-specific features. A banking installation analyses transaction narratives, merchant categories, and payment patterns. A telco installation analyses call patterns, SIM lifecycle events, and network behaviour. A crypto installation analyses wallet clustering, bridge usage, and mixer proximity. These sector-specific features produce entity-level risk assessments that are comparable across sectors through calibration (Section 4.7), even though the underlying feature sets are different.
-
-
-
-The banking pipeline is built and tested on synthetic data at TRL 6. The telecommunications and blockchain pipelines are planned engineering milestones. The detection engine, federation protocol, and scoring infrastructure are already operational and data-agnostic. What remains is building the sector-specific ingestion adapters and tuning the detection parameters per data domain.
+These are candidate fields for an availability and decision-time validation study. Their incremental value is not yet qualified.
 
 
 
@@ -316,7 +308,7 @@ The federation protocol connects institutional installations as peers. Each inst
 
 
 
-The observer does not receive entity-level data and cannot be used for prosecution. Evidence for law enforcement is handled through a separate mechanism described in Section 4.10.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -336,7 +328,7 @@ In the target launch jurisdictions, a single government identifier serves as the
 
 
 
-The F1 Engine uses ECDH-PSI to discover common entities without revealing the underlying identity data. Institution A blinds its set of identity hashes. Institution B blinds its set. The protocol produces the intersection: entities present in both sets. Neither institution learns anything about entities that are not in the intersection. The protocol is GPU-accelerated and provably secure under standard cryptographic assumptions.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -353,7 +345,7 @@ The matching operates on two tiers, each serving a different detection purpose:
 
 
 
-**Tier 2: Phone number hash in E.164 format.** This is the primary matching mechanism for APP fraud detection. In APP fraud, the fraudster and the mule are typically different people. The fraudster uses a burner SIM. The victim sends money to a mule account at a different bank. Government ID matching between the telco and the bank will not link them because they are different individuals. The link is the victim: the same person who is both a telco subscriber being targeted by a scam pattern and a bank customer initiating an unusual payment. Phone number matching identifies the victim across both sectors, enabling the telco's "this subscriber is being targeted" signal to reach the bank before the payment settles.
+These are candidate fields for an availability and decision-time validation study. Their incremental value is not yet qualified.
 
 
 
@@ -385,7 +377,7 @@ The solution is deterministic normalisation before hashing, not fuzzy matching i
 
 
 
-This pipeline runs locally at each institution before any data enters the cryptographic protocol. It is deterministic: the same input always produces the same canonical form. In jurisdictions with standardised address formats (Dutch postcode plus house number, UK postcode plus building number), this achieves near-perfect matching accuracy on the primary government ID identifier, where formatting variation is minimal (BSN is a 9-digit number, NI number follows a fixed alphanumeric pattern).
+These are candidate fields for an availability and decision-time validation study. Their incremental value is not yet qualified.
 
 
 
@@ -405,12 +397,12 @@ Each installation computes local risk assessments for its entities based on its 
 
 
 
-No raw transactions, no CDRs, no blockchain addresses, no customer names cross institutional boundaries. The federation shares only the escalation decision, not the underlying data or reasoning.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
 
-In the current production architecture, federation signals are binary escalations: escalated or not escalated. Unlike quantitative risk scores, binary signals are mathematically immune to threshold drift. An escalation is either propagated or it is not. There is no intermediate value that noise, rounding, or miscalibration can degrade. This design ensures that no institution can claim a signal was "too ambiguous to act on."
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -420,7 +412,7 @@ In the current production architecture, federation signals are binary escalation
 
 
 
-Escalation signals are not propagated per-event. They are batched into federation rounds that aggregate multiple events. If a telco detects burst messaging at 09:42, a SIM swap at 10:15, and a suspicious CDR pattern at 11:30, the receiving bank sees a single aggregated signal at the next federation round. The bank cannot determine which specific event triggered the escalation or at what time it occurred. This decoupling of signal from event timing defeats inference attacks where a receiving institution attempts to reconstruct the sender's private data from timing correlations.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -428,7 +420,7 @@ Escalation signals are not propagated per-event. They are batched into federatio
 
 
 
-Phase 2 will introduce quantitative risk deltas alongside binary escalation signals, enabling richer cross-sector intelligence. Each delta will include calibrated noise providing formal differential privacy guarantees. The privacy budget will be configurable per federation agreement.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -464,7 +456,7 @@ The architecture mitigates this through three controls.
 
 
 
-First, the PSI is risk-filtered. Only entities that exceed a local risk threshold enter the PSI set. If a bank has 2 million customers but only 50,000 are in elevated-risk categories, the PSI operates on 50,000 entities, not 2 million. The intersection reveals overlap only within the risk population, not the full customer base.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -472,7 +464,7 @@ Second, the intersection result is ephemeral. Matched entity identifiers are use
 
 
 
-Third, PSI query budgets limit the number of federation rounds per bilateral pair per period. This prevents an institution from running continuous PSI to incrementally map the other's customer base over time.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -500,91 +492,23 @@ The simulation environment currently generates banking populations. Cross-sector
 
 
 
-### 4.8 The APP Fraud Detection Example: Victim-Centric Linkage
+These are candidate fields for an availability and decision-time validation study. Their incremental value is not yet qualified.
 
 
 
-In most professional APP fraud, the fraudster and the mule are different people. The fraudster uses a burner SIM or stolen identity to make the call. The victim sends money to a mule account at a different bank. Matching the fraudster's identity across sectors will not work because the fraudster takes deliberate steps to avoid identity linkage.
+### 4.8 Candidate Phone and Telecommunications Fields
 
 
 
-The architecture solves this by centering the linkage on the victim.
+These are candidate fields for an availability and decision-time validation study. Their incremental value is not yet qualified.
 
 
 
+### 4.9 Exchange Participation Under Retest
 
 
 
-
-
-**Step 1:** A fraudster operating from a burner SIM calls 200 potential victims. The telco's F1 installation detects that multiple subscribers are receiving calls from a number exhibiting a scam pattern (burst calling to many targets in a short window). Each targeted subscriber's entity is flagged locally: "this subscriber is being targeted by a scam cluster." No data leaves the telco.
-
-
-
-**Step 2:** At the next batched federation round, the federation protocol runs a PSI match on Tier 2 (phone number). The victim's phone number appears in both the telco's elevated-risk set and the bank's customer set (because the victim is a bank customer). The match identifies the victim, not the fraudster.
-
-
-
-**Step 3:** The telco's escalation signal propagates to the bank: "this customer is being targeted by a telecommunications scam pattern." The bank cannot determine which phone number called the victim, what was said, or when the call occurred. It knows only that its customer has been identified as a scam target by the telecommunications sector.
-
-
-
-**Step 4:** Hours later, the victim, convinced by the fraudster's call, initiates a payment to the mule's account. The bank's F1 installation evaluates the transaction in real time (under 10 milliseconds). The victim's entity has a pre-existing cross-sector signal: "targeted by telecommunications scam pattern." The bank's detection pipeline combines this with the transaction characteristics: first-time payee, high-value transfer, unusual payment pattern. Alert generated.
-
-
-
-**Step 5:** The bank holds the payment for review. The compliance officer sees: the customer's own transaction history, plus a cross-sector indicator that this customer was recently targeted by a scam pattern on the telecommunications network. The officer investigates the specific payment, not the customer's entire account. The customer's salary deposits, direct debits, and routine transactions continue uninterrupted. Only the specific high-risk payment is held.
-
-
-
-
-Without federation: the bank sees a payment to a new payee. That happens thousands of times per day. It is not suspicious in isolation. With federation: the bank sees a payment to a new payee from a customer who was recently targeted by a telecommunications scam pattern. The telco's targeting signal, which the bank never sees directly, has changed the risk calculus for a transaction the bank processes.
-
-
-
-
-
-The critical insight: the architecture does not need to unmask the fraudster to protect the victim. By correlating the targeting signal at the telco with the transfer signal at the bank, the fraud lifecycle is broken before the first payment settles.
-
-
-
-A note on service continuity: the escalation signal elevates risk on the specific transaction context, not on the victim's account. The victim is a customer being protected, not a suspect being investigated. Their account remains fully functional. Only the specific payment to the suspicious counterparty is held for review. This distinction is enforced by the policy engine, which evaluates risk at the transaction level, not the entity level.
-
-
-
-A note on timing: the local bank detection operates in under 10 milliseconds. The federation round (under 10 seconds per bilateral pair) pre-enriches entity risk profiles between transactions. When the payment arrives, the cross-sector signal is already present. The local installation blocks in real time. The federation enriches over rounds.
-
-
-
-### 4.9 The Private Blockchain Detection Example
-
-
-
-**Step 1:** A bank customer initiates a GBP payment through SWIFT's blockchain-based ledger. The payment settles as a stablecoin transfer on a permissioned chain operated by a consortium of banks.
-
-
-
-**Step 2:** The recipient converts the stablecoin to a different token on a public chain through a regulated bridge operated by a licensed CASP.
-
-
-
-**Step 3:** The tokens are sent to a mixer on the public chain and redistributed to multiple wallets.
-
-
-
-On the permissioned chain: only the participating banks see the transaction. Chain analysis tools have no access. The blockchain's consensus mechanism confirms the transaction is valid, but validity is not innocence. Every individual transaction in a laundering circuit is structurally valid.
-
-
-
-On the public chain: the bridge transaction and mixer interaction are visible but there is no link back to the originating bank payment because the permissioned chain is private.
-
-
-
-**With cross-sector federation:** The bank's F1 installation assesses the originating entity based on transaction patterns. The CASP's F1 installation assesses the bridge user based on rapid conversion and mixer interaction. The PSI matches the entity across both installations (same government ID at KYC). The CASP's escalation signal propagates to the bank. The bank now knows that the entity it processed a payment for has elevated risk at a crypto-asset service provider, without knowing the specific blockchain addresses or on-chain behaviour.
-
-
-
-**Without federation:** the bank sees a settled payment. The CASP sees a bridge user heading to a mixer. Neither connects the dots.
+Exchange participation is being retested with information available to each exchange at the decision time.
 
 
 
@@ -596,11 +520,7 @@ The regulatory observer receives aggregated metrics for supervisory purposes. It
 
 
 
-When a case requires law enforcement action, the F1 Engine generates an evidence package for each cross-sector alert. The package contains: investigation items compiled from the detecting institution's own data (no cross-institutional raw data); a cryptographic attestation transcript signed by each participating installation proving that correlated risk signals were detected at Time T across N institutions; and sector attribution indicating which sectors contributed signals without revealing the specific signals or raw data.
-
-
-
-When the FIU or law enforcement agency issues a warrant, each participating institution provides its own raw data under existing production order procedures. The attestation transcript proves the correlation existed and when it was detected. The prosecutor can demonstrate cross-sector criminal activity without the institutions ever having seen each other's files.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -640,11 +560,11 @@ The protocol governance is limited to: data format versioning, federation round 
 
 
 
-### 5.1 No Raw Data Sharing
+### 5.1 Bounded Information Sharing
 
 
 
-No institution shares raw customer data, transaction records, CDRs, or blockchain addresses. The federation shares binary escalation signals. Whether those signals and the underlying protocol traffic constitute personal data processing is unresolved, and no EU data protection authority has ruled on it.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -652,7 +572,7 @@ No institution shares raw customer data, transaction records, CDRs, or blockchai
 
 
 
-The ECDH-PSI protocol blinds all identity data before comparison. Neither institution reveals its customer list to the other. The intersection is computed on blinded points. The protocol is provably secure under standard cryptographic assumptions.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -660,7 +580,7 @@ The ECDH-PSI protocol blinds all identity data before comparison. Neither instit
 
 
 
-The [Data (Use and Access) Act 2025](https://assets.publishing.service.gov.uk/media/69aea29d917847c0a4c8999e/E03551200_Fraud_Strategy_2026__English__ELAY.pdf) establishes crime and fraud prevention as a lawful basis for data sharing, as referenced in the UK Government's Fraud Strategy 2026-2029. Under AMLR Article 75, cross-institutional information sharing for AML purposes is mandated.
+The [Data (Use and Access) Act 2025](https://assets.publishing.service.gov.uk/media/69aea29d917847c0a4c8999e/E03551200_Fraud_Strategy_2026__English__ELAY.pdf) establishes crime and fraud prevention as a lawful basis for data sharing, as referenced in the UK Government's Fraud Strategy 2026-2029. The Anti-Money Laundering Regulation (AMLR) Article 75 permits information sharing between obliged entities within a partnership, subject to its safeguards. It does not mandate that banks build sharing mechanisms.
 
 
 
@@ -676,15 +596,15 @@ The right to erasure under GDPR Article 17 is implemented through cryptographic 
 
 
 
-Escalation signals do not reveal the underlying reason for the escalation. A bank receiving a cross-sector signal learns "elevated risk from telecommunications" but not what specific activity caused it. The intersection privacy controls (Section 4.6) further limit processing to what is necessary and proportionate.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
-### 5.6 No Mass Surveillance
+### 5.6 Bounded Information Sharing
 
 
 
-The PSI operates on risk-filtered entity sets, not full customer bases. Only entities that exceed a local risk threshold enter the PSI. There is no central database. Each institution retains full sovereignty over its own data. The federation is a protocol, not a platform.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -708,7 +628,7 @@ There is an honest tension. Joining a federation implies that an institution's n
 
 
 
-The federation protocol shares an escalation signal, not an admission. The bank cannot determine what specific activity caused the elevation. The telco is demonstrating vigilance, not confessing failure.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -724,7 +644,7 @@ According to the [CFCA's 2023 Global Fraud Loss Survey](https://cfca.org/telecom
 
 
 
-### 6.4 No Additional Data Exposure
+### 6.4 Candidate Fields Under Validation
 
 
 
@@ -744,11 +664,11 @@ MiCA requires CASPs to implement transaction monitoring equivalent to traditiona
 
 
 
-### 7.2 Withdrawal check under test
+### 7.2 Exchange participation under retest
 
 
 
-Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.
+Exchange participation is being retested with information available to each exchange at the decision time.
 
 
 
@@ -756,7 +676,7 @@ Exchanges as members: we are testing a withdrawal check that asks the funding ba
 
 
 
-The FATF Travel Rule requires originator and beneficiary information to be transmitted with virtual asset transfers. The federation protocol can facilitate compliance by confirming entity identity matches without revealing underlying data.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -789,7 +709,7 @@ In the Netherlands, Transactie Monitoring Nederland (TMNL) pioneered joint trans
 
 
 
-ZQUAS is architected to process banking, telecommunications, and blockchain data in a single GPU-native detection pipeline, connected by a privacy-preserving federation protocol across all three sectors. In the competitive landscape reviewed, no current system has been identified that performs cross-institutional risk determination without disclosure across those sectors. The banking pipeline is built and tested on synthetic data at TRL 6. The federation protocol is production-ready. The cross-sector extensions are engineering milestones on an operational foundation.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -882,11 +802,7 @@ The regulatory response is converging. Singapore has implemented cross-sector li
 
 
 
-The technology to match this regulatory direction did not exist. A detection engine that operates across banking, telecommunications, and blockchain data, connected by a federation protocol that shares escalation signals without sharing raw data, running at the speed required for real-time intervention, governed by the institutions that use it rather than a central authority.
-
-
-
-We do not need to unmask the fraudster to protect the victim. By correlating the targeting signal at the telco with the transfer signal at the bank, we break the fraud lifecycle before the first payment settles.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

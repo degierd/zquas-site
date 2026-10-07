@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=12">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -219,7 +219,7 @@
             <g aria-label="Layer 2: Federation">
               <rect x="20" y="160" width="580" height="100" rx="6" fill="#131D28" stroke="#30363D" stroke-width="1.5"/>
               <text x="40" y="183" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#3FB950">LAYER 2: FEDERATION</text>
-              <text x="40" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Cross-bank detection, no data shared</text>
+              <text x="40" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Bounded cross-bank sharing</text>
               <!-- Bank A -->
               <rect x="80" y="210" width="120" height="38" rx="4" fill="#161B22" stroke="#3FB950" stroke-width="1"/>
               <text x="140" y="234" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Bank A</text>
@@ -244,7 +244,7 @@
             <g aria-label="Layer 3: Regulatory Interface">
               <rect x="20" y="40" width="580" height="100" rx="6" fill="#161D26" stroke="#30363D" stroke-width="1.5"/>
               <text x="40" y="63" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#BC8CFF">LAYER 3: REGULATORY INTERFACE</text>
-              <text x="40" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Supervisory access without data exposure</text>
+              <text x="40" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Supervisory access to signed records</text>
               <!-- SAR Gen -->
               <rect x="40" y="90" width="130" height="38" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
               <text x="105" y="114" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#C9D1D9" text-anchor="middle">SAR Generation</text>
@@ -266,7 +266,7 @@
               <rect x="620" y="160" width="168" height="100" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
               <text x="704" y="190" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#3FB950" text-anchor="middle">Cross-institution</text>
               <text x="704" y="208" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">ECDH-PSI matching</text>
-              <text x="704" y="222" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Zero raw data shared</text>
+              <text x="704" y="222" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Bounded sharing</text>
 
               <rect x="620" y="280" width="168" height="128" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
               <text x="704" y="310" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#58A6FF" text-anchor="middle">Bank data centre</text>
@@ -449,7 +449,7 @@
           </svg>
         </div>
 
-        <h3>Layer 2: Federation: Cross-Bank Detection Without Data Sharing</h3>
+        <h3>Layer 2: Federation: Bounded Information Sharing</h3>
 
         <p>The federation layer is where the architecture addresses the most fundamental limitation of current AML systems: single-institution blindness.</p>
 
@@ -459,21 +459,15 @@
 
         <p>These initiatives share a common architectural weakness. They relied on sending disguised customer data to a central organisation. This approach has two problems. First, the disguise (converting a national identifier to a scrambled code using a technique called hashing) can be reversed: any country's identifier space is finite. The Dutch social security number space contains approximately 20 million values. The UK's National Insurance number registry holds over 90 million. Scrambling all of them produces a reverse lookup table that breaks the disguise. Second, centralisation creates a single point of failure. If the central organisation's legal basis is challenged (as happened with TMNL), the entire system collapses.</p>
 
-        <p>The F1 Engine uses a different approach. Two banks discover which customers they share without either bank revealing its full customer list. Each bank takes its list of customer identifiers (like social security numbers or national insurance numbers) and transforms them into mathematical codes using advanced cryptography. These codes can be compared to find matches, but the original identifiers cannot be recovered from the codes. This is fundamentally different from the hashing approach used by previous initiatives. With hashing, an attacker who knows a country's finite identifier space can simply hash all values and build a reverse lookup table. With the cryptographic approach used by the F1 Engine, this attack does not work. There is no shortcut to reverse the transformation.</p>
-
-        <p>After shared customers are discovered, the banks exchange risk signals, not data. If Bank A's detection system determines that a customer's risk has increased, Bank A sends a simple message to Bank B: "This customer's risk went up. Reason: unusual incoming money." Bank B adds this information to its own assessment of that customer. Bank B never learns the details of the customer's transactions at Bank A, the identity of their counterparties, or which specific rule triggered the alert. Only the change in risk level and a general reason category.</p>
-
-        <p>This happens in pairs. In a network of five banks, each bank conducts a separate, private exchange with each of the other four banks. No bank sees the full picture. No central organisation holds all the data. The detection of a criminal network spanning three banks emerges from the combination of local decisions at each bank, informed by risk signals from direct partners. Each bank sees one piece. The picture forms without anyone holding the full image.</p>
-
-        <p>For regulators reviewing this architecture: the privacy guarantee is not a claim. It is a mathematical property of the protocol. Each exchange between two banks reveals only the customers they share and numerical risk scores. The European Data Protection Supervisor's test for whether data counts as truly anonymised is satisfied with stronger margins than any approach based on hashing identifiers.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p>Each risk signal carries a category label explaining why the score changed (for example: "unusual inbound flow pattern" or "structuring behaviour detected"). The receiving bank can verify, using the cryptographic audit trail, that the signal was computed according to mutually agreed policies. This is not a black-box score passing between banks. It is a verifiable, auditable, explainable signal.</p>
 
         <p>The federation does not require every bank in the country to participate. It operates between pairs of banks. Two banks with a legal agreement can begin exchanging risk signals immediately. The detection improves with each additional bank that joins, but it produces results from the very first pair. The legal framework for this type of information sharing between banks is being developed under AMLR Article 75. The F1 Engine provides the technical mechanism that this legal framework requires.</p>
 
-        <h3>Layer 3: Regulatory Interface: Supervisory Access Without Data Exposure</h3>
+        <h3>Layer 3: Regulatory Interface: Signed Records</h3>
 
-        <p>The final layer provides the interface between the detection system and regulatory supervisors. Automated generation of Suspicious Activity Reports from detection results. A complete audit trail that allows supervisors to verify that a detection decision was computed correctly without accessing the underlying customer data. Cryptographic provenance that proves which policies were evaluated, on which data, at which time, without revealing the data itself.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p>AMLR Article 75 permits information sharing between obliged entities within a partnership, subject to its safeguards. It does not mandate that banks build sharing mechanisms. Whether the threshold output of this protocol constitutes information sharing for Article 75 purposes is unresolved, and resolving it with the competent authorities is a stated objective. The federation protocol described in Layer 2, combined with a policy-based access control system that governs who can see what at each institutional boundary, is designed to operate inside that permission on either reading.</p>
 
@@ -543,7 +537,7 @@
 
         <p>Any detection system is only as good as the data it is tested against. A system that catches every criminal in a controlled test but fails against real criminal patterns provides false confidence.</p>
 
-        <p>The F1 Engine includes a simulation environment (Financial Crime Network Simulator) that generates synthetic banking populations with embedded criminal networks. The simulator produces ground truth: it knows exactly which entities are criminals, which network they belong to, and which typology they use. This enables closed-loop testing. Run a simulation, see the scorecard, verify that every criminal was detected.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p>But synthetic data has an obvious weakness: it might not reflect reality. If the synthetic transactions do not resemble real bank transactions, the detection thresholds calibrated against synthetic data will fail in production.</p>
 
@@ -553,11 +547,11 @@
 
         <p>Eight criminal typologies are supported: trade-based laundering, mule networks, professional laundering, smurfing and structuring, correspondent banking abuse, dormant account exploitation, business front operations, and property market laundering. Each typology can be configured at difficulty levels 1 through 5, from amateur operations with obvious patterns to professional operations designed to evade detection.</p>
 
-        <p>The engine also includes an Adversarial Threshold Optimizer that automatically discovers optimal detection thresholds. Instead of a compliance officer manually deciding that "3 transactions per day is suspicious," the optimizer evaluates millions of threshold configurations against the simulated population and produces a mathematically verified set of optimal trade-offs between detection rate and false positive rate. The compliance officer does not guess. They choose a point on a curve that has been validated against adversarial criminal behaviour across multiple population seeds, difficulty levels, and economic conditions. No other AML system provides this capability.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p>Detection results depend on the test population and the pattern evaluated. The published results use synthetic data and do not establish a real-world detection rate. See the homepage for the specific network tests and their limitations.</p>
 
-        <p>An important caveat: this result is measured against synthetic populations where the system knows exactly who the criminals are, because the simulator created them. In the real world, criminals are adaptive. They change their behaviour to avoid detection. Production detection rates will be lower than simulation results. This is true for every detection system ever built. The simulator's purpose is not to claim perfection. It is to provide a controlled environment for continuous calibration: run the simulation, measure what was missed, adjust the detection thresholds, run again. This feedback loop does not exist in systems that rely solely on production data, where you never know what you missed.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <h2>7. Regulatory Alignment</h2>
 
@@ -569,9 +563,7 @@
 
         <p><strong>AMLD6</strong> requires enhanced due diligence and beneficial ownership identification. The structural detection layer identifies shell company structures and complex ownership networks, and the federation layer reveals cross-institutional ownership patterns that no single bank can see alone.</p>
 
-        <p><strong>GDPR and European data protection guidance</strong> require that data processing minimises exposure. The federation protocol exchanges only mathematical codes (not customer names or account numbers) and numerical risk scores (not transaction details). The access control system restricts what each operator can see based on their role. The raw mathematical outputs from the cross-bank matching process are never shown to human analysts.</p>
-
-        <p><strong>The EU AI Act</strong> requires that AI systems used in high-impact decisions can be explained and overseen by humans. The Operator Console provides a human review step for every alert. Compliance policies are written in plain language that a compliance officer can read and understand, not hidden inside a machine learning model. Every detection decision carries a full audit trail showing exactly which rules fired and why.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p><strong>DORA</strong> (Digital Operational Resilience Act) requires operational resilience for critical financial infrastructure. The system runs entirely on-premise, within the bank's own network. There is no cloud dependency.</p>
 
@@ -603,7 +595,7 @@
 
         <p>The downstream consequence is de-risking. When a bank's monitoring system is inaccurate, the bank responds by closing the accounts of entire categories of customers deemed too expensive to monitor. Students, recent immigrants, small businesses in "high-risk" postcodes, money transfer operators serving diaspora communities. These groups lose access to the banking system not because they are criminals, but because the detection technology cannot distinguish them from criminals efficiently.</p>
 
-        <p>A system that finds every criminal in a test population and simultaneously reduces false alarms directly addresses this problem. By detecting actual criminals with precision, the system eliminates the pressure to de-risk entire populations. Innocent people stay in the financial system. The bank meets its compliance obligations without punishing its customers for the limitations of its technology.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p>There is a second social dimension. Money laundering networks exploit vulnerable people as mules, often students or recent immigrants recruited through social media with promises of easy money. These individuals face criminal prosecution when the network is eventually discovered. By detecting and disrupting mule networks in real-time, the system breaks the economic model that criminal organisations use to recruit vulnerable individuals. Faster detection means fewer people are recruited into criminal activity before the network is dismantled.</p>
 
@@ -613,7 +605,7 @@
 
         <p>This is a governance problem that is about to become a legal problem. The EU AI Act requires explainability for AI systems used in high-impact decisions. AML detection affects people's access to financial services. A system that cannot explain why it flagged an individual may not survive regulatory scrutiny under the AI Act.</p>
 
-        <p>The ZQUAS architecture takes a different approach. The federation protocol uses elliptic curve cryptography, not probabilistic AI, for its cross-institutional detection. The bank can prove to a regulator, mathematically, exactly why a risk score changed, which policies evaluated, which data was processed, at what time, without ever exposing private customer data. The audit trail is not a log file. It is a cryptographic proof.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p>The compliance policies themselves are written in a human-readable policy language (CPL). A compliance officer can read the policy that triggered an alert and understand, in plain language, what condition was met. This is not possible with a machine learning model. The same policy runs identically across the entire architecture, creating a single version of truth.</p>
 
@@ -680,7 +672,7 @@
               <text x="600" y="74" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#BC8CFF">GOVERNANCE</text>
               <text x="560" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9">Full transparency</text>
               <text x="560" y="135" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Cryptographic audit trail on</text>
-              <text x="560" y="150" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">every detection decision</text>
+              <text x="560" y="150" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">signed decision records</text>
               <line x1="560" y1="165" x2="760" y2="165" stroke="#30363D" stroke-width="0.5"/>
               <text x="560" y="190" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9">Human-readable policies</text>
               <text x="560" y="208" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">CPL: compliance officers</text>
@@ -715,7 +707,7 @@
 
         <p>From a bare Windows installation to a running detection platform with a full Operator Console accessible in the web browser: one day. One person. No external dependencies, no cloud services, no installation consultants.</p>
 
-        <p>The engine ran a simulation: 1,000 entities across five Dutch banks, with embedded criminal networks. Detection result: every criminal found. Zero missed. The Operator Console displayed the full scorecard, the criminal network structure, alert details, and the investigative workflow. On a laptop that costs less than a dinner at a Michelin-starred restaurant.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p>This portability demonstrates that the minimum hardware threshold for institutional-grade AML detection has dropped to commodity hardware. A regional bank, a credit union, a payment service provider, or a crypto exchange can deploy the same detection capability that a Tier 1 bank runs in its data centre. The barrier to entry is no longer technology. It is decision.</p>
 
@@ -966,7 +958,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>Bounded Compliance on an Unbounded Platform.<br>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">

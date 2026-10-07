@@ -156,13 +156,7 @@ Alert fatigue is not a morale issue. It is a detection failure. The false positi
 
 
 
-            This is the problem ZQUAS is built to solve, and the entire point is to solve it without that central database. Two institutions can compute the overlap between their entities and signals without either revealing its underlying customer data, using private set intersection over elliptic-curve Diffie-Hellman (ECDH-PSI). Joint analysis across several parties runs as secure multi-party computation. In both cases the raw data never leaves the institution that holds it.
-
-
-
-
-            Only cryptographically protected values ever cross an institutional boundary, and no central platform holds anyone's records. It is not the pooled model that earlier consortia moved away from, and it is not the prohibitive overhead of fully homomorphic encryption. It is private set intersection and multi-party computation, run peer to peer, with GPU acceleration used to reduce the computational cost of the cryptography and the detection itself.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -171,8 +165,7 @@ Alert fatigue is not a morale issue. It is a detection failure. The false positi
 
 
 
-            The result is the one thing tuning, modelling, and single-bank graphs cannot provide: network context that is substantially harder for a criminal to manipulate by looking normal at any single bank, delivered without a central store of pooled data. This is not a complete solution, and it does not pretend to be. A criminal who deliberately spreads activity through institutions or jurisdictions outside the participating network stays only partially visible. What it removes is the option of hiding in plain sight across the banks that do take part.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -181,8 +174,7 @@ Alert fatigue is not a morale issue. It is a detection failure. The false positi
 
 
 
-            See how the [architecture](architecture.html) resolves cross-institutional context without pooling data, or follow [the full detection flow from transaction to SAR](use-case.html).
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
             Danny de Gier

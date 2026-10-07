@@ -47,7 +47,7 @@
 <id>https://zquas.ai/article-beyond-banking.html</id>
 <published>2026-04-15T09:00:00+00:00</published>
 <updated>2026-04-15T09:00:00+00:00</updated>
-<summary type="text">A single detection engine that correlates risk signals across banks, telecommunications operators, and digital asset platforms without sharing raw data between institutions. The same code, the same cryptographic protocols, the same GPU-native detection pipeline, applied to every regulated sector where financial crime operates.</summary>
+<summary type="text">The prototype supports bounded information sharing and signed decision records under the stated trust model.</summary>
 </entry>
 <entry>
 <title>What Article 75 Was Afraid to Permit</title>
@@ -55,7 +55,7 @@
 <id>https://zquas.ai/article-75.html</id>
 <published>2026-03-15T09:00:00+00:00</published>
 <updated>2026-03-15T09:00:00+00:00</updated>
-<summary type="text">AMLR Article 75 restricts cross-institutional data sharing to high-risk customers. The criminals who are hardest to catch are the ones who stay low-risk at every bank. Multi-Party Computation offers a route through: federation in which no raw or directly identifying customer data leaves the institution. The evidence, the legal argument, and the path to a pilot.</summary>
+<summary type="text">The prototype supports bounded information sharing and signed decision records under the stated trust model.</summary>
 </entry>
 <entry>
 <title>From Edge to Federation: A Unified Architecture for Real-Time Financial Crime Detection</title>
@@ -63,7 +63,7 @@
 <id>https://zquas.ai/article-edge-to-federation.html</id>
 <published>2026-03-15T09:00:00+00:00</published>
 <updated>2026-03-15T09:00:00+00:00</updated>
-<summary type="text">A single detection engine that replaces overnight batch processing with continuous real-time monitoring. Three layers, one binary. Institutional real-time monitoring, cross-bank federation without data sharing, and regulatory interface. Three use cases, the ESG case, and the regulatory alignment map.</summary>
+<summary type="text">The prototype supports bounded information sharing and signed decision records under the stated trust model.</summary>
 </entry>
 <entry>
 <title>The AML Industry Has Never Proven Detection Works. We Built a Way to Measure It.</title>

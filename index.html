@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZQUAS: Criminals use many banks. Now banks can act as one.</title>
-    <meta name="description" content="ZQUAS lets banks catch scam payments and mule accounts together, without pooling customer data. TRL 6, synthetic data only, no production deployments.">
+    <meta name="description" content="The prototype supports bounded information sharing and signed decision records under the stated trust model.">
     <meta property="og:title" content="ZQUAS: Criminals use many banks. Now banks can act as one.">
-    <meta property="og:description" content="ZQUAS lets banks catch scam payments and mule accounts together, without pooling customer data. TRL 6, synthetic data only, no production deployments.">
+    <meta property="og:description" content="The prototype supports bounded information sharing and signed decision records under the stated trust model.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zquas.ai">
     <meta property="og:image" content="https://zquas.ai/og-image.png">
@@ -31,7 +31,7 @@
     <link rel="canonical" href="https://zquas.ai">
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=12">
     <style>
         #zquas-story { padding-top:65px; background:#0a0b0f; }
         #zquas-story .story-fallback { min-height:calc(100svh - 65px); max-width:none; margin:0; padding:12px 24px 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; color:#a1a9bf; }
@@ -44,39 +44,39 @@
     </style>
     <link rel="preload" as="image" href="story-assets/film/poster.jpg" media="(min-width:641px), (orientation:landscape)">
     <link rel="preload" as="image" href="story-assets/film/poster-portrait.jpg" media="(max-width:640px) and (orientation:portrait)">
-    <link rel="stylesheet" href="story-assets/story.css?v=8">
+    <link rel="stylesheet" href="story-assets/story.css?v=9">
     <script src="config.js?v=5"></script>
-    <script src="story-assets/story.js?v=9" defer></script>
+    <script src="story-assets/story.js?v=10" defer></script>
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "ZQUAS",
-        "legalName": "ZQUAS B.V.",
-        "url": "https://zquas.ai",
-        "logo": "https://zquas.ai/og-image.png",
-        "description": "ZQUAS lets banks catch scam payments and mule accounts together without pooling customer data. It is built on a GPU governance engine that applies an institution's rules to decisions made by automated systems and AI agents.",
-        "founder": {
-            "@type": "Person",
-            "name": "Danny de Gier",
-            "jobTitle": "Founder & Engineer",
-            "url": "https://www.linkedin.com/in/danny-de-gier-prof-pgdip-fcc/"
-        },
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Zwolle",
-            "addressCountry": "NL"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "info@zquas.ai",
-            "contactType": "sales"
-        },
-        "sameAs": [
-            "https://www.linkedin.com/in/danny-de-gier-prof-pgdip-fcc/"
-        ]
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ZQUAS",
+  "legalName": "ZQUAS B.V.",
+  "url": "https://zquas.ai",
+  "logo": "https://zquas.ai/og-image.png",
+  "description": "The prototype supports bounded information sharing and signed decision records under the stated trust model.",
+  "founder": {
+    "@type": "Person",
+    "name": "Danny de Gier",
+    "jobTitle": "Founder & Engineer",
+    "url": "https://www.linkedin.com/in/danny-de-gier-prof-pgdip-fcc/"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Zwolle",
+    "addressCountry": "NL"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "info@zquas.ai",
+    "contactType": "sales"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/danny-de-gier-prof-pgdip-fcc/"
+  ]
+}
+</script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -100,45 +100,45 @@
 }
     </script>
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is ZQUAS?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "ZQUAS is a network that lets banks catch scam payments and mule accounts together, without pooling customer data. The bank that holds the receiving account checks the payments coming into it. One confirmed scam report protects every member. It is built on a GPU governance engine that applies an institution's rules to automated decisions."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What problem does ZQUAS address?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "UK victims lost £576.4 million to APP scams in 2025, up 19%, across 248,070 cases (UK Finance, 2026). One mule account often collects from victims at several banks, and each bank sees only its own piece. ZQUAS lets banks act on one confirmed report together without exchanging customer files."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What has ZQUAS shown?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "On synthetic data, in a world of 1,000,000 adults at the UK scam rate, about half of scam payments were reviewed with the network, against about 1 in 7 for each bank alone, with every limit held. Up to 540 simulated bank installations ran together, and 99 in 100 decisions took under 10 ms. These are not real-world detection rates."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Is ZQUAS production-ready?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "No. Readiness is TRL 6: an integrated prototype demonstrated in a controlled relevant environment. All validation to date is on synthetic data. There are no production deployments, no live counterparty data, and security is semi-honest only. ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results."
-                }
-            }
-        ]
+      "@type": "Question",
+      "name": "What is ZQUAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The prototype supports bounded information sharing and signed decision records under the stated trust model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What problem does ZQUAS address?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UK victims lost £576.4 million to APP scams in 2025, up 19%, across 248,070 cases (UK Finance, 2026). One mule account often collects from victims at several banks, and each bank sees only its own piece. ZQUAS lets banks act on one confirmed report together without exchanging customer files."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What has ZQUAS shown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An offline retrospective study identified payments for review in one synthetic world. It did not measure executed prevention under a live review queue. The reported timing measures the warm decision path, not cold arrival-to-decision delay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is ZQUAS production-ready?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Readiness is TRL 6: an integrated prototype demonstrated in a controlled relevant environment. All validation to date is on synthetic data. There are no production deployments, no live counterparty data, and security is semi-honest only. ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results."
+      }
     }
-    </script>
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -213,7 +213,7 @@
                 <div class="tenant-card-head">
                     <h3>Crypto exchanges</h3>
                 </div>
-                <p>Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.</p>
+                <p>Exchange participation is being retested with information available to each exchange at the decision time.</p>
                 <a href="contact.html?audience=exchanges" class="hero-cta-primary">Join the pilot</a>
             </div>
             <div class="tenant-card">
@@ -229,38 +229,30 @@
 
 <section class="home-evidence" id="results">
     <div class="container">
-        <div class="section-label">What we have shown</div>
-        <h2 class="section-title">Results on synthetic data</h2>
+        <div class="section-label">Evidence and limits</div>
+        <h2 class="section-title">Studies on synthetic data</h2>
         <p class="section-desc">
-            Every result on this page comes from our own tests on synthetic data. None of them is a real-world detection rate.
+            An offline retrospective study identified payments for review in one synthetic world. It did not measure executed prevention under a live review queue.
         </p>
         <div class="metric-grid">
-            <div class="metric-card">
-                <span class="metric-val">About 1 in 2</span>
-                <span class="metric-label">Scam payments reviewed with the network</span>
-                <span class="metric-tag">Synthetic data. In our model.</span>
-                <details>
-                    <summary>Read the test detail</summary>
-                <p>Our synthetic world has 1,000,000 adults at the UK scam rate. Each bank's own fraud model alone caught about 1 in 7. When we removed our generator's easiest clue, the network figure fell to about 1 in 3. Every limit held, and fewer than 1 genuine payment in 10,000 was reviewed.</p>
-                </details>
-            </div>
             <div class="metric-card">
                 <span class="metric-val">Testing</span>
                 <span class="metric-label">Withdrawal check</span>
                 <span class="metric-tag">Test in progress. No result published.</span>
-                <p>Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.</p>
+                <p>Exchange participation is being retested with information available to each exchange at the decision time.</p>
             </div>
             <div class="metric-card">
                 <span class="metric-val">99 in 100</span>
-                <span class="metric-label">Decisions in under 10 ms</span>
+                <span class="metric-label">Warm decisions in under 10 ms</span>
                 <span class="metric-tag">Our test. Synthetic data.</span>
+                <p>The reported timing measures the warm decision path, not cold arrival-to-decision delay.</p>
                 <details>
                     <summary>Read the test detail</summary>
                 <p>Up to 540 simulated bank installations ran together on nine cloud GPUs in one cloud zone.</p>
                 </details>
             </div>
         </div>
-        <p class="section-note">Limits in the model: at most 1 payment in 1,000 held and 1 in 500 reviewed. Network signals add reviews, never automatic holds. Synthetic data throughout, not real-world detection rates. Position today: TRL 6, no production deployments, no live counterparty data.</p>
+        <p class="section-note">The prototype supports bounded information sharing and signed decision records under the stated trust model. Synthetic data. TRL 6. No production deployments or live counterparty data.</p>
         <div class="evidence-links">
             <a href="zquas-onepager.pdf">Download the briefing <span aria-hidden="true">↗</span></a>
             <a href="benchmark.html">Engine benchmarks <span aria-hidden="true">↗</span></a>
@@ -276,7 +268,7 @@
         </div>
         <div>
         <p class="section-desc">
-            Every ZQUAS decision runs on the same engine: it applies an institution's rules to decisions made by automated systems and AI agents, at GPU speed, and records why each decision was made so a supervisor can check it. Financial crime is where we start. The same engine can govern decisions in other industries where automated decisions need rules, limits and an audit trail.
+            The prototype supports bounded information sharing and signed decision records under the stated trust model. Financial crime is where we start. The same engine can govern decisions in other industries where automated decisions need rules, limits and an audit trail.
         </p>
         <a href="platform.html" class="hero-cta-secondary engine-link">The platform &rarr;</a>
         </div>
@@ -290,7 +282,7 @@
 <section>
     <div class="container">
         <div class="section-label">How it works</div>
-        <h2 class="section-title">The receiving bank checks. One report protects every member.</h2>
+        <h2 class="section-title">Bounded information sharing and signed decision records.</h2>
         <div class="icon-grid">
             <div class="icon-card">
                 <span class="card-icon step-num">1</span>
@@ -299,13 +291,13 @@
             </div>
             <div class="icon-card">
                 <span class="card-icon step-num">2</span>
-                <h3>One confirmed report protects every member</h3>
-                <p>When a victim reports a scam, that confirmed report is shared with every member. The mule account is flagged for review at every bank in the network. The network only ever adds reviews. It never adds automatic holds.</p>
+                <h3>Bounded sharing of confirmed reports</h3>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
             </div>
             <div class="icon-card">
                 <span class="card-icon step-num">3</span>
-                <h3>No customer files leave a bank</h3>
-                <p>No customer files are exchanged, and no raw or directly identifying customer data leaves the institution. Alerts carry proofs that the supervisor can verify. Security today is semi-honest: it assumes each member follows the protocol.</p>
+                <h3>Bounded information sharing</h3>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
             </div>
         </div>
     </div>
@@ -338,7 +330,7 @@
             </div>
         </div>
         <p class="source-line">Source: UK Finance, Annual Fraud Report 2026 (figures for 2025).</p>
-        <p class="fact-line">Under the UK's mandatory reimbursement rules, in force since October 2024, the sending bank and the receiving bank split each reimbursement 50:50, up to &pound;85,000 a claim.</p>
+        <p class="fact-line">Under the UK's mandatory reimbursement rules, in force since October 2024, the sending bank and the receiving bank split eligible reimbursement under the applicable UK APP rules 50:50, up to &pound;85,000 a claim.</p>
         <p class="source-line">Source: Payment Systems Regulator, APP reimbursement rules.</p>
     </div>
 </section>

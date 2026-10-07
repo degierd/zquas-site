@@ -1,6 +1,6 @@
 # For Regulators
 
-> ZQUAS produces cryptographic proof of every compliance decision. Supervisory teams verify outcomes independently, without relying on the running production engine or its internal state.
+> The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 Source: https://zquas.ai/regulators.html
 Site: https://zquas.ai
@@ -13,8 +13,7 @@ For Supervisory Authorities
 
 
 
-            ZQUAS produces cryptographic proof of every compliance decision. Your supervisory team verifies outcomes independently, without relying on the running production engine or its internal state, and without seeing underlying transaction data.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
         Programmes and sandboxes
 
@@ -79,8 +78,7 @@ The EU AI Act may classify AI-based AML risk profiling as high-risk under Annex 
 
 
 
-            Every batch of compliance decisions produces a sealed proof bundle. The bundle is self-contained, tamper-evident, and independently verifiable.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -202,7 +200,7 @@ Result: VALID
 
 
 
-Articles 9, 11, 12, 14. Risk management supported by built-in adversarial testing framework that continuously evaluates system robustness (Article 9). Technical documentation via sealed evidence bundles (Article 11). Record-keeping through cryptographic proof bundles with full decision chain traceability (Article 12). Human oversight enforced by constitutional warrant model where no automated action executes without authorization (Article 14).
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -262,7 +260,7 @@ Technology Risk Management guidelines. Applicable to financial institutions unde
 
 
 
-Data protection by design. Privacy-preserving MPC architecture eliminates cross-institutional data exposure.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -272,7 +270,7 @@ Data protection by design. Privacy-preserving MPC architecture eliminates cross-
 
 
 
-Digital operational resilience. ICT risk management, incident reporting, and third-party oversight. Automated test coverage across the codebase. Ed25519-signed audit trail for every compliance decision. Binary self-verification and build attestation with embedded cryptographic hashes for runtime integrity verification.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -302,7 +300,7 @@ Instead of periodic examinations with sampled reviews, regulators could receive 
 
 
 
-A proof bundle from one jurisdiction can be verified by another jurisdiction's examiner without data sharing or system access. The proof is self-contained. This simplifies supervisory cooperation under frameworks like the ECB's Single Supervisory Mechanism and emerging AMLA coordination requirements.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

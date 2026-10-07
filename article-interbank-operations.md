@@ -49,11 +49,7 @@ In a centralised model, joining is straightforward. The bank signs a data-sharin
 
 
 
-In a privacy-preserving model, joining looks different. The bank deploys a node on its own infrastructure. The node runs the compliance engine locally, processing the bank's own data against its own policy set. No data leaves the bank.
-
-
-
-The cross-institutional capability activates when the bank's node establishes an MPC connection with another bank's node. This connection doesn't transmit transaction data. It enables cryptographic comparison: the two nodes can jointly evaluate whether shared counterparties exhibit suspicious cross-bank patterns, without either node revealing its underlying transactions.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -89,7 +85,7 @@ Per-bank rules in a central platform create confidentiality issues. A bank's mon
 
 
 
-In a privacy-preserving model, each bank runs its own rules locally. There is no shared rule set. There is no central operator seeing anyone's configuration. The MPC layer computes cross-institutional risk indicators without knowing what rules either bank is running.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -193,7 +189,7 @@ The key difference is that the risk indicator is the same for all banks, so they
 
 
 
-If regulators want to understand the cross-institutional picture, the proof bundles from each bank's local monitoring can be verified independently. The MPC computation itself produces a separate attestation that can be verified without accessing either bank's data.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

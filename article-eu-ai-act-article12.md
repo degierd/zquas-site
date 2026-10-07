@@ -122,8 +122,7 @@ The EU AI Act may classify AI-based AML risk profiling as high-risk under Annex 
 
 
 
-            When every batch of compliance decisions produces a cryptographic proof bundle that includes: the policy set hash, the input data hash, the individual verdicts, a Merkle root over all verdicts, and an Ed25519 signature binding everything together, you have a complete, tamper-evident, structured record of every decision the system made.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -132,7 +131,7 @@ The EU AI Act may classify AI-based AML risk profiling as high-risk under Annex 
 
 
 
-            The records are tamper-evident by construction. Any modification to a verdict, a policy hash, or a timestamp would invalidate the cryptographic signature. You don't need to trust the logging infrastructure. The mathematics guarantee integrity.
+            The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

@@ -142,8 +142,7 @@ In 2019, five of the largest Dutch banks created Transaction Monitoring Netherla
 
 
 
-            MPC goes beyond the Article 75(4)(f) pseudonymisation requirement in technical terms: the intelligence is generated and no raw or directly identifying customer data leaves the originating institution. No EU data protection authority has ruled on the status of MPC protocol messages. Obtaining a formal assessment from a national data protection authority is a stated objective, not an accomplished fact.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

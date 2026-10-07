@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=12">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -138,12 +138,7 @@
         </p>
 
         <h2>A Different Architectural Premise</h2>
-        <p>
-            Centralised monitoring assumes you need to see the data to analyse it. But that's not actually true anymore. Secure multi-party computation (MPC) and zero-knowledge proofs let you run meaningful analysis across datasets that never leave their home institutions.
-        </p>
-        <p>
-            In practice, this means each bank keeps full control of its own data. No transaction records cross the perimeter. The system runs risk comparisons cryptographically. Bank A and Bank B can determine whether a shared counterparty shows suspicious patterns across both institutions, without either bank seeing the other's transactions.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <table class="comparison-table">
             <thead>
@@ -162,7 +157,7 @@
                 <tr>
                     <td><strong>Privacy exposure</strong></td>
                     <td>Full transaction visibility</td>
-                    <td>Zero raw data disclosure</td>
+                    <td>Bounded information sharing</td>
                 </tr>
                 <tr>
                     <td><strong>GDPR/AMLR compatibility</strong></td>
@@ -197,9 +192,7 @@
         <p>
             The part that matters most for regulators is auditability. Today, supervisors rely on log files, case management exports, and institutional self-reporting to assess whether monitoring systems actually work. That entire model runs on trust.
         </p>
-        <p>
-            A cryptographically attested architecture changes that. Every batch of compliance decisions produces a sealed evidence bundle, a proof that specific policies were applied to specific data and produced specific verdicts. A regulator can verify that proof with a standalone tool. No need to access the bank's systems. No need to trust the vendor's software. No need to see the underlying data.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p>
             That changes how supervision works in practice. Instead of asking "show me your monitoring reports" and spending weeks reviewing them, the regulator asks for the proof bundle and gets a clear answer: valid or invalid. The guesswork goes away.
         </p>
@@ -231,7 +224,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>Bounded Compliance on an Unbounded Platform.<br>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">

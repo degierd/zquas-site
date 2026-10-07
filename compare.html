@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=12">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -278,7 +278,7 @@
                         <td class="cap-label">Cross-Institutional Detection</td>
                         <td class="val-no">Not possible. Each institution operates in isolation.</td>
                         <td class="val-no">Not possible. Same data silo, better algorithms.</td>
-                        <td class="zquas-val">Privacy-preserving federation: ECDH-PSI + Garbled Circuits + OT. Banks jointly detect suspicious entities without sharing data. 3,052 ms per bilateral round at 100K entities per party, over a loopback development transport. Dual Ed25519 attestation per round.</td>
+                        <td class="zquas-val">The prototype supports bounded information sharing and signed decision records under the stated trust model.</td>
                     </tr>
                     <tr>
                         <td class="cap-label">Processing Speed</td>
@@ -290,19 +290,19 @@
                         <td class="cap-label">Governance Model</td>
                         <td>Configuration files. Change management committees. Months to update a rule.</td>
                         <td>Model governance. Bias testing, validation reports. Weeks to retrain and deploy.</td>
-                        <td class="zquas-val">Three-layer governance. Layer 1: formally verified execution core (immutable at runtime). Layer 2: certified rule schemas (versioned, validated). Layer 3: AI-generated content (every decision audited with reasoning). A governance validation layer sits between the rules and the AI, rejecting any proposal that violates the certified schema.</td>
+                        <td class="zquas-val">The prototype supports bounded information sharing and signed decision records under the stated trust model.</td>
                     </tr>
                     <tr>
                         <td class="cap-label">Audit Trail</td>
                         <td>Log files. Database records. Manually reviewed during examinations.</td>
                         <td>Log files plus model cards. Feature importance scores.</td>
-                        <td class="zquas-val">Cryptographic audit ledger. Every governance decision is recorded in a tamper-proof, cryptographically chained log. Ed25519 signatures. Blake3 integrity hashing. The audit trail is mathematically verifiable, not just reviewable.</td>
+                        <td class="zquas-val">The prototype supports bounded information sharing and signed decision records under the stated trust model.</td>
                     </tr>
                     <tr>
                         <td class="cap-label">Explainability</td>
                         <td>Rule X matched. Human analyst explains the context.</td>
                         <td>SHAP values. Feature importance. Partial dependence plots. Requires data science expertise to interpret.</td>
-                        <td class="zquas-val">Glass Box. Every decision carries a structured explanation of why it was made, what alternatives were considered, and which rules applied. Readable by compliance officers, not just data scientists.</td>
+                        <td class="zquas-val">The prototype supports bounded information sharing and signed decision records under the stated trust model.</td>
                     </tr>
                     <tr>
                         <td class="cap-label">Temporal Control</td>
@@ -332,7 +332,7 @@
                         <td class="cap-label">Privacy</td>
                         <td>Data centralisation. Access controls. Pseudonymisation.</td>
                         <td>Same as traditional, plus model access controls.</td>
-                        <td class="zquas-val">Multi-party computation under a semi-honest adversary model. No raw or directly identifying customer data leaves the institution. No EU data protection authority has yet ruled on the status of MPC protocol messages; obtaining a formal assessment from a national data protection authority is a stated objective.</td>
+                        <td class="zquas-val">The prototype supports bounded information sharing and signed decision records under the stated trust model.</td>
                     </tr>
                 </tbody>
             </table>
@@ -357,7 +357,7 @@
                 <div class="stat-label">synthetic data, no production deployments</div>
             </div>
         </div>
-        <p class="stats-note">The detection cycle figure is a median of three runs on NVIDIA RTX 5090, CUDA 13.1, Linux, against synthetic data. Every result signed.</p>
+        <p class="stats-note">The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
     </div>
 </section>
 
@@ -376,7 +376,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>Bounded Compliance on an Unbounded Platform.<br>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">

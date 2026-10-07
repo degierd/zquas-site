@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Banking: Cross-Sector Federated Detection for Financial Crime, Telecommunications Fraud, and Digital Asset Compliance | ZQUAS</title>
-    <meta name="description" content="A ZQUAS position paper. A single detection engine that correlates risk signals across banks, telecommunications operators, and digital asset platforms without sharing raw data between institutions. The same code, the same cryptographic protocols, the same GPU-native detection pipeline, applied to every regulated sector where financial crime operates.">
+    <meta name="description" content="The prototype supports bounded information sharing and signed decision records under the stated trust model.">
     <meta property="og:title" content="Beyond Banking: Cross-Sector Federated Detection | ZQUAS">
-    <meta property="og:description" content="A single detection engine that correlates risk signals across banks, telecommunications operators, and digital asset platforms without sharing raw data between institutions.">
+    <meta property="og:description" content="The prototype supports bounded information sharing and signed decision records under the stated trust model.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://zquas.ai/article-beyond-banking.html">
     <meta property="og:image" content="https://zquas.ai/og-image.png">
@@ -32,29 +32,29 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=12">
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Beyond Banking: Cross-Sector Federated Detection for Financial Crime, Telecommunications Fraud, and Digital Asset Compliance",
-        "description": "A single detection engine that correlates risk signals across banks, telecommunications operators, and digital asset platforms without sharing raw data between institutions.",
-        "datePublished": "2026-04-01",
-        "author": {
-            "@type": "Person",
-            "name": "Danny de Gier"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "ZQUAS",
-            "url": "https://zquas.ai"
-        },
-        "image": "https://zquas.ai/og-image.png",
-        "inLanguage": "en-GB",
-        "isAccessibleForFree": true,
-        "mainEntityOfPage": "https://zquas.ai/article-beyond-banking.html"
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Beyond Banking: Cross-Sector Federated Detection for Financial Crime, Telecommunications Fraud, and Digital Asset Compliance",
+  "description": "The prototype supports bounded information sharing and signed decision records under the stated trust model.",
+  "datePublished": "2026-04-01",
+  "author": {
+    "@type": "Person",
+    "name": "Danny de Gier"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ZQUAS",
+    "url": "https://zquas.ai"
+  },
+  "image": "https://zquas.ai/og-image.png",
+  "inLanguage": "en-GB",
+  "isAccessibleForFree": true,
+  "mainEntityOfPage": "https://zquas.ai/article-beyond-banking.html"
+}
+</script>
 
     <script type="application/ld+json">
     {
@@ -107,7 +107,7 @@
         <div class="article-meta">April 2026 &middot; Position Paper &middot; 30 min read</div>
         <p class="content-updated">Updated: 7 October 2026</p>
         <h1>Beyond Banking: Cross-Sector Federated Detection for Financial Crime, Telecommunications Fraud, and Digital Asset Compliance</h1>
-        <p class="lead">A single detection engine that correlates risk signals across banks, telecommunications operators, and digital asset platforms without sharing raw data between institutions. The same code, the same cryptographic protocols, the same GPU-native detection pipeline, applied to every regulated sector where financial crime operates.</p>
+        <p class="lead">The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p class="article-author"><em>Danny de Gier, Founder ZQUAS. 18 years financial crime compliance: Deutsche Bank, HSBC, RBS, ABN AMRO, ClearBank, Vivid Money. PGDip Financial Crime Compliance, University of Manchester.</em></p>
     </div>
 
@@ -199,19 +199,19 @@
 
         <p>The ZQUAS F1 Engine is a GPU-native financial crime detection engine of approximately 753,000 source lines excluding third-party code. Readiness is TRL 6: an integrated prototype demonstrated in a controlled relevant environment, validated on synthetic populations, with no production deployments.</p>
 
-        <h3>2.1 Banking Detection: Production-Ready</h3>
+        <h3>2.1 Banking Detection: Synthetic Evaluation</h3>
 
-        <p>The engine processes 500,000 entities in under 2 seconds with an alert lifecycle under 10 milliseconds. Total VRAM consumption is under 1 gigabyte. It runs on hardware ranging from a consumer-grade laptop GPU to data centre GPUs (A100, H100). The same binary, the same detection pipeline, different throughput.</p>
+        <p>The engine processes 500,000 entities in under 2 seconds with an alert lifecycle under 10 milliseconds. It runs on hardware ranging from a consumer-grade laptop GPU to data centre GPUs (A100, H100). The same binary, the same detection pipeline, different throughput.</p>
 
         <p>The detection pipeline evaluates five layers covering temporal analysis, structural graph analysis, behavioural profiling, corridor analysis, and flow path reconstruction. All five layers execute on GPU with over 100 compiled compliance policies evaluated by the GPU-native policy engine. Transaction processing, entity resolution, policy evaluation, alert lifecycle, case management, and regulatory reporting are all implemented.</p>
 
-        <h3>2.2 Bank-to-Bank Federation: Production-Ready</h3>
+        <h3>2.2 Bank-to-Bank Federation: Prototype</h3>
 
         <p>The federation protocol implements Elliptic Curve Diffie-Hellman Private Set Intersection (ECDH-PSI) for entity matching, bilateral escalation signal propagation, and cryptographic evidence attestation. Federation rounds complete in under 10 seconds per bilateral pair. The protocol has been validated across simulated multi-bank deployments.</p>
 
         <p>This is not a theoretical protocol. It is compiled code that runs, produces verifiable results, and has been tested across multiple simulated banking topologies.</p>
 
-        <h3>2.3 Financial Crime Network Simulator: Production-Ready</h3>
+        <h3>2.3 Financial Crime Network Simulator: Synthetic Evaluation</h3>
 
         <p>The F1 Engine includes a GPU-native simulation environment that generates synthetic banking populations with embedded criminal networks. 15 criminal typologies (8 AML, 7 APP fraud) generate realistic transaction data on GPU. The simulator is calibrated against published national statistics for three jurisdictions (Netherlands, United Kingdom, Germany). Over 300 tests pass with strict assertions.</p>
 
@@ -397,11 +397,7 @@
 
         <p>The ZQUAS F1 Engine operates on entities and relationships between entities. A bank customer who is also a mobile subscriber who is also a crypto exchange user is one entity with three institutional views. The detection pipeline evaluates risk based on the combined signal surface, not on any single institutional perspective.</p>
 
-        <p>At the federation layer, the engine treats all data sources uniformly: a sender, a receiver, a value, and a timestamp. This uniformity enables the same federation protocol to operate between a bank and a telco as between two banks.</p>
-
-        <p>This does not mean that all data sources are equally simple to process. Financial crime detection within a single sector depends on rich, sector-specific features. A banking installation analyses transaction narratives, merchant categories, and payment patterns. A telco installation analyses call patterns, SIM lifecycle events, and network behaviour. A crypto installation analyses wallet clustering, bridge usage, and mixer proximity. These sector-specific features produce entity-level risk assessments that are comparable across sectors through calibration (Section 4.7), even though the underlying feature sets are different.</p>
-
-        <p>The banking pipeline is built and tested on synthetic data at TRL 6. The telecommunications and blockchain pipelines are planned engineering milestones. The detection engine, federation protocol, and scoring infrastructure are already operational and data-agnostic. What remains is building the sector-specific ingestion adapters and tuning the detection parameters per data domain.</p>
+        <p>These are candidate fields for an availability and decision-time validation study. Their incremental value is not yet qualified.</p>
 
         <h3>4.2 The Four-Installation Federation</h3>
 
@@ -460,7 +456,7 @@
             <rect x="570" y="435" width="180" height="28" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
             <text x="660" y="454" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Detection + false positive rates</text>
             <rect x="570" y="470" width="180" height="28" rx="4" fill="#161B22" stroke="#30363D" stroke-width="1"/>
-            <text x="660" y="489" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">No entity-level data</text>
+            <text x="660" y="489" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#C9D1D9" text-anchor="middle">Bounded information</text>
 
             <!-- Centre: Federation Protocol -->
             <rect x="290" y="220" width="220" height="140" rx="8" fill="#131D28" stroke="#3FB950" stroke-width="2"/>
@@ -468,7 +464,7 @@
             <text x="400" y="275" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#C9D1D9" text-anchor="middle">ECDH-PSI entity matching</text>
             <text x="400" y="295" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#C9D1D9" text-anchor="middle">Binary escalation signals</text>
             <text x="400" y="315" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#C9D1D9" text-anchor="middle">Cryptographic attestation</text>
-            <text x="400" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Zero raw data crosses boundaries</text>
+            <text x="400" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">Bounded sharing</text>
 
             <!-- Connection lines -->
             <line x1="252" y1="150" x2="290" y2="260" stroke="#3FB950" stroke-width="1.5" stroke-dasharray="6 3"/>
@@ -497,7 +493,7 @@
 
         <p><strong>Installation Type 4: Regulatory Observer.</strong> The regulator connects as a read-only observer. It receives aggregated, anonymised detection metrics without accessing any institution's raw data or entity-level identifiers. It sees: detection rates, alert volumes, federation participation rates, cross-sector signal contribution, and crucially, false positive rates alongside detection rates. This dual reporting (precision and recall, not just detection volume) prevents a "race to the top" where institutions over-calibrate their detection to avoid appearing as regulatory laggards, generating false positive explosions and wrongful de-risking of innocent customers. The observer provides the data for regulators to measure detection quality, not just quantity.</p>
 
-        <p>The observer does not receive entity-level data and cannot be used for prosecution. Evidence for law enforcement is handled through a separate mechanism described in Section 4.10.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <h3>4.3 Cross-Sector Entity Matching</h3>
 
@@ -507,7 +503,7 @@
 
         <p>In the target launch jurisdictions, a single government identifier serves as the natural join key across all regulated sectors. In the Netherlands, the BSN (Burgerservicenummer) is mandatory at banks (Wwft), telcos (SIM registration), and crypto exchanges (Wwft). In the United Kingdom, the National Insurance number and passport serve equivalent functions across regulated institutions.</p>
 
-        <p>The F1 Engine uses ECDH-PSI to discover common entities without revealing the underlying identity data. Institution A blinds its set of identity hashes. Institution B blinds its set. The protocol produces the intersection: entities present in both sets. Neither institution learns anything about entities that are not in the intersection. The protocol is GPU-accelerated and provably secure under standard cryptographic assumptions.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <!-- Two-Tier Entity Matching Diagram -->
         <div class="diagram-container" style="max-width: 800px; margin: 2.5rem auto;">
@@ -540,10 +536,10 @@
             <!-- Tier 2 -->
             <rect x="30" y="200" width="740" height="150" rx="6" fill="#101820" stroke="#D29922" stroke-width="1.5"/>
             <text x="50" y="226" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#D29922">TIER 2: Phone Number Hash (E.164)</text>
-            <text x="50" y="246" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Primary mechanism for APP fraud detection. Links the victim across telco and bank.</text>
+            <text x="50" y="246" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Candidate phone field</text>
 
             <rect x="50" y="262" width="220" height="70" rx="4" fill="#161B22" stroke="#D29922" stroke-width="1"/>
-            <text x="160" y="284" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">Telco: subscriber targeted</text>
+            <text x="160" y="284" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="middle">Candidate telco signal</text>
             <text x="160" y="300" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#8B949E" text-anchor="middle">H(+31612345678)</text>
             <text x="160" y="318" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#F85149" text-anchor="middle">Scam pattern detected</text>
 
@@ -557,7 +553,7 @@
             <text x="640" y="318" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#3FB950" text-anchor="middle">Signal received: hold payment</text>
 
             <!-- Key insight -->
-            <text x="400" y="372" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#C9D1D9" text-anchor="middle">The architecture does not need to unmask the fraudster to protect the victim.</text>
+            <text x="400" y="372" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#C9D1D9" text-anchor="middle">Candidate fields under validation</text>
 
             <!-- Brand -->
             <text x="780" y="378" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#58A6FF" text-anchor="end" opacity="0.6">ZQUAS<tspan fill="#4a7dff">.</tspan></text>
@@ -568,7 +564,7 @@
 
         <p><strong>Tier 1: Government-issued ID hash.</strong> Exact match after normalisation. Highest confidence. Available at all regulated institutions. This is the primary matching mechanism for AML detection, where the same person launders money across institutions using the same identity.</p>
 
-        <p><strong>Tier 2: Phone number hash in E.164 format.</strong> This is the primary matching mechanism for APP fraud detection. In APP fraud, the fraudster and the mule are typically different people. The fraudster uses a burner SIM. The victim sends money to a mule account at a different bank. Government ID matching between the telco and the bank will not link them because they are different individuals. The link is the victim: the same person who is both a telco subscriber being targeted by a scam pattern and a bank customer initiating an unusual payment. Phone number matching identifies the victim across both sectors, enabling the telco's "this subscriber is being targeted" signal to reach the bank before the payment settles.</p>
+        <p>These are candidate fields for an availability and decision-time validation study. Their incremental value is not yet qualified.</p>
 
         <h3>4.3.1 ID Fragmentation in Multi-Document Jurisdictions</h3>
 
@@ -584,7 +580,7 @@
 
         <p>The solution is deterministic normalisation before hashing, not fuzzy matching inside the cryptographic protocol. Each institution applies the same normalisation rules to its own data before blinding. The rules include case normalisation, punctuation and whitespace stripping, abbreviation standardisation, and ISO formatting of document numbers and phone numbers (E.164). The normalised output is concatenated into a canonical string and hashed before entering the PSI protocol.</p>
 
-        <p>This pipeline runs locally at each institution before any data enters the cryptographic protocol. It is deterministic: the same input always produces the same canonical form. In jurisdictions with standardised address formats (Dutch postcode plus house number, UK postcode plus building number), this achieves near-perfect matching accuracy on the primary government ID identifier, where formatting variation is minimal (BSN is a 9-digit number, NI number follows a fixed alphanumeric pattern).</p>
+        <p>These are candidate fields for an availability and decision-time validation study. Their incremental value is not yet qualified.</p>
 
         <p>The current implementation applies deterministic canonical hashing to entity identifiers. The full normalisation pipeline with jurisdiction-specific abbreviation mapping and document formatting is specified and planned for Phase 2.</p>
 
@@ -594,19 +590,19 @@
 
         <p>Each installation computes local risk assessments for its entities based on its own data and its own detection pipeline. When an installation's detection pipeline determines that an entity warrants cross-institutional attention, an escalation signal propagates to matched peers. The receiving installation incorporates this cross-sector signal as a risk elevation in its own assessment.</p>
 
-        <p>No raw transactions, no CDRs, no blockchain addresses, no customer names cross institutional boundaries. The federation shares only the escalation decision, not the underlying data or reasoning.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <div class="callout">
-            <p>In the current production architecture, federation signals are binary escalations: escalated or not escalated. Unlike quantitative risk scores, binary signals are mathematically immune to threshold drift. An escalation is either propagated or it is not. There is no intermediate value that noise, rounding, or miscalibration can degrade. This design ensures that no institution can claim a signal was "too ambiguous to act on."</p>
+            <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
 
         <h3>4.5.1 Batched Federation Rounds</h3>
 
-        <p>Escalation signals are not propagated per-event. They are batched into federation rounds that aggregate multiple events. If a telco detects burst messaging at 09:42, a SIM swap at 10:15, and a suspicious CDR pattern at 11:30, the receiving bank sees a single aggregated signal at the next federation round. The bank cannot determine which specific event triggered the escalation or at what time it occurred. This decoupling of signal from event timing defeats inference attacks where a receiving institution attempts to reconstruct the sender's private data from timing correlations.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <h3>4.5.2 Differential Privacy (Planned)</h3>
 
-        <p>Phase 2 will introduce quantitative risk deltas alongside binary escalation signals, enabling richer cross-sector intelligence. Each delta will include calibrated noise providing formal differential privacy guarantees. The privacy budget will be configurable per federation agreement.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p>The differential privacy noise will apply to the inter-institutional signal, not to the receiving institution's internal assessment. The receiving institution will combine the noised cross-sector indicator with its own full-resolution local data. A compliance officer at the receiving bank sees their own bank's complete transaction history plus a cross-sector risk elevation. Their legal duty to act under the UK's APP regime or Singapore's SRF is assessed on this combined picture, not on any single noised input. The local action threshold remains under the sole control of the receiving institution. Privacy-preserving noise never serves as a justification for inaction.</p>
 
@@ -624,11 +620,11 @@
 
         <p>The architecture mitigates this through three controls.</p>
 
-        <p>First, the PSI is risk-filtered. Only entities that exceed a local risk threshold enter the PSI set. If a bank has 2 million customers but only 50,000 are in elevated-risk categories, the PSI operates on 50,000 entities, not 2 million. The intersection reveals overlap only within the risk population, not the full customer base.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p>Second, the intersection result is ephemeral. Matched entity identifiers are used for signal propagation during the federation round and then discarded from the federation working memory. The institution stores "Entity X has cross-sector risk elevation" with a sector label (telecommunications, digital assets), not an institution name.</p>
 
-        <p>Third, PSI query budgets limit the number of federation rounds per bilateral pair per period. This prevents an institution from running continuous PSI to incrementally map the other's customer base over time.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <h3>4.7 Cross-Sector Score Calibration and Signal Quality (Planned)</h3>
 
@@ -642,121 +638,18 @@
 
         <p>The simulation environment currently generates banking populations. Cross-sector simulation is a Phase 2 engineering milestone.</p>
 
-        <h3>4.8 The APP Fraud Detection Example: Victim-Centric Linkage</h3>
+        <p class="section-note">These are candidate fields for an availability and decision-time validation study. Their incremental value is not yet qualified.</p>
 
-        <p>In most professional APP fraud, the fraudster and the mule are different people. The fraudster uses a burner SIM or stolen identity to make the call. The victim sends money to a mule account at a different bank. Matching the fraudster's identity across sectors will not work because the fraudster takes deliberate steps to avoid identity linkage.</p>
-
-        <p>The architecture solves this by centering the linkage on the victim.</p>
-
-        <!-- APP Fraud Detection Flow Diagram -->
-        <div class="diagram-container" style="max-width: 800px; margin: 2.5rem auto;">
-          <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Five-step APP fraud detection flow showing how the telco's scam signal reaches the bank before the payment settles">
-            <title>APP Fraud Detection: Victim-Centric Linkage</title>
-            <defs>
-              <marker id="arr-step" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#58A6FF"/></marker>
-            </defs>
-
-            <!-- Title -->
-            <text x="400" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#C9D1D9" text-anchor="middle">APP Fraud Detection: Victim-Centric Linkage</text>
-
-            <!-- Step 1 -->
-            <rect x="30" y="50" width="740" height="68" rx="6" fill="#101820" stroke="#D29922" stroke-width="1"/>
-            <rect x="40" y="58" width="28" height="28" rx="14" fill="#D29922"/>
-            <text x="54" y="78" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#0a0b0f" text-anchor="middle">1</text>
-            <text x="80" y="76" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#D29922">Telco detects scam pattern</text>
-            <text x="80" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Burner SIM calls 200 potential victims. Burst calling pattern detected. Each targeted subscriber flagged locally.</text>
-            <text x="740" y="76" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#D29922" text-anchor="end">No data leaves telco</text>
-
-            <line x1="400" y1="120" x2="400" y2="135" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arr-step)"/>
-
-            <!-- Step 2 -->
-            <rect x="30" y="140" width="740" height="68" rx="6" fill="#101820" stroke="#3FB950" stroke-width="1"/>
-            <rect x="40" y="148" width="28" height="28" rx="14" fill="#3FB950"/>
-            <text x="54" y="168" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#0a0b0f" text-anchor="middle">2</text>
-            <text x="80" y="166" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#3FB950">Federation round: PSI match on phone number</text>
-            <text x="80" y="186" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Victim's phone number matches in both telco's risk set and bank's customer set. Match identifies the victim, not the fraudster.</text>
-
-            <line x1="400" y1="210" x2="400" y2="225" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arr-step)"/>
-
-            <!-- Step 3 -->
-            <rect x="30" y="230" width="740" height="68" rx="6" fill="#101820" stroke="#58A6FF" stroke-width="1"/>
-            <rect x="40" y="238" width="28" height="28" rx="14" fill="#58A6FF"/>
-            <text x="54" y="258" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#0a0b0f" text-anchor="middle">3</text>
-            <text x="80" y="256" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#58A6FF">Escalation signal propagates to bank</text>
-            <text x="80" y="276" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">"This customer is being targeted by a telecommunications scam pattern." No call details, no timing, no number shared.</text>
-
-            <line x1="400" y1="300" x2="400" y2="315" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arr-step)"/>
-
-            <!-- Step 4 -->
-            <rect x="30" y="320" width="740" height="68" rx="6" fill="#101820" stroke="#F85149" stroke-width="1"/>
-            <rect x="40" y="328" width="28" height="28" rx="14" fill="#F85149"/>
-            <text x="54" y="348" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#0a0b0f" text-anchor="middle">4</text>
-            <text x="80" y="346" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#F85149">Victim initiates payment to mule account</text>
-            <text x="80" y="366" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8B949E">Bank's detection pipeline combines cross-sector signal + first-time payee + high-value transfer. Alert in under 10ms.</text>
-
-            <line x1="400" y1="390" x2="400" y2="405" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arr-step)"/>
-
-            <!-- Step 5 -->
-            <rect x="30" y="410" width="740" height="68" rx="6" fill="#131D28" stroke="#3FB950" stroke-width="2"/>
-            <rect x="40" y="418" width="28" height="28" rx="14" fill="#3FB950"/>
-            <text x="54" y="438" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#0a0b0f" text-anchor="middle">5</text>
-            <text x="80" y="436" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="bold" fill="#3FB950">Payment held. Fraud lifecycle broken.</text>
-            <text x="80" y="456" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#C9D1D9">Only the specific high-risk payment is held. Salary, direct debits, routine transactions continue uninterrupted.</text>
-
-            <!-- Comparison -->
-            <rect x="130" y="492" width="260" height="22" rx="4" fill="#161B22" stroke="#F85149" stroke-width="1"/>
-            <text x="260" y="508" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#F85149" text-anchor="middle">Without federation: payment looks normal</text>
-            <rect x="410" y="492" width="260" height="22" rx="4" fill="#161B22" stroke="#3FB950" stroke-width="1"/>
-            <text x="540" y="508" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#3FB950" text-anchor="middle">With federation: fraud stopped in real time</text>
-
-            <!-- Brand -->
-            <text x="780" y="516" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="bold" fill="#58A6FF" text-anchor="end" opacity="0.6">ZQUAS<tspan fill="#4a7dff">.</tspan></text>
-          </svg>
-        </div>
-
-        <p><strong>Step 1:</strong> A fraudster operating from a burner SIM calls 200 potential victims. The telco's F1 installation detects that multiple subscribers are receiving calls from a number exhibiting a scam pattern (burst calling to many targets in a short window). Each targeted subscriber's entity is flagged locally: "this subscriber is being targeted by a scam cluster." No data leaves the telco.</p>
-
-        <p><strong>Step 2:</strong> At the next batched federation round, the federation protocol runs a PSI match on Tier 2 (phone number). The victim's phone number appears in both the telco's elevated-risk set and the bank's customer set (because the victim is a bank customer). The match identifies the victim, not the fraudster.</p>
-
-        <p><strong>Step 3:</strong> The telco's escalation signal propagates to the bank: "this customer is being targeted by a telecommunications scam pattern." The bank cannot determine which phone number called the victim, what was said, or when the call occurred. It knows only that its customer has been identified as a scam target by the telecommunications sector.</p>
-
-        <p><strong>Step 4:</strong> Hours later, the victim, convinced by the fraudster's call, initiates a payment to the mule's account. The bank's F1 installation evaluates the transaction in real time (under 10 milliseconds). The victim's entity has a pre-existing cross-sector signal: "targeted by telecommunications scam pattern." The bank's detection pipeline combines this with the transaction characteristics: first-time payee, high-value transfer, unusual payment pattern. Alert generated.</p>
-
-        <p><strong>Step 5:</strong> The bank holds the payment for review. The compliance officer sees: the customer's own transaction history, plus a cross-sector indicator that this customer was recently targeted by a scam pattern on the telecommunications network. The officer investigates the specific payment, not the customer's entire account. The customer's salary deposits, direct debits, and routine transactions continue uninterrupted. Only the specific high-risk payment is held.</p>
-
-        <div class="callout">
-            <p>Without federation: the bank sees a payment to a new payee. That happens thousands of times per day. It is not suspicious in isolation. With federation: the bank sees a payment to a new payee from a customer who was recently targeted by a telecommunications scam pattern. The telco's targeting signal, which the bank never sees directly, has changed the risk calculus for a transaction the bank processes.</p>
-        </div>
-
-        <p>The critical insight: the architecture does not need to unmask the fraudster to protect the victim. By correlating the targeting signal at the telco with the transfer signal at the bank, the fraud lifecycle is broken before the first payment settles.</p>
-
-        <p>A note on service continuity: the escalation signal elevates risk on the specific transaction context, not on the victim's account. The victim is a customer being protected, not a suspect being investigated. Their account remains fully functional. Only the specific payment to the suspicious counterparty is held for review. This distinction is enforced by the policy engine, which evaluates risk at the transaction level, not the entity level.</p>
-
-        <p>A note on timing: the local bank detection operates in under 10 milliseconds. The federation round (under 10 seconds per bilateral pair) pre-enriches entity risk profiles between transactions. When the payment arrives, the cross-sector signal is already present. The local installation blocks in real time. The federation enriches over rounds.</p>
-
-        <h3>4.9 The Private Blockchain Detection Example</h3>
-
-        <p><strong>Step 1:</strong> A bank customer initiates a GBP payment through SWIFT's blockchain-based ledger. The payment settles as a stablecoin transfer on a permissioned chain operated by a consortium of banks.</p>
-
-        <p><strong>Step 2:</strong> The recipient converts the stablecoin to a different token on a public chain through a regulated bridge operated by a licensed CASP.</p>
-
-        <p><strong>Step 3:</strong> The tokens are sent to a mixer on the public chain and redistributed to multiple wallets.</p>
-
-        <p>On the permissioned chain: only the participating banks see the transaction. Chain analysis tools have no access. The blockchain's consensus mechanism confirms the transaction is valid, but validity is not innocence. Every individual transaction in a laundering circuit is structurally valid.</p>
-
-        <p>On the public chain: the bridge transaction and mixer interaction are visible but there is no link back to the originating bank payment because the permissioned chain is private.</p>
-
-        <p><strong>With cross-sector federation:</strong> The bank's F1 installation assesses the originating entity based on transaction patterns. The CASP's F1 installation assesses the bridge user based on rapid conversion and mixer interaction. The PSI matches the entity across both installations (same government ID at KYC). The CASP's escalation signal propagates to the bank. The bank now knows that the entity it processed a payment for has elevated risk at a crypto-asset service provider, without knowing the specific blockchain addresses or on-chain behaviour.</p>
-
-        <p><strong>Without federation:</strong> the bank sees a settled payment. The CASP sees a bridge user heading to a mixer. Neither connects the dots.</p>
+        <h3>4.8 Candidate Phone and Telecommunications Fields</h3>
+        <p>These are candidate fields for an availability and decision-time validation study. Their incremental value is not yet qualified.</p>
+        <h3>4.9 Exchange Participation Under Retest</h3>
+        <p>Exchange participation is being retested with information available to each exchange at the decision time.</p>
 
         <h3>4.10 Evidence Attestation</h3>
 
         <p>The regulatory observer receives aggregated metrics for supervisory purposes. It does not receive entity-level data.</p>
 
-        <p>When a case requires law enforcement action, the F1 Engine generates an evidence package for each cross-sector alert. The package contains: investigation items compiled from the detecting institution's own data (no cross-institutional raw data); a cryptographic attestation transcript signed by each participating installation proving that correlated risk signals were detected at Time T across N institutions; and sector attribution indicating which sectors contributed signals without revealing the specific signals or raw data.</p>
-
-        <p>When the FIU or law enforcement agency issues a warrant, each participating institution provides its own raw data under existing production order procedures. The attestation transcript proves the correlation existed and when it was detected. The prosecutor can demonstrate cross-sector criminal activity without the institutions ever having seen each other's files.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p>The evidence system includes a human assessment workflow where an investigator reviews items without ground truth labels and makes an independent judgment. This produces a documented audit trail of human decision-making, separate from algorithmic detection, essential for regulatory compliance and court proceedings.</p>
 
@@ -777,17 +670,17 @@
 
         <h2>5. GDPR Compliance Architecture</h2>
 
-        <h3>5.1 No Raw Data Sharing</h3>
+        <h3>5.1 Bounded Information Sharing</h3>
 
-        <p>No institution shares raw customer data, transaction records, CDRs, or blockchain addresses. The federation shares binary escalation signals. Whether those signals and the underlying protocol traffic constitute personal data processing is unresolved, and no EU data protection authority has ruled on it.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <h3>5.2 Cryptographic Entity Matching</h3>
 
-        <p>The ECDH-PSI protocol blinds all identity data before comparison. Neither institution reveals its customer list to the other. The intersection is computed on blinded points. The protocol is provably secure under standard cryptographic assumptions.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <h3>5.3 Lawful Basis</h3>
 
-        <p>The <a href="https://assets.publishing.service.gov.uk/media/69aea29d917847c0a4c8999e/E03551200_Fraud_Strategy_2026__English__ELAY.pdf" target="_blank" rel="noopener">Data (Use and Access) Act 2025</a> establishes crime and fraud prevention as a lawful basis for data sharing, as referenced in the UK Government's Fraud Strategy 2026-2029. Under AMLR Article 75, cross-institutional information sharing for AML purposes is mandated.</p>
+        <p>The <a href="https://assets.publishing.service.gov.uk/media/69aea29d917847c0a4c8999e/E03551200_Fraud_Strategy_2026__English__ELAY.pdf" target="_blank" rel="noopener">Data (Use and Access) Act 2025</a> establishes crime and fraud prevention as a lawful basis for data sharing, as referenced in the UK Government's Fraud Strategy 2026-2029. The Anti-Money Laundering Regulation (AMLR) Article 75 permits information sharing between obliged entities within a partnership, subject to its safeguards. It does not mandate that banks build sharing mechanisms.</p>
 
         <h3>5.4 Cryptographic Erasure</h3>
 
@@ -795,11 +688,11 @@
 
         <h3>5.5 Purpose Limitation and Minimisation</h3>
 
-        <p>Escalation signals do not reveal the underlying reason for the escalation. A bank receiving a cross-sector signal learns "elevated risk from telecommunications" but not what specific activity caused it. The intersection privacy controls (Section 4.6) further limit processing to what is necessary and proportionate.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
-        <h3>5.6 No Mass Surveillance</h3>
+        <h3>5.6 Bounded Information Sharing</h3>
 
-        <p>The PSI operates on risk-filtered entity sets, not full customer bases. Only entities that exceed a local risk threshold enter the PSI. There is no central database. Each institution retains full sovereignty over its own data. The federation is a protocol, not a platform.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
 
         <h2>6. The Telco Value Proposition</h2>
@@ -812,7 +705,7 @@
 
         <p>There is an honest tension. Joining a federation implies that an institution's network is used by criminals. Under shared liability frameworks, not participating is more damaging than participating. A telco that could have flagged risk but did not faces financial liability and regulatory enforcement. The risk of inaction exceeds the risk of admission.</p>
 
-        <p>The federation protocol shares an escalation signal, not an admission. The bank cannot determine what specific activity caused the elevation. The telco is demonstrating vigilance, not confessing failure.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p>Without a strict legal mandate in every jurisdiction, Data Protection Officers will debate the lawful basis. The Data (Use and Access) Act 2025 and AMLR Article 75 provide the foundation. Early adopters shape the interpretation.</p>
 
@@ -820,7 +713,7 @@
 
         <p>According to the <a href="https://cfca.org/telecommunications-fraud-increased-12-in-2023-equating-to-an-estimated-38-95-billion-lost-to-fraud/" target="_blank" rel="noopener">CFCA's 2023 Global Fraud Loss Survey</a>, telecommunications fraud losses reached USD 38.95 billion globally in 2023, representing 2.5 per cent of industry revenues.</p>
 
-        <h3>6.4 No Additional Data Exposure</h3>
+        <h3>6.4 Candidate Fields Under Validation</h3>
 
         <p>The telco shares escalation signals, not CDRs. The F1 Edge Installation runs inside the telco's data centre, on the telco's hardware, under the telco's operational control.</p>
 
@@ -831,13 +724,13 @@
 
         <p>MiCA requires CASPs to implement transaction monitoring equivalent to traditional financial institutions. Most exchanges check wallet blacklists. They cannot detect novel laundering patterns or the intersection of on-chain and off-chain activity.</p>
 
-        <h3>7.2 Withdrawal check under test</h3>
+        <h3>7.2 Exchange participation under retest</h3>
 
-        <p>Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.</p>
+        <p>Exchange participation is being retested with information available to each exchange at the decision time.</p>
 
         <h3>7.3 Travel Rule Compliance</h3>
 
-        <p>The FATF Travel Rule requires originator and beneficiary information to be transmitted with virtual asset transfers. The federation protocol can facilitate compliance by confirming entity identity matches without revealing underlying data.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
 
         <h2>8. The Market Gap</h2>
@@ -903,7 +796,7 @@
 
         <p>In the Netherlands, Transactie Monitoring Nederland (TMNL) pioneered joint transaction monitoring across five banks. TMNL operated on a centralised model: banks sent pseudonymised data to a shared utility. The initiative faced sustained scrutiny from the Autoriteit Persoonsgegevens over proportionality. ZQUAS addresses a different architecture and a different scope. The architecture is peer-to-peer: no central database. The scope extends beyond banking to telecommunications and digital assets. The distinction is structural.</p>
 
-        <p>ZQUAS is architected to process banking, telecommunications, and blockchain data in a single GPU-native detection pipeline, connected by a privacy-preserving federation protocol across all three sectors. In the competitive landscape reviewed, no current system has been identified that performs cross-institutional risk determination without disclosure across those sectors. The banking pipeline is built and tested on synthetic data at TRL 6. The federation protocol is production-ready. The cross-sector extensions are engineering milestones on an operational foundation.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
 
         <h2>9. Honest Limitations</h2>
@@ -1010,9 +903,7 @@
 
         <p>The regulatory response is converging. Singapore has implemented cross-sector liability. The UK is building the framework. The EU mandates cross-institutional sharing under AMLR. MiCA brings crypto exchanges into the regulated perimeter.</p>
 
-        <p>The technology to match this regulatory direction did not exist. A detection engine that operates across banking, telecommunications, and blockchain data, connected by a federation protocol that shares escalation signals without sharing raw data, running at the speed required for real-time intervention, governed by the institutions that use it rather than a central authority.</p>
-
-        <p>We do not need to unmask the fraudster to protect the victim. By correlating the targeting signal at the telco with the transfer signal at the bank, we break the fraud lifecycle before the first payment settles.</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <p>The banking detection engine is built. The federation protocol is built. The simulation environment is built. The cross-sector extensions are engineering milestones on an operational foundation.</p>
 
@@ -1033,7 +924,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>Bounded Compliance on an Unbounded Platform.<br>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">

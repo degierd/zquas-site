@@ -68,8 +68,7 @@ Competitors can copy a feature in a sprint. They can't replicate a GPU-native ar
 
 
 
-            MPC is not a product feature you can add to an existing monitoring system. It's a fundamental change in how computation happens. Instead of processing raw data, you process encrypted shares. Instead of running standard algorithms, you run cryptographic protocols (oblivious transfer, garbled circuits, secret sharing) that produce correct outputs without revealing inputs.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -78,8 +77,7 @@ Competitors can copy a feature in a sprint. They can't replicate a GPU-native ar
 
 
 
-            Then add the zero-knowledge proof layer on top. GPU-accelerated zero-knowledge proofs using ZK-optimised elliptic curves and hash functions. Number-theoretic transforms running natively on GPU. Each layer builds on the one below it, and each requires specialised knowledge to implement correctly.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -126,8 +124,7 @@ Competitors can copy a feature in a sprint. They can't replicate a GPU-native ar
 
 
 
-            The identity resolution graph learns the entity network over time. The policy sets are customised to the bank's specific risk profile and regulatory environment. The cryptographic audit history creates an immutable record that becomes more valuable the longer it runs. The compliance team develops operational expertise with the platform.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

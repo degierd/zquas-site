@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why We Applied to the FCA's Supercharged Sandbox | ZQUAS</title>
     <meta name="description" content="Why ZQUAS applied to the FCA&#x27;s Supercharged Sandbox: how we use AI in a compliance setting, determinism, governance and human oversight, and what participation does and does not mean. ZQUAS is taking part in the FCA&#x27;s Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.">
-    <meta property="og:title" content="Why We Applied to the FCA's Supercharged Sandbox | ZQUAS">
+    <meta property="og:title" content="Why We Applied to the FCA&#x27;s Supercharged Sandbox | ZQUAS">
     <meta property="og:description" content="Why ZQUAS applied to the FCA&#x27;s Supercharged Sandbox: how we use AI in a compliance setting, determinism, governance and human oversight, and what participation does and does not mean. ZQUAS is taking part in the FCA&#x27;s Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://zquas.ai/article-fca-sandbox.html">
@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=12">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -120,9 +120,7 @@
         <span class="fca-disclaimer">ZQUAS is taking part in the FCA&#x27;s Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.</span></p>
 
         <h2>To Test the Claim, Not Just Make It</h2>
-        <p>
-            We make strong claims. That financial crime can be detected across institutions without any of them pooling raw customer data. That the detection decision inside an institution can be reached in the low milliseconds, fast enough to keep up with modern payment rails, while the cross-institutional exchange that enriches it is bound by network and protocol rounds and runs on a longer timescale. That richer, cross-institutional context can materially reduce the false positives that bury compliance teams.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p>
             We believe these claims. We have measured the latency and the cross-institutional detection on our own data. The false-positive reduction we argue from how the system is built, since a signal has to be corroborated across sectors before it escalates, rather than present as a number we have yet produced. But a claim tested only against our own benchmarks is still, from the outside, just a claim.
         </p>
@@ -166,9 +164,7 @@
             <p>In compliance, a system that cannot reproduce its own decision, or explain it the same way twice, is not one a regulator can accept. That constraint is not something we work around. It is a design principle.</p>
         </div>
 
-        <p>
-            Underneath sits a governance layer. The policies that drive detection are written as code: versioned, reviewed, and auditable, so the system's behaviour is governable and every change to it is tracked. Beyond explaining why a decision was made, the system is built to produce a verifiable record of what it actually did, closer to cryptographic attestation than to a log you simply have to trust, because in regulated AI, being able to prove what happened matters as much as being able to describe it. And the models themselves run inside the institution's own environment rather than through an outside service, so no customer data leaves for inference and the model's behaviour stays under the institution's control.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p>
             That last point is a large part of why we built <a href="article-inference-engine.html">our own inference engine</a> instead of calling out to a third-party API. Running inference inside our own stack is what lets us keep data in place, control how the model behaves, and hold it to the same governance as the rest of the system, rather than accepting whatever a remote service happens to do. We set out the reasoning at the time. The engine is now fully delivered and runs as the default inference path in our own stack.
         </p>
@@ -177,9 +173,7 @@
         </p>
 
         <h2>Privacy by Design Is the Method, Not a Constraint</h2>
-        <p>
-            The programme runs on synthetic data, and it expects participants to design for privacy and security from the outset. For many firms that is a discipline to adopt. For us it is simply how the technology already works. ZQUAS is built to detect financial crime without exposing raw customer data, and we test on synthetic data rather than real records as a matter of principle, not compliance.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p>
             So an environment that provides representative synthetic data and expects privacy by design is not a set of rules we are tolerating. It is close to the environment we would have chosen. It lets us test detection quality, including the network patterns that single-institution systems miss, on data that behaves like the real thing, without a single real customer's information ever being involved.
         </p>
@@ -225,7 +219,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>Bounded Compliance on an Unbounded Platform.<br>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">

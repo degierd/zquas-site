@@ -121,7 +121,7 @@ The question isn't whether cross-institutional detection is valuable. TMNL prove
 
 
 
-Secure multi-party computation allows multiple parties to jointly compute a result from their combined data without any party revealing its data to the others. The mathematics for this have existed since the 1980s. What's changed is performance.
+The prototype supports bounded information sharing and signed decision records under the stated trust model. The mathematics for this have existed since the 1980s. What's changed is performance.
 
 
 
@@ -133,7 +133,7 @@ GPU-accelerated MPC implementations now achieve throughput levels compatible wit
 
 
 
-Each bank deploys a compliance engine on its own infrastructure. The bank's transaction data never leaves its premises. The engine processes the bank's transactions against its own policy set locally, providing the same single-bank monitoring capability as any conventional system.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -141,7 +141,7 @@ When two or more banks run compatible engines, cross-institutional detection act
 
 
 
-The MPC output is a risk indicator, not customer data. If the indicator flags elevated risk, the banks can use AMLR's legitimate data-sharing provisions for high-risk customers to share specific information. The MPC computation provides the reasonable basis for sharing, without requiring a data pool to generate that basis.
+The prototype supports bounded information sharing and signed decision records under the stated trust model. If the indicator flags elevated risk, the banks can use AMLR's legitimate data-sharing provisions for high-risk customers to share specific information. The MPC computation provides the reasonable basis for sharing, without requiring a data pool to generate that basis.
 
 
 
@@ -151,46 +151,46 @@ The MPC output is a risk indicator, not customer data. If the indicator flags el
 
 
 
-| 
-                        Dimension | 
-                        TMNL Model | 
-                        MPC-Based Model 
-| 
-                        **Data location** | 
-                        Central platform | 
-                        Stays at each bank 
-| 
-                        **Privacy exposure** | 
-                        Full transaction visibility | 
-                        Zero raw data disclosure 
-| 
-                        **GDPR/AMLR compatibility** | 
-                        Required legislative carve-out | 
-                        Compatible by construction 
-| 
-                        **Single point of breach** | 
-                        Central database | 
-                        No central target 
-| 
-                        **Bank autonomy** | 
-                        Shared rule set negotiations | 
-                        Each bank runs own rules 
-| 
-                        **Policy change impact** | 
-                        Network-wide cascading | 
-                        Contained to local installation 
-| 
-                        **Governance overhead** | 
-                        Steering committee, PMO, consensus | 
-                        Technical standards only 
-| 
-                        **Network scaling** | 
-                        Consortium agreement | 
-                        Bilateral connections 
-| 
-                        **Regulatory verification** | 
-                        Trust-based audit | 
-                        Cryptographic proof bundles 
+|
+                        Dimension |
+                        TMNL Model |
+                        MPC-Based Model
+|
+                        **Data location** |
+                        Central platform |
+                        Stays at each bank
+|
+                        **Privacy exposure** |
+                        Full transaction visibility |
+                        Bounded information sharing
+|
+                        **GDPR/AMLR compatibility** |
+                        Required legislative carve-out |
+                        Compatible by construction
+|
+                        **Single point of breach** |
+                        Central database |
+                        No central target
+|
+                        **Bank autonomy** |
+                        Shared rule set negotiations |
+                        Each bank runs own rules
+|
+                        **Policy change impact** |
+                        Network-wide cascading |
+                        Contained to local installation
+|
+                        **Governance overhead** |
+                        Steering committee, PMO, consensus |
+                        Technical standards only
+|
+                        **Network scaling** |
+                        Consortium agreement |
+                        Bilateral connections
+|
+                        **Regulatory verification** |
+                        Trust-based audit |
+                        Cryptographic proof bundles
 ## The Window Is Open
 
 
@@ -231,7 +231,7 @@ The core architecture is proven. The regulatory framework supports it. The insti
 
 
 
-The complete operational flow from transaction to SAR. Six steps, three banks, zero data shared.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
             ](use-case.html)
             [

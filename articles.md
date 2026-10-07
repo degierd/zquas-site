@@ -66,7 +66,7 @@ ChatGPT runs on one. Llama runs on one. We wrote our own. Why a financial crime 
 
 
 
-A single detection engine that correlates risk signals across banks, telecommunications operators, and digital asset platforms without sharing raw data between institutions. The same code, the same cryptographic protocols, the same GPU-native detection pipeline, applied to every regulated sector where financial crime operates.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
     ](article-beyond-banking.html)
     [
@@ -77,7 +77,7 @@ A single detection engine that correlates risk signals across banks, telecommuni
 
 
 
-AMLR Article 75 restricts cross-institutional data sharing to high-risk customers. The criminals who are hardest to catch are the ones who stay low-risk at every bank. Multi-Party Computation offers a route through: federation in which no raw or directly identifying customer data leaves the institution. The evidence, the legal argument, and the path to a pilot.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
     ](article-75.html)
     [
@@ -88,7 +88,7 @@ AMLR Article 75 restricts cross-institutional data sharing to high-risk customer
 
 
 
-A single detection engine that replaces overnight batch processing with continuous real-time monitoring. Three layers, one binary. Institutional real-time monitoring, cross-bank federation without data sharing, and regulatory interface. Three use cases, the ESG case, and the regulatory alignment map.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
     ](article-edge-to-federation.html)
     [

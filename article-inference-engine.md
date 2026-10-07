@@ -204,8 +204,7 @@ ChatGPT runs on one. Llama runs on one. We wrote our own. Financial crime detect
 
 
 
-            Regulated AI decision-making at the platform level. Audit-chain primacy. Federation under cryptographic guarantees rather than shared trust. The stack we needed did not exist, so we built it. When an auditor sits down months from now and asks us to replay an AI decision from January, we will be able to.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

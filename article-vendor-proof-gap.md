@@ -127,8 +127,7 @@ Your monitoring system generates alerts, case files, and reports. But can it cry
 
 
 
-            Each batch of evaluations produces a sealed proof bundle. The bundle contains a hash of the exact policy set that was running, a hash of the input data that was evaluated, each individual verdict, a Merkle root binding all verdicts together, and an Ed25519 signature over the entire bundle.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -137,8 +136,7 @@ Your monitoring system generates alerts, case files, and reports. But can it cry
 
 
 
-            It proves completeness for the evaluated batch. The Merkle root covers every verdict in the batch. If a verdict is missing, the root doesn't verify.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

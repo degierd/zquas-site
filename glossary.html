@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=12">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -49,7 +49,7 @@
     {
       "@type": "DefinedTerm",
       "name": "Cross-Institutional AML Detection",
-      "description": "Detecting financial crime patterns that span multiple banks by comparing risk indicators across institutions, without any institution exposing its raw customer data."
+      "description": "The prototype supports bounded information sharing and signed decision records under the stated trust model."
     },
     {
       "@type": "DefinedTerm",
@@ -129,7 +129,7 @@
     {
       "@type": "DefinedTerm",
       "name": "Federated Detection",
-      "description": "Detection that runs across multiple institutions without those institutions sharing raw data. Achieved in ZQUAS via cryptographic federation rather than data centralisation."
+      "description": "The prototype supports bounded information sharing and signed decision records under the stated trust model."
     },
     {
       "@type": "DefinedTerm",
@@ -140,61 +140,61 @@
 }
 </script>
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is cross-institutional AML detection?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Detecting financial crime patterns that span multiple banks by comparing risk indicators across institutions, without any institution exposing its raw customer data. Required to catch criminal networks that deliberately split activity across multiple banks to stay below per-bank detection thresholds."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What is Multi-Party Computation (MPC)?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A family of cryptographic protocols that allow several parties to jointly compute a function over their combined inputs while keeping each input private from the others. In AML, MPC enables banks to compare risk scores or detect shared customers without sharing the underlying data."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What is AMLR Article 75?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Article 75 of the EU Anti-Money Laundering Regulation. It permits cross-institutional information sharing for AML purposes, with mandatory pseudonymisation as a technical safeguard. It applies from July 10, 2027. Cross-institutional monitoring infrastructure typically takes 18 to 24 months to build."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Why did TMNL fail?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Transaction Monitoring Netherlands was the most ambitious cross-institutional AML initiative in Europe. It was wound down because its architecture, which centralised transaction data into a joint pool, could not be reconciled with EU privacy law. The detection concept was sound. The architecture was wrong. Centralising data creates the privacy problem the initiative was meant to solve."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What is the difference between GPU-native and GPU-accelerated?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A GPU-accelerated engine is fundamentally a CPU pipeline that offloads selected operations to a GPU. A GPU-native engine, like ZQUAS, is designed from the ground up to execute on GPU. Data structures, control flow, scheduling, and memory layout are all GPU-resident. The performance difference is typically several orders of magnitude."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How does a regulator verify a ZQUAS compliance decision?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "With a public key and the proof bundle. Every compliance decision produces a cryptographic proof bundle, Ed25519 signed and Merkle-included. The supervisor runs a standalone command-line verifier without relying on the running production engine or its internal state. The verifier is written by ZQUAS and currently links the CUDA runtime; a CPU-only verifier is planned."
-                }
-            }
-        ]
+      "@type": "Question",
+      "name": "What is cross-institutional AML detection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The prototype supports bounded information sharing and signed decision records under the stated trust model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Multi-Party Computation (MPC)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The prototype supports bounded information sharing and signed decision records under the stated trust model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is AMLR Article 75?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Article 75 of the EU Anti-Money Laundering Regulation. It permits cross-institutional information sharing for AML purposes, with mandatory pseudonymisation as a technical safeguard. It applies from July 10, 2027. Cross-institutional monitoring infrastructure typically takes 18 to 24 months to build."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did TMNL fail?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Transaction Monitoring Netherlands was the most ambitious cross-institutional AML initiative in Europe. It was wound down because its architecture, which centralised transaction data into a joint pool, could not be reconciled with EU privacy law. The detection concept was sound. The architecture was wrong. Centralising data creates the privacy problem the initiative was meant to solve."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between GPU-native and GPU-accelerated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A GPU-accelerated engine is fundamentally a CPU pipeline that offloads selected operations to a GPU. A GPU-native engine, like ZQUAS, is designed from the ground up to execute on GPU. Data structures, control flow, scheduling, and memory layout are all GPU-resident. The performance difference is typically several orders of magnitude."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a regulator verify a ZQUAS compliance decision?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The prototype supports bounded information sharing and signed decision records under the stated trust model."
+      }
     }
-    </script>
+  ]
+}
+</script>
     <style>
         .glossary-list {
             max-width: 820px;
@@ -355,17 +355,17 @@
             <div class="glossary-term" id="mpc">
                 <h3>Multi-Party Computation (MPC)</h3>
                 <p>A family of cryptographic protocols that allow several parties to jointly compute a function over their combined inputs while keeping each input private from the others.</p>
-                <p>In AML, MPC enables banks to compare risk scores or detect shared customers without sharing the underlying data. The privacy property is mathematical, not contractual.</p>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
             </div>
             <div class="glossary-term" id="psi">
                 <h3>Private Set Intersection (PSI)</h3>
-                <p>An MPC primitive that lets two parties identify the entities they have in common without either party revealing its full set to the other.</p>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
                 <p>For two banks, PSI answers the question "which of our customers also bank with you?" without disclosing any customer who is not also at the counterparty.</p>
             </div>
             <div class="glossary-term" id="ecdh-psi">
                 <h3>ECDH-PSI</h3>
                 <p>A Private Set Intersection construction built on Elliptic Curve Diffie-Hellman key agreement. ZQUAS uses ECDH-PSI over Curve25519 (X25519) for cross-institutional entity matching.</p>
-                <p>Each party hashes its identifiers to a curve point, applies its private key, exchanges results, and applies its key again. Matching points indicate shared entities. Non-matching points reveal nothing.</p>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
             </div>
             <div class="glossary-term" id="garbled-circuits">
                 <h3>Yao's Garbled Circuits</h3>
@@ -387,8 +387,7 @@
             </div>
             <div class="glossary-term" id="zk-proofs">
                 <h3>Zero-Knowledge Governance Proofs</h3>
-                <p>Cryptographic proofs that a computation was performed correctly without revealing the inputs or intermediate state.</p>
-                <p>ZQUAS uses GPU-accelerated PLONK to optionally include zero-knowledge governance proofs in proof bundles. Useful when the policy logic itself is sensitive but the supervisor still needs to verify correct execution.</p>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
             </div>
         </div>
 
@@ -401,12 +400,12 @@
             </div>
             <div class="glossary-term" id="cross-institutional">
                 <h3>Cross-Institutional AML Detection</h3>
-                <p>Detecting financial crime patterns that span multiple banks by comparing risk indicators across institutions, without any institution exposing its raw customer data.</p>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
                 <p>Required to catch criminal networks that deliberately split activity across multiple banks to stay below per-bank detection thresholds.</p>
             </div>
             <div class="glossary-term" id="federated-detection">
                 <h3>Federated Detection</h3>
-                <p>Detection that runs across multiple institutions without those institutions sharing raw data. Achieved in ZQUAS via cryptographic federation rather than data centralisation.</p>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
                 <p>The opposite of TMNL's centralisation approach. Each institution retains absolute data sovereignty.</p>
             </div>
             <div class="glossary-term" id="sovereign-compliance">
@@ -416,8 +415,7 @@
             </div>
             <div class="glossary-term" id="proof-bundle">
                 <h3>Cryptographic Proof Bundle</h3>
-                <p>A signed, Merkle-included artefact produced for every compliance decision. Contains a hash of the policy set in effect, a hash of the input data, individual verdict hashes, a Merkle root binding all verdicts together, and an Ed25519 signature.</p>
-                <p>Produced for every evaluation. Verifiable by a supervisor with a public key alone.</p>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
             </div>
             <div class="glossary-term" id="deterministic-evaluation">
                 <h3>Deterministic Evaluation</h3>
@@ -485,7 +483,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>Bounded Compliance on an Unbounded Platform.<br>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">

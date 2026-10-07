@@ -70,42 +70,36 @@ Here's the problem we keep running into: you need cross-bank visibility to catch
 
 
 
-            Centralised monitoring assumes you need to see the data to analyse it. But that's not actually true anymore. Secure multi-party computation (MPC) and zero-knowledge proofs let you run meaningful analysis across datasets that never leave their home institutions.
-
-
-
-
-            In practice, this means each bank keeps full control of its own data. No transaction records cross the perimeter. The system runs risk comparisons cryptographically. Bank A and Bank B can determine whether a shared counterparty shows suspicious patterns across both institutions, without either bank seeing the other's transactions.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
 
 
-
-| 
-                    Dimension | 
-                    Centralised Model | 
-                    MPC-Based Model 
-| 
-                    **Data location** | 
-                    Central pooling entity | 
-                    Remains at each institution 
-| 
-                    **Privacy exposure** | 
-                    Full transaction visibility | 
-                    Zero raw data disclosure 
-| 
-                    **GDPR/AMLR compatibility** | 
-                    Requires legislative carve-out | 
-                    Compatible by construction 
-| 
-                    **Single point of breach** | 
-                    Yes, central database | 
-                    No, distributed by design 
-| 
-                    **Regulatory verifiability** | 
-                    Trust-based audit trails | 
-                    Cryptographic proof verification 
+|
+                    Dimension |
+                    Centralised Model |
+                    MPC-Based Model
+|
+                    **Data location** |
+                    Central pooling entity |
+                    Remains at each institution
+|
+                    **Privacy exposure** |
+                    Full transaction visibility |
+                    Bounded information sharing
+|
+                    **GDPR/AMLR compatibility** |
+                    Requires legislative carve-out |
+                    Compatible by construction
+|
+                    **Single point of breach** |
+                    Yes, central database |
+                    No, distributed by design
+|
+                    **Regulatory verifiability** |
+                    Trust-based audit trails |
+                    Cryptographic proof verification
 ## Performance Is No Longer the Barrier
 
 
@@ -134,8 +128,7 @@ Here's the problem we keep running into: you need cross-bank visibility to catch
 
 
 
-            A cryptographically attested architecture changes that. Every batch of compliance decisions produces a sealed evidence bundle, a proof that specific policies were applied to specific data and produced specific verdicts. A regulator can verify that proof with a standalone tool. No need to access the bank's systems. No need to trust the vendor's software. No need to see the underlying data.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

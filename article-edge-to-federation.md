@@ -218,7 +218,7 @@ The difference this makes is concrete. In the mule network scenario from Section
 
 
 
-### Layer 2: Federation: Cross-Bank Detection Without Data Sharing
+### Layer 2: Federation: Bounded Information Sharing
 
 
 
@@ -238,19 +238,7 @@ These initiatives share a common architectural weakness. They relied on sending 
 
 
 
-The F1 Engine uses a different approach. Two banks discover which customers they share without either bank revealing its full customer list. Each bank takes its list of customer identifiers (like social security numbers or national insurance numbers) and transforms them into mathematical codes using advanced cryptography. These codes can be compared to find matches, but the original identifiers cannot be recovered from the codes. This is fundamentally different from the hashing approach used by previous initiatives. With hashing, an attacker who knows a country's finite identifier space can simply hash all values and build a reverse lookup table. With the cryptographic approach used by the F1 Engine, this attack does not work. There is no shortcut to reverse the transformation.
-
-
-
-After shared customers are discovered, the banks exchange risk signals, not data. If Bank A's detection system determines that a customer's risk has increased, Bank A sends a simple message to Bank B: "This customer's risk went up. Reason: unusual incoming money." Bank B adds this information to its own assessment of that customer. Bank B never learns the details of the customer's transactions at Bank A, the identity of their counterparties, or which specific rule triggered the alert. Only the change in risk level and a general reason category.
-
-
-
-This happens in pairs. In a network of five banks, each bank conducts a separate, private exchange with each of the other four banks. No bank sees the full picture. No central organisation holds all the data. The detection of a criminal network spanning three banks emerges from the combination of local decisions at each bank, informed by risk signals from direct partners. Each bank sees one piece. The picture forms without anyone holding the full image.
-
-
-
-For regulators reviewing this architecture: the privacy guarantee is not a claim. It is a mathematical property of the protocol. Each exchange between two banks reveals only the customers they share and numerical risk scores. The European Data Protection Supervisor's test for whether data counts as truly anonymised is satisfied with stronger margins than any approach based on hashing identifiers.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -262,11 +250,11 @@ The federation does not require every bank in the country to participate. It ope
 
 
 
-### Layer 3: Regulatory Interface: Supervisory Access Without Data Exposure
+### Layer 3: Regulatory Interface: Signed Records
 
 
 
-The final layer provides the interface between the detection system and regulatory supervisors. Automated generation of Suspicious Activity Reports from detection results. A complete audit trail that allows supervisors to verify that a detection decision was computed correctly without accessing the underlying customer data. Cryptographic provenance that proves which policies were evaluated, on which data, at which time, without revealing the data itself.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -406,7 +394,7 @@ Any detection system is only as good as the data it is tested against. A system 
 
 
 
-The F1 Engine includes a simulation environment (Financial Crime Network Simulator) that generates synthetic banking populations with embedded criminal networks. The simulator produces ground truth: it knows exactly which entities are criminals, which network they belong to, and which typology they use. This enables closed-loop testing. Run a simulation, see the scorecard, verify that every criminal was detected.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -426,7 +414,7 @@ Eight criminal typologies are supported: trade-based laundering, mule networks, 
 
 
 
-The engine also includes an Adversarial Threshold Optimizer that automatically discovers optimal detection thresholds. Instead of a compliance officer manually deciding that "3 transactions per day is suspicious," the optimizer evaluates millions of threshold configurations against the simulated population and produces a mathematically verified set of optimal trade-offs between detection rate and false positive rate. The compliance officer does not guess. They choose a point on a curve that has been validated against adversarial criminal behaviour across multiple population seeds, difficulty levels, and economic conditions. No other AML system provides this capability.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -434,7 +422,7 @@ Detection results depend on the test population and the pattern evaluated. The p
 
 
 
-An important caveat: this result is measured against synthetic populations where the system knows exactly who the criminals are, because the simulator created them. In the real world, criminals are adaptive. They change their behaviour to avoid detection. Production detection rates will be lower than simulation results. This is true for every detection system ever built. The simulator's purpose is not to claim perfection. It is to provide a controlled environment for continuous calibration: run the simulation, measure what was missed, adjust the detection thresholds, run again. This feedback loop does not exist in systems that rely solely on production data, where you never know what you missed.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -458,11 +446,7 @@ The architecture is not built in anticipation of regulation. It is built to impl
 
 
 
-**GDPR and European data protection guidance** require that data processing minimises exposure. The federation protocol exchanges only mathematical codes (not customer names or account numbers) and numerical risk scores (not transaction details). The access control system restricts what each operator can see based on their role. The raw mathematical outputs from the cross-bank matching process are never shown to human analysts.
-
-
-
-**The EU AI Act** requires that AI systems used in high-impact decisions can be explained and overseen by humans. The Operator Console provides a human review step for every alert. Compliance policies are written in plain language that a compliance officer can read and understand, not hidden inside a machine learning model. Every detection decision carries a full audit trail showing exactly which rules fired and why.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -526,7 +510,7 @@ The downstream consequence is de-risking. When a bank's monitoring system is ina
 
 
 
-A system that finds every criminal in a test population and simultaneously reduces false alarms directly addresses this problem. By detecting actual criminals with precision, the system eliminates the pressure to de-risk entire populations. Innocent people stay in the financial system. The bank meets its compliance obligations without punishing its customers for the limitations of its technology.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -546,7 +530,7 @@ This is a governance problem that is about to become a legal problem. The EU AI 
 
 
 
-The ZQUAS architecture takes a different approach. The federation protocol uses elliptic curve cryptography, not probabilistic AI, for its cross-institutional detection. The bank can prove to a regulator, mathematically, exactly why a risk score changed, which policies evaluated, which data was processed, at what time, without ever exposing private customer data. The audit trail is not a log file. It is a cryptographic proof.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -594,7 +578,7 @@ From a bare Windows installation to a running detection platform with a full Ope
 
 
 
-The engine ran a simulation: 1,000 entities across five Dutch banks, with embedded criminal networks. Detection result: every criminal found. Zero missed. The Operator Console displayed the full scorecard, the criminal network structure, alert details, and the investigative workflow. On a laptop that costs less than a dinner at a Michelin-starred restaurant.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

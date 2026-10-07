@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=12">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -136,15 +136,11 @@
         <p>
             Even if a competitor decided to build a GPU-native compliance engine from scratch, they'd face a second architectural challenge: privacy-preserving multi-party computation.
         </p>
-        <p>
-            MPC is not a product feature you can add to an existing monitoring system. It's a fundamental change in how computation happens. Instead of processing raw data, you process encrypted shares. Instead of running standard algorithms, you run cryptographic protocols (oblivious transfer, garbled circuits, secret sharing) that produce correct outputs without revealing inputs.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p>
             Implementing MPC correctly is hard. Implementing it on GPU is much harder. The cryptographic protocols need to be parallelised across thousands of GPU cores, synchronised correctly, and verified for security. This requires expertise in both GPU systems programming and cryptographic protocol design. That intersection is exceptionally rare in the talent market.
         </p>
-        <p>
-            Then add the zero-knowledge proof layer on top. GPU-accelerated zero-knowledge proofs using ZK-optimised elliptic curves and hash functions. Number-theoretic transforms running natively on GPU. Each layer builds on the one below it, and each requires specialised knowledge to implement correctly.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p>
             A competitor starting from zero would be assembling GPU systems programming, applied cryptography and regulatory engineering in one codebase, which is difficult to put together. And they'd need to find people who understand both GPU programming and cryptographic protocols, which is a talent pool measured in hundreds globally, not thousands.
         </p>
@@ -170,9 +166,7 @@
         <p>
             Once deployed, the system generates its own moat through data accumulation.
         </p>
-        <p>
-            The identity resolution graph learns the entity network over time. The policy sets are customised to the bank's specific risk profile and regulatory environment. The cryptographic audit history creates an immutable record that becomes more valuable the longer it runs. The compliance team develops operational expertise with the platform.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p>
             This is a standard enterprise software switching cost argument, but it's amplified by the cryptographic attestation dimension. The audit history isn't just operational records in a database. It's a chain of cryptographic proofs that regulators can reference. Switching to a different system means breaking the proof chain and rebuilding the audit history from zero. That's a risk no compliance officer wants to take during a regulatory examination cycle.
         </p>
@@ -216,7 +210,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>Bounded Compliance on an Unbounded Platform.<br>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">

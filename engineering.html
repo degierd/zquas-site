@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=12">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -166,7 +166,7 @@
 
         <div class="eng-section">
             <h2>Test Coverage</h2>
-            <p>The engine is verified by an automated test suite. Coverage spans cryptographic correctness, GPU compute validation, governance logic, compliance rules, privacy-preserving federation protocols, financial crime detection, synthetic benchmarking, browser-level UI, and infrastructure. The breakdown, counted by each harness's own lister and verified on 12 June 2026: 11,734 GTest, 980 Playwright browser tests, 622 pytest. The shape matters as much as the count: roughly 7 percent are full-scale composition, integration and locked-number proofs at realistic scale, and roughly 93 percent are unit, boundary and single-subsystem correctness tests. A bare count implies more assurance than it delivers, so we publish both. Every test runs on every build. Zero tolerance for failures. Categories include known-answer tests against published cryptographic vectors, cross-validation between independent implementations (GPU vs CPU), boundary value analysis, adversarial input testing, determinism verification across repeated runs, multi-institution federation integration tests with realistic data distributions, and end-to-end browser tests verifying that the operator console renders real data from real detection pipelines.</p>
+            <p>Internal testing covers cryptographic correctness, GPU computation, governance rules, synthetic benchmarks and integration. The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
 
         <div class="eng-section">
@@ -181,7 +181,7 @@
 
         <div class="eng-section">
             <h2>Privacy-Preserving Federation</h2>
-            <p>Cross-bank detection uses Multi-Party Computation: the data never leaves the bank. Private Set Intersection for identity matching. Arithmetic Secret Sharing and Garbled Circuits for joint risk computation. Oblivious Transfer Extension for efficient protocol execution. The federation protocol runs over the open internet. The security is in the cryptography, not the network. Same elliptic curve foundations as Bitcoin, stronger privacy guarantees. Benchmarked at 100,000 entities per party: a bilateral round completes in 3,052 ms over a loopback development transport, against a 10-second bound enforced in continuous integration. No real-network inter-participant measurement exists.</p>
+            <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
 
         <div class="eng-section">
@@ -256,7 +256,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>Bounded Compliance on an Unbounded Platform.<br>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">

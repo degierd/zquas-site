@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bounded Compliance on an Unbounded Platform — ZQUAS</title>
-    <meta name="description" content="The architectural philosophy behind ZQUAS: a deterministic, cryptographically attestable compliance layer running on GPU-native infrastructure. Every decision provable. Every policy bounded.">
+    <meta name="description" content="The prototype supports bounded information sharing and signed decision records under the stated trust model.">
     <meta property="og:title" content="Bounded Compliance on an Unbounded Platform — ZQUAS">
     <meta property="og:description" content="CPL policy execution is deterministic, sandboxed, and attestable. The engine underneath computes at GPU scale. That separation is the point.">
     <meta property="og:type" content="website">
@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=12">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -474,9 +474,7 @@
     <h1 class="arch-hero-headline">
         <span class="word-bounded">Bounded</span> compliance<br>on an <span class="word-unbounded">unbounded</span> platform.
     </h1>
-    <p class="arch-hero-sub">
-        The compliance layer is deliberately constrained. Deterministic execution. Guaranteed termination. Cryptographic proof for every verdict. The platform it runs on is not constrained at all. That separation is the design.
-    </p>
+    <p class="arch-hero-sub">The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 </div>
 
 <!-- ── Bounded / Unbounded split ── -->
@@ -505,10 +503,7 @@
                     <span class="feat-icon bounded">SBX</span>
                     <span><strong>Sandboxed reads.</strong> A policy can only read fields it has declared in its input schema. Access to undeclared fields fails at compile time, not runtime.</span>
                 </li>
-                <li>
-                    <span class="feat-icon bounded">ATT</span>
-                    <span><strong>Cryptographically attestable.</strong> Each evaluation produces a cryptographic proof bundle: the policy hash, the inputs read, the verdict produced, and an Ed25519 signature over all three.</span>
-                </li>
+                <li>The prototype supports bounded information sharing and signed decision records under the stated trust model.</li>
             </ul>
             <div class="split-footer">
                 <strong>56-policy logical catalogue. Proofs a supervisor can verify.</strong>
@@ -526,10 +521,7 @@
                     <span class="feat-icon unbounded">GPU</span>
                     <span><strong>Full GPU compute.</strong> RTX 5090, 32GB VRAM, 170 streaming multiprocessors. No artificial compute ceiling.</span>
                 </li>
-                <li>
-                    <span class="feat-icon unbounded">FED</span>
-                    <span><strong>Real-time federation.</strong> Privacy-preserving cross-bank detection via MPC: ECDH-PSI, garbled circuits, oblivious transfer (OT extension protocol). No raw data shared.</span>
-                </li>
+                <li>The prototype supports bounded information sharing and signed decision records under the stated trust model.</li>
                 <li>
                     <span class="feat-icon unbounded">SCL</span>
                     <span><strong>500,000 entities in 3.4 seconds.</strong> Bilateral AML detection at Tier-1 scale. 30 institutions in a single 36-second federation epoch.</span>
@@ -566,12 +558,12 @@
             <div class="matters-card">
                 <div class="matters-card-label">FOR REGULATORS</div>
                 <h3>Verify. Don't trust.</h3>
-                <p>Every compliance decision has a mathematical proof. Not a log file. A cryptographic attestation that the correct policy was applied to the stated inputs. <strong>You can verify any verdict independently</strong>, with a standalone CLI tool, without relying on the running production engine or its internal state. The verifier is written by ZQUAS and currently links the CUDA runtime; a CPU-only verifier is planned.</p>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
             </div>
             <div class="matters-card">
                 <div class="matters-card-label">FOR BANKS</div>
                 <h3>Real-time. Not overnight.</h3>
-                <p>Compliance policies execute on GPU in parallel, not in sequential overnight batch cycles. Cross-bank money laundering detection that TMNL took 24 hours to attempt takes ZQUAS <strong>36 seconds with zero data shared</strong> across institutions.</p>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
             </div>
             <div class="matters-card">
                 <div class="matters-card-label">FOR COMPLIANCE OFFICERS</div>
@@ -659,7 +651,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>Bounded Compliance on an Unbounded Platform.<br>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">

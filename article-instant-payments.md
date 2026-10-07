@@ -176,8 +176,7 @@ Retrospective is not the problem. Slowly retrospective is where the value leaks 
 
 
 
-            ZQUAS uses private set intersection over elliptic-curve Diffie-Hellman (ECDH-PSI) between two institutions, and secure multi-party computation across several, so only cryptographically protected values ever cross an institutional boundary. It is not central pooling, and it is not the overhead of fully homomorphic encryption. It runs peer to peer, with GPU acceleration used to reduce the computational cost of the cryptographic protocols and the detection itself.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

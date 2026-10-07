@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Article 75 Was Afraid to Permit | ZQUAS Position Paper</title>
-    <meta name="description" content="How Multi-Party Computation enables full customer base federation for AML detection without sharing personal data. ZQUAS position paper on AMLR Article 75 and GDPR.">
+    <meta name="description" content="The prototype supports bounded information sharing and signed decision records under the stated trust model.">
     <meta property="og:title" content="What Article 75 Was Afraid to Permit | ZQUAS">
-    <meta property="og:description" content="How Multi-Party Computation enables full customer base federation for AML detection without sharing personal data. ZQUAS position paper on AMLR Article 75 and GDPR.">
+    <meta property="og:description" content="The prototype supports bounded information sharing and signed decision records under the stated trust model.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://zquas.ai/article-75.html">
     <meta property="og:image" content="https://zquas.ai/og-image.png">
@@ -32,29 +32,29 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=12">
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "What Article 75 Was Afraid to Permit",
-        "description": "How Multi-Party Computation enables full customer base federation for AML detection without sharing personal data.",
-        "datePublished": "2026-03-15",
-        "author": {
-            "@type": "Person",
-            "name": "Danny de Gier"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "ZQUAS",
-            "url": "https://zquas.ai"
-        },
-        "image": "https://zquas.ai/og-image.png",
-        "inLanguage": "en-GB",
-        "isAccessibleForFree": true,
-        "mainEntityOfPage": "https://zquas.ai/article-75.html"
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Article 75 Was Afraid to Permit",
+  "description": "The prototype supports bounded information sharing and signed decision records under the stated trust model.",
+  "datePublished": "2026-03-15",
+  "author": {
+    "@type": "Person",
+    "name": "Danny de Gier"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ZQUAS",
+    "url": "https://zquas.ai"
+  },
+  "image": "https://zquas.ai/og-image.png",
+  "inLanguage": "en-GB",
+  "isAccessibleForFree": true,
+  "mainEntityOfPage": "https://zquas.ai/article-75.html"
+}
+</script>
     <style>
         /* ── POSITION PAPER SPECIFIC ── */
         .paper-badge {
@@ -414,47 +414,30 @@
         <hr class="section-rule">
 
         <!-- ══ SECTION 2 ══ -->
-        <h2>The Resolution: Compute Without Sharing</h2>
+        <h2>Bounded information sharing</h2>
 
-        <p>
-            There is a class of technologies that resolves this paradox. It does not argue for broader data sharing permissions. It eliminates the need for data sharing entirely.
-        </p>
-        <p>
-            Multi-Party Computation (MPC) is a cryptographic technique that allows two or more parties to jointly compute a function over their combined data without any party revealing its individual inputs to any other party. The output of the computation is shared. The inputs are not.
-        </p>
-        <p>
-            In the context of cross-institutional AML detection, the operation works as follows. Bank A and Bank B each hold risk scores for their customers. They wish to determine whether any customer's combined cross-bank risk exceeds a defined threshold. Using MPC, they compute this comparison without Bank A learning Bank B's risk score, without Bank B learning Bank A's risk score, and without either bank learning anything about the other's non-shared customers. The output is a binary signal: this entity's combined risk exceeds the threshold, or it does not. Nothing else is revealed.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <h2>Why This Changes the Article 75 Equation</h2>
 
-        <p>
-            The Article 75 restriction on low-risk customer sharing exists because sharing means exposing personal data. MPC does not share data. The question is whether MPC computation falls within the scope of "information sharing" as Article 75 defines it, or whether it constitutes a fundamentally different operation. We argue it is fundamentally different, for three reasons.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <div class="argument-label">Argument 1</div>
-        <p class="p-bold">What crosses between institutions is not personal data.</p>
+        <p class="p-bold">Information shared under the stated trust model</p>
         <p>
             During an MPC federation round, the data transmitted between institutions consists of elliptic curve points (blinded cryptographic values), garbled circuit ciphertexts (encrypted gate evaluations), and oblivious transfer labels (randomly masked keys). None of these values can be attributed to an identified or identifiable natural person. They are computationally indistinguishable from random byte sequences.
         </p>
         <p>
             GDPR Article 4(1) defines personal data as "any information relating to an identified or identifiable natural person." GDPR Recital 26 clarifies that the principles of data protection should not apply to anonymous information: information which does not relate to an identified or identifiable natural person, or personal data rendered anonymous in such a manner that the data subject is not or no longer identifiable.
         </p>
-        <p>
-            MPC protocol messages are not pseudonymised data, which remains personal data under GDPR. They are cryptographic material that cannot, even in principle, be de-anonymised by the receiving party without the cooperation of the sending party. The protocol is specifically designed to prevent that cooperation.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <div class="argument-label">Argument 2</div>
         <p class="p-bold">No institution gains access to any other institution's customer data.</p>
-        <p>
-            After a complete MPC federation round, each bank learns exactly one thing about each shared customer: whether the combined cross-institutional risk exceeds the threshold. This is a binary signal derived from a computation, not a data transfer. The bank does not learn the other institution's risk score, transaction history, or even which other institution holds the customer.
-        </p>
-        <p>
-            This is materially different from the "exchange of information" that Article 75 regulates. Article 75 governs the sharing of customer identification and beneficial ownership information, details of the purpose and nature of business relationships and transactions, customer transactions information, and risk factors associated with customers. In an MPC federation, none of this information is shared.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <div class="argument-label">Argument 3</div>
-        <p class="p-bold">The privacy guarantee is mathematical, not administrative.</p>
+        <p class="p-bold">The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p>
             Traditional data sharing partnerships rely on contractual obligations, access controls, and supervisory oversight to prevent misuse of shared data. These are administrative safeguards. They work when everyone complies and fail when someone does not.
         </p>
@@ -500,7 +483,7 @@
                     <tr>
                         <td class="td-label">Privacy model</td>
                         <td>Administrative: contracts, access controls, supervision</td>
-                        <td class="td-strong">Mathematical: cryptographic guarantee</td>
+                        <td class="td-strong">The prototype supports bounded information sharing and signed decision records under the stated trust model.</td>
                     </tr>
                     <tr>
                         <td class="td-label">GDPR basis required</td>
@@ -510,20 +493,18 @@
                     <tr>
                         <td class="td-label">Detects low-risk profile criminals</td>
                         <td>No. Excluded from sharing scope.</td>
-                        <td class="td-strong">Yes. All customers are federated.</td>
+                        <td class="td-strong">The prototype supports bounded information sharing and signed decision records under the stated trust model.</td>
                     </tr>
                     <tr>
                         <td class="td-label">DPA risk</td>
                         <td>Moderate. TMNL precedent shows DPA will scrutinise.</td>
-                        <td class="td-strong">Low. No personal data leaves the institution.</td>
+                        <td class="td-strong">The prototype supports bounded information sharing and signed decision records under the stated trust model.</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <p>
-            The criminals Article 75 cannot reach are those who deliberately maintain low-risk profiles at each institution and distribute their laundering across the banking system. MPC federation is designed to detect them. Their combined risk is computed without any institution revealing its individual assessment.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <hr class="section-rule">
 
@@ -582,9 +563,7 @@
         <p>
             Correspondent banking wire stripping is validated end to end as a named cohort on synthetic data across simulated participants. Trade-based over-invoicing, shell company layering and funnel account structuring are designed and in scope, not validated. In the validated cohort, no individual simulated bank's monitoring would have escalated the entity. Only cross-institutional federation detected the pattern.
         </p>
-        <p>
-            Each policy evaluation produces a cryptographic proof bundle: an attestation of the policy that fired, the inputs it read, and the verdict it produced. A regulator can independently verify, years after the fact, that the system correctly applied the approved policy to the available data.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <hr class="section-rule">
 
@@ -612,17 +591,13 @@
         </p>
 
         <p class="p-bold">2. The MPC protocol is computationally lightweight.</p>
-        <p>
-            The cryptographic operations in a bilateral MPC round are: elliptic curve scalar multiplication for Private Set Intersection, symmetric-key encryption of garbled circuit gates (AES), and oblivious transfer key derivation. These are not expensive operations. For 5,000 entities, the entire PSI phase, which identifies shared customers without revealing non-shared ones, completes in under 20 milliseconds. The garbled circuit that compares risk scores evaluates in microseconds per entity.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p>
             A common misconception is that "cryptographic" means "slow." Fully homomorphic encryption is slow: roughly 10,000-times overhead. MPC using garbled circuits and oblivious transfer is not. The overhead compared to plaintext computation is approximately 100 to 500 times for the comparison operation. The comparison itself is trivial, so 500-times overhead on a microsecond operation is still sub-millisecond.
         </p>
 
-        <p class="p-bold">3. No data extraction, no transfer, no central database.</p>
-        <p>
-            There is no ETL pipeline. There is no data warehouse. Each bank runs the ZQUAS installation alongside its existing infrastructure. The installation reads risk scores from the bank's own transaction monitoring system, encrypts them using the MPC protocol, and exchanges messages directly with peer banks over encrypted TCP. A binary escalation signal per shared entity is available in milliseconds. The entire overnight batch cycle is eliminated because the computation that justified it is replaced by a distributed cryptographic computation that runs in real time.
-        </p>
+        <p class="p-bold">3. Bounded information sharing</p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
 
         <h2>Scaling behaviour</h2>
 
@@ -678,7 +653,7 @@
                     </tr>
                     <tr>
                         <td class="td-label">Raw data shared</td>
-                        <td colspan="3">No raw or directly identifying customer data leaves the institution. Encrypted protocol messages only (ECDLP-protected)</td>
+                        <td colspan="3">The prototype supports bounded information sharing and signed decision records under the stated trust model.</td>
                     </tr>
                 </tbody>
             </table>
@@ -783,9 +758,7 @@
         <p>
             The MPC protocol is secure against a semi-honest adversary: a bank that follows the protocol correctly but attempts to extract additional information from the messages it receives. Under this model, a compromised bank learns nothing beyond the binary escalation signal.
         </p>
-        <p>
-            Against a fully malicious adversary (a bank that deviates from the protocol), the current bilateral implementation provides limited protection. The mitigation is operational: the cryptographic proof bundle provides a record of every input to every round. If a bank submits anomalous risk scores to probe the other bank's data, this pattern is detectable in the attestation log.
-        </p>
+        <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <p>
             Stronger malicious-adversary guarantees are architecturally designed for networks exceeding 30 institutions, based on 4-party MPC with guaranteed output delivery. This is not yet implemented. It is the natural evolution for large-scale production deployment.
         </p>
@@ -850,7 +823,7 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>Bounded Compliance on an Unbounded Platform.<br>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">

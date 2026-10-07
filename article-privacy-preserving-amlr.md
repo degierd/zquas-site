@@ -79,12 +79,11 @@ The EU Anti-Money Laundering Regulation creates a catch-22. You can only share d
 
 
 
-## Computation Without Disclosure
+## Bounded Information Sharing
 
 
 
-            There is a branch of cryptography that solves exactly this problem. Secure multi-party computation, or MPC, allows multiple parties to jointly compute a result from their combined data without any party revealing its data to the others.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -107,18 +106,7 @@ The EU Anti-Money Laundering Regulation creates a catch-22. You can only share d
 
 
 
-            No raw data is shared between institutions. Each bank's transaction data stays within its own infrastructure. There is no central database. There is no data processor holding information from multiple banks. The GDPR exposure that killed centralised approaches simply doesn't exist.
-
-
-
-
-            What is shared is a cryptographic computation output: a risk indicator. This output doesn't contain customer data. It contains a yes/no signal about whether further investigation is warranted. If the signal indicates elevated risk, the relevant banks can then use the AMLR's legitimate data-sharing provisions for high-risk customers. The MPC computation provides the reasonable basis for sharing, without requiring a data pool to generate that basis.
-
-
-
-
-            In other words, MPC turns the AMLR catch-22 into a two-step process. Step one: cryptographic computation identifies potential risk across institutions, without data disclosure. Step two: once risk is indicated, AMLR-compliant data sharing kicks in for the specific customers flagged.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -126,8 +114,7 @@ The EU Anti-Money Laundering Regulation creates a catch-22. You can only share d
 
 
 
-            For regulators, there's a separate benefit. If the compliance system produces cryptographic proof bundles for every decision, supervisory verification changes character entirely.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -136,8 +123,7 @@ The EU Anti-Money Laundering Regulation creates a catch-22. You can only share d
 
 
 
-            With cryptographic attestation, the examiner doesn't need to trust. Each batch of compliance decisions carries a proof: these specific policies were applied to these specific inputs and produced these specific verdicts. A standalone verification tool can confirm the proof independently. No access to the bank's systems needed. No reliance on the vendor's software.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

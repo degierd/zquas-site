@@ -24,8 +24,7 @@ The platform
 
 
 
-            The institution writes its rules and sets its limits. The engine applies them to the decisions an automated system or AI agent makes. It evaluates a full policy set against every entity at once on a GPU, with no sampling. Alerts carry proofs that a supervisor can verify without relying on the running production engine or its internal state.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

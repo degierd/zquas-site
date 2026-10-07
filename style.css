@@ -2813,3 +2813,14 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
 }
 .regulators-page .pilot-cta-links { flex-wrap: wrap; min-width: 0; max-width: 100%; }
+
+/* Keep reviewed comparison copy and technical cards inside narrow viewports. */
+@media (max-width: 480px) {
+    .comparison-table { table-layout: fixed; }
+    .comparison-table th,
+    .comparison-table td {
+        overflow-wrap: anywhere;
+        padding: 0.65rem 0.45rem;
+    }
+    .arch-grid { grid-template-columns: minmax(0, 1fr); }
+}

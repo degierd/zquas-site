@@ -1,6 +1,6 @@
 # ZQUAS: Criminals use many banks. Now banks can act as one.
 
-> ZQUAS lets banks catch scam payments and mule accounts together, without pooling customer data. TRL 6, synthetic data only, no production deployments.
+> The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 Source: https://zquas.ai
 Site: https://zquas.ai
@@ -60,7 +60,7 @@ Check the payments coming into your own accounts, on your own data, inside your 
 
 
 
-Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.
+Exchange participation is being retested with information available to each exchange at the decision time.
 
                 [Join the pilot](contact.html?audience=exchanges)
 
@@ -81,26 +81,14 @@ A governance engine with measured results on synthetic data. Financial crime is 
 
 
 
-        What we have shown
+        Evidence and limits
 
 
-## Results on synthetic data
-
-
-
-            Every result on this page comes from our own tests on synthetic data. None of them is a real-world detection rate.
+## Studies on synthetic data
 
 
 
-
-                About 1 in 2
-                Scam payments reviewed with the network
-                Synthetic data. In our model.
-
-                    Read the test detail
-
-
-Our synthetic world has 1,000,000 adults at the UK scam rate. Each bank's own fraud model alone caught about 1 in 7. When we removed our generator's easiest clue, the network figure fell to about 1 in 3. Every limit held, and fewer than 1 genuine payment in 10,000 was reviewed.
+            An offline retrospective study identified payments for review in one synthetic world. It did not measure executed prevention under a live review queue.
 
 
 
@@ -110,13 +98,17 @@ Our synthetic world has 1,000,000 adults at the UK scam rate. Each bank's own fr
                 Test in progress. No result published.
 
 
-Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.
+Exchange participation is being retested with information available to each exchange at the decision time.
 
 
 
                 99 in 100
-                Decisions in under 10 ms
+                Warm decisions in under 10 ms
                 Our test. Synthetic data.
+
+
+The reported timing measures the warm decision path, not cold arrival-to-decision delay.
+
 
                     Read the test detail
 
@@ -128,7 +120,7 @@ Up to 540 simulated bank installations ran together on nine cloud GPUs in one cl
 
 
 
-Limits in the model: at most 1 payment in 1,000 held and 1 in 500 reviewed. Network signals add reviews, never automatic holds. Synthetic data throughout, not real-world detection rates. Position today: TRL 6, no production deployments, no live counterparty data.
+The prototype supports bounded information sharing and signed decision records under the stated trust model. Synthetic data. TRL 6. No production deployments or live counterparty data.
 
 
             [Download the briefing ↗](zquas-onepager.pdf)
@@ -147,7 +139,7 @@ Limits in the model: at most 1 payment in 1,000 held and 1 in 500 reviewed. Netw
 
 
 
-            Every ZQUAS decision runs on the same engine: it applies an institution's rules to decisions made by automated systems and AI agents, at GPU speed, and records why each decision was made so a supervisor can check it. Financial crime is where we start. The same engine can govern decisions in other industries where automated decisions need rules, limits and an audit trail.
+            The prototype supports bounded information sharing and signed decision records under the stated trust model. Financial crime is where we start. The same engine can govern decisions in other industries where automated decisions need rules, limits and an audit trail.
 
 
         [The platform →](platform.html)
@@ -164,7 +156,7 @@ Limits in the model: at most 1 payment in 1,000 held and 1 in 500 reviewed. Netw
         How it works
 
 
-## The receiving bank checks. One report protects every member.
+## Bounded information sharing and signed decision records.
 
 
 
@@ -182,22 +174,22 @@ The bank that holds the receiving account checks the payments coming into it. It
                 2
 
 
-### One confirmed report protects every member
+### Bounded sharing of confirmed reports
 
 
 
-When a victim reports a scam, that confirmed report is shared with every member. The mule account is flagged for review at every bank in the network. The network only ever adds reviews. It never adds automatic holds.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
                 3
 
 
-### No customer files leave a bank
+### Bounded information sharing
 
 
 
-No customer files are exchanged, and no raw or directly identifying customer data leaves the institution. Alerts carry proofs that the supervisor can verify. Security today is semi-honest: it assumes each member follows the protocol.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -248,7 +240,7 @@ Source: UK Finance, Annual Fraud Report 2026 (figures for 2025).
 
 
 
-Under the UK's mandatory reimbursement rules, in force since October 2024, the sending bank and the receiving bank split each reimbursement 50:50, up to £85,000 a claim.
+Under the UK's mandatory reimbursement rules, in force since October 2024, the sending bank and the receiving bank split eligible reimbursement under the applicable UK APP rules 50:50, up to £85,000 a claim.
 
 
 

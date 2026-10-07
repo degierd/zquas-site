@@ -2,11 +2,11 @@
 
 > ZQUAS governs decisions made by automated systems and AI agents. Financial crime is where it starts. TRL 6. Synthetic data only. No production deployments.
 
-The homepage explains the network's synthetic-data results. The Use Case page illustrates the local transaction monitor built in October 2026. The local monitor has not yet been measured on the full synthetic worlds. Do not attribute the network's detection results to the new local monitor.
+An offline retrospective study identified payments for review in one synthetic world. It did not measure executed prevention under a live review queue. The Use Case page illustrates the local transaction monitor built in October 2026. The local monitor has not yet been measured on the full synthetic worlds. The retrospective network study does not establish the local monitor's performance.
 
 ## Exchanges as members
 
-Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.
+Exchange participation is being retested with information available to each exchange at the decision time.
 
 ## Programmes and sandboxes
 
@@ -29,6 +29,12 @@ Exchanges as members: we are testing a withdrawal check that asks the funding ba
 - [About](https://zquas.ai/about.html)
 - [Articles](https://zquas.ai/articles.html)
 
+## Measurement boundaries
+
+The reported timing measures the warm decision path, not cold arrival-to-decision delay.
+
+Our thinned-data experiment exposed sparse training labels under assumed reporting.
+
 ## Scoped engine figures
 
 - 500K entities under 2 seconds on the fixed synthetic fixture, with about 55K transactions. This is a detection test, not the full product cycle.
@@ -42,13 +48,11 @@ These figures come from internal tests on synthetic data. They are not an extern
 
 A 12-week local pilot for scam review and local transaction monitoring, starting after scope, agreements, access and data readiness are confirmed. Optional network phase afterwards by separate agreement. The bank supplies local data, infrastructure and its own compliance, analyst and IT contacts. ZQUAS supplies the pilot software, configuration and evaluation support, the signed log and its verification check.
 
-Scam payments caught, at most 1 review per 500 payments and 1 hold per 1,000, analyst workload, local monitoring workload and coverage, every decision verifiable in the signed log. These are evaluation measures and limits, not promised detection rates. Local transaction monitoring selects investigation work and does not itself hold payments.
+Scam payments caught, at most 1 review per 500 payments and 1 hold per 1,000, analyst workload, local monitoring workload and coverage, verification of signed decision records. These are evaluation measures and limits, not promised detection rates. Local transaction monitoring selects investigation work and does not itself hold payments.
 
-No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log.
+## Sharing and signed decisions
 
-## Signed decisions
-
-Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys).
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 ## MCP server for AI assistants
 
@@ -79,7 +83,7 @@ for agents that prefer Markdown over HTML.
 
 ## Common Questions
 
-**What is ZQUAS?** A network that lets banks catch scam payments and mule accounts together without pooling customer data, built on a GPU governance engine that applies an institution's rules to decisions made by automated systems and AI agents.
+**What is ZQUAS?** The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 **What problem does ZQUAS solve?** TMNL proved cross-institutional detection works. TMNL encountered unresolved legal and proportionality objections. The Dutch data protection authority was critical of population-scale joint monitoring, the Council of State concluded that necessity and proportionality had not been demonstrated for the proposed statutory basis and advised its removal, and the bill carrying that basis was declared controversial after the government fell. With the AMLR applying from 10 July 2027, TMNL is winding down its existing model and redesigning to reconcile with it. MPC is an attempt at an architecture that avoids central pooling.
 
@@ -87,9 +91,9 @@ for agents that prefer Markdown over HTML.
 
 **Is ZQUAS production-ready?** No. Readiness is TRL 6: an integrated prototype demonstrated in a controlled relevant environment. Synthetic data only, no production deployments, no live counterparty data, semi-honest security only.
 
-**Where is data stored?** No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log.
+**Where is data stored?** The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
-**How does a regulator verify a decision?** Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys).
+**How does a regulator verify a decision?** The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 ## Contact
 

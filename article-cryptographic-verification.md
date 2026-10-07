@@ -74,8 +74,7 @@ Current supervisory models depend on banks accurately reporting how their system
 
 
 
-            Each batch of compliance decisions generates a proof bundle. This bundle contains: a hash of the policy set that was in effect, a hash of the input data that was evaluated, the verdicts that were produced, a timestamp, and a cryptographic signature that binds all of these together. The bundle also includes a Merkle root over the individual verdict hashes, which means any individual verdict can be verified as part of the batch without revealing all the others.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -151,8 +150,7 @@ Current supervisory models depend on banks accurately reporting how their system
 
 
 
-            Cross-jurisdictional supervision also benefits. When a bank operates in multiple jurisdictions, each regulator currently conducts its own examination independently. With cryptographic proofs, a proof bundle from one jurisdiction can be verified by another jurisdiction's examiner without any data sharing or system access. The proof is self-contained. This could simplify supervisory cooperation under frameworks like the ECB's Single Supervisory Mechanism.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

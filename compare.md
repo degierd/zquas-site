@@ -81,7 +81,7 @@ Built from the ground up as a GPU-native runtime. Each monitored entity carries 
                         Cross-Institutional Detection |
                         Not possible. Each institution operates in isolation. |
                         Not possible. Same data silo, better algorithms. |
-                        Privacy-preserving federation: ECDH-PSI + Garbled Circuits + OT. Banks jointly detect suspicious entities without sharing data. 3,052 ms per bilateral round at 100K entities per party, over a loopback development transport. Dual Ed25519 attestation per round.
+                        The prototype supports bounded information sharing and signed decision records under the stated trust model.
 |
                         Processing Speed |
                         Batch. Overnight or hourly. Thousands of decisions per second. |
@@ -91,17 +91,17 @@ Built from the ground up as a GPU-native runtime. Each monitored entity carries 
                         Governance Model |
                         Configuration files. Change management committees. Months to update a rule. |
                         Model governance. Bias testing, validation reports. Weeks to retrain and deploy. |
-                        Three-layer governance. Layer 1: formally verified execution core (immutable at runtime). Layer 2: certified rule schemas (versioned, validated). Layer 3: AI-generated content (every decision audited with reasoning). A governance validation layer sits between the rules and the AI, rejecting any proposal that violates the certified schema.
+                        The prototype supports bounded information sharing and signed decision records under the stated trust model.
 |
                         Audit Trail |
                         Log files. Database records. Manually reviewed during examinations. |
                         Log files plus model cards. Feature importance scores. |
-                        Cryptographic audit ledger. Every governance decision is recorded in a tamper-proof, cryptographically chained log. Ed25519 signatures. Blake3 integrity hashing. The audit trail is mathematically verifiable, not just reviewable.
+                        The prototype supports bounded information sharing and signed decision records under the stated trust model.
 |
                         Explainability |
                         Rule X matched. Human analyst explains the context. |
                         SHAP values. Feature importance. Partial dependence plots. Requires data science expertise to interpret. |
-                        Glass Box. Every decision carries a structured explanation of why it was made, what alternatives were considered, and which rules applied. Readable by compliance officers, not just data scientists.
+                        The prototype supports bounded information sharing and signed decision records under the stated trust model.
 |
                         Temporal Control |
                         Replay from database snapshots. Hours to reconstruct a scenario. |
@@ -126,7 +126,7 @@ Built from the ground up as a GPU-native runtime. Each monitored entity carries 
                         Privacy |
                         Data centralisation. Access controls. Pseudonymisation. |
                         Same as traditional, plus model access controls. |
-                        Multi-party computation under a semi-honest adversary model. No raw or directly identifying customer data leaves the institution. No EU data protection authority has yet ruled on the status of MPC protocol messages; obtaining a formal assessment from a national data protection authority is a stated objective.
+                        The prototype supports bounded information sharing and signed decision records under the stated trust model.
         Measured, Not Projected
 
 
@@ -152,7 +152,7 @@ Measured detection-pass working set only. Synthetic data. Resident ingestion and
 
 
 
-The detection cycle figure is a median of three runs on NVIDIA RTX 5090, CUDA 13.1, Linux, against synthetic data. Every result signed.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

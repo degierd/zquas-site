@@ -26,7 +26,7 @@ How we build matters as much as what we build.
 
 
 
-The engine is verified by an automated test suite. Coverage spans cryptographic correctness, GPU compute validation, governance logic, compliance rules, privacy-preserving federation protocols, financial crime detection, synthetic benchmarking, browser-level UI, and infrastructure. The breakdown, counted by each harness's own lister and verified on 12 June 2026: 11,734 GTest, 980 Playwright browser tests, 622 pytest. The shape matters as much as the count: roughly 7 percent are full-scale composition, integration and locked-number proofs at realistic scale, and roughly 93 percent are unit, boundary and single-subsystem correctness tests. A bare count implies more assurance than it delivers, so we publish both. Every test runs on every build. Zero tolerance for failures. Categories include known-answer tests against published cryptographic vectors, cross-validation between independent implementations (GPU vs CPU), boundary value analysis, adversarial input testing, determinism verification across repeated runs, multi-institution federation integration tests with realistic data distributions, and end-to-end browser tests verifying that the operator console renders real data from real detection pipelines.
+Internal testing covers cryptographic correctness, GPU computation, governance rules, synthetic benchmarks and integration. The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -59,7 +59,7 @@ The engine includes the Financial Crime Network Simulator (FCNS): a synthetic be
 
 
 
-Cross-bank detection uses Multi-Party Computation: the data never leaves the bank. Private Set Intersection for identity matching. Arithmetic Secret Sharing and Garbled Circuits for joint risk computation. Oblivious Transfer Extension for efficient protocol execution. The federation protocol runs over the open internet. The security is in the cryptography, not the network. Same elliptic curve foundations as Bitcoin, stronger privacy guarantees. Benchmarked at 100,000 entities per party: a bilateral round completes in 3,052 ms over a loopback development transport, against a 10-second bound enforced in continuous integration. No real-network inter-participant measurement exists.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

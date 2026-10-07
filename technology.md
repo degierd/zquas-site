@@ -77,7 +77,7 @@ A GPU-resident entity graph maintains relationships between accounts, individual
 
 
 
-Every batch of compliance decisions produces a sealed proof bundle. The bundle includes: a BLAKE3 hash of the policy set, a hash of the input data, individual verdict hashes, a Merkle root binding all verdicts together, and an Ed25519 signature over the complete bundle. A separate SHA-256 witness hash is produced for regulatory interfaces. Proof bundles can optionally include GPU-accelerated zero-knowledge governance proofs.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -90,7 +90,7 @@ Every batch of compliance decisions produces a sealed proof bundle. The bundle i
 
 
 
-When multiple institutions run ZQUAS, cross-bank detection activates via privacy-preserving federation. The protocol combines ECDH-PSI (X25519) for entity matching, Yao's Garbled Circuits (Free-XOR) for risk comparison, and IKNP OT Extension (Chou-Orlandi base OT on P-256) for oblivious transfer. Security model: semi-honest. Transport: AES-256-GCM with X25519 key exchange. Each institution retains full data sovereignty. No raw entity data crosses institutional boundaries. At 100,000 entities per party, a bilateral round completes in 3,052 ms over a loopback development transport, against a 10-second bound enforced in CI. No real-network inter-participant measurement exists. Both parties sign the result with Ed25519. A regulator verifies the attestation with a public key alone. 361 tests, zero critical findings.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -158,8 +158,7 @@ Inter-stream synchronisation uses CUDA events. Streams execute concurrently. Loa
 
 
 
-            The engine ships with a standalone verification CLI. The tool is independent of the ZQUAS engine. It takes a proof bundle, a registered policy set, and evaluation contexts as input. It replays the evaluation deterministically and confirms that the proof is valid. The tool outputs VALID (exit code 0), INVALID (exit code 1), or ERROR (exit code 2). No GPU required for verification. No vendor infrastructure needed.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -261,8 +260,7 @@ Reproducible builds with embedded BLAKE3 + SHA-256 hashes, compiler version, git
 
 
 
-            The engine enforces a zero-bypass governance model. Every computational action requires explicit authorization, every authorization is metered, and every action is cryptographically provable. This is not a logging layer added on top. It's the execution model itself.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -431,7 +429,7 @@ The engine can evaluate the same entity under different temporal contexts simult
 
 
 
-Verdict export in RAW and CEF formats for direct ingestion by SIEM platforms (Splunk, QRadar, Sentinel) and GRC systems. Messages use zero-copy flat encoding with domain-tagged BLAKE3 integrity hashes. Epoch-level export batches align with the cryptographic attestation cycle, so every exported verdict is traceable to its proof bundle.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

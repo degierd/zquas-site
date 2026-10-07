@@ -30,7 +30,7 @@ This is not a new problem. In the Netherlands, five major banks created TMNL to 
 
 
 
-The EU has now created the legal basis. AMLR Article 75 (applicable July 2027) explicitly permits cross-institutional information sharing for AML purposes, with mandatory pseudonymisation as a technical safeguard. The legal barrier is removed. The question is now purely technical: how do institutions cooperate without sharing data? The answer is privacy-preserving computation, specifically multi-party computation, where institutions jointly compute over their combined data without any institution revealing its raw information to another.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -59,9 +59,9 @@ The EU has now created the legal basis. AMLR Article 75 (applicable July 2027) e
 |
                             Data Sharing |
                             Collaboration requires sharing customer data. |
-                            Banks collaborate with no raw or directly identifying customer data leaving the institution.
+                            The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
-                            Multi-party computation allows joint detection with mathematical privacy guarantees. No raw data leaves any institution.
+                            The prototype supports bounded information sharing and signed decision records under the stated trust model.
 |
                             Detection Model |
                             Static rules tested against historical transactions. |
@@ -77,9 +77,9 @@ The EU has now created the legal basis. AMLR Article 75 (applicable July 2027) e
 |
                             Compliance Assurance |
                             Systems produce logs and reports for auditors. |
-                            Every decision is cryptographically signed and independently verifiable.
+                            The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
-                            Regulators can mathematically verify that a compliance decision was made correctly, not just trust the documentation.
+                            The prototype supports bounded information sharing and signed decision records under the stated trust model.
 |
                             Security Testing |
                             Periodic penetration testing and vulnerability scans. |
@@ -97,13 +97,13 @@ The EU has now created the legal basis. AMLR Article 75 (applicable July 2027) e
                             Audits rely on documentation and sampling. |
                             Audit evidence is machine-verifiable.
 
-                            Compliance examinations become faster and more reliable because every decision carries a cryptographic proof chain.
+                            The prototype supports bounded information sharing and signed decision records under the stated trust model.
 |
                             AI Integration |
                             ML models bolted onto existing rule engines. |
                             AI sits inside the same governance perimeter as the rule engine, with the same audit trail and the same constraints.
 
-                            AI components and policy components run under the same deterministic, attestable governance model. No model output reaches a regulator-facing decision without passing through the same controls as a hand-written rule.
+                            The prototype supports bounded information sharing and signed decision records under the stated trust model.
 |
                             Scalability |
                             Scale by adding servers and databases. |

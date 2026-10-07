@@ -31,8 +31,7 @@ When banks discuss collaborative AML, the first objection is always GDPR. No EU 
 
 
 
-            The technical description is not contested: MPC transforms inputs into values that are computationally indistinguishable from random and that are discarded once the computation completes. Whether those values are personal data in the hands of a recipient is precisely the open question. MPC does not transmit customer records between institutions. It transmits intermediate cryptographic values derived from that data, values that carry no intelligible information about individuals and are discarded once the computation completes.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -74,8 +73,7 @@ When banks discuss collaborative AML, the first objection is always GDPR. No EU 
 
 
 
-            For practical purposes, the residual risk is substantially lower than in conventional sharing arrangements. An institution receiving MPC-derived risk signals holds no additional personal data about the other institution's customers. The risk of re-identification, data breach, or misuse at the receiving institution is materially reduced.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

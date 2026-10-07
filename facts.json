@@ -2,7 +2,7 @@
   "name": "ZQUAS",
   "type": "compliance_technology_platform",
   "tagline": "Criminals use many banks. Now banks can act as one.",
-  "description": "ZQUAS lets banks catch scam payments and mule accounts together, without pooling customer data. Built on a GPU governance engine that applies an institution's rules to decisions made by automated systems and AI agents. Alerts carry proofs a supervisor can verify.",
+  "description": "The prototype supports bounded information sharing and signed decision records under the stated trust model.",
   "website": "https://zquas.ai",
   "founded": "2024",
   "stage": "TRL 6, synthetic data only, no production deployments, pre-revenue",
@@ -66,11 +66,11 @@
     "transport": "AES-256-GCM with X25519 key exchange",
     "transport_note": "Federation bilateral round under 10 seconds on TCP loopback development transport. Semi-honest security. This does not measure a real inter-bank network.",
     "attestation": "dual Ed25519 (both parties sign)",
-    "raw_data_shared": "no raw or directly identifying customer data leaves the institution",
-    "sharing": "No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log."
+    "raw_data_shared": "The prototype supports bounded information sharing and signed decision records under the stated trust model.",
+    "sharing": "The prototype supports bounded information sharing and signed decision records under the stated trust model."
   },
   "proofs": {
-    "statement": "Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys)",
+    "statement": "The prototype supports bounded information sharing and signed decision records under the stated trust model.",
     "scope": "Synthetic data, development keys. Internal tests, including run R43.0 B. This is verification of the signed record, not an external audit or proof that a transaction is criminal."
   },
   "codebase": {
@@ -138,7 +138,7 @@
   "differentiators": [
     "GPU-native architecture (not GPU-accelerated)",
     "Privacy-preserving cross-institutional detection via MPC (semi-honest security model)",
-    "Cryptographic proof bundles for every compliance decision (Ed25519 signed, Merkle-included)",
+    "The prototype supports bounded information sharing and signed decision records under the stated trust model.",
     "Independent regulator verification: public key plus proof bundle, without relying on the running production engine or its internal state. The verifier is vendor-written and currently links the CUDA runtime; a CPU-only verifier is planned",
     "Deterministic evaluation (byte-identical replay)",
     "Constitutional governance: agents cannot file SARs autonomously",
@@ -149,21 +149,12 @@
     "deployment": "on-premise (bank's own infrastructure)",
     "pricing": "annual licensing by transaction volume and policy complexity",
     "expansion": "cross-institutional MPC network with network effects",
-    "data_sovereignty": "No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log."
+    "data_sovereignty": "The prototype supports bounded information sharing and signed decision records under the stated trust model."
   },
   "target_market": {
     "primary": "Tier-1 and Tier-2 European banks",
     "secondary": "Fintechs, payment service providers",
     "geographic_focus": "EU (AMLR Article 75 applies July 10, 2027)"
-  },
-  "sandbox_results_synthetic": {
-    "label": "Synthetic data. In our model or in our test. Not real-world detection rates.",
-    "world": "1,000,000 adults at the UK scam rate",
-    "each_bank_alone_caught": "about 1 in 7 scam payments",
-    "with_network_reviewed": "about 1 in 2 in our model; about 1 in 3 with the generator's easiest clue removed",
-    "genuine_payments_reviewed": "fewer than 1 in 10,000",
-    "limits": "at most 1 payment in 1,000 held and 1 in 500 reviewed; network signals add reviews, never automatic holds",
-    "scale_and_speed": "up to 540 simulated bank installations on nine cloud GPUs in one cloud zone; 99 in 100 decisions in under 10 ms, in our test"
   },
   "maturity": {
     "trl": 6,
@@ -181,7 +172,7 @@
       "At most 1 review per 500 payments and 1 hold per 1,000",
       "Analyst workload",
       "Local monitoring workload and coverage",
-      "Every decision verifiable in the signed log"
+      "Verification of signed decision records"
     ],
     "scope": "Scam review and local transaction monitoring on the institution's own data and infrastructure. Local transaction monitoring selects investigation work and does not itself hold payments. These are evaluation measures and limits, not promised detection rates.",
     "offer": "12-week local pilot for scam review and local transaction monitoring"
@@ -192,7 +183,16 @@
     "walkthrough": "Synthetic example at every step: several payers in; money out within a day; funnel or rapid pass-through pattern score; analyst queue within a daily analyst-time limit and monthly investigation allowance; tm-alert in the signed decision log; the bank decides."
   },
   "exchange_withdrawal_test": {
-    "status": "Testing. No result published.",
-    "statement": "Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete."
+    "status": "Retesting",
+    "statement": "Exchange participation is being retested with information available to each exchange at the decision time."
+  },
+  "retrospective_study": {
+    "status": "An offline retrospective study identified payments for review in one synthetic world. It did not measure executed prevention under a live review queue.",
+    "data": "Synthetic data. Offline retrospective study."
+  },
+  "thinned_data_experiment": "Our thinned-data experiment exposed sparse training labels under assumed reporting.",
+  "sandbox_timing": {
+    "scope": "The reported timing measures the warm decision path, not cold arrival-to-decision delay.",
+    "scale": "Up to 540 simulated bank installations on nine cloud GPUs in one cloud zone. Synthetic data."
   }
 }

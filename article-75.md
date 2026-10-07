@@ -1,6 +1,6 @@
 # What Article 75 Was Afraid to Permit
 
-> How Multi-Party Computation enables full customer base federation for AML detection without sharing personal data. ZQUAS position paper on AMLR Article 75 and GDPR.
+> The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 Source: https://zquas.ai/article-75.html
 Site: https://zquas.ai
@@ -114,22 +114,11 @@ How Multi-Party Computation Makes Full Customer Base Federation Legal Under GDPR
 
 
 
-## The Resolution: Compute Without Sharing
+## Bounded information sharing
 
 
 
-            There is a class of technologies that resolves this paradox. It does not argue for broader data sharing permissions. It eliminates the need for data sharing entirely.
-
-
-
-
-            Multi-Party Computation (MPC) is a cryptographic technique that allows two or more parties to jointly compute a function over their combined data without any party revealing its individual inputs to any other party. The output of the computation is shared. The inputs are not.
-
-
-
-
-            In the context of cross-institutional AML detection, the operation works as follows. Bank A and Bank B each hold risk scores for their customers. They wish to determine whether any customer's combined cross-bank risk exceeds a defined threshold. Using MPC, they compute this comparison without Bank A learning Bank B's risk score, without Bank B learning Bank A's risk score, and without either bank learning anything about the other's non-shared customers. The output is a binary signal: this entity's combined risk exceeds the threshold, or it does not. Nothing else is revealed.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -137,13 +126,12 @@ How Multi-Party Computation Makes Full Customer Base Federation Legal Under GDPR
 
 
 
-            The Article 75 restriction on low-risk customer sharing exists because sharing means exposing personal data. MPC does not share data. The question is whether MPC computation falls within the scope of "information sharing" as Article 75 defines it, or whether it constitutes a fundamentally different operation. We argue it is fundamentally different, for three reasons.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
         Argument 1
 
 
-What crosses between institutions is not personal data.
+Information shared under the stated trust model
 
 
 
@@ -157,8 +145,7 @@ What crosses between institutions is not personal data.
 
 
 
-            MPC protocol messages are not pseudonymised data, which remains personal data under GDPR. They are cryptographic material that cannot, even in principle, be de-anonymised by the receiving party without the cooperation of the sending party. The protocol is specifically designed to prevent that cooperation.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
         Argument 2
 
@@ -167,18 +154,12 @@ No institution gains access to any other institution's customer data.
 
 
 
-            After a complete MPC federation round, each bank learns exactly one thing about each shared customer: whether the combined cross-institutional risk exceeds the threshold. This is a binary signal derived from a computation, not a data transfer. The bank does not learn the other institution's risk score, transaction history, or even which other institution holds the customer.
-
-
-
-
-            This is materially different from the "exchange of information" that Article 75 regulates. Article 75 governs the sharing of customer identification and beneficial ownership information, details of the purpose and nature of business relationships and transactions, customer transactions information, and risk factors associated with customers. In an MPC federation, none of this information is shared.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
         Argument 3
 
 
-The privacy guarantee is mathematical, not administrative.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -233,7 +214,7 @@ The privacy guarantee is mathematical, not administrative.
 |
                         Privacy model |
                         Administrative: contracts, access controls, supervision |
-                        Mathematical: cryptographic guarantee
+                        The prototype supports bounded information sharing and signed decision records under the stated trust model.
 |
                         GDPR basis required |
                         Yes: proportionality analysis, DPIA, supervisory approval |
@@ -241,13 +222,12 @@ The privacy guarantee is mathematical, not administrative.
 |
                         Detects low-risk profile criminals |
                         No. Excluded from sharing scope. |
-                        Yes. All customers are federated.
+                        The prototype supports bounded information sharing and signed decision records under the stated trust model.
 |
                         DPA risk |
                         Moderate. TMNL precedent shows DPA will scrutinise. |
-                        Low. No personal data leaves the institution.
-            The criminals Article 75 cannot reach are those who deliberately maintain low-risk profiles at each institution and distribute their laundering across the banking system. MPC federation is designed to detect them. Their combined risk is computed without any institution revealing its individual assessment.
-
+                        The prototype supports bounded information sharing and signed decision records under the stated trust model.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -300,8 +280,7 @@ The privacy guarantee is mathematical, not administrative.
 
 
 
-            Each policy evaluation produces a cryptographic proof bundle: an attestation of the policy that fired, the inputs it read, and the verdict it produced. A regulator can independently verify, years after the fact, that the system correctly applied the approved policy to the available data.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -350,8 +329,7 @@ The privacy guarantee is mathematical, not administrative.
 
 
 
-            The cryptographic operations in a bilateral MPC round are: elliptic curve scalar multiplication for Private Set Intersection, symmetric-key encryption of garbled circuit gates (AES), and oblivious transfer key derivation. These are not expensive operations. For 5,000 entities, the entire PSI phase, which identifies shared customers without revealing non-shared ones, completes in under 20 milliseconds. The garbled circuit that compares risk scores evaluates in microseconds per entity.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -360,12 +338,11 @@ The privacy guarantee is mathematical, not administrative.
 
 
 
-3. No data extraction, no transfer, no central database.
+3. Bounded information sharing
 
 
 
-            There is no ETL pipeline. There is no data warehouse. Each bank runs the ZQUAS installation alongside its existing infrastructure. The installation reads risk scores from the bank's own transaction monitoring system, encrypts them using the MPC protocol, and exchanges messages directly with peer banks over encrypted TCP. A binary escalation signal per shared entity is available in milliseconds. The entire overnight batch cycle is eliminated because the computation that justified it is replaced by a distributed cryptographic computation that runs in real time.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -416,7 +393,7 @@ The privacy guarantee is mathematical, not administrative.
                         Both parties sign; regulator verifies
 |
                         Raw data shared |
-                        No raw or directly identifying customer data leaves the institution. Encrypted protocol messages only (ECDLP-protected)
+                        The prototype supports bounded information sharing and signed decision records under the stated trust model.
             Real network conditions add latency. The ~15 second figure is measured over TCP localhost. Federation rounds are expected to run nightly or on a configurable schedule aligned with existing monitoring cycles.
 
 
@@ -560,8 +537,7 @@ The privacy guarantee is mathematical, not administrative.
 
 
 
-            Against a fully malicious adversary (a bank that deviates from the protocol), the current bilateral implementation provides limited protection. The mitigation is operational: the cryptographic proof bundle provides a record of every input to every round. If a bank submits anomalous risk scores to probe the other bank's data, this pattern is detectable in the attestation log.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

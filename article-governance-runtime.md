@@ -69,11 +69,7 @@ A governance runtime has different switching dynamics.
 
 
 
-First, the runtime accumulates institutional knowledge. Policies written in the runtime's policy language encode years of compliance expertise. The entity resolution graph learns the institution's relationship network over time. The cryptographic audit history creates an immutable record that regulators reference during examinations. This isn't just data. It's operational and regulatory infrastructure that deepens with every epoch.
-
-
-
-Second, the runtime becomes the audit trail. Once a regulator has verified compliance decisions using the runtime's proof bundles, switching to a different system means breaking the proof chain. The new system can't reference the old proofs. The cryptographic continuity is lost. No compliance officer wants to explain to the regulator that they can no longer verify decisions from the previous two years because they switched vendors.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -109,7 +105,7 @@ In the ZQUAS governance runtime, nothing executes without passing through the en
 
 
 
-The zero-bypass principle also matters for regulatory credibility. When a bank tells the regulator "every automated decision passes through our governance framework," the regulator can ask "are you sure? Could a decision bypass it?" With a monitoring tool overlay, the honest answer is "theoretically, yes." With a zero-bypass runtime, the honest answer is "architecturally impossible."
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

@@ -35,8 +35,7 @@ Start with one bank. Add cross-institutional detection as the network grows. Eac
 
 
 
-            ZQUAS starts from a different premise. The engine deploys on-premise, inside the bank's own infrastructure. The bank's data never leaves. This isn't just a deployment option. It's an architectural principle that shapes the entire business model.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -44,8 +43,7 @@ Start with one bank. Add cross-institutional detection as the network grows. Eac
 
 
 
-            The initial sale is a single-bank deployment. The bank runs ZQUAS on its own hardware (or private cloud). The engine processes the bank's transactions against its policy set. The bank gets real-time monitoring with full graph context, deterministic policy enforcement, and cryptographic attestation of every decision.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -83,8 +81,7 @@ Start with one bank. Add cross-institutional detection as the network grows. Eac
 
 
 
-            Cross-institutional expansion: when two or more banks run ZQUAS, MPC-based cross-institutional detection can activate between them. This is where the architecture pays off. Because each bank retains full data sovereignty and the risk comparison happens cryptographically, there is no central processor. The status of MPC protocol messages under EU data protection law has not been ruled on by any authority, so the data protection analysis is not assumed away.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

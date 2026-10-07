@@ -121,8 +121,7 @@ Financial institutions spend more on compliance than on almost any other technol
 
 
 
-            ZQUAS is built on a different architectural premise. The compliance engine runs on GPU, processing millions of compliance events per second against full policy sets. Cross-institutional detection uses GPU-accelerated secure multi-party computation, designed so banks can detect cross-border patterns without sharing raw data. Every decision produces a cryptographic proof bundle that regulators can verify independently.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

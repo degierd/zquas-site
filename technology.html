@@ -32,7 +32,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=6">
+    <link rel="stylesheet" href="style.css?v=12">
 
     <script type="application/ld+json">
     {
@@ -134,14 +134,14 @@
             <div class="layer-card-inner">
                 <div class="arch-tag">LAYER 4</div>
                 <h3>Cryptographic Attestation</h3>
-                <p>Every batch of compliance decisions produces a sealed proof bundle. The bundle includes: a BLAKE3 hash of the policy set, a hash of the input data, individual verdict hashes, a Merkle root binding all verdicts together, and an Ed25519 signature over the complete bundle. A separate SHA-256 witness hash is produced for regulatory interfaces. Proof bundles can optionally include GPU-accelerated zero-knowledge governance proofs.</p>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
             </div>
         </div>
         <div class="layer-card">
             <div class="layer-card-inner">
                 <div class="arch-tag">LAYER 5</div>
                 <h3>Privacy-Preserving Cross-Institutional Layer</h3>
-                <p>When multiple institutions run ZQUAS, cross-bank detection activates via privacy-preserving federation. The protocol combines ECDH-PSI (X25519) for entity matching, Yao's Garbled Circuits (Free-XOR) for risk comparison, and IKNP OT Extension (Chou-Orlandi base OT on P-256) for oblivious transfer. Security model: semi-honest. Transport: AES-256-GCM with X25519 key exchange. Each institution retains full data sovereignty. No raw entity data crosses institutional boundaries. At 100,000 entities per party, a bilateral round completes in 3,052 ms over a loopback development transport, against a 10-second bound enforced in CI. No real-network inter-participant measurement exists. Both parties sign the result with Ed25519. A regulator verifies the attestation with a public key alone. 361 tests, zero critical findings.</p>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
             </div>
         </div>
     </div>
@@ -181,9 +181,7 @@
     <div class="container">
         <div class="section-label">Regulator Verification</div>
         <h2 class="section-title">Independent verification without the production engine</h2>
-        <p class="section-desc">
-            The engine ships with a standalone verification CLI. The tool is independent of the ZQUAS engine. It takes a proof bundle, a registered policy set, and evaluation contexts as input. It replays the evaluation deterministically and confirms that the proof is valid. The tool outputs VALID (exit code 0), INVALID (exit code 1), or ERROR (exit code 2). No GPU required for verification. No vendor infrastructure needed.
-        </p>
+        <p class="section-desc">The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <div class="terminal-block">
 <pre><span class="terminal-prompt">$</span> themis-verify --epoch epoch_2026-03-08.bundle --policies /registered/v4.2/ --contexts eval_contexts.bin
 
@@ -237,9 +235,7 @@ Result: <span class="terminal-ok">VALID</span> (deterministic replay confirmed)<
     <div class="container">
         <div class="section-label">Governance Architecture</div>
         <h2 class="section-title">Nothing executes without constitutional authorization</h2>
-        <p class="section-desc">
-            The engine enforces a zero-bypass governance model. Every computational action requires explicit authorization, every authorization is metered, and every action is cryptographically provable. This is not a logging layer added on top. It's the execution model itself.
-        </p>
+        <p class="section-desc">The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         <div class="arch-grid">
             <div class="arch-card">
                 <div class="arch-tag">ENFORCEMENT</div>
@@ -334,7 +330,7 @@ Result: <span class="terminal-ok">VALID</span> (deterministic replay confirmed)<
             <div class="arch-card">
                 <div class="arch-tag">SIEM / GRC</div>
                 <h3>Zero-Copy Export</h3>
-                <p>Verdict export in RAW and CEF formats for direct ingestion by SIEM platforms (Splunk, QRadar, Sentinel) and GRC systems. Messages use zero-copy flat encoding with domain-tagged BLAKE3 integrity hashes. Epoch-level export batches align with the cryptographic attestation cycle, so every exported verdict is traceable to its proof bundle.</p>
+                <p>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
             </div>
             <div class="arch-card">
                 <div class="arch-tag">DATA INGESTION</div>
@@ -372,7 +368,7 @@ Result: <span class="terminal-ok">VALID</span> (deterministic replay confirmed)<
     <div class="footer-inner">
         <div class="footer-brand">
             <a href="/" class="footer-logo">ZQUAS<span>.</span></a>
-            <p>Bounded Compliance on an Unbounded Platform.<br>Cross-institutional AML detection without sharing customer data.</p>
+            <p>Bounded Compliance on an Unbounded Platform.<br>The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
         </div>
         <div class="footer-links">
             <div class="footer-col">

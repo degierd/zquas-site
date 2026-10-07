@@ -43,8 +43,7 @@ We have joined the second cohort of the FCA's Supercharged Sandbox. This note ex
 
 
 
-            We make strong claims. That financial crime can be detected across institutions without any of them pooling raw customer data. That the detection decision inside an institution can be reached in the low milliseconds, fast enough to keep up with modern payment rails, while the cross-institutional exchange that enriches it is bound by network and protocol rounds and runs on a longer timescale. That richer, cross-institutional context can materially reduce the false positives that bury compliance teams.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -120,8 +119,7 @@ In compliance, a system that cannot reproduce its own decision, or explain it th
 
 
 
-            Underneath sits a governance layer. The policies that drive detection are written as code: versioned, reviewed, and auditable, so the system's behaviour is governable and every change to it is tracked. Beyond explaining why a decision was made, the system is built to produce a verifiable record of what it actually did, closer to cryptographic attestation than to a log you simply have to trust, because in regulated AI, being able to prove what happened matters as much as being able to describe it. And the models themselves run inside the institution's own environment rather than through an outside service, so no customer data leaves for inference and the model's behaviour stays under the institution's control.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -139,8 +137,7 @@ In compliance, a system that cannot reproduce its own decision, or explain it th
 
 
 
-            The programme runs on synthetic data, and it expects participants to design for privacy and security from the outset. For many firms that is a discipline to adopt. For us it is simply how the technology already works. ZQUAS is built to detect financial crime without exposing raw customer data, and we test on synthetic data rather than real records as a matter of principle, not compliance.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 

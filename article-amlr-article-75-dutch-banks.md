@@ -150,8 +150,7 @@ The Netherlands tried collaborative AML detection. It failed. Not because the te
 
 
 
-            Article 75 permits collaborative AML detection within its scope. The status of MPC protocol messages under data protection law remains open. The technical question is which architecture gives the best account of itself against both the legal mandate and the privacy requirements. An architecture that shares pseudonymised raw data may satisfy the letter of Article 75(4)(f) while remaining vulnerable to GDPR challenge. An architecture that generates intelligence without sharing raw data satisfies both.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
             Danny de Gier

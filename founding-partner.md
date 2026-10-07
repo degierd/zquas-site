@@ -45,7 +45,7 @@ The pilot software, support to configure scam review and local monitoring, the s
 
 ### What gets measured
 
-Scam payments caught, at most 1 review per 500 payments and 1 hold per 1,000, analyst workload, local monitoring workload and coverage, every decision verifiable in the signed log. These are evaluation measures and limits, not promised detection rates. Local transaction monitoring selects investigation work and does not itself hold payments.
+Scam payments caught, at most 1 review per 500 payments and 1 hold per 1,000, analyst workload, local monitoring workload and coverage, verification of signed decision records. These are evaluation measures and limits, not promised detection rates. Local transaction monitoring selects investigation work and does not itself hold payments.
 
 05
 
@@ -93,7 +93,7 @@ Data sovereignty
 
 ## Your records stay with you.
 
-No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 Network participation is optional and follows the local phase by separate agreement. Current federation security is semi-honest: it assumes participants follow the protocol.
 
@@ -101,7 +101,7 @@ Evidence today
 
 ## A prototype with results to examine.
 
-TRL 6. Synthetic data only. No production deployments. Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys).
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 ZQUAS governs decisions made by automated systems and AI agents. Financial crime is where it starts.
 

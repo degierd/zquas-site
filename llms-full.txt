@@ -4,7 +4,7 @@ Checked 7 October 2026. Each section links its public page.
 
 # ZQUAS: Criminals use many banks. Now banks can act as one.
 
-> ZQUAS lets banks catch scam payments and mule accounts together, without pooling customer data. TRL 6, synthetic data only, no production deployments.
+> The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 Source: https://zquas.ai
 Site: https://zquas.ai
@@ -64,7 +64,7 @@ Check the payments coming into your own accounts, on your own data, inside your 
 
 
 
-Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.
+Exchange participation is being retested with information available to each exchange at the decision time.
 
                 [Join the pilot](contact.html?audience=exchanges)
 
@@ -85,26 +85,14 @@ A governance engine with measured results on synthetic data. Financial crime is 
 
 
 
-        What we have shown
+        Evidence and limits
 
 
-## Results on synthetic data
-
-
-
-            Every result on this page comes from our own tests on synthetic data. None of them is a real-world detection rate.
+## Studies on synthetic data
 
 
 
-
-                About 1 in 2
-                Scam payments reviewed with the network
-                Synthetic data. In our model.
-
-                    Read the test detail
-
-
-Our synthetic world has 1,000,000 adults at the UK scam rate. Each bank's own fraud model alone caught about 1 in 7. When we removed our generator's easiest clue, the network figure fell to about 1 in 3. Every limit held, and fewer than 1 genuine payment in 10,000 was reviewed.
+            An offline retrospective study identified payments for review in one synthetic world. It did not measure executed prevention under a live review queue.
 
 
 
@@ -114,13 +102,17 @@ Our synthetic world has 1,000,000 adults at the UK scam rate. Each bank's own fr
                 Test in progress. No result published.
 
 
-Exchanges as members: we are testing a withdrawal check that asks the funding bank one question about the payment that funded it. Results will be published when the test is complete.
+Exchange participation is being retested with information available to each exchange at the decision time.
 
 
 
                 99 in 100
-                Decisions in under 10 ms
+                Warm decisions in under 10 ms
                 Our test. Synthetic data.
+
+
+The reported timing measures the warm decision path, not cold arrival-to-decision delay.
+
 
                     Read the test detail
 
@@ -132,7 +124,7 @@ Up to 540 simulated bank installations ran together on nine cloud GPUs in one cl
 
 
 
-Limits in the model: at most 1 payment in 1,000 held and 1 in 500 reviewed. Network signals add reviews, never automatic holds. Synthetic data throughout, not real-world detection rates. Position today: TRL 6, no production deployments, no live counterparty data.
+The prototype supports bounded information sharing and signed decision records under the stated trust model. Synthetic data. TRL 6. No production deployments or live counterparty data.
 
 
             [Download the briefing ↗](zquas-onepager.pdf)
@@ -151,7 +143,7 @@ Limits in the model: at most 1 payment in 1,000 held and 1 in 500 reviewed. Netw
 
 
 
-            Every ZQUAS decision runs on the same engine: it applies an institution's rules to decisions made by automated systems and AI agents, at GPU speed, and records why each decision was made so a supervisor can check it. Financial crime is where we start. The same engine can govern decisions in other industries where automated decisions need rules, limits and an audit trail.
+            The prototype supports bounded information sharing and signed decision records under the stated trust model. Financial crime is where we start. The same engine can govern decisions in other industries where automated decisions need rules, limits and an audit trail.
 
 
         [The platform →](platform.html)
@@ -168,7 +160,7 @@ Limits in the model: at most 1 payment in 1,000 held and 1 in 500 reviewed. Netw
         How it works
 
 
-## The receiving bank checks. One report protects every member.
+## Bounded information sharing and signed decision records.
 
 
 
@@ -186,22 +178,22 @@ The bank that holds the receiving account checks the payments coming into it. It
                 2
 
 
-### One confirmed report protects every member
+### Bounded sharing of confirmed reports
 
 
 
-When a victim reports a scam, that confirmed report is shared with every member. The mule account is flagged for review at every bank in the network. The network only ever adds reviews. It never adds automatic holds.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
                 3
 
 
-### No customer files leave a bank
+### Bounded information sharing
 
 
 
-No customer files are exchanged, and no raw or directly identifying customer data leaves the institution. Alerts carry proofs that the supervisor can verify. Security today is semi-honest: it assumes each member follows the protocol.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -252,11 +244,12 @@ Source: UK Finance, Annual Fraud Report 2026 (figures for 2025).
 
 
 
-Under the UK's mandatory reimbursement rules, in force since October 2024, the sending bank and the receiving bank split each reimbursement 50:50, up to £85,000 a claim.
+Under the UK's mandatory reimbursement rules, in force since October 2024, the sending bank and the receiving bank split eligible reimbursement under the applicable UK APP rules 50:50, up to £85,000 a claim.
 
 
 
 Source: Payment Systems Regulator, APP reimbursement rules.
+
 
 # A 12-week local pilot
 
@@ -305,7 +298,7 @@ The pilot software, support to configure scam review and local monitoring, the s
 
 ### What gets measured
 
-Scam payments caught, at most 1 review per 500 payments and 1 hold per 1,000, analyst workload, local monitoring workload and coverage, every decision verifiable in the signed log. These are evaluation measures and limits, not promised detection rates. Local transaction monitoring selects investigation work and does not itself hold payments.
+Scam payments caught, at most 1 review per 500 payments and 1 hold per 1,000, analyst workload, local monitoring workload and coverage, verification of signed decision records. These are evaluation measures and limits, not promised detection rates. Local transaction monitoring selects investigation work and does not itself hold payments.
 
 05
 
@@ -353,7 +346,7 @@ Data sovereignty
 
 ## Your records stay with you.
 
-No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 Network participation is optional and follows the local phase by separate agreement. Current federation security is semi-honest: it assumes participants follow the protocol.
 
@@ -361,7 +354,7 @@ Evidence today
 
 ## A prototype with results to examine.
 
-TRL 6. Synthetic data only. No production deployments. Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys).
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 ZQUAS governs decisions made by automated systems and AI agents. Financial crime is where it starts.
 
@@ -380,6 +373,7 @@ The next step
 12 weeks inside your institution. An optional network phase follows only by agreement.
 
 [Discuss your pilot ↗](contact.html?audience=banks)
+
 
 # Local monitoring: a synthetic walkthrough
 
@@ -483,7 +477,7 @@ A checkable record
 
 ## The decision stays with the bank.
 
-Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys).
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 The check covers the signed record. It does not establish that a transaction is criminal or that an investigation has reached the right conclusion.
 
@@ -491,7 +485,7 @@ Optional network phase
 
 ## Start locally. Decide separately about sharing.
 
-No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 Current federation security is semi-honest: it assumes participants follow the protocol. The network adds reviews, never automatic holds.
 
@@ -510,6 +504,7 @@ The next step
 12 weeks inside your institution. An optional network phase follows only by agreement.
 
 [Discuss your pilot ↗](contact.html?audience=banks)
+
 
 # Engine benchmarks and their limits
 
@@ -594,7 +589,7 @@ Verification
 
 These results come from our own tests. They are not an external audit. Hardware and workload affect timings.
 
-Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys).
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 The performance statements were checked against the F1_ENGINE test definitions, claim register and retained run reports on 7 October 2026. The relevant tests are DetectionCycleThemis.Latency_500K_FullCycle, AlertLifecycleLatency, ThreeBankTMNL.RealisticScaleBenchmarkIknp and DetectionPeakVram.HardCap_500K_4M_UnderBound.
 
@@ -613,6 +608,7 @@ The next step
 12 weeks inside your institution. An optional network phase follows only by agreement.
 
 [Discuss your pilot ↗](contact.html?audience=banks)
+
 
 # About
 
@@ -806,6 +802,7 @@ Server card: [/.well-known/mcp/server-card.json](/.well-known/mcp/server-card.js
 
             [Get in touch](contact.html)
 
+
 # Technology
 
 > Technical overview of the ZQUAS engine architecture: GPU adjudication, policy compiler, identity graph, cryptographic attestation, and privacy-preserving MPC.
@@ -885,7 +882,7 @@ A GPU-resident entity graph maintains relationships between accounts, individual
 
 
 
-Every batch of compliance decisions produces a sealed proof bundle. The bundle includes: a BLAKE3 hash of the policy set, a hash of the input data, individual verdict hashes, a Merkle root binding all verdicts together, and an Ed25519 signature over the complete bundle. A separate SHA-256 witness hash is produced for regulatory interfaces. Proof bundles can optionally include GPU-accelerated zero-knowledge governance proofs.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -898,7 +895,7 @@ Every batch of compliance decisions produces a sealed proof bundle. The bundle i
 
 
 
-When multiple institutions run ZQUAS, cross-bank detection activates via privacy-preserving federation. The protocol combines ECDH-PSI (X25519) for entity matching, Yao's Garbled Circuits (Free-XOR) for risk comparison, and IKNP OT Extension (Chou-Orlandi base OT on P-256) for oblivious transfer. Security model: semi-honest. Transport: AES-256-GCM with X25519 key exchange. Each institution retains full data sovereignty. No raw entity data crosses institutional boundaries. At 100,000 entities per party, a bilateral round completes in 3,052 ms over a loopback development transport, against a 10-second bound enforced in CI. No real-network inter-participant measurement exists. Both parties sign the result with Ed25519. A regulator verifies the attestation with a public key alone. 361 tests, zero critical findings.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -966,8 +963,7 @@ Inter-stream synchronisation uses CUDA events. Streams execute concurrently. Loa
 
 
 
-            The engine ships with a standalone verification CLI. The tool is independent of the ZQUAS engine. It takes a proof bundle, a registered policy set, and evaluation contexts as input. It replays the evaluation deterministically and confirms that the proof is valid. The tool outputs VALID (exit code 0), INVALID (exit code 1), or ERROR (exit code 2). No GPU required for verification. No vendor infrastructure needed.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -1069,8 +1065,7 @@ Reproducible builds with embedded BLAKE3 + SHA-256 hashes, compiler version, git
 
 
 
-            The engine enforces a zero-bypass governance model. Every computational action requires explicit authorization, every authorization is metered, and every action is cryptographically provable. This is not a logging layer added on top. It's the execution model itself.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -1239,7 +1234,7 @@ The engine can evaluate the same entity under different temporal contexts simult
 
 
 
-Verdict export in RAW and CEF formats for direct ingestion by SIEM platforms (Splunk, QRadar, Sentinel) and GRC systems. Messages use zero-copy flat encoding with domain-tagged BLAKE3 integrity hashes. Epoch-level export batches align with the cryptographic attestation cycle, so every exported verdict is traceable to its proof bundle.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -1281,9 +1276,10 @@ Every compiled binary embeds deterministic hashes (BLAKE3 and SHA-256) of its ow
 
             This page describes the architecture at a level appropriate for technical evaluation. Implementation details including the policy language syntax, GPU kernel design, MPC protocol specifics, and internal subsystem architecture are available under NDA for qualified evaluation partners. Contact [danny@zquas.ai](mailto:danny@zquas.ai).
 
+
 # For Regulators
 
-> ZQUAS produces cryptographic proof of every compliance decision. Supervisory teams verify outcomes independently, without relying on the running production engine or its internal state.
+> The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 Source: https://zquas.ai/regulators.html
 Site: https://zquas.ai
@@ -1296,8 +1292,7 @@ For Supervisory Authorities
 
 
 
-            ZQUAS produces cryptographic proof of every compliance decision. Your supervisory team verifies outcomes independently, without relying on the running production engine or its internal state, and without seeing underlying transaction data.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
         Programmes and sandboxes
 
@@ -1362,8 +1357,7 @@ The EU AI Act may classify AI-based AML risk profiling as high-risk under Annex 
 
 
 
-            Every batch of compliance decisions produces a sealed proof bundle. The bundle is self-contained, tamper-evident, and independently verifiable.
-
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -1485,7 +1479,7 @@ Result: VALID
 
 
 
-Articles 9, 11, 12, 14. Risk management supported by built-in adversarial testing framework that continuously evaluates system robustness (Article 9). Technical documentation via sealed evidence bundles (Article 11). Record-keeping through cryptographic proof bundles with full decision chain traceability (Article 12). Human oversight enforced by constitutional warrant model where no automated action executes without authorization (Article 14).
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -1545,7 +1539,7 @@ Technology Risk Management guidelines. Applicable to financial institutions unde
 
 
 
-Data protection by design. Privacy-preserving MPC architecture eliminates cross-institutional data exposure.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -1555,7 +1549,7 @@ Data protection by design. Privacy-preserving MPC architecture eliminates cross-
 
 
 
-Digital operational resilience. ICT risk management, incident reporting, and third-party oversight. Automated test coverage across the codebase. Ed25519-signed audit trail for every compliance decision. Binary self-verification and build attestation with embedded cryptographic hashes for runtime integrity verification.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -1585,7 +1579,7 @@ Instead of periodic examinations with sampled reviews, regulators could receive 
 
 
 
-A proof bundle from one jurisdiction can be verified by another jurisdiction's examiner without data sharing or system access. The proof is self-contained. This simplifies supervisory cooperation under frameworks like the ECB's Single Supervisory Mechanism and emerging AMLA coordination requirements.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 
 
@@ -1671,6 +1665,7 @@ As CEN/CENELEC drafts technical standards for the EU AI Act's high-risk AI requi
 
             [View Programme](founding-partner.html)
             [Position Paper](article-75.html)
+
 
 # The Founder's Story
 

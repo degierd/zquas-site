@@ -100,7 +100,7 @@ A checkable record
 
 ## The decision stays with the bank.
 
-Every decision is signed, and the supervisor can verify it with a published check (synthetic data, development keys).
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 The check covers the signed record. It does not establish that a transaction is criminal or that an investigation has reached the right conclusion.
 
@@ -108,7 +108,7 @@ Optional network phase
 
 ## Start locally. Decide separately about sharing.
 
-No customer records leave your infrastructure. With network sharing switched on, the bank sends only bounded answers about payments it is part of, each one authorized by its own policy and recorded in its signed log.
+The prototype supports bounded information sharing and signed decision records under the stated trust model.
 
 Current federation security is semi-honest: it assumes participants follow the protocol. The network adds reviews, never automatic holds.
 

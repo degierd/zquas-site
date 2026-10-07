@@ -1,1 +1,224 @@
-[{"key":"scam-0","from":78,"seconds":7.632208},{"key":"scam-1","from":317,"seconds":3.008292},{"key":"scam-2","from":422,"seconds":6.43475},{"key":"mule-0","from":689,"seconds":3.779},{"key":"mule-1","from":817,"seconds":5.9665},{"key":"mule-2","from":1020,"seconds":3.347917},{"key":"mule-3","from":1139,"seconds":6.032375},{"key":"why-0","from":1370,"seconds":6.877458},{"key":"why-1","from":1600,"seconds":3.257875},{"key":"why-2","from":1710,"seconds":7.337},{"key":"network-0","from":1964,"seconds":8.692917},{"key":"network-1","from":2245,"seconds":1.872708},{"key":"question-0","from":2339,"seconds":8.9695},{"key":"question-1","from":2623,"seconds":7.165125},{"key":"question-2","from":2850,"seconds":5.865208},{"key":"report-0","from":3089,"seconds":8.528125},{"key":"report-1","from":3368,"seconds":5.532542},{"key":"can-0","from":3620,"seconds":4.924208},{"key":"can-1","from":3784,"seconds":3.643667},{"key":"can-2","from":3910,"seconds":5.37525},{"key":"can-3","from":4088,"seconds":6.073583},{"key":"can-4","from":4294,"seconds":5.907708},{"key":"can-5","from":4486,"seconds":4.785667},{"key":"tested-0","from":4664,"seconds":5.119875},{"key":"tested-1","from":4842,"seconds":6.874125},{"key":"tested-2","from":5073,"seconds":6.439708},{"key":"result-0","from":5420,"seconds":8.773667},{"key":"result-1","from":5702,"seconds":5.121167},{"key":"result-2","from":5868,"seconds":4.320458},{"key":"result-3","from":6016,"seconds":5.344542},{"key":"result-4","from":6201,"seconds":7.71725},{"key":"result-5","from":6457,"seconds":3.840542},{"key":"value-0","from":6618,"seconds":13.7635},{"key":"value-1","from":7051,"seconds":4.041208},{"key":"value-2","from":7185,"seconds":3.343625},{"key":"next-0","from":7368,"seconds":5.006208},{"key":"next-1","from":7535,"seconds":3.808875},{"key":"next-2","from":7668,"seconds":12.780417},{"key":"next-3","from":8070,"seconds":5.393542},{"key":"outro-0","from":8349,"seconds":0.878667},{"key":"outro-1","from":8396,"seconds":2.564167}]
+[
+  {
+    "key": "scam-0",
+    "from": 78,
+    "seconds": 7.632208
+  },
+  {
+    "key": "scam-1",
+    "from": 317,
+    "seconds": 3.008292
+  },
+  {
+    "key": "scam-2",
+    "from": 422,
+    "seconds": 6.43475
+  },
+  {
+    "key": "mule-0",
+    "from": 689,
+    "seconds": 3.779
+  },
+  {
+    "key": "mule-1",
+    "from": 817,
+    "seconds": 5.9665
+  },
+  {
+    "key": "mule-2",
+    "from": 1020,
+    "seconds": 3.347917
+  },
+  {
+    "key": "mule-3",
+    "from": 1139,
+    "seconds": 6.032375
+  },
+  {
+    "key": "why-0",
+    "from": 1370,
+    "seconds": 6.877458
+  },
+  {
+    "key": "why-1",
+    "from": 1600,
+    "seconds": 3.257875
+  },
+  {
+    "key": "why-2",
+    "from": 1710,
+    "seconds": 7.337,
+    "text": "Our thinned-data experiment exposed sparse training labels under assumed reporting."
+  },
+  {
+    "key": "network-0",
+    "from": 1964,
+    "seconds": 8.692917,
+    "text": "The prototype supports bounded information sharing and signed decision records under the stated trust model."
+  },
+  {
+    "key": "network-1",
+    "from": 2245,
+    "seconds": 1.872708
+  },
+  {
+    "key": "question-0",
+    "from": 2339,
+    "seconds": 8.9695
+  },
+  {
+    "key": "question-1",
+    "from": 2623,
+    "seconds": 7.165125
+  },
+  {
+    "key": "question-2",
+    "from": 2850,
+    "seconds": 5.865208
+  },
+  {
+    "key": "report-0",
+    "from": 3089,
+    "seconds": 8.528125,
+    "text": "The prototype supports bounded information sharing"
+  },
+  {
+    "key": "report-1",
+    "from": 3368,
+    "seconds": 5.532542,
+    "text": "and signed decision records under the stated trust model."
+  },
+  {
+    "key": "can-0",
+    "from": 3620,
+    "seconds": 4.924208
+  },
+  {
+    "key": "can-1",
+    "from": 3784,
+    "seconds": 3.643667
+  },
+  {
+    "key": "can-2",
+    "from": 3910,
+    "seconds": 5.37525
+  },
+  {
+    "key": "can-3",
+    "from": 4088,
+    "seconds": 6.073583,
+    "text": "The prototype supports bounded information sharing and signed decision records under the stated trust model."
+  },
+  {
+    "key": "can-4",
+    "from": 4294,
+    "seconds": 5.907708,
+    "text": "An offline retrospective study identified payments for review in one synthetic world."
+  },
+  {
+    "key": "can-5",
+    "from": 4486,
+    "seconds": 4.785667,
+    "text": "It did not measure executed prevention under a live review queue."
+  },
+  {
+    "key": "tested-0",
+    "from": 4664,
+    "seconds": 5.119875
+  },
+  {
+    "key": "tested-1",
+    "from": 4842,
+    "seconds": 6.874125
+  },
+  {
+    "key": "tested-2",
+    "from": 5073,
+    "seconds": 6.439708,
+    "text": "The reported timing measures the warm decision path, not cold arrival-to-decision delay."
+  },
+  {
+    "key": "result-0",
+    "from": 5420,
+    "seconds": 8.773667,
+    "text": "An offline retrospective study identified payments for review in one synthetic world."
+  },
+  {
+    "key": "result-1",
+    "from": 5702,
+    "seconds": 5.121167,
+    "text": "It did not measure executed prevention under a live review queue."
+  },
+  {
+    "key": "result-2",
+    "from": 5868,
+    "seconds": 4.320458,
+    "text": "The prototype supports bounded information sharing"
+  },
+  {
+    "key": "result-3",
+    "from": 6016,
+    "seconds": 5.344542,
+    "text": "and signed decision records under the stated trust model."
+  },
+  {
+    "key": "result-4",
+    "from": 6201,
+    "seconds": 7.71725,
+    "text": "Exchange participation is being retested with information available to each exchange at the decision time."
+  },
+  {
+    "key": "result-5",
+    "from": 6457,
+    "seconds": 3.840542
+  },
+  {
+    "key": "value-0",
+    "from": 6618,
+    "seconds": 13.7635,
+    "text": "Eligible reimbursement under the applicable UK APP rules is split fifty-fifty between the sending and receiving firms, up to eighty-five thousand pounds a claim. These rules have been in force since October twenty twenty-four."
+  },
+  {
+    "key": "value-1",
+    "from": 7051,
+    "seconds": 4.041208,
+    "text": "Eligible reimbursement under the applicable UK APP rules."
+  },
+  {
+    "key": "value-2",
+    "from": 7185,
+    "seconds": 3.343625,
+    "text": "The prototype supports bounded information sharing."
+  },
+  {
+    "key": "next-0",
+    "from": 7368,
+    "seconds": 5.006208
+  },
+  {
+    "key": "next-1",
+    "from": 7535,
+    "seconds": 3.808875
+  },
+  {
+    "key": "next-2",
+    "from": 7668,
+    "seconds": 12.780417
+  },
+  {
+    "key": "next-3",
+    "from": 8070,
+    "seconds": 5.393542
+  },
+  {
+    "key": "outro-0",
+    "from": 8349,
+    "seconds": 0.878667
+  },
+  {
+    "key": "outro-1",
+    "from": 8396,
+    "seconds": 6.442125,
+    "text": "The prototype supports bounded information sharing and signed decision records under the stated trust model."
+  }
+]
