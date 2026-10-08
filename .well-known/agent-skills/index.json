@@ -13,7 +13,7 @@
       "description": "LLM-optimised summary of ZQUAS: what it is, who it serves, the engine's published benchmark numbers, and the regulatory frameworks it covers.",
       "url": "https://zquas.ai/llms.txt",
       "media_type": "text/plain",
-      "sha256": "32d9f91b222021d6f9f0d4d5dd6590bb6508d7b5a0c9670ad5eaec6823bae1ef"
+      "sha256": "f2110530cba5b39c2eda603c1d67d8759228adadfd6df3be0899f2026cd25f5d"
     },
     {
       "name": "site-summary-full",
@@ -21,7 +21,7 @@
       "description": "Long-form companion to llms.txt with the verbatim content of the strongest pages on the site (homepage, technology, regulators, founder timeline).",
       "url": "https://zquas.ai/llms-full.txt",
       "media_type": "text/plain",
-      "sha256": "6cc86bbeda00f62c040658332c36cf93bcf4266d27bc89ab04b57906bbec3bc3"
+      "sha256": "d0f6711b95763bc51ed74b9f6cc1828382751b61986d3171a5f57a370ee9de58"
     },
     {
       "name": "facts",
@@ -69,7 +69,7 @@
       "description": "PDF briefing on the local pilot, synthetic walkthrough, scoped engine benchmarks and programme participation.",
       "url": "https://zquas.ai/zquas-onepager.pdf",
       "media_type": "application/pdf",
-      "sha256": "ff54ac36a231b24c28fad3c583e0e96c02640a1b58952085866ee7482f02ddda"
+      "sha256": "a3ac0b9caaffaa7948f282fe7bd0db0be334d2b78181fb94f49da5871476f960"
     },
     {
       "name": "articles-feed",

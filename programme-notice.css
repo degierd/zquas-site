@@ -1,0 +1,14 @@
+/* Shared notice for the two FCA programme entries. */
+.programme-notice { max-width: 760px; margin: 24px 0; text-align: left; }
+.programme-list { margin: 0; padding: 0; list-style: none; }
+.programme-list li { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 24px; padding: 16px 0; border-bottom: 1px solid var(--border, #242b3a); }
+.programme-list strong { color: var(--text-primary, #e2e4ed); font-size: 16px; font-weight: 600; }
+.programme-list span { color: var(--text-secondary, #a1a9bf); font-size: 14px; }
+.programme-notice .fca-disclaimer { margin: 14px 0 0; font-size: 12px; line-height: 1.65; }
+.programme-other { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 24px 0 0; font-size: 14px; line-height: 1.65; text-align: left; }
+.programme-other strong { font-weight: 500; }
+.programme-other span { color: var(--text-secondary, #a1a9bf); }
+.reg-header .programme-notice, .reg-header .programme-other { max-width: 690px; margin-left: auto; margin-right: auto; }
+.about-prose .programme-notice { margin-top: 0; }
+@media (max-width: 480px) { .programme-list li { display: block; } .programme-list span { display: block; margin-top: 6px; } }
+.programme-notice + p a, .regulators-page .section-desc a[href="#programmes"] { color: var(--accent, #4a7dff); text-underline-offset: 3px; }

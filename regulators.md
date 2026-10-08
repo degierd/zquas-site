@@ -18,15 +18,21 @@ The prototype supports bounded information sharing and signed decision records u
         Programmes and sandboxes
 
 
-ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
+
+
+- **FCA Supercharged Sandbox** Taking part
+
+- **FCA Digital Sandbox** Accepted in March 2026
 
 
 
-ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.
+
+The FCA does not endorse ZQUAS, its products or its results.
 
 
 
-DNB InnovationHub submission under review.
+
+**DNB InnovationHub** Submission under review
 
 
 
@@ -344,8 +350,7 @@ The predictive compliance engine simulates governance state forward in time. It 
 
 
 
-            ZQUAS is purpose-built for supervisory evaluation. Accepted into the FCA Digital Sandbox in March 2026. Joined the second cohort of the FCA Supercharged Sandbox in July 2026. DNB InnovationHub submission under review.
-        ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
+ZQUAS is purpose-built for supervisory evaluation. See our [programme participation and current engagement status](#programmes) above.
 
 
 

@@ -123,21 +123,21 @@ ZQUAS is a member of the NVIDIA Inception program. Inception is NVIDIA's global 
 
 
 
-### FCA Supercharged Sandbox
+
+
+- **FCA Supercharged Sandbox** Taking part
+
+- **FCA Digital Sandbox** Accepted in March 2026
 
 
 
-ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results. Read [why we applied](article-fca-sandbox.html).
+
+The FCA does not endorse ZQUAS, its products or its results.
 
 
 
 
-
-### FCA Digital Sandbox
-
-
-
-ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.
+Read [why we applied to the Supercharged Sandbox](article-fca-sandbox.html).
 
 
 

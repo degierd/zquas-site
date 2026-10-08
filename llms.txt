@@ -10,8 +10,10 @@ Exchange participation is being retested with information available to each exch
 
 ## Programmes and sandboxes
 
-- ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.
-- ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.
+- FCA Supercharged Sandbox: ZQUAS is taking part.
+- FCA Digital Sandbox: ZQUAS was accepted in March 2026.
+
+The FCA does not endorse ZQUAS, its products or its results.
 
 ## Key Pages
 

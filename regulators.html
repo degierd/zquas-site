@@ -44,6 +44,7 @@
         ]
     }
     </script>
+    <link rel="stylesheet" href="programme-notice.css?v=1">
 </head>
 <body class="regulators-page">
 
@@ -83,10 +84,15 @@
         <div class="section-label">For Supervisory Authorities</div>
         <h1>Verify compliance decisions. Don't trust vendor reports.</h1>
         <p class="section-desc">The prototype supports bounded information sharing and signed decision records under the stated trust model.</p>
-        <div class="reg-badge"><span class="dot"></span>Programmes and sandboxes</div>
-        <p class="fca-disclaimer">ZQUAS is taking part in the FCA's Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.</p>
-        <p class="fca-disclaimer">ZQUAS was accepted into the FCA's Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.</p>
-        <p class="fca-disclaimer">DNB InnovationHub submission under review.</p>
+        <div class="reg-badge" id="programmes"><span class="dot"></span>Programmes and sandboxes</div>
+        <div class="programme-notice" aria-label="FCA sandbox participation">
+            <ul class="programme-list">
+                <li><strong>FCA Supercharged Sandbox</strong> <span>Taking part</span></li>
+                <li><strong>FCA Digital Sandbox</strong> <span>Accepted in March 2026</span></li>
+            </ul>
+            <p class="fca-disclaimer">The FCA does not endorse ZQUAS, its products or its results.</p>
+        </div>
+        <p class="programme-other"><strong>DNB InnovationHub</strong> <span>Submission under review</span></p>
     </div>
 </section>
 
@@ -275,9 +281,7 @@ Result: <span class="terminal-ok">VALID</span></pre></div>
     <div class="container">
         <div class="section-label">Engagement</div>
         <h2 class="section-title">Designed for regulatory scrutiny</h2>
-        <p class="section-desc">
-            ZQUAS is purpose-built for supervisory evaluation. Accepted into the FCA Digital Sandbox in March 2026. Joined the second cohort of the FCA Supercharged Sandbox in July 2026. DNB InnovationHub submission under review.
-        <span class="fca-disclaimer">ZQUAS was accepted into the FCA&#x27;s Digital Sandbox in March 2026. The FCA does not endorse ZQUAS, its products or its results.</span><span class="fca-disclaimer">ZQUAS is taking part in the FCA&#x27;s Supercharged Sandbox. The FCA does not endorse ZQUAS, its products or its results.</span></p>
+        <p class="section-desc">ZQUAS is purpose-built for supervisory evaluation. See our <a href="#programmes">programme participation and current engagement status</a> above.</p>
         <div class="engage-grid">
             <div class="engage-card">
                 <h3>Sandbox Evaluation</h3>
