@@ -1,0 +1,16 @@
+/* Decorative wordmark motion. No layout changes or pointer interception. */
+.brand-dot-flight {
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 14px;
+  height: 14px;
+  z-index: 1000;
+  pointer-events: none;
+  border-radius: 50%;
+  background: #4a7dff;
+  box-shadow: 0 0 15px rgb(74 125 255 / 32%);
+  transform-origin: center;
+  contain: layout style;
+  will-change: transform;
+}
+.brand-dot-flight.is-trail { box-shadow: none; }
